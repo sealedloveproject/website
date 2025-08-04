@@ -1,0 +1,132 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// NextAuth Models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// VerificationToken model removed - using Redis instead
+
+// User model (extended for NextAuth)
+model User {
+  id            String    @id @default(uuid())
+  email         String    @unique
+  name          String?
+  emailVerified DateTime?
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+  
+  accounts      Account[]
+  sessions      Session[]
+  stories       Story[]
+  storyLikes    StoryLike[]
+}
+
+// Story model
+model Story {
+  id          String    @id @default(uuid())
+  title       String
+  content     String    @db.Text
+  isPublic    Boolean   @default(false)
+  likes       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  userId      String
+  user        User      @relation(fields: [userId], references: [id])
+  location    String?
+  coverImageId String?   // ID of the attachment that serves as the cover image
+  vaultId     String?    // ID of the vault this story belongs to
+  vault       Vault?     @relation(fields: [vaultId], references: [id])
+  attachments Attachment[]
+  hashReplicatingAttachment Boolean @default(false)
+  reports     StoryReport[]
+  storyLikes  StoryLike[]
+}
+
+// Attachment model for files related to stories
+model Attachment {
+  id        String   @id @default(uuid())
+  storyId   String
+  story     Story    @relation(fields: [storyId], references: [id])
+  fileName  String
+  fileType  String
+  fileUrl   String
+  size      Int?
+  hash      String?
+  replicated Boolean @default(false)
+  s3Region  String?  // AWS S3 region where the file is stored
+  s3Bucket  String?  // AWS S3 bucket where the file is stored
+  createdAt DateTime @default(now())
+}
+
+// StoryReport model for user-submitted reports about stories
+model StoryReport {
+  id          String   @id @default(uuid())
+  storyId     String
+  story       Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  reporterEmail String
+  reporterName  String?
+  reason      String   @db.Text
+  status      String   @default("pending") // pending, reviewed, dismissed
+  adminNotes  String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+// StoryLike model for tracking user likes on stories
+model StoryLike {
+  id        String   @id @default(uuid())
+  storyId   String
+  userId    String
+  createdAt DateTime @default(now())
+  
+  story     Story    @relation(fields: [storyId], references: [id], onDelete: Cascade)
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@unique([storyId, userId]) // Ensures a user can only like a story once
+}
+
+// Vault model for managing time-bound story collections
+model Vault {
+  id        String    @id @default(uuid())
+  name      String
+  startsAt  DateTime
+  endsAt    DateTime
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  stories   Story[]
+}

@@ -1,0 +1,139 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Deploy to Production
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: ${{ secrets.SERVER_HOST }}
+        username: ${{ secrets.SERVER_USER }}
+        key: ${{ secrets.SERVER_SSH_KEY }}
+        port: ${{ secrets.SERVER_PORT || 22 }}
+        script: |
+          # Create app directory if it doesn't exist
+          mkdir -p /apps/website
+          cd /apps/website
+          
+          # Create a build directory for the new deployment
+          rm -rf build_temp
+          mkdir -p build_temp
+          cd build_temp
+          
+          # Clone the repository directly into the build directory
+          git clone --depth 1 https://github.com/sealedloveproject/website.git . || {
+            echo "Git clone failed. Aborting deployment."
+            cd /apps/website
+            rm -rf build_temp
+            exit 1;
+          }
+          
+          # Install Yarn if not already installed
+          if ! command -v yarn &> /dev/null; then
+            npm install -g yarn
+          fi
+          
+          # Copy environment file if it exists
+          if [ -f /apps/website/.env ]; then
+            cp /apps/website/.env .
+          fi
+          
+          # Install dependencies
+          yarn install || { echo "Dependency installation failed"; exit 1; }
+          
+          # Generate Prisma client
+          echo "Generating Prisma client..."
+          npx prisma generate || {
+            echo "Prisma client generation failed. Aborting deployment."
+            cd /apps/website
+            rm -rf build_temp
+            exit 1;
+          }
+          
+          # Run database migrations with transaction support for rollback
+          echo "Running database migrations..."
+          npx prisma migrate deploy || {
+            echo "Database migration failed. Aborting deployment."
+            cd /apps/website
+            rm -rf build_temp
+            exit 1;
+          }
+          
+          # Build the application
+          yarn build || {
+            echo "Build failed. Aborting deployment."
+            cd /apps/website
+            rm -rf build_temp
+            exit 1;
+          }
+          
+          # Install production dependencies only
+          rm -rf node_modules
+          yarn install --production || {
+            echo "Production dependency installation failed. Aborting deployment."
+            cd /apps/website
+            rm -rf build_temp
+            exit 1;
+          }
+          
+          # At this point, the build is successful and ready to deploy
+          cd /apps/website
+          
+          # Create backup of previous deployment
+          if [ -d "previous" ]; then
+            rm -rf previous_backup
+            mv previous previous_backup
+          fi
+          
+          # Backup current production deployment
+          if [ -d "production" ]; then
+            mv production previous
+          fi
+          
+          # Move the new build to production
+          mv build_temp production
+          
+          # Reload the PM2 application for zero-downtime deployment
+          cd /apps/website/production
+          if pm2 list | grep -q "sealed-love-website"; then
+            pm2 reload sealed-love-website || {
+              echo "PM2 reload failed. Rolling back to previous version."
+              if [ -d /apps/website/previous ]; then
+                rm -rf /apps/website/production
+                mv /apps/website/previous /apps/website/production
+                cd /apps/website/production
+                pm2 start /apps/website/production/ecosystem.config.js
+              fi
+              exit 1;
+            }
+          else
+            # Use absolute path to ecosystem.config.js to ensure PM2 finds it
+            pm2 start /apps/website/production/ecosystem.config.js || {
+              echo "PM2 start failed. Rolling back to previous version."
+              if [ -d /apps/website/previous ]; then
+                rm -rf /apps/website/production
+                mv /apps/website/previous /apps/website/production
+                cd /apps/website/production
+                pm2 start /apps/website/production/ecosystem.config.js
+              fi
+              exit 1;
+            }
+          fi
+          
+          # Save PM2 process list
+          pm2 save
+          
+          # Clean up old backups if needed
+          if [ -d "previous_backup" ] && [ -d "previous" ]; then
+            rm -rf previous_backup
+          fi
