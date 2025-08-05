@@ -7,6 +7,8 @@ import { AuthProvider } from "@/contexts/AuthContext";
 import SignInModal from "@/components/auth/SignInModal";
 import { SessionProvider } from "@/providers/SessionProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from 'next-intl/server';
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -25,14 +27,16 @@ export const metadata: Metadata = {
   description: "sealed.love - a personal project by Alex & Ioana",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
 
+  const locale = (await getLocale()) || 'en';
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${playfair.variable} ${barlow.variable} antialiased text-foreground`}
       >
@@ -41,13 +45,13 @@ export default function RootLayout({
             <AuthProvider>
               <div className="min-h-screen flex flex-col">
                 <div className="texture-background"></div>
-                <Navigation />
-                
-                <main className="flex-grow mt-12">
-                  {children}
-                </main>
-                
-                <Footer />
+                <NextIntlClientProvider>
+                  <Navigation />
+                  <main className="flex-grow mt-12">
+                    {children}
+                  </main>
+                  <Footer />
+                </NextIntlClientProvider>
               </div>
               <SignInModal />
             </AuthProvider>

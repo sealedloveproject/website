@@ -1,0 +1,28 @@
+{
+  "stories": "Stories",
+  "about": "About",
+  "support": "Support",
+  "signIn": "Sign In",
+  "signOut": "Sign Out",
+  "account": "Account",
+  "profile": "Profile",
+  "settings": "Settings",
+  "admin": "Admin",
+  "dashboard": "Dashboard",
+  "reports": "Reports",
+  "users": "Users",
+  "vaults": "Vaults",
+  "myStories": "My Stories",
+  "theme": "Theme",
+  "selectLanguage": "Select Language",
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "ru": "Русский",
+    "ro": "Română",
+    "it": "Italiano"
+  }
+}

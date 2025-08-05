@@ -1,0 +1,28 @@
+{
+  "stories": "Historias",
+  "about": "Acerca de",
+  "support": "Soporte",
+  "signIn": "Iniciar Sesión",
+  "signOut": "Cerrar Sesión",
+  "account": "Cuenta",
+  "profile": "Perfil",
+  "settings": "Configuración",
+  "admin": "Administrador",
+  "dashboard": "Panel de Control",
+  "reports": "Informes",
+  "users": "Usuarios",
+  "vaults": "Bóvedas",
+  "myStories": "Mis Historias",
+  "theme": "Tema",
+  "selectLanguage": "Seleccionar Idioma",
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "ru": "Русский",
+    "ro": "Română",
+    "it": "Italiano"
+  }
+}
