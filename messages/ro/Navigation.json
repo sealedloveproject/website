@@ -1,0 +1,28 @@
+{
+  "stories": "Povești",
+  "about": "Despre",
+  "support": "Suport",
+  "signIn": "Autentificare",
+  "signOut": "Deconectare",
+  "account": "Cont",
+  "profile": "Profil",
+  "settings": "Setări",
+  "admin": "Administrator",
+  "dashboard": "Panou de control",
+  "reports": "Rapoarte",
+  "users": "Utilizatori",
+  "vaults": "Seifuri",
+  "myStories": "Poveștile mele",
+  "theme": "Temă",
+  "selectLanguage": "Selectează limba",
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "ru": "Русский",
+    "ro": "Română",
+    "it": "Italiano"
+  }
+}

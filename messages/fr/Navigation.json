@@ -1,0 +1,28 @@
+{
+  "stories": "Histoires",
+  "about": "À propos",
+  "support": "Support",
+  "signIn": "Se connecter",
+  "signOut": "Se déconnecter",
+  "account": "Compte",
+  "profile": "Profil",
+  "settings": "Paramètres",
+  "admin": "Administrateur",
+  "dashboard": "Tableau de bord",
+  "reports": "Rapports",
+  "users": "Utilisateurs",
+  "vaults": "Coffres",
+  "myStories": "Mes Histoires",
+  "theme": "Thème",
+  "selectLanguage": "Sélectionner la langue",
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "ru": "Русский",
+    "ro": "Română",
+    "it": "Italiano"
+  }
+}
