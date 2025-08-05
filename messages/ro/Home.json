@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Păstrează poveștile tale de dragoste",
+    "description": "Păstrează poveștile tale de dragoste pentru următorul mileniu, gratuit. Sealed Love Project te ajută să capturezi și să stochezi cele mai prețioase amintiri în siguranță."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Păstrează poveștile tale de dragoste pentru următorul mileniu, gratuit",
+    "description": "O capsulă de timp digitală pentru cele mai prețioase amintiri despre familie, prieteni, animale de companie, pasiuni, credință și tot ce ții drag în inima ta. Proiectat pentru conservare fizică ce durează peste 1.000 de ani.",
+    "motto": "Fii bun, fii onest, fii uman!",
+    "storeStory": "Salvează povestea ta",
+    "learnMore": "Află mai multe"
+  },
+  "vault": {
+    "title": "Seiful Mileniului",
+    "presentingVault": "Prezentăm seiful \"{vaultName}\"",
+    "storyCollectionPeriod": "Perioada de colectare a poveștilor:",
+    "paragraph1": "În fiecare an, creăm un seif fizic de dragoste conceput să reziste cel puțin 1.000 de ani sub pământ. Aceste seifuri sunt îngropate în diverse locații geografice din întreaga lume, așteptând să fie descoperite de generațiile viitoare.",
+    "paragraph2": "Poți participa păstrând poveștile tale de dragoste de orice fel, parteneriate romantice, legături de familie, prietenii sau chiar dragoste pentru locuri și pasiuni. Fiecare poveste poate include până la 100MB de atașamente: fotografii, videoclipuri și înregistrări audio care captează cele mai prețioase momente ale tale.",
+    "paragraph3": "În mod implicit, toate poveștile sunt private și nu sunt accesibile public, cu excepția cazului în care alegi altfel. Cei care doresc să își împărtășească experiențele cu lumea pot face poveștile lor publice, permițând altora să le citească și să fie inspirați de călătoriile lor frumoase.",
+    "paragraph4": "Acest proiect bazat pe comunitate este încă în evoluție, colaborăm cu ingineri de construcții și conservare pentru a perfecționa designul seifului nostru. Alătură-te nouă în această călătorie pentru a arăta umanității viitoare cum am iubit și am fost iubiți, păstrând cele mai semnificative momente ale noastre pentru generațiile viitoare.",
+    "preserveStory": "Păstrează povestea ta"
+  },
+  "publicStories": {
+    "title": "Povești publice",
+    "description": "Explorează poveștile pe care alții au ales să le împărtășească cu lumea",
+    "viewAll": "Vezi toate poveștile",
+    "noStories": {
+      "title": "Încă nu există povești publice!",
+      "description": "Fii primul care salvează o poveste publică și vei primi un cadou din partea noastră!",
+      "cta": "Fii primul care își împărtășește povestea"
+    }
+  }
+}

@@ -6,6 +6,7 @@ import { getCurrentVault } from '@/app/actions/public/vaults';
 import { Story } from '@/types';
 import FallbackImage from '@/components/stories/FallbackImage';
 import { Metadata } from 'next';
+import { getTranslations } from 'next-intl/server';
 
 // Define metadata for the homepage
 export const metadata: Metadata = {
@@ -39,6 +40,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
+  const t = await getTranslations('Home');
 
   const publicStories = await getHotStories(3);
   const { success, vault } = await getCurrentVault();
@@ -71,22 +73,22 @@ export default async function Home() {
         <div className="mb-6 relative">
           <div className="absolute -inset-8 rounded-full bg-primary/5 blur-3xl"></div>
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-3 text-foreground relative tracking-tight">
-            <span className="inline-block">Sealed Love Project</span>
+            <span className="inline-block">{t('hero.title')}</span>
           </h1>
           <div className="w-32 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mt-2"></div>
         </div>
         
         {/* Tagline with improved typography */}
         <p className="text-2xl md:text-3xl mb-4 max-w-3xl text-foreground/90 leading-relaxed font-light">
-          Preserve your love stories for the next millennium, for free
+          {t('hero.tagline')}
         </p>
         
         <p className="text-lg md:text-xl mb-5 max-w-2xl text-muted-foreground italic">
-          A digital time capsule for your most precious memories about family, friends, pets, passions, faith, and everything you hold dear in your heart. Engineered for physical preservation lasting over 1,000 years.
+          {t('hero.description')}
         </p>
         
         <p className="text-lg md:text-xl mb-8 font-medium text-primary/90">
-          Be kind, be honest, be human!
+          {t('hero.motto')}
         </p>
         
         {/* CTA buttons with enhanced hover effects */}
@@ -95,7 +97,7 @@ export default async function Home() {
             href="/user/stories" 
             className="btn-primary inline-flex items-center gap-2 group"
           >
-            Store Your Story
+            {t('hero.storeStory')}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -106,7 +108,7 @@ export default async function Home() {
             className="relative overflow-hidden px-8 py-4 rounded-xl font-medium border-2 border-primary/30 hover:border-primary transition-all duration-300 group"
           >
             <span className="relative z-10 flex items-center space-x-2 text-foreground group-hover:text-primary transition-colors duration-300">
-              <span>Learn More</span>
+              <span>{t('hero.learnMore')}</span>
               <svg className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
@@ -134,9 +136,9 @@ export default async function Home() {
             <div className="max-w-6xl mx-auto px-4 sm:px-6">
               <div className="text-center mb-16">
                 {vault ? (
-                  <h2 className="text-4xl md:text-4xl font-bold relative inline-block">Presenting "{vault.name}" vault</h2>
+                  <h2 className="text-4xl md:text-4xl font-bold relative inline-block">{t('vault.presentingVault', { vaultName: vault.name })}</h2>
                 ) : (
-                  <h2 className="text-4xl md:text-4xl font-bold relative inline-block">The Millennium Vault</h2>
+                  <h2 className="text-4xl md:text-4xl font-bold relative inline-block">{t('vault.title')}</h2>
                 )}
                 <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4 mx-auto"></div>
                 {vault && (
@@ -145,7 +147,7 @@ export default async function Home() {
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-primary">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
                       </svg>
-                      Story Collection Period: {' '}
+                      {t('vault.storyCollectionPeriod')} {' '}
                       <span className="font-medium">
                         {new Date(vault.startsAt).toLocaleDateString('en-US', { 
                           year: 'numeric', 
@@ -186,19 +188,19 @@ export default async function Home() {
                     <div className="md:col-span-10">
                       <div className="prose max-w-none text-foreground/90">
                         <p className="text-lg mb-5 leading-relaxed">
-                          Each year, we create a physical love vault designed to withstand at least 1,000 years underground. These vaults are buried in various geographic locations around the world, waiting to be discovered by future generations.
+                          {t('vault.paragraph1')}
                         </p>
                         
                         <p className="text-lg mb-5 leading-relaxed">
-                          You can participate by preserving your love stories of any kind, romantic partnerships, family bonds, friendships, or even love for places and passions. Each story can include up to 100MB of attachments: photos, videos, and audio recordings that capture your most precious moments.
+                          {t('vault.paragraph2')}
                         </p>
                         
                         <p className="text-lg mb-5 leading-relaxed">
-                          By default, all stories are private and not publicly accessible unless you choose otherwise. Those who wish to share their experiences with the world can make their stories public, allowing others to read and be inspired by their beautiful journeys.
+                          {t('vault.paragraph3')}
                         </p>
                         
                         <p className="text-lg leading-relaxed">
-                          This community-based project is still evolving, we're collaborating with construction and preservation engineers to perfect our vault design. Join us in this journey to show future humanity how we loved and were loved, preserving our most meaningful moments for generations to come.
+                          {t('vault.paragraph4')}
                         </p>
                       </div>
                       
@@ -208,7 +210,7 @@ export default async function Home() {
                           href="/user/stories" 
                           className="btn-primary inline-flex items-center gap-2 group"
                         >
-                          Preserve Your Story
+                          {t('vault.preserveStory')}
                           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                           </svg>
@@ -229,10 +231,10 @@ export default async function Home() {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-4xl font-bold relative inline-block">Public Stories</h2>
+          <h2 className="text-4xl md:text-4xl font-bold relative inline-block">{t('publicStories.title')}</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4 mx-auto"></div>
           <p className="mt-6 text-lg text-foreground/80 max-w-3xl mx-auto">
-            Explore stories that others have chosen to share with the world
+            {t('publicStories.description')}
           </p>
         </div>
 
@@ -260,7 +262,7 @@ export default async function Home() {
                 href="/stories" 
                 className="btn-secondary inline-flex items-center gap-2 group"
               >
-                View All Stories
+                {t('publicStories.viewAll')}
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
                 </svg>
@@ -275,16 +277,16 @@ export default async function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold mb-4 text-foreground">No public stories yet!</h3>
+              <h3 className="text-2xl font-bold mb-4 text-foreground">{t('publicStories.noStories.title')}</h3>
               <p className="text-lg text-foreground/80 mb-6 max-w-2xl mx-auto">
-                Be the first one to store a public story and you will receive a present from us!
+                {t('publicStories.noStories.description')}
               </p>
             </div>
             <Link 
               href="/user/stories" 
               className="btn-primary inline-flex items-center gap-2 group"
             >
-              Be the First to Share Your Story
+              {t('publicStories.noStories.cta')}
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
               </svg>

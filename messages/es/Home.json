@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Preserva tus historias de amor",
+    "description": "Preserva tus historias de amor para el próximo milenio, gratis. Sealed Love Project te ayuda a capturar y almacenar tus recuerdos más preciados de forma segura."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Preserva tus historias de amor para el próximo milenio, gratis",
+    "description": "Una cápsula del tiempo digital para tus recuerdos más preciados sobre familia, amigos, mascotas, pasiones, fe y todo lo que guardas en tu corazón. Diseñado para una preservación física que dura más de 1.000 años.",
+    "motto": "¡Sé amable, sé honesto, sé humano!",
+    "storeStory": "Guarda tu historia",
+    "learnMore": "Saber más"
+  },
+  "vault": {
+    "title": "La Bóveda del Milenio",
+    "presentingVault": "Presentando la bóveda \"{vaultName}\"",
+    "storyCollectionPeriod": "Período de recolección de historias:",
+    "paragraph1": "Cada año, creamos una bóveda física de amor diseñada para resistir al menos 1.000 años bajo tierra. Estas bóvedas están enterradas en varias ubicaciones geográficas alrededor del mundo, esperando ser descubiertas por las generaciones futuras.",
+    "paragraph2": "Puedes participar preservando tus historias de amor de cualquier tipo, relaciones románticas, lazos familiares, amistades o incluso amor por lugares y pasiones. Cada historia puede incluir hasta 100MB de archivos adjuntos: fotos, videos y grabaciones de audio que capturan tus momentos más preciados.",
+    "paragraph3": "Por defecto, todas las historias son privadas y no son accesibles públicamente a menos que elijas lo contrario. Aquellos que deseen compartir sus experiencias con el mundo pueden hacer que sus historias sean públicas, permitiendo que otros lean y se inspiren en sus hermosos viajes.",
+    "paragraph4": "Este proyecto comunitario sigue evolucionando, estamos colaborando con ingenieros de construcción y preservación para perfeccionar el diseño de nuestra bóveda. Únete a nosotros en este viaje para mostrar a la humanidad futura cómo amamos y fuimos amados, preservando nuestros momentos más significativos para las generaciones venideras.",
+    "preserveStory": "Preserva tu historia"
+  },
+  "publicStories": {
+    "title": "Historias públicas",
+    "description": "Explora historias que otros han elegido compartir con el mundo",
+    "viewAll": "Ver todas las historias",
+    "noStories": {
+      "title": "¡Aún no hay historias públicas!",
+      "description": "¡Sé el primero en almacenar una historia pública y recibirás un regalo de nuestra parte!",
+      "cta": "Sé el primero en compartir tu historia"
+    }
+  }
+}
