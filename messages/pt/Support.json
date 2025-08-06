@@ -1,0 +1,29 @@
+{
+  "title": "Apoie Nossa Missão",
+  "subtitle": "Sua doação nos ajuda a preservar memórias preciosas para as gerações futuras",
+  "description": "Os fundos são usados para pagar por servidores, serviços e materiais necessários para nossas caixas de preservação: M-Discs, gravadores de M-Disc, gás inerte, recipientes de proteção e outros componentes essenciais. Estamos comprometidos com este projeto por pelo menos 20 anos, com planos de passá-lo para outros que compartilham nossa visão depois disso. Os doadores não recebem vantagens materiais, produtos ou recursos especiais em comparação com não doadores, apenas nossa sincera gratidão e o conhecimento de que ajudaram a tornar este projeto de preservação possível para todos.",
+  "patreon": {
+    "title": "Apoie-nos no Patreon",
+    "description": "Torne-se um apoiador mensal no Patreon e ajude-nos a sustentar nossa missão a longo prazo. Sua generosidade nos permite continuar nossa missão de preservar memórias preciosas para as gerações futuras, e somos profundamente gratos por sua crença em nosso projeto.",
+    "buttonText": "Apoiar no Patreon"
+  },
+  "paypal": {
+    "title": "Faça uma Doação via PayPal",
+    "description": "Doe usando PayPal, cartão de crédito/débito ou transferência bancária. Você pode escolher uma doação única ou configurar pagamentos recorrentes durante o checkout.",
+    "note": "Você será redirecionado para o PayPal para completar sua doação com segurança. Não é necessária uma conta PayPal.",
+    "buttonText": "Doar"
+  },
+  "whyDonate": {
+    "title": "Por que Doar?",
+    "reason1": "Apoie nossa missão de preservar memórias para as gerações futuras",
+    "reason2": "Financie materiais e equipamentos essenciais de preservação: M-Discs, recipientes de proteção de qualidade arquivística, sistemas de gás inerte, gravadores de disco especializados, controladores de umidade, reguladores de temperatura, equipamentos antiestáticos, materiais de proteção UV e materiais de construção de cofres seguros",
+    "reason3": "Ajude-nos a desenvolver novos recursos e melhorar nossa tecnologia",
+    "reason4": "Permita-nos fornecer nossos serviços a mais pessoas em todo o mundo"
+  },
+  "otherWays": {
+    "title": "Outras Formas de Apoiar",
+    "way1": "Compartilhe nossa plataforma com amigos e familiares",
+    "way2": "Ofereça suas habilidades como voluntário (entre em contato conosco para oportunidades)",
+    "way3": "Crie e compartilhe suas próprias histórias em nossa plataforma"
+  }
+}

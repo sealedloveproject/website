@@ -1,0 +1,29 @@
+{
+  "title": "Unterstützen Sie unsere Mission",
+  "subtitle": "Ihre Spende hilft uns, wertvolle Erinnerungen für kommende Generationen zu bewahren",
+  "description": "Die Mittel werden für Server, Dienste und Materialien verwendet, die für unsere Aufbewahrungsboxen benötigt werden: M-Discs, M-Disc-Schreiber, Inertgas, Schutzbehälter und andere wesentliche Komponenten. Wir haben uns diesem Projekt für mindestens 20 Jahre verschrieben, mit Plänen, es danach an andere weiterzugeben, die unsere Vision teilen. Spender erhalten keine materiellen Vorteile, Produkte oder besonderen Funktionen im Vergleich zu Nicht-Spendern, nur unsere herzliche Dankbarkeit und das Wissen, dass sie dazu beigetragen haben, dieses Bewahrungsprojekt für alle zu ermöglichen.",
+  "patreon": {
+    "title": "Unterstützen Sie uns auf Patreon",
+    "description": "Werden Sie monatlicher Unterstützer auf Patreon und helfen Sie uns, unsere Mission langfristig zu erhalten. Ihre Großzügigkeit ermöglicht es uns, unsere Mission der Bewahrung wertvoller Erinnerungen für zukünftige Generationen fortzusetzen, und wir sind zutiefst dankbar für Ihren Glauben an unser Projekt.",
+    "buttonText": "Auf Patreon unterstützen"
+  },
+  "paypal": {
+    "title": "Spenden Sie über PayPal",
+    "description": "Spenden Sie mit PayPal, Kredit-/Debitkarte oder Banküberweisung. Sie können eine einmalige Spende wählen oder beim Checkout wiederkehrende Zahlungen einrichten.",
+    "note": "Sie werden zu PayPal weitergeleitet, um Ihre Spende sicher abzuschließen. Kein PayPal-Konto erforderlich.",
+    "buttonText": "Spenden"
+  },
+  "whyDonate": {
+    "title": "Warum spenden?",
+    "reason1": "Unterstützen Sie unsere Mission, Erinnerungen für zukünftige Generationen zu bewahren",
+    "reason2": "Finanzieren Sie wesentliche Bewahrungsmaterialien und -ausrüstung: M-Discs, Schutzbehälter in Archivqualität, Inertgassysteme, spezielle Disc-Schreiber, Feuchtigkeitsregler, Temperaturregler, antistatische Ausrüstung, UV-Schutzmaterialien und Materialien für den sicheren Tresoraufbau",
+    "reason3": "Helfen Sie uns, neue Funktionen zu entwickeln und unsere Technologie zu verbessern",
+    "reason4": "Ermöglichen Sie uns, unsere Dienste mehr Menschen weltweit anzubieten"
+  },
+  "otherWays": {
+    "title": "Andere Wege der Unterstützung",
+    "way1": "Teilen Sie unsere Plattform mit Freunden und Familie",
+    "way2": "Stellen Sie Ihre Fähigkeiten zur Verfügung (kontaktieren Sie uns für Möglichkeiten)",
+    "way3": "Erstellen und teilen Sie Ihre eigenen Geschichten auf unserer Plattform"
+  }
+}
