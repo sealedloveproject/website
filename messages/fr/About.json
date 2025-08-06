@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "À propos de sealed.love",
+    "description": "Découvrez notre mission de préserver des histoires d'amour pour les générations futures"
+  },
+  "header": {
+    "title": "À propos de sealed.love",
+    "subtitle": "Un projet personnel d'Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "L'Histoire",
+      "content": {
+        "intro": "Je suis Alex, mari, père et, à la fin de la journée, juste une personne ordinaire comme vous.",
+        "dream": "Pendant des années, j'ai rêvé de créer quelque chose de vraiment significatif, pas seulement une autre entreprise, mais un héritage. Un cadeau à l'humanité qui pourrait me survivre. Ce projet, sealed.love, est le résultat de ce rêve.",
+        "revelation": "Quand mon père est décédé, j'ai été forcé de confronter les vérités les plus profondes de la vie. Dans un monde guidé par la vitesse, la distraction et l'incertitude, son absence a rendu une chose étonnamment claire : l'AMOUR est la seule constante.",
+        "transcends": "Il transcende le temps, les frontières, les cultures et les générations. C'est la seule force qui reste longtemps après que tout le reste s'est estompé.",
+        "purpose": "C'est pourquoi j'ai construit sealed.love, pour aider à préserver les histoires d'amour qui comptent. Ces capsules temporelles émotionnelles sont plus que de simples messages. Ce sont des coffres-forts numériques sécurisés pour vos souvenirs les plus significatifs, conçus pour durer des siècles, même si la technologie et le monde continuent d'évoluer.",
+        "background": "J'ai investi mon expérience en technologie et en préservation pour créer quelque chose qui résistera à l'épreuve du temps. Mais plus que n'importe quel code ou système, ce qui donne à ce projet sa vraie valeur est l'énergie qui le sous-tend : l'amour que vous choisissez de partager.",
+        "immortal": "Ces histoires sont notre héritage immortel. Lorsqu'elles sont partagées et préservées, elles deviennent des ponts reliant les générations, permettant à nos descendants de comprendre qui nous étions et ce que nous valorisions le plus.",
+        "essence": "C'est pourquoi ce que nous faisons ici est important. Ces messages, ces archives émotionnelles, ils portent l'essence, pas seulement des données. Ils parlent de la seule chose qui nous survit vraiment, notre capacité à aimer.",
+        "divine": "L'amour est le don divin qui nous a été donné en tant qu'êtres humains. Alors prenons un moment, juste quelques minutes par jour d'introspection, pour nous rappeler ce qui compte vraiment.",
+        "forgive": "En préservant ces histoires, nous apprenons aussi à pardonner, à guérir et à embrasser tout le spectre de la connexion humaine - avec toute sa beauté et son imperfection.",
+        "chance": "C'est notre chance de nous souvenir, de réfléchir, de transmettre la seule chose qui nous définit au-delà de cette vie.",
+        "love": "L'amour."
+      }
+    },
+    "vault": {
+      "title": "À propos des Coffres d'Amour",
+      "intro": "Nos coffres d'amour sont des systèmes de préservation sécurisés et à long terme conçus pour protéger vos souvenirs les plus précieux pour que les générations futures les découvrent et les chérissent.",
+      "whatIsVault": {
+        "title": "Qu'est-ce qu'un Coffre d'Amour ?",
+        "description": "Nos coffres d'amour sont des systèmes de préservation sécurisés et à long terme conçus pour protéger vos souvenirs les plus précieux pour que les générations futures les découvrent et les chérissent."
+      },
+      "howItWorks": {
+        "title": "Comment fonctionnent les Coffres d'Amour sealed.love",
+        "subtitle": "Un processus simple en trois étapes pour préserver les histoires d'amour pour les générations futures",
+        "steps": {
+          "submit": {
+            "title": "Soumettez Votre Histoire",
+            "description": "Partagez votre histoire d'amour via notre plateforme sécurisée. Ajoutez du texte, des photos, de l'audio ou de la vidéo pour créer une capsule temporelle émotionnelle complète."
+          },
+          "preserve": {
+            "title": "Nous la Préservons",
+            "description": "Votre histoire est archivée en utilisant plusieurs méthodes de préservation, y compris la technologie M-DISC (durée de vie de plus de 1 000 ans), du papier d'archives et un stockage numérique redondant."
+          },
+          "legacy": {
+            "title": "Créez Votre Héritage",
+            "description": "Votre histoire d'amour devient partie d'un coffre millénaire, préservée pour que les générations futures découvrent la puissance de la connexion humaine."
+          }
+        }
+      },
+      "collection": {
+        "title": "Collection",
+        "description": "Partagez votre histoire d'amour via notre plateforme sécurisée. Ajoutez du texte, des photos, de l'audio ou de la vidéo pour créer une capsule temporelle émotionnelle complète."
+      },
+      "digitalPreservation": {
+        "title": "Préservation Numérique",
+        "description": "Votre histoire est archivée en utilisant plusieurs méthodes de préservation, y compris la technologie M-DISC (durée de vie de plus de 1 000 ans), du papier d'archives et un stockage numérique redondant."
+      },
+      "futureDiscovery": {
+        "title": "Découverte Future",
+        "description": "Votre histoire d'amour devient partie d'un coffre millénaire, préservée pour que les générations futures découvrent la puissance de la connexion humaine."
+      },
+      "preserveStory": "Préservez Votre Histoire"
+    },
+    "trust": {
+      "title": "Confiance & Transparence",
+      "features": {
+        "openSource": {
+          "title": "Open Source",
+          "description": "Tout le code de la plateforme est open source et disponible pour examen sur GitHub, assurant une transparence complète dans la façon dont nous gérons vos précieux souvenirs"
+        },
+        "dataIntegrity": {
+          "title": "Intégrité des Données",
+          "description": "Chaque soumission reçoit une somme de contrôle MD5 publique comme preuve d'intégrité, que vous pouvez vérifier indépendamment pour vous assurer que votre histoire reste exactement comme vous l'avez voulue"
+        },
+        "community": {
+          "title": "Communauté",
+          "description": "Rejoignez notre communauté de gardiens de mémoire qui croient en la préservation des héritages émotionnels pour les générations futures"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Rejoignez La Communauté",
+      "description": "Nous construisons une communauté mondiale de gardiens de mémoire qui croient en la préservation des héritages émotionnels. Connectez-vous avec nous et d'autres personnes partageant les mêmes idées qui partagent notre passion pour la préservation des histoires d'amour à travers les générations.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Suivez-nous pour des mises à jour, des annonces et pour voir des histoires d'amour en vedette de notre communauté"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Découvrez des histoires visuelles et des aperçus des coulisses de notre processus de création de coffres"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Rejoignez notre communauté active pour discuter des histoires d'amour, des techniques de préservation et vous connecter avec d'autres contributeurs"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Explorez notre code open source, contribuez à notre projet et aidez-nous à améliorer la préservation des histoires d'amour"
+        }
+      }
+    },
+    "faq": {
+      "title": "Questions Fréquemment Posées",
+      "questions": {
+        "vaultDuration": {
+          "question": "Combien de temps dureront ces coffres?",
+          "answer": "Les coffres sont fabriqués en acier inoxydable 316L et contiennent des M-discs avec une durée de vie vérifiée de plus de 1 000 ans. Les matériaux imprimés utilisent du papier d'archives avec une composition à pH neutre et des encres à base de pigments conçues pour durer des siècles sans s'estomper."
+        },
+        "storySelection": {
+          "question": "Comment les histoires sont-elles sélectionnées?",
+          "answer": "Toutes les histoires soumises sont préservées numériquement. Vous pouvez choisir de rendre votre histoire publique ou de la garder privée. Notre équipe de conservation assure la diversité des histoires à travers les cultures et les types d'amour."
+        },
+        "whyVaults": {
+          "question": "Pourquoi créer ces coffres?",
+          "answer": "Nous croyons que l'amour est l'émotion humaine la plus importante. En préservant ces histoires, nous créons un héritage positif qui montre aux générations futures notre capacité à aimer, même pendant les périodes difficiles. Ces coffres servent de capsules temporelles de connexion humaine dans un monde de plus en plus numérique."
+        },
+        "dataControl": {
+          "question": "Ai-je le contrôle de mes données?",
+          "answer": "Oui, à tout moment jusqu'à ce que nous écrivions les données sur des M-discs et du papier, vous pouvez vous désinscrire, supprimer votre histoire ou la modifier. Vous avez un contrôle total sur votre contenu jusqu'à ce qu'il soit préservé dans le coffre physique. Nous ne partageons jamais d'histoires privées avec des tiers."
+        },
+        "cost": {
+          "question": "Y a-t-il un coût pour soumettre mon histoire?",
+          "answer": "Toutes les soumissions d'histoires sont entièrement gratuites. Nous croyons que la préservation des histoires d'amour devrait être accessible à tous. Notre projet est entièrement soutenu par des dons volontaires pro bono. Si vous appréciez notre mission, je vous invite à nous soutenir sur notre page de soutien. Chaque contribution aide à assurer la préservation à long terme de ces histoires d'amour pour les générations futures, sans aucune récompense matérielle en retour."
+        },
+        "security": {
+          "question": "À quel point les emplacements des coffres sont-ils sécurisés?",
+          "answer": "Nos méthodes de préservation sont conçues en pensant à la longévité. Nous utilisons plusieurs systèmes redondants et suivons les meilleures pratiques en matière d'archivage numérique et physique pour garantir que ces histoires survivent pour les générations futures."
+        },
+        "locations": {
+          "question": "Divulguerez-vous les emplacements des coffres?",
+          "answer": "Non, nous ne divulguerons jamais aucune information sur les emplacements des coffres. C'est une politique stricte qui s'applique à tous nos coffres. Les emplacements exacts sont gardés confidentiels pour assurer une sécurité maximale et la préservation du contenu pour les générations futures."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Conservez Votre Histoire",
+      "readStories": "Lire des Histoires",
+      "vaultDescription": "Ajoutez votre histoire d'amour à notre coffre millénaire",
+      "motto": "Soyez gentil, soyez honnête, soyez humain!"
+    }
+  }
+}

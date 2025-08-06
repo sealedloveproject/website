@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Über sealed.love",
+    "description": "Erfahren Sie mehr über unsere Mission, Liebesgeschichten für zukünftige Generationen zu bewahren"
+  },
+  "header": {
+    "title": "Über sealed.love",
+    "subtitle": "Ein persönliches Projekt von Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "Die Geschichte",
+      "content": {
+        "intro": "Ich bin Alex, Ehemann, Vater und am Ende des Tages einfach ein normaler Mensch wie du.",
+        "dream": "Jahrelang träumte ich davon, etwas wirklich Bedeutungsvolles zu schaffen, nicht nur ein weiteres Unternehmen, sondern ein Vermächtnis. Ein Geschenk an die Menschheit, das mich überdauern könnte. Dieses Projekt, sealed.love, ist das Ergebnis dieses Traums.",
+        "revelation": "Als mein Vater starb, wurde ich gezwungen, mich mit den tiefsten Wahrheiten des Lebens auseinanderzusetzen. In einer Welt, die von Geschwindigkeit, Ablenkung und Unsicherheit getrieben wird, machte seine Abwesenheit eines auffallend klar: LIEBE ist die einzige Konstante.",
+        "transcends": "Sie überschreitet Zeit, Grenzen, Kulturen und Generationen. Sie ist die einzige Kraft, die noch lange bestehen bleibt, nachdem alles andere verblasst ist.",
+        "purpose": "Deshalb habe ich sealed.love gebaut, um dabei zu helfen, Liebesgeschichten zu bewahren, die wichtig sind. Diese emotionalen Zeitkapseln sind mehr als nur Nachrichten. Sie sind sichere digitale Tresore für Ihre bedeutungsvollsten Erinnerungen, die so konzipiert sind, dass sie Jahrhunderte überdauern, auch wenn sich die Technologie und die Welt weiterentwickeln.",
+        "background": "Ich habe meinen Hintergrund in Technologie und Konservierung in die Schaffung von etwas eingebracht, das die Zeit überdauern wird. Aber mehr als jeder Code oder jedes System gibt diesem Projekt seinen wahren Wert die Energie dahinter: die Liebe, die Sie teilen möchten.",
+        "immortal": "Diese Geschichten sind unser unsterbliches Vermächtnis. Wenn sie geteilt und bewahrt werden, werden sie zu Brücken, die Generationen verbinden und unseren Nachkommen ermöglichen zu verstehen, wer wir waren und was wir am meisten schätzten.",
+        "essence": "Deshalb ist das, was wir hier tun, wichtig. Diese Nachrichten, diese emotionalen Archive, sie tragen Essenz, nicht nur Daten. Sie sprechen zu dem Einzigen, was uns wirklich überlebt, unsere Fähigkeit zu lieben.",
+        "divine": "Liebe ist das göttliche Geschenk, das wir als Menschen erhalten haben. Nehmen wir uns also einen Moment Zeit, nur ein paar Minuten pro Tag der Introspektion, um uns daran zu erinnern, was wirklich wichtig ist.",
+        "forgive": "Bei der Bewahrung dieser Geschichten lernen wir auch zu vergeben, zu heilen und das gesamte Spektrum menschlicher Verbindung mit all seiner Schönheit und Unvollkommenheit anzunehmen.",
+        "chance": "Dies ist unsere Chance, uns zu erinnern, zu reflektieren, das Eine weiterzugeben, das uns über dieses Leben hinaus definiert.",
+        "love": "Liebe."
+      }
+    },
+    "vault": {
+      "title": "Über Love Vaults",
+      "intro": "Unsere Love Vaults sind sichere, langfristige Aufbewahrungssysteme, die entwickelt wurden, um Ihre wertvollsten Erinnerungen für zukünftige Generationen zu schützen, zu entdecken und zu schätzen.",
+      "whatIsVault": {
+        "title": "Was ist ein Love Vault?",
+        "description": "Unsere Love Vaults sind sichere, langfristige Aufbewahrungssysteme, die entwickelt wurden, um Ihre wertvollsten Erinnerungen für zukünftige Generationen zu schützen, zu entdecken und zu schätzen."
+      },
+      "howItWorks": {
+        "title": "Wie sealed.love Love Vaults funktionieren",
+        "subtitle": "Ein einfacher Drei-Schritte-Prozess zur Bewahrung von Liebesgeschichten für zukünftige Generationen",
+        "steps": {
+          "submit": {
+            "title": "Reichen Sie Ihre Geschichte ein",
+            "description": "Teilen Sie Ihre Liebesgeschichte über unsere sichere Plattform. Fügen Sie Text, Fotos, Audio oder Video hinzu, um eine vollständige emotionale Zeitkapsel zu erstellen."
+          },
+          "preserve": {
+            "title": "Wir bewahren sie auf",
+            "description": "Ihre Geschichte wird mit verschiedenen Konservierungsmethoden archiviert, darunter M-DISC-Technologie (Lebensdauer von über 1.000 Jahren), Archivpapier und redundante digitale Speicherung."
+          },
+          "legacy": {
+            "title": "Schaffen Sie Ihr Vermächtnis",
+            "description": "Ihre Liebesgeschichte wird Teil eines Jahrtausend-Tresors, der für zukünftige Generationen bewahrt wird, um die Kraft menschlicher Verbindung zu entdecken."
+          }
+        }
+      },
+      "collection": {
+        "title": "Sammlung",
+        "description": "Teilen Sie Ihre Liebesgeschichte über unsere sichere Plattform. Fügen Sie Text, Fotos, Audio oder Video hinzu, um eine vollständige emotionale Zeitkapsel zu erstellen."
+      },
+      "digitalPreservation": {
+        "title": "Digitale Bewahrung",
+        "description": "Ihre Geschichte wird mit verschiedenen Konservierungsmethoden archiviert, darunter M-DISC-Technologie (Lebensdauer von über 1.000 Jahren), Archivpapier und redundante digitale Speicherung."
+      },
+      "futureDiscovery": {
+        "title": "Zukünftige Entdeckung",
+        "description": "Ihre Liebesgeschichte wird Teil eines Jahrtausend-Tresors, der für zukünftige Generationen bewahrt wird, um die Kraft menschlicher Verbindung zu entdecken."
+      },
+      "preserveStory": "Bewahren Sie Ihre Geschichte"
+    },
+    "trust": {
+      "title": "Vertrauen & Transparenz",
+      "features": {
+        "openSource": {
+          "title": "Open Source",
+          "description": "Der gesamte Plattformcode ist Open Source und auf GitHub zur Überprüfung verfügbar, was vollständige Transparenz darüber gewährleistet, wie wir mit Ihren wertvollen Erinnerungen umgehen"
+        },
+        "dataIntegrity": {
+          "title": "Datenintegrität",
+          "description": "Jede Einreichung erhält eine öffentliche MD5-Prüfsumme als Integritätsnachweis, die Sie unabhängig überprüfen können, um sicherzustellen, dass Ihre Geschichte genau so bleibt, wie Sie es beabsichtigt haben"
+        },
+        "community": {
+          "title": "Gemeinschaft",
+          "description": "Treten Sie unserer Gemeinschaft von Erinnerungsbewahrern bei, die daran glauben, emotionale Vermächtnisse für zukünftige Generationen zu bewahren"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Treten Sie der Gemeinschaft bei",
+      "description": "Wir bauen eine globale Gemeinschaft von Erinnerungsbewahrern auf, die daran glauben, emotionale Vermächtnisse zu bewahren. Verbinden Sie sich mit uns und anderen Gleichgesinnten, die unsere Leidenschaft für die Bewahrung von Liebesgeschichten über Generationen hinweg teilen.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Folgen Sie uns für Updates, Ankündigungen und um ausgewählte Liebesgeschichten aus unserer Community zu sehen"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Erleben Sie visuelle Geschichten und Einblicke hinter die Kulissen unseres Tresor-Erstellungsprozesses"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Treten Sie unserer aktiven Community bei, um über Liebesgeschichten, Konservierungstechniken zu diskutieren und sich mit anderen Mitwirkenden zu vernetzen"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Erkunden Sie unseren Open-Source-Code, tragen Sie zu unserem Projekt bei und helfen Sie uns, die Bewahrung von Liebesgeschichten zu verbessern"
+        }
+      }
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "questions": {
+        "vaultDuration": {
+          "question": "Wie lange halten diese Tresore?",
+          "answer": "Die Tresore bestehen aus 316L Edelstahl und enthalten M-Discs mit einer verifizierten Lebensdauer von über 1.000 Jahren. Die gedruckten Materialien verwenden Archivpapier mit einer pH-neutralen Zusammensetzung und pigmentbasierte Tinten, die so konzipiert sind, dass sie jahrhundertelang ohne Verblassen halten."
+        },
+        "storySelection": {
+          "question": "Wie werden die Geschichten ausgewählt?",
+          "answer": "Alle eingereichten Geschichten werden digital aufbewahrt. Sie können wählen, ob Ihre Geschichte öffentlich oder privat sein soll. Unser Kuratorenteam sorgt für Vielfalt der Geschichten über Kulturen und Arten der Liebe hinweg."
+        },
+        "whyVaults": {
+          "question": "Warum diese Tresore erstellen?",
+          "answer": "Wir glauben, dass Liebe die wichtigste menschliche Emotion ist. Durch die Bewahrung dieser Geschichten schaffen wir ein positives Vermächtnis, das zukünftigen Generationen unsere Fähigkeit zur Liebe zeigt, selbst in schwierigen Zeiten. Diese Tresore dienen als Zeitkapseln menschlicher Verbindung in einer zunehmend digitalen Welt."
+        },
+        "dataControl": {
+          "question": "Habe ich die Kontrolle über meine Daten?",
+          "answer": "Ja, bis zu dem Moment, in dem wir die Daten auf M-Discs und Papier schreiben, können Sie sich abmelden, Ihre Geschichte entfernen oder ändern. Sie haben die volle Kontrolle über Ihre Inhalte, bis sie im physischen Tresor aufbewahrt werden. Wir teilen private Geschichten niemals mit Dritten."
+        },
+        "cost": {
+          "question": "Gibt es Kosten für die Einreichung meiner Geschichte?",
+          "answer": "Alle Geschichtseinreichungen sind völlig kostenlos. Wir glauben, dass die Bewahrung von Liebesgeschichten für jeden zugänglich sein sollte. Unser Projekt wird ausschließlich durch freiwillige Pro-Bono-Spenden getragen. Wenn Sie unsere Mission schätzen, lade ich Sie ein, uns auf unserer Unterstützungsseite zu unterstützen. Jeder Beitrag hilft, die langfristige Bewahrung dieser Liebesgeschichten für zukünftige Generationen zu gewährleisten, ohne materielle Gegenleistungen."
+        },
+        "security": {
+          "question": "Wie sicher sind die Tresorstandorte?",
+          "answer": "Unsere Konservierungsmethoden sind auf Langlebigkeit ausgelegt. Wir verwenden mehrere redundante Systeme und folgen bewährten Praktiken in der digitalen und physischen Archivierung, um sicherzustellen, dass diese Geschichten für zukünftige Generationen überleben."
+        },
+        "locations": {
+          "question": "Werden Sie die Tresorstandorte bekannt geben?",
+          "answer": "Nein, wir werden niemals Informationen über die Tresorstandorte veröffentlichen. Dies ist eine strikte Richtlinie, die für alle unsere Tresore gilt. Die genauen Standorte werden vertraulich behandelt, um maximale Sicherheit und Bewahrung der Inhalte für zukünftige Generationen zu gewährleisten."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Speichern Sie Ihre Geschichte",
+      "readStories": "Geschichten lesen",
+      "vaultDescription": "Fügen Sie Ihre Liebesgeschichte zu unserem Jahrtausend-Tresor hinzu",
+      "motto": "Sei freundlich, sei ehrlich, sei menschlich!"
+    }
+  }
+}

@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Informazioni su sealed.love",
+    "description": "Scopri la nostra missione di preservare storie d'amore per le generazioni future"
+  },
+  "header": {
+    "title": "Informazioni su sealed.love",
+    "subtitle": "Un progetto personale di Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "La Storia",
+      "content": {
+        "intro": "Sono Alex, marito, padre e, alla fine della giornata, solo una persona normale come te.",
+        "dream": "Per anni, ho sognato di creare qualcosa di veramente significativo, non solo un'altra attività, ma un'eredità. Un dono all'umanità che potesse sopravvivermi. Questo progetto, sealed.love, è il risultato di quel sogno.",
+        "revelation": "Quando mio padre è morto, sono stato costretto a confrontarmi con le verità più profonde della vita. In un mondo guidato dalla velocità, dalla distrazione e dall'incertezza, la sua assenza ha reso una cosa sorprendentemente chiara: l'AMORE è l'unica costante.",
+        "transcends": "Trascende il tempo, i confini, le culture e le generazioni. È l'unica forza che rimane molto dopo che tutto il resto è svanito.",
+        "purpose": "Ecco perché ho costruito sealed.love, per aiutare a preservare storie d'amore che contano. Queste capsule temporali emotive sono più che semplici messaggi. Sono casseforti digitali sicure per i tuoi ricordi più significativi, progettate per durare secoli, anche mentre la tecnologia e il mondo continuano a evolversi.",
+        "background": "Ho riversato la mia esperienza in tecnologia e conservazione per creare qualcosa che resisterà alla prova del tempo. Ma più di qualsiasi codice o sistema, ciò che dà a questo progetto il suo vero valore è l'energia che lo anima: l'amore che scegli di condividere.",
+        "immortal": "Queste storie sono la nostra eredità immortale. Quando condivise e conservate, diventano ponti che collegano generazioni, permettendo ai nostri discendenti di capire chi eravamo e cosa valorizzavamo di più.",
+        "essence": "Ecco perché ciò che facciamo qui è importante. Questi messaggi, questi archivi emotivi, portano essenza, non solo dati. Parlano dell'unica cosa che ci sopravvive veramente, la nostra capacità di amare.",
+        "divine": "L'amore è il dono divino che ci è stato dato come esseri umani. Quindi prendiamoci un momento, solo pochi minuti al giorno di introspezione, per ricordare ciò che conta davvero.",
+        "forgive": "Nel preservare queste storie, impariamo anche a perdonare, a guarire e ad abbracciare l'intero spettro della connessione umana - con tutta la sua bellezza e imperfezione.",
+        "chance": "Questa è la nostra occasione per ricordare, riflettere, tramandare l'unica cosa che ci definisce oltre questa vita.",
+        "love": "Amore."
+      }
+    },
+    "vault": {
+      "title": "Informazioni sulle Casseforti d'Amore",
+      "intro": "Le nostre casseforti d'amore sono sistemi di conservazione sicuri e a lungo termine progettati per proteggere i tuoi ricordi più preziosi affinché le generazioni future possano scoprirli e apprezzarli.",
+      "whatIsVault": {
+        "title": "Cos'è una Cassaforte d'Amore?",
+        "description": "Le nostre casseforti d'amore sono sistemi di conservazione sicuri e a lungo termine progettati per proteggere i tuoi ricordi più preziosi affinché le generazioni future possano scoprirli e apprezzarli."
+      },
+      "howItWorks": {
+        "title": "Come funzionano le Casseforti d'Amore di sealed.love",
+        "subtitle": "Un semplice processo in tre fasi per preservare storie d'amore per le generazioni future",
+        "steps": {
+          "submit": {
+            "title": "Invia La Tua Storia",
+            "description": "Condividi la tua storia d'amore attraverso la nostra piattaforma sicura. Aggiungi testo, foto, audio o video per creare una capsula temporale emotiva completa."
+          },
+          "preserve": {
+            "title": "Noi La Conserviamo",
+            "description": "La tua storia viene archiviata utilizzando molteplici metodi di conservazione, tra cui la tecnologia M-DISC (durata di vita di oltre 1.000 anni), carta d'archivio e archiviazione digitale ridondante."
+          },
+          "legacy": {
+            "title": "Crea La Tua Eredità",
+            "description": "La tua storia d'amore diventa parte di una cassaforte millenaria, conservata affinché le generazioni future scoprano il potere della connessione umana."
+          }
+        }
+      },
+      "collection": {
+        "title": "Collezione",
+        "description": "Condividi la tua storia d'amore attraverso la nostra piattaforma sicura. Aggiungi testo, foto, audio o video per creare una capsula temporale emotiva completa."
+      },
+      "digitalPreservation": {
+        "title": "Conservazione Digitale",
+        "description": "La tua storia viene archiviata utilizzando molteplici metodi di conservazione, tra cui la tecnologia M-DISC (durata di vita di oltre 1.000 anni), carta d'archivio e archiviazione digitale ridondante."
+      },
+      "futureDiscovery": {
+        "title": "Scoperta Futura",
+        "description": "La tua storia d'amore diventa parte di una cassaforte millenaria, conservata affinché le generazioni future scoprano il potere della connessione umana."
+      },
+      "preserveStory": "Conserva La Tua Storia"
+    },
+    "trust": {
+      "title": "Fiducia e Trasparenza",
+      "features": {
+        "openSource": {
+          "title": "Open Source",
+          "description": "Tutto il codice della piattaforma è open source e disponibile per la revisione su GitHub, garantendo completa trasparenza su come gestiamo i tuoi preziosi ricordi"
+        },
+        "dataIntegrity": {
+          "title": "Integrità dei Dati",
+          "description": "Ogni invio riceve un checksum MD5 pubblico come prova di integrità, che puoi verificare in modo indipendente per assicurarti che la tua storia rimanga esattamente come l'hai concepita"
+        },
+        "community": {
+          "title": "Comunità",
+          "description": "Unisciti alla nostra comunità di custodi della memoria che credono nella conservazione di eredità emotive per le generazioni future"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Unisciti alla Comunità",
+      "description": "Stiamo costruendo una comunità globale di custodi della memoria che credono nella conservazione di eredità emotive. Connettiti con noi e altre persone che la pensano come te e che condividono la nostra passione per la conservazione di storie d'amore attraverso le generazioni.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Seguici per aggiornamenti, annunci e per vedere storie d'amore in evidenza dalla nostra comunità"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Vivi storie visive e scorci dietro le quinte del nostro processo di creazione delle casseforti"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Unisciti alla nostra comunità attiva per discutere di storie d'amore, tecniche di conservazione e connetterti con altri collaboratori"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Esplora il nostro codice open source, contribuisci al nostro progetto e aiutaci a migliorare la conservazione delle storie d'amore"
+        }
+      }
+    },
+    "faq": {
+      "title": "Domande Frequenti",
+      "questions": {
+        "vaultDuration": {
+          "question": "Quanto dureranno queste casseforti?",
+          "answer": "Le casseforti sono realizzate in acciaio inossidabile 316L e contengono M-disc con una durata di vita verificata di oltre 1.000 anni. I materiali stampati utilizzano carta d'archivio con una composizione a pH neutro e inchiostri a base di pigmenti progettati per durare secoli senza sbiadire."
+        },
+        "storySelection": {
+          "question": "Come vengono selezionate le storie?",
+          "answer": "Tutte le storie inviate vengono conservate digitalmente. Puoi scegliere di rendere la tua storia pubblica o mantenerla privata. Il nostro team di curatori garantisce la diversità delle storie attraverso culture e tipi di amore."
+        },
+        "whyVaults": {
+          "question": "Perché creare queste casseforti?",
+          "answer": "Crediamo che l'amore sia l'emozione umana più importante. Conservando queste storie, stiamo creando un'eredità positiva che mostra alle generazioni future la nostra capacità di amare, anche durante i momenti difficili. Queste casseforti servono come capsule temporali di connessione umana in un mondo sempre più digitale."
+        },
+        "dataControl": {
+          "question": "Ho il controllo dei miei dati?",
+          "answer": "Sì, in qualsiasi momento fino a quando non scriviamo i dati su M-disc e carta, puoi scegliere di uscire, rimuovere la tua storia o modificarla. Hai il pieno controllo sui tuoi contenuti fino a quando non vengono conservati nella cassaforte fisica. Non condividiamo mai storie private con terze parti."
+        },
+        "cost": {
+          "question": "C'è un costo per inviare la mia storia?",
+          "answer": "Tutti gli invii di storie sono completamente gratuiti. Crediamo che la conservazione delle storie d'amore dovrebbe essere accessibile a tutti. Il nostro progetto è sostenuto interamente attraverso donazioni volontarie pro bono. Se apprezzi la nostra missione, ti invito a sostenerci sulla nostra pagina di supporto. Ogni contributo aiuta a garantire la conservazione a lungo termine di queste storie d'amore per le generazioni future, senza alcuna ricompensa materiale in cambio."
+        },
+        "security": {
+          "question": "Quanto sono sicure le posizioni delle casseforti?",
+          "answer": "I nostri metodi di conservazione sono progettati pensando alla longevità. Utilizziamo sistemi multipli ridondanti e seguiamo le migliori pratiche nell'archiviazione digitale e fisica per garantire che queste storie sopravvivano per le generazioni future."
+        },
+        "locations": {
+          "question": "Rivelerete le posizioni delle casseforti?",
+          "answer": "No, non riveleremo mai alcuna informazione sulle posizioni delle casseforti. Questa è una politica rigorosa che si applica a tutte le nostre casseforti. Le posizioni esatte sono mantenute confidenziali per garantire la massima sicurezza e conservazione dei contenuti per le generazioni future."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Conserva La Tua Storia",
+      "readStories": "Leggi Storie",
+      "vaultDescription": "Aggiungi la tua storia d'amore alla nostra cassaforte millenaria",
+      "motto": "Sii gentile, sii onesto, sii umano!"
+    }
+  }
+}

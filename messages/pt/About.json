@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Sobre sealed.love",
+    "description": "Conheça nossa missão de preservar histórias de amor para as gerações futuras"
+  },
+  "header": {
+    "title": "Sobre sealed.love",
+    "subtitle": "Um projeto pessoal de Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "A História",
+      "content": {
+        "intro": "Eu sou Alex, marido, pai e, no final do dia, apenas uma pessoa comum como você.",
+        "dream": "Por anos, sonhei em criar algo verdadeiramente significativo, não apenas mais um negócio, mas um legado. Um presente para a humanidade que pudesse me sobreviver. Este projeto, sealed.love, é o resultado desse sonho.",
+        "revelation": "Quando meu pai faleceu, fui forçado a confrontar as verdades mais profundas da vida. Em um mundo impulsionado pela velocidade, distração e incerteza, sua ausência tornou uma coisa surpreendentemente clara: o AMOR é a única constante.",
+        "transcends": "Ele transcende o tempo, fronteiras, culturas e gerações. É a única força que permanece muito depois que tudo o mais desaparece.",
+        "purpose": "É por isso que construí o sealed.love, para ajudar a preservar histórias de amor que importam. Essas cápsulas emocionais do tempo são mais do que apenas mensagens. São cofres digitais seguros para suas memórias mais significativas, projetados para durar séculos, mesmo enquanto a tecnologia e o mundo continuam a evoluir.",
+        "background": "Investi minha experiência em tecnologia e preservação para criar algo que resistirá ao teste do tempo. Mas mais do que qualquer código ou sistema, o que dá a este projeto seu verdadeiro valor é a energia por trás dele: o amor que você escolhe compartilhar.",
+        "immortal": "Essas histórias são nosso legado imortal. Quando compartilhadas e preservadas, elas se tornam pontes conectando gerações, permitindo que nossos descendentes entendam quem éramos e o que mais valorizávamos.",
+        "essence": "É por isso que o que estamos fazendo aqui importa. Essas mensagens, esses arquivos emocionais, eles carregam essência, não apenas dados. Eles falam da única coisa que realmente nos sobrevive, nossa capacidade de amar.",
+        "divine": "O amor é o presente divino que nos foi dado como seres humanos. Então vamos tirar um momento, apenas alguns minutos por dia de introspecção, para lembrar o que realmente importa.",
+        "forgive": "Ao preservar essas histórias, também aprendemos a perdoar, a curar e a abraçar todo o espectro da conexão humana - com toda sua beleza e imperfeição.",
+        "chance": "Esta é nossa chance de lembrar, de refletir, de transmitir a única coisa que nos define além desta vida.",
+        "love": "Amor."
+      }
+    },
+    "vault": {
+      "title": "Sobre os Cofres de Amor",
+      "intro": "Nossos cofres de amor são sistemas de preservação seguros e de longo prazo projetados para proteger suas memórias mais preciosas para que as gerações futuras descubram e valorizem.",
+      "whatIsVault": {
+        "title": "O que é um Cofre de Amor?",
+        "description": "Nossos cofres de amor são sistemas de preservação seguros e de longo prazo projetados para proteger suas memórias mais preciosas para que as gerações futuras descubram e valorizem."
+      },
+      "howItWorks": {
+        "title": "Como funcionam os Cofres de Amor sealed.love",
+        "subtitle": "Um processo simples de três etapas para preservar histórias de amor para as gerações futuras",
+        "steps": {
+          "submit": {
+            "title": "Envie Sua História",
+            "description": "Compartilhe sua história de amor através de nossa plataforma segura. Adicione texto, fotos, áudio ou vídeo para criar uma cápsula emocional do tempo completa."
+          },
+          "preserve": {
+            "title": "Nós a Preservamos",
+            "description": "Sua história é arquivada usando múltiplos métodos de preservação, incluindo tecnologia M-DISC (vida útil de mais de 1.000 anos), papel de arquivo e armazenamento digital redundante."
+          },
+          "legacy": {
+            "title": "Crie Seu Legado",
+            "description": "Sua história de amor se torna parte de um cofre milenar, preservada para que as gerações futuras descubram o poder da conexão humana."
+          }
+        }
+      },
+      "collection": {
+        "title": "Coleção",
+        "description": "Compartilhe sua história de amor através de nossa plataforma segura. Adicione texto, fotos, áudio ou vídeo para criar uma cápsula emocional do tempo completa."
+      },
+      "digitalPreservation": {
+        "title": "Preservação Digital",
+        "description": "Sua história é arquivada usando múltiplos métodos de preservação, incluindo tecnologia M-DISC (vida útil de mais de 1.000 anos), papel de arquivo e armazenamento digital redundante."
+      },
+      "futureDiscovery": {
+        "title": "Descoberta Futura",
+        "description": "Sua história de amor se torna parte de um cofre milenar, preservada para que as gerações futuras descubram o poder da conexão humana."
+      },
+      "preserveStory": "Preserve Sua História"
+    },
+    "trust": {
+      "title": "Confiança e Transparência",
+      "features": {
+        "openSource": {
+          "title": "Código Aberto",
+          "description": "Todo o código da plataforma é de código aberto e disponível para revisão no GitHub, garantindo total transparência em como lidamos com suas preciosas memórias"
+        },
+        "dataIntegrity": {
+          "title": "Integridade de Dados",
+          "description": "Cada envio recebe uma soma de verificação MD5 pública como prova de integridade, que você pode verificar independentemente para garantir que sua história permaneça exatamente como você pretendia"
+        },
+        "community": {
+          "title": "Comunidade",
+          "description": "Junte-se à nossa comunidade de guardiões da memória que acreditam em preservar legados emocionais para as gerações futuras"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Junte-se à Comunidade",
+      "description": "Estamos construindo uma comunidade global de guardiões da memória que acreditam em preservar legados emocionais. Conecte-se conosco e outras pessoas com ideias semelhantes que compartilham nossa paixão por preservar histórias de amor através das gerações.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Siga-nos para atualizações, anúncios e para ver histórias de amor em destaque de nossa comunidade"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Experimente histórias visuais e vislumbres dos bastidores do nosso processo de criação de cofres"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Junte-se à nossa comunidade ativa para discutir histórias de amor, técnicas de preservação e conectar-se com outros colaboradores"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Explore nosso código de código aberto, contribua para nosso projeto e ajude-nos a melhorar a preservação de histórias de amor"
+        }
+      }
+    },
+    "faq": {
+      "title": "Perguntas Frequentes",
+      "questions": {
+        "vaultDuration": {
+          "question": "Quanto tempo durarão esses cofres?",
+          "answer": "Os cofres são feitos de aço inoxidável 316L e contêm M-discs com uma vida útil verificada de mais de 1.000 anos. Os materiais impressos usam papel de arquivo com uma composição de pH neutro e tintas à base de pigmentos projetadas para durar séculos sem desbotamento."
+        },
+        "storySelection": {
+          "question": "Como as histórias são selecionadas?",
+          "answer": "Todas as histórias enviadas são preservadas digitalmente. Você pode escolher tornar sua história pública ou mantê-la privada. Nossa equipe de curadoria garante a diversidade de histórias através de culturas e tipos de amor."
+        },
+        "whyVaults": {
+          "question": "Por que criar esses cofres?",
+          "answer": "Acreditamos que o amor é a emoção humana mais importante. Ao preservar essas histórias, estamos criando um legado positivo que mostra às gerações futuras nossa capacidade de amar, mesmo durante tempos difíceis. Esses cofres servem como cápsulas do tempo de conexão humana em um mundo cada vez mais digital."
+        },
+        "dataControl": {
+          "question": "Eu tenho controle sobre meus dados?",
+          "answer": "Sim, a qualquer momento até escrevermos os dados em M-discs e papel, você pode optar por sair, remover sua história ou alterá-la. Você tem controle total sobre seu conteúdo até que seja preservado no cofre físico. Nunca compartilhamos histórias privadas com terceiros."
+        },
+        "cost": {
+          "question": "Há algum custo para enviar minha história?",
+          "answer": "Todos os envios de histórias são completamente gratuitos. Acreditamos que preservar histórias de amor deve ser acessível a todos. Nosso projeto é sustentado inteiramente através de doações voluntárias pro bono. Se você aprecia nossa missão, convido você a nos apoiar em nossa página de apoio. Cada contribuição ajuda a garantir a preservação a longo prazo dessas histórias de amor para as gerações futuras, sem qualquer recompensa material em troca."
+        },
+        "security": {
+          "question": "Quão seguras são as localizações dos cofres?",
+          "answer": "Nossos métodos de preservação são projetados com longevidade em mente. Usamos múltiplos sistemas redundantes e seguimos as melhores práticas em arquivamento digital e físico para garantir que essas histórias sobrevivam para as gerações futuras."
+        },
+        "locations": {
+          "question": "Vocês divulgarão as localizações dos cofres?",
+          "answer": "Não, nunca divulgaremos nenhuma informação sobre as localizações dos cofres. Esta é uma política rigorosa que se aplica a todos os nossos cofres. As localizações exatas são mantidas confidenciais para garantir a máxima segurança e preservação do conteúdo para as gerações futuras."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Armazene Sua História",
+      "readStories": "Ler Histórias",
+      "vaultDescription": "Adicione sua história de amor ao nosso cofre milenar",
+      "motto": "Seja gentil, seja honesto, seja humano!"
+    }
+  }
+}
