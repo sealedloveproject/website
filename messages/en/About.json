@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "About sealed.love",
+    "description": "Learn about our mission to preserve love stories for future generations"
+  },
+  "header": {
+    "title": "About sealed.love",
+    "subtitle": "A personal project by Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "The Story",
+      "content": {
+        "intro": "I'm Alex, husband, father, and, at the end of the day, just a regular person like you.",
+        "dream": "For years, I dreamed of creating something truly meaningful, not just another business, but a legacy. A gift to humanity that could outlast me. This project, sealed.love, is the result of that dream.",
+        "revelation": "When my father passed away, I was forced to confront life's deepest truths. In a world driven by speed, distraction, and uncertainty, his absence made one thing strikingly clear: LOVE is the only constant.",
+        "transcends": "It transcends time, borders, cultures, and generations. It's the one force that remains long after everything else fades.",
+        "purpose": "That's why I've built sealed.love, to help preserve love stories that matter. These emotional time capsules are more than just messages. They are secure digital vaults for your most meaningful memories, designed to endure for centuries, even as technology and the world continue to evolve.",
+        "background": "I've poured my background in tech and preservation into creating something that will stand the test of time. But more than any code or system, what gives this project its true value is the energy behind it: the love you choose to share.",
+        "immortal": "These stories are our immortal legacy. When shared and preserved, they become bridges connecting generations, allowing our descendants to understand who we were and what we valued most.",
+        "essence": "This is why what we're doing here matters. These messages, these emotional archives, they carry essence, not just data. They speak to the only thing that truly survives us, our capacity to love.",
+        "divine": "Love is the divine gift we've been given as human beings. So let's take a moment, just a few minutes per day of introspection, to remember what really matters.",
+        "forgive": "In preserving these stories, we also learn to forgive, to heal, and to embrace the full spectrum of human connection—with all its beauty and imperfection.",
+        "chance": "This is our chance to remember, to reflect, to pass down the one thing that defines us beyond this life.",
+        "love": "Love."
+      }
+    },
+    "vault": {
+      "title": "About Love Vaults",
+      "intro": "Our love vaults are secure, long-term preservation systems designed to protect your most precious memories for future generations to discover and cherish.",
+      "whatIsVault": {
+        "title": "What is a Love Vault?",
+        "description": "Our love vaults are secure, long-term preservation systems designed to protect your most precious memories for future generations to discover and cherish."
+      },
+      "howItWorks": {
+        "title": "How sealed.love Love Vaults Work",
+        "subtitle": "A simple three-step process to preserve love stories for future generations",
+        "steps": {
+          "submit": {
+            "title": "Submit Your Story",
+            "description": "Share your love story through our secure platform. Add text, photos, audio, or video to create a complete emotional time capsule."
+          },
+          "preserve": {
+            "title": "We Preserve It",
+            "description": "Your story is archived using multiple preservation methods including M-DISC technology (1,000+ year lifespan), archival paper, and redundant digital storage."
+          },
+          "legacy": {
+            "title": "Create Your Legacy",
+            "description": "Your love story becomes part of a millennium vault, preserved for future generations to discover the power of human connection."
+          }
+        }
+      },
+      "collection": {
+        "title": "Collection",
+        "description": "Share your love story through our secure platform. Add text, photos, audio, or video to create a complete emotional time capsule."
+      },
+      "digitalPreservation": {
+        "title": "Digital Preservation",
+        "description": "Your story is archived using multiple preservation methods including M-DISC technology (1,000+ year lifespan), archival paper, and redundant digital storage."
+      },
+      "futureDiscovery": {
+        "title": "Future Discovery",
+        "description": "Your love story becomes part of a millennium vault, preserved for future generations to discover the power of human connection."
+      },
+      "preserveStory": "Preserve Your Story"
+    },
+    "trust": {
+      "title": "Trust & Transparency",
+      "features": {
+        "openSource": {
+          "title": "Open Source",
+          "description": "All platform code is open source and available for review on GitHub, ensuring complete transparency in how we handle your precious memories"
+        },
+        "dataIntegrity": {
+          "title": "Data Integrity",
+          "description": "Every submission receives a public MD5 checksum as proof of integrity, which you can verify independently to ensure your story remains exactly as you intended"
+        },
+        "community": {
+          "title": "Community",
+          "description": "Join our community of memory-keepers who believe in preserving emotional legacies for future generations"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Join The Community",
+      "description": "We're building a global community of memory-keepers who believe in preserving emotional legacies. Connect with us and other like-minded individuals who share our passion for preserving love stories across generations.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Follow us for updates, announcements, and to see featured love stories from our community"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Experience visual stories and behind-the-scenes glimpses of our vault creation process"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Join our active community to discuss love stories, preservation techniques, and connect with fellow contributors"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Explore our open-source code, contribute to our project, and help us improve the preservation of love stories"
+        }
+      }
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "questions": {
+        "vaultDuration": {
+          "question": "How long will these vaults last?",
+          "answer": "The vaults are made of 316L stainless steel and contain M-discs with a verified lifespan of 1,000+ years. The printed materials use archival paper with a pH-neutral composition and pigment-based inks designed to last for centuries without fading."
+        },
+        "storySelection": {
+          "question": "How are the stories selected?",
+          "answer": "All submitted stories are preserved digitally. You can choose to make your story public or keep it private. Our curation team ensures diversity of stories across cultures and types of love."
+        },
+        "whyVaults": {
+          "question": "Why create these vaults?",
+          "answer": "We believe love is the most important human emotion. By preserving these stories, we're creating a positive legacy that shows future generations our capacity for love, even during challenging times. These vaults serve as time capsules of human connection in an increasingly digital world."
+        },
+        "dataControl": {
+          "question": "Am I in control of my data?",
+          "answer": "Yes, at any moment until we write the data to M-discs and paper, you can opt out, remove your story or change it. You have full control over your content until it's preserved in the physical vault. We never share private stories with third parties."
+        },
+        "cost": {
+          "question": "Is there a cost to submit my story?",
+          "answer": "All story submissions are completely free. We believe that preserving love stories should be accessible to everyone. Our project is sustained entirely through voluntary pro bono donations. If you appreciate our mission, I invite you to support us on our support page. Every contribution helps ensure the long-term preservation of these love stories for future generations, without any material rewards in return."
+        },
+        "security": {
+          "question": "How secure are the vault locations?",
+          "answer": "Our preservation methods are designed with longevity in mind. We use multiple redundant systems and follow best practices in digital and physical archiving to ensure these stories survive for future generations."
+        },
+        "locations": {
+          "question": "Will you release the vault locations?",
+          "answer": "No, we will not release any information about the vault locations, ever. This is a strict policy that applies to all of our vaults. The exact locations are kept confidential to ensure maximum security and preservation of the contents for future generations."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Store Your Story",
+      "readStories": "Read Stories",
+      "vaultDescription": "Add your love story to our millennium vault",
+      "motto": "Be kind, be honest, be human!"
+    }
+  }
+}

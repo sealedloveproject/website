@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Conserva le tue storie d'amore",
+    "description": "Conserva le tue storie d'amore per il prossimo millennio, gratuitamente. Sealed Love Project ti aiuta a catturare e archiviare i tuoi ricordi più preziosi in modo sicuro."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Conserva le tue storie d'amore per il prossimo millennio, gratuitamente",
+    "description": "Una capsula del tempo digitale per i tuoi ricordi più preziosi su famiglia, amici, animali domestici, passioni, fede e tutto ciò che ti sta a cuore. Progettata per una conservazione fisica che dura oltre 1.000 anni.",
+    "motto": "Sii gentile, sii onesto, sii umano!",
+    "storeStory": "Salva la tua storia",
+    "learnMore": "Scopri di più"
+  },
+  "vault": {
+    "title": "La Cassaforte del Millennio",
+    "presentingVault": "Presentazione della cassaforte \"{vaultName}\"",
+    "storyCollectionPeriod": "Periodo di raccolta delle storie:",
+    "paragraph1": "Ogni anno, creiamo una cassaforte fisica dell'amore progettata per resistere almeno 1.000 anni sottoterra. Queste casseforti sono sepolte in varie località geografiche in tutto il mondo, in attesa di essere scoperte dalle generazioni future.",
+    "paragraph2": "Puoi partecipare conservando le tue storie d'amore di qualsiasi tipo, relazioni romantiche, legami familiari, amicizie o anche amore per luoghi e passioni. Ogni storia può includere fino a 100MB di allegati: foto, video e registrazioni audio che catturano i tuoi momenti più preziosi.",
+    "paragraph3": "Per impostazione predefinita, tutte le storie sono private e non accessibili pubblicamente a meno che tu non scelga diversamente. Coloro che desiderano condividere le proprie esperienze con il mondo possono rendere le loro storie pubbliche, permettendo ad altri di leggerle e ispirarsi ai loro bellissimi viaggi.",
+    "paragraph4": "Questo progetto basato sulla comunità è ancora in evoluzione, stiamo collaborando con ingegneri di costruzione e conservazione per perfezionare il design della nostra cassaforte. Unisciti a noi in questo viaggio per mostrare all'umanità futura come abbiamo amato e siamo stati amati, preservando i nostri momenti più significativi per le generazioni a venire.",
+    "preserveStory": "Conserva la tua storia"
+  },
+  "publicStories": {
+    "title": "Storie pubbliche",
+    "description": "Esplora le storie che altri hanno scelto di condividere con il mondo",
+    "viewAll": "Visualizza tutte le storie",
+    "noStories": {
+      "title": "Ancora nessuna storia pubblica!",
+      "description": "Sii il primo a salvare una storia pubblica e riceverai un regalo da parte nostra!",
+      "cta": "Sii il primo a condividere la tua storia"
+    }
+  }
+}

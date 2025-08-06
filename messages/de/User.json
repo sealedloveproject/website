@@ -1,0 +1,204 @@
+{
+  "profile": {
+    "title": "Mein Profil",
+    "subtitle": "Verwalten Sie Ihre Kontoinformationen und Einstellungen",
+    "loading": "Wird geladen...",
+    "loginRequired": "Anmeldung erforderlich",
+    "personalInfo": {
+      "title": "Persönliche Informationen",
+      "firstName": "Vorname",
+      "lastName": "Nachname",
+      "email": "E-Mail-Adresse",
+      "emailCannotChange": "E-Mail-Adresse kann nicht geändert werden",
+      "updateButton": "Profil aktualisieren",
+      "updating": "Aktualisiere...",
+      "updateSuccess": "Profil erfolgreich aktualisiert!",
+      "updateError": "Fehler beim Aktualisieren des Profils. Bitte versuchen Sie es erneut."
+    },
+    "accountSettings": {
+      "title": "Kontoeinstellungen",
+      "signOut": "Abmelden",
+      "deleteAccount": {
+        "button": "Konto löschen",
+        "title": "Konto löschen",
+        "warning": "Warnung: Diese Aktion kann nicht rückgängig gemacht werden",
+        "description": "Durch das Löschen Ihres Kontos werden alle Ihre Daten, einschließlich Ihrer Geschichten und persönlichen Informationen, dauerhaft entfernt.",
+        "verificationStep": "Aus Sicherheitsgründen senden wir einen Bestätigungscode an Ihre E-Mail-Adresse.",
+        "sendCode": "Bestätigungscode senden",
+        "sending": "Senden...",
+        "resendCode": "Code erneut senden",
+        "verifyCode": "Überprüfen",
+        "verifying": "Überprüfe...",
+        "codeVerified": "E-Mail erfolgreich verifiziert",
+        "confirmText": "Geben Sie DELETE MY ACCOUNT ein, um zu bestätigen:",
+        "confirmPlaceholder": "Bestätigungstext eingeben",
+        "cancel": "Abbrechen",
+        "delete": "Konto löschen",
+        "deleting": "Lösche..."
+      }
+    }
+  },
+  "stories": {
+    "title": "Meine Geschichten",
+    "subtitle": "Verwalten und erstellen Sie Ihre Liebesgeschichten",
+    "loading": "Lade Ihre Geschichten...",
+    "search": {
+      "placeholder": "Durchsuchen Sie Ihre Geschichten..."
+    },
+    "createButton": "Neue Geschichte erstellen",
+    "loginRequired": {
+      "title": "Anmeldung erforderlich",
+      "message": "Sie müssen angemeldet sein, um Ihre Geschichten anzuzeigen und zu verwalten.",
+      "signIn": "Anmelden"
+    },
+    "noStories": {
+      "title": "Keine Geschichten gefunden",
+      "searchMessage": "Versuchen Sie, Ihre Suchkriterien anzupassen",
+      "emptyMessage": "Sie haben noch keine Geschichten erstellt",
+      "createFirst": "Erstellen Sie Ihre erste Geschichte"
+    }
+  },
+  "newStory": {
+    "title": "Speichern Sie Ihre Liebesgeschichte",
+    "subtitle": "Bewahren Sie Ihre Erinnerungen in unserem Jahrtausend-Tresor auf",
+    "backButton": "Zurück zu Meinen Geschichten",
+    "login": {
+      "title": "E-Mail-Anmeldung mit Einmalcode",
+      "description": "Geben Sie Ihre E-Mail-Adresse ein, um einen 6-stelligen Code zu erhalten, mit dem Sie auf Ihre Geschichten zugreifen und diese verwalten können. Keine Registrierung erforderlich.",
+      "infoBox": "Warum wir die E-Mail-Anmeldung verwenden: Diese einfache Methode ermöglicht es Ihnen, Ihre Geschichte später zu bearbeiten, zu aktualisieren oder zu löschen. Ihre E-Mail wird nur zur Authentifizierung verwendet und wir geben sie niemals an Dritte weiter.",
+      "continueButton": "Mit E-Mail fortfahren"
+    },
+    "form": {
+      "submitButton": "Geschichte speichern",
+      "submitting": "Wird übermittelt...",
+      "title": {
+        "label": "Titel der Geschichte",
+        "placeholder": "Gib deiner Geschichte einen Titel"
+      },
+      "content": {
+        "label": "Deine Geschichte",
+        "placeholder": "Teile deine Geschichte hier...",
+        "wordCount": "{count} / 500 Wörter",
+        "wordLimitExceeded": "Deine Geschichte überschreitet das Limit von 500 Wörtern. Bitte kürze sie."
+      },
+      "media": {
+        "title": "Mediendateien",
+        "replicatingWarning": {
+          "title": "Einige Mediendateien werden noch repliziert",
+          "description": "Sie werden bald verfügbar sein. Nicht replizierte Bilder zeigen einen Platzhalter an."
+        },
+        "upload": {
+          "dragDrop": "Dateien hierher ziehen oder klicken zum Durchsuchen",
+          "supportedFormats": "Unterstützte Formate: Bilder, Videos, Audio",
+          "formats": {
+            "title": "Unterstützte Formate",
+            "images": "Bilder: jpg, jpeg, png, webp",
+            "videos": "Videos: mp4, mov",
+            "audio": "Audio: mp3, aac"
+          },
+          "region": {
+            "title": "Upload-Region",
+            "closest": "Nächste Region: {region}",
+            "info": "Dateien werden in die nächstgelegene AWS-Region zu Ihrem Standort hochgeladen"
+          },
+          "storage": {
+            "title": "Speichernutzung",
+            "used": "{used} MB / 100 MB",
+            "percentage": "{percentage}% genutzt"
+          }
+        },
+        "attachmentsList": {
+          "title": "Vorhandene Anhänge",
+          "fileTypes": {
+            "video": "Video",
+            "audio": "Audio"
+          },
+          "coverImage": "Titelbild",
+          "setAsCover": "Als Titelbild festlegen",
+          "removeAttachment": "Anhang entfernen"
+        },
+        "fileList": {
+          "title": "Hochzuladende Dateien",
+          "uploadedTitle": "Hochgeladene Dateien",
+          "coverImage": "Titelbild",
+          "setAsCover": "Als Titelbild festlegen",
+          "removeFile": "Datei entfernen"
+        },
+        "privacy": {
+          "title": "Datenschutzeinstellungen",
+          "agreeToTerms": "Ich stimme den {termsLink} und der {privacyLink} zu",
+          "termsLink": "Nutzungsbedingungen",
+          "privacyLink": "Datenschutzrichtlinie",
+          "makePublic": "Diese Geschichte öffentlich und teilbar machen (optional)"
+        }
+      }
+    }
+  },
+  "editStory": {
+    "header": {
+      "title": "Deine Geschichte bearbeiten",
+      "subtitle": "Aktualisiere deine Geschichte oder füge neue Anhänge hinzu"
+    },
+    "backToStories": "Zurück zu Meinen Geschichten",
+    "form": {
+      "submitButton": "Geschichte aktualisieren",
+      "submitting": "Wird aktualisiert..."
+    },
+    "error": {
+      "title": "Fehler"
+    },
+    "errors": {
+      "notFound": "Geschichte nicht gefunden oder du hast keine Berechtigung, sie zu bearbeiten.",
+      "loadingFailed": "Beim Laden der Geschichte ist ein Fehler aufgetreten. Bitte versuche es erneut.",
+      "updateFailed": "Aktualisierung der Geschichte fehlgeschlagen",
+      "unexpected": "Ein unerwarteter Fehler ist aufgetreten. Bitte versuche es erneut.",
+      "deleteFailed": "Löschen der Geschichte fehlgeschlagen",
+      "deleteUnexpected": "Beim Löschen der Geschichte ist ein unerwarteter Fehler aufgetreten"
+    },
+    "fileUpload": {
+      "unsupportedFiles": "{count} Datei(en) wurden nicht hinzugefügt, da sie nicht unterstützt werden. Bitte lade nur jpg, jpeg, png, webp, mp4, mov, mp3 oder aac Dateien hoch.",
+      "sizeExceeded": "Das Hinzufügen dieser Dateien würde dein Speicherlimit von 100MB überschreiten. Bitte entferne zuerst einige Dateien."
+    },
+    "deleteModal": {
+      "title": "Geschichte löschen",
+      "message": "Bist du sicher, dass du diese Geschichte löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden und alle zugehörigen Mediendateien werden dauerhaft entfernt.",
+      "cancel": "Abbrechen",
+      "confirm": "Endgültig löschen",
+      "deleting": "Wird gelöscht..."
+    },
+    "dangerZone": {
+      "title": "Gefahrenzone",
+      "warning": "Warnung",
+      "permanentWarning": "Das Löschen dieser Geschichte ist permanent und unumkehrbar.",
+      "consequences": {
+        "servers": "Die Geschichte wird vollständig von all unseren Servern entfernt",
+        "media": "Alle zugehörigen Dateien und Medien werden aus unserem Cloud-Speicher gelöscht",
+        "backups": "Die Geschichte wird auch aus allen unseren Backup-Systemen entfernt",
+        "support": "Diese Aktion kann nicht von unserem Support-Team rückgängig gemacht werden"
+      },
+      "deleteButton": "Geschichte endgültig löschen"
+    }
+  },
+  "successPage": {
+    "created": {
+      "title": "Geschichte erfolgreich gespeichert!",
+      "message": "Ihre Liebesgeschichte wurde in unserem digitalen Tresor gespeichert. Vielen Dank, dass Sie Ihre wertvollen Erinnerungen mit uns teilen. Denken Sie daran, dass Sie Ihre Geschichte jederzeit bearbeiten können, um neue Details oder Aktualisierungen hinzuzufügen."
+    },
+    "updated": {
+      "title": "Geschichte erfolgreich aktualisiert!",
+      "message": "Ihre Liebesgeschichte wurde in unserem digitalen Tresor aktualisiert. Vielen Dank, dass Sie Ihre Erinnerungen aktuell halten. Denken Sie daran, dass Sie Ihre Geschichte jederzeit bearbeiten können, um neue Details oder Aktualisierungen hinzuzufügen."
+    },
+    "share": {
+      "title": "Helfen Sie uns, Liebesgeschichten für immer zu bewahren!",
+      "message": "Teilen Sie das Sealed Love Project mit Ihren Freunden und Ihrer Familie. Jede geteilte Geschichte hilft uns, einen Jahrtausend-Tresor menschlicher Liebe und Verbindung aufzubauen.",
+      "shareButton": "Dieses Projekt teilen",
+      "supportButton": "Unsere Mission unterstützen",
+      "exploreButton": "Öffentliche Geschichten erkunden",
+      "footer": "💝 Jede geteilte Geschichte hilft uns, unsere Gemeinschaft der Liebe und Erinnerungen zu vergrößern"
+    },
+    "actions": {
+      "addAnother": "Weitere Geschichte hinzufügen",
+      "viewStories": "Meine Geschichten anzeigen"
+    }
+  }
+}

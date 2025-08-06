@@ -10,11 +10,13 @@ import { storyFormSchema, validateFileSize, type StoryFormData, type FileWithMet
 import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import StoryForm from '@/components/stories/StoryForm';
+import { useTranslations } from 'next-intl';
 
 export default function StoreYourStory() {
   const { user, isAuthenticated, openSignInModal } = useAuth();
   const router = useRouter();
   const [wordCount, setWordCount] = useState(0);
+  const t = useTranslations('User.newStory');
   
   // React Hook Form setup with Zod validation
   const {
@@ -63,7 +65,7 @@ export default function StoreYourStory() {
     
     // Alert if some files were filtered out
     if (validFiles.length < fileArray.length) {
-      alert(`${fileArray.length - validFiles.length} file(s) were not added because they are not supported. Please only upload jpg, jpeg, png, webp, mp4, mov, mp3, or aac files.`);
+      alert(t('unsupportedFiles', { count: fileArray.length - validFiles.length }));
       if (validFiles.length === 0) return; // Exit if no valid files
     }
     
@@ -222,12 +224,12 @@ export default function StoreYourStory() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            Back to My Stories
+            {t('backButton')}
           </Link>
         </div>
-        <h1 className="text-3xl font-bold">Store Your Love Story</h1>
+        <h1 className="text-3xl font-bold">{t('title')}</h1>
         <p className="text-muted-foreground mt-2">
-          Preserve your memories in our millennium vault
+          {t('subtitle')}
         </p>
       </header>
 
@@ -237,12 +239,12 @@ export default function StoreYourStory() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-primary">
               <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
             </svg>
-            Email Login with One-Time Code
+            {t('login.title')}
           </h2>
-          <p className="mb-3 text-foreground/80">Enter your email address to receive a 6-digit code that lets you access and manage your stories. No registration required.</p>
+          <p className="mb-3 text-foreground/80">{t('login.description')}</p>
           <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-100 dark:border-blue-800 rounded-lg p-4 mb-6">
             <p className="text-sm text-foreground/80">
-              <span className="font-medium">Why we use email login:</span> This simple method allows you to edit, update or delete your story later. Your email is only used for authentication and we never share it with third parties.
+              {t('login.infoBox')}
             </p>
           </div>
           
@@ -250,7 +252,7 @@ export default function StoreYourStory() {
             onClick={openSignInModal}
             className="w-full bg-gradient-to-r from-primary to-secondary py-3.5 px-6 rounded-xl font-medium hover:shadow-lg hover:shadow-primary/20 transition-all flex items-center justify-center gap-2"
           >
-            Continue with Email
+            {t('login.continueButton')}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -267,8 +269,8 @@ export default function StoreYourStory() {
           getValues={getValues}
           onSubmit={onSubmit}
           isSubmitting={isSubmitting}
-          submitButtonText="Save Story"
-          loadingButtonText="Submitting..."
+          submitButtonText={t('form.submitButton')}
+          loadingButtonText={t('form.submitting')}
           files={files}
           handleFiles={handleFiles}
           removeFile={removeFile}

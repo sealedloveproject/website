@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "Geschichte nicht gefunden",
+      "description": "Die angeforderte Geschichte konnte nicht gefunden werden."
+    }
+  },
+  "header": {
+    "backToStories": "Zurück zu den Geschichten",
+    "by": "Von",
+    "published": "Veröffentlicht",
+    "updated": "Aktualisiert",
+    "from": "Tresor"
+  },
+  "content": {
+    "readMore": "Weiterlesen",
+    "readLess": "Weniger anzeigen"
+  },
+  "actions": {
+    "like": "Diese Geschichte gefällt mir",
+    "liked": "Gefällt mir nicht mehr",
+    "title": "Aktionen",
+    "moreStories": "Mehr Geschichten",
+    "share": {
+      "title": "Diese Geschichte teilen",
+      "twitter": {
+        "prefix": "Schau dir an",
+        "default": "Schau dir diese Liebesgeschichte an"
+      },
+      "copied": "Link kopiert!"
+    },
+    "report": "Geschichte melden"
+  },
+  "attachments": {
+    "title": "Anhänge",
+    "gallery": "Mediengalerie",
+    "images": "Bilder",
+    "documents": "Dokumente",
+    "audio": "Audio",
+    "video": "Video",
+    "image": "Bild",
+    "counter": "{current} von {total}",
+    "noAttachments": "Keine Anhänge für diese Geschichte",
+    "processing": "Einige Mediendateien werden noch verarbeitet. Sie werden in Kürze verfügbar sein. Bitte aktualisieren Sie die Seite in wenigen Augenblicken, um alle Inhalte zu sehen."
+  },
+  "support": {
+    "title": "Unterstütze unsere Mission",
+    "description": "Deine Geschichte ist jetzt Teil unseres digitalen Archivs. Hilf uns, diese wertvollen Erinnerungen für zukünftige Generationen zu bewahren, indem du unser Millennium-Tresor-Projekt unterstützt. Dein Beitrag macht einen Unterschied.",
+    "button": "Unser Projekt unterstützen"
+  },
+  "notFound": {
+    "title": "Geschichte nicht gefunden",
+    "description": "Die gesuchte Geschichte existiert nicht oder wurde entfernt.",
+    "button": "Zurück zu den Geschichten"
+  }
+}

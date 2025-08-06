@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Préservez vos histoires d'amour",
+    "description": "Préservez vos histoires d'amour pour le prochain millénaire, gratuitement. Sealed Love Project vous aide à capturer et stocker vos souvenirs les plus précieux en toute sécurité."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Préservez vos histoires d'amour pour le prochain millénaire, gratuitement",
+    "description": "Une capsule temporelle numérique pour vos souvenirs les plus précieux concernant la famille, les amis, les animaux de compagnie, les passions, la foi et tout ce que vous chérissez dans votre cœur. Conçue pour une préservation physique durant plus de 1 000 ans.",
+    "motto": "Soyez gentil, soyez honnête, soyez humain !",
+    "storeStory": "Enregistrez votre histoire",
+    "learnMore": "En savoir plus"
+  },
+  "vault": {
+    "title": "Le Coffre du Millénaire",
+    "presentingVault": "Présentation du coffre \"{vaultName}\"",
+    "storyCollectionPeriod": "Période de collecte des histoires :",
+    "paragraph1": "Chaque année, nous créons un coffre d'amour physique conçu pour résister au moins 1 000 ans sous terre. Ces coffres sont enterrés dans divers endroits géographiques autour du monde, attendant d'être découverts par les générations futures.",
+    "paragraph2": "Vous pouvez participer en préservant vos histoires d'amour de toutes sortes, relations romantiques, liens familiaux, amitiés, ou même l'amour pour des lieux et des passions. Chaque histoire peut inclure jusqu'à 100 Mo de pièces jointes : photos, vidéos et enregistrements audio qui capturent vos moments les plus précieux.",
+    "paragraph3": "Par défaut, toutes les histoires sont privées et non accessibles publiquement, sauf si vous choisissez le contraire. Ceux qui souhaitent partager leurs expériences avec le monde peuvent rendre leurs histoires publiques, permettant aux autres de les lire et de s'inspirer de leurs beaux parcours.",
+    "paragraph4": "Ce projet communautaire est toujours en évolution, nous collaborons avec des ingénieurs en construction et en préservation pour perfectionner la conception de notre coffre. Rejoignez-nous dans ce voyage pour montrer à l'humanité future comment nous avons aimé et avons été aimés, en préservant nos moments les plus significatifs pour les générations à venir.",
+    "preserveStory": "Préservez votre histoire"
+  },
+  "publicStories": {
+    "title": "Histoires publiques",
+    "description": "Explorez les histoires que d'autres ont choisi de partager avec le monde",
+    "viewAll": "Voir toutes les histoires",
+    "noStories": {
+      "title": "Pas encore d'histoires publiques !",
+      "description": "Soyez le premier à stocker une histoire publique et vous recevrez un cadeau de notre part !",
+      "cta": "Soyez le premier à partager votre histoire"
+    }
+  }
+}

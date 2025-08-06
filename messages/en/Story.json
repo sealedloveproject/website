@@ -1,0 +1,58 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "Story Not Found",
+      "description": "The requested story could not be found."
+    }
+  },
+  "header": {
+    "backToStories": "Back to Stories",
+    "by": "By",
+    "published": "Published",
+    "updated": "Updated",
+    "from": "vault"
+  },
+  "content": {
+    "readMore": "Read More",
+    "readLess": "Read Less"
+  },
+  "actions": {
+    "like": "Like this story",
+    "liked": "Unlike this story",
+    "title": "Actions",
+    "moreStories": "More Stories",
+    "share": {
+      "title": "Share this story",
+      "twitter": {
+        "prefix": "Check out",
+        "default": "Check out this love story"
+      },
+      "copied": "Link copied!"
+    },
+    "shareOnFacebook": "Share on Facebook",
+    "shareOnTwitter": "Share on Twitter",
+    "shareOnLinkedIn": "Share on LinkedIn"
+  },
+  "attachments": {
+    "title": "Attachments",
+    "gallery": "Media Gallery",
+    "images": "Images",
+    "documents": "Documents",
+    "audio": "Audio",
+    "video": "Video",
+    "image": "Image",
+    "counter": "{current} of {total}",
+    "noAttachments": "No attachments for this story",
+    "processing": "Some media files are still being processed. They will be available soon. Please refresh the page in a few moments to see all content."
+  },
+  "support": {
+    "title": "Support our mission",
+    "description": "Your story is now part of our digital archive. Help us preserve these precious memories for future generations by supporting our millennium vault project. Your contribution makes a difference.",
+    "button": "Support Our Project"
+  },
+  "notFound": {
+    "title": "Story Not Found",
+    "description": "The story you're looking for doesn't exist or has been removed.",
+    "button": "Back to Stories"
+  }
+}

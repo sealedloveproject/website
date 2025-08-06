@@ -6,6 +6,7 @@ import FileList from './FileList';
 import AttachmentsList from './AttachmentsList';
 import FileUploadArea from './FileUploadArea';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 /**
  * Shared form component for creating and editing stories
@@ -35,6 +36,7 @@ export default function StoryForm({
   uploadProgress = {},
   hashReplicatingAttachment = false,
 }: StoryFormProps) {
+  const t = useTranslations('User.newStory.form');
 
   // Helper function to calculate total file size
   const getTotalFileSize = (files: any[], returnRawSize = false) => {
@@ -79,13 +81,13 @@ export default function StoryForm({
       {/* Title Field */}
       <div className="space-y-2">
         <label htmlFor="title" className="block font-medium">
-          Story Title
+          {t('title.label')}
         </label>
         <input
           id="title"
           type="text"
           className={`w-full p-3 border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all ${errors.title ? 'border-red-500' : 'border-border'}`}
-          placeholder="Give your story a title"
+          placeholder={t('title.placeholder')}
           {...register('title')}
         />
         {errors.title && (
@@ -97,17 +99,17 @@ export default function StoryForm({
       <div className="space-y-2">
         <div className="flex justify-between items-center">
           <label htmlFor="content" className="block font-medium">
-            Your Story
+            {t('content.label')}
           </label>
           <span className={`text-sm ${wordCount > 500 ? 'text-red-500 font-medium' : 'text-muted-foreground'}`}>
-            {wordCount} / 500 words
+            {t('content.wordCount', { count: wordCount })}
           </span>
         </div>
         <textarea
           id="content"
           rows={10}
           className={`w-full p-4 border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all min-h-[300px] ${errors.content ? 'border-red-500' : 'border-border'}`}
-          placeholder="Share your story here..."
+          placeholder={t('content.placeholder')}
           {...register('content')}
         />
         {errors.content && (
@@ -115,7 +117,7 @@ export default function StoryForm({
         )}
         {wordCount > 500 && (
           <p className="text-red-500 text-sm mt-1">
-            Your story exceeds the 500 word limit. Please shorten it.
+            {t('content.wordLimitExceeded')}
           </p>
         )}
       </div>
@@ -128,7 +130,7 @@ export default function StoryForm({
             <circle cx="8.5" cy="8.5" r="1.5"/>
             <polyline points="21 15 16 10 5 21"/>
           </svg>
-          Media Files
+          {t('media.title')}
         </h3>
         
         {/* Warning message when media files are still replicating */}
@@ -141,8 +143,8 @@ export default function StoryForm({
                 </svg>
               </div>
               <div>
-                <p className="text-sm font-medium text-amber-800 dark:text-amber-300">Some media files are still replicating</p>
-                <p className="text-xs text-amber-700 dark:text-amber-400">They will be available soon. Non-replicated images will show a placeholder.</p>
+                <p className="text-sm font-medium text-amber-800 dark:text-amber-300">{t('media.replicatingWarning.title')}</p>
+                <p className="text-xs text-amber-700 dark:text-amber-400">{t('media.replicatingWarning.description')}</p>
               </div>
             </div>
           </div>
@@ -184,7 +186,7 @@ export default function StoryForm({
 
       {/* Privacy Settings */}
       <div className="bg-muted/50 p-6 rounded-lg border border-border">
-        <h3 className="font-medium mb-4">Privacy Settings</h3>
+        <h3 className="font-medium mb-4">{t('media.privacy.title')}</h3>
         
         <div className="flex items-start mb-4">
           <div className="flex items-center h-5">
@@ -196,7 +198,16 @@ export default function StoryForm({
             />
           </div>
           <label htmlFor="agreeToTerms" className="ml-3 text-sm">
-            I agree to the <Link href="/terms" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Terms of Service</Link> and <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Privacy Policy</Link>
+            <span>
+              I agree to the{' '}
+              <Link href="/terms" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                {t('media.privacy.termsLink')}
+              </Link>
+              {' '}and{' '}
+              <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                {t('media.privacy.privacyLink')}
+              </Link>
+            </span>
             {errors.agreeToTerms && <p className="text-red-500 text-sm mt-1">{errors.agreeToTerms.message}</p>}
           </label>
         </div>
@@ -211,7 +222,7 @@ export default function StoryForm({
             />
           </div>
           <label htmlFor="isPublic" className="ml-3 text-sm">
-            Make this story public and shareable (optional)
+            {t('media.privacy.makePublic')}
           </label>
         </div>
       </div>

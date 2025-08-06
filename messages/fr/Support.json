@@ -1,0 +1,29 @@
+{
+  "title": "Soutenez Notre Mission",
+  "subtitle": "Votre don nous aide à préserver des souvenirs précieux pour les générations futures",
+  "description": "Les fonds sont utilisés pour payer les serveurs, les services et les matériaux nécessaires à nos boîtes de conservation : M-Discs, graveurs M-Disc, gaz inerte, conteneurs de protection et autres composants essentiels. Nous nous sommes engagés dans ce projet pour au moins 20 ans, avec des plans pour le transmettre ensuite à d'autres qui partagent notre vision. Les donateurs ne reçoivent aucun avantage matériel, produit ou fonctionnalité spéciale par rapport aux non-donateurs, juste notre sincère gratitude et la connaissance qu'ils ont contribué à rendre ce projet de conservation possible pour tous.",
+  "patreon": {
+    "title": "Soutenez-nous sur Patreon",
+    "description": "Devenez un soutien mensuel sur Patreon et aidez-nous à maintenir notre mission à long terme. Votre générosité nous permet de poursuivre notre mission de préservation de souvenirs précieux pour les générations futures, et nous sommes profondément reconnaissants pour votre confiance en notre projet.",
+    "buttonText": "Soutenir sur Patreon"
+  },
+  "paypal": {
+    "title": "Faire un Don via PayPal",
+    "description": "Donnez en utilisant PayPal, carte de crédit/débit ou virement bancaire. Vous pouvez choisir un don unique ou configurer des paiements récurrents lors du paiement.",
+    "note": "Vous serez redirigé vers PayPal pour compléter votre don en toute sécurité. Aucun compte PayPal n'est requis.",
+    "buttonText": "Faire un don"
+  },
+  "whyDonate": {
+    "title": "Pourquoi Donner ?",
+    "reason1": "Soutenez notre mission de préserver des souvenirs pour les générations futures",
+    "reason2": "Financez des matériaux et équipements essentiels de conservation : M-Discs, conteneurs de protection de qualité archivistique, systèmes de gaz inerte, graveurs de disques spécialisés, contrôleurs d'humidité, régulateurs de température, équipements antistatiques, matériaux de protection UV et matériaux de construction de coffres-forts sécurisés",
+    "reason3": "Aidez-nous à développer de nouvelles fonctionnalités et à améliorer notre technologie",
+    "reason4": "Permettez-nous de fournir nos services à plus de personnes dans le monde entier"
+  },
+  "otherWays": {
+    "title": "Autres Façons de Soutenir",
+    "way1": "Partagez notre plateforme avec vos amis et votre famille",
+    "way2": "Proposez vos compétences en tant que bénévole (contactez-nous pour les opportunités)",
+    "way3": "Créez et partagez vos propres histoires sur notre plateforme"
+  }
+}

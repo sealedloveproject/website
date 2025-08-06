@@ -1,0 +1,29 @@
+{
+  "title": "Susține Misiunea Noastră",
+  "subtitle": "Donația ta ne ajută să păstrăm amintiri prețioase pentru generațiile viitoare",
+  "description": "Fondurile sunt utilizate pentru a plăti serverele, serviciile și materialele necesare pentru cutiile noastre de conservare: M-Discuri, inscriptoare M-Disc, gaz inert, recipiente de protecție și alte componente esențiale. Ne-am angajat la acest proiect pentru cel puțin 20 de ani, cu planuri de a-l transmite ulterior altora care împărtășesc viziunea noastră. Donatorii nu primesc avantaje materiale, produse sau funcții speciale în comparație cu non-donatorii, doar recunoștința noastră sinceră și cunoștința că au ajutat la realizarea acestui proiect de conservare pentru toată lumea.",
+  "patreon": {
+    "title": "Susține-ne pe Patreon",
+    "description": "Devino un susținător lunar pe Patreon și ajută-ne să ne menținem misiunea pe termen lung. Generozitatea ta ne permite să continuăm misiunea noastră de a păstra amintiri prețioase pentru generațiile viitoare, și suntem profund recunoscători pentru încrederea ta în proiectul nostru.",
+    "buttonText": "Susține pe Patreon"
+  },
+  "paypal": {
+    "title": "Fă o Donație prin PayPal",
+    "description": "Donează folosind PayPal, card de credit/debit sau transfer bancar. Poți alege o donație unică sau poți configura plăți recurente în timpul finalizării comenzii.",
+    "note": "Vei fi redirecționat către PayPal pentru a-ți finaliza donația în siguranță. Nu este necesar un cont PayPal.",
+    "buttonText": "Donează"
+  },
+  "whyDonate": {
+    "title": "De ce să Donezi?",
+    "reason1": "Susține misiunea noastră de a păstra amintiri pentru generațiile viitoare",
+    "reason2": "Finanțează materiale și echipamente esențiale pentru conservare: M-Discuri, recipiente de protecție de calitate arhivistică, sisteme de gaz inert, inscriptoare specializate de discuri, controloare de umiditate, regulatoare de temperatură, echipamente antistatice, materiale de protecție UV și materiale pentru construcția seifurilor securizate",
+    "reason3": "Ajută-ne să dezvoltăm noi funcționalități și să ne îmbunătățim tehnologia",
+    "reason4": "Permite-ne să oferim serviciile noastre mai multor oameni din întreaga lume"
+  },
+  "otherWays": {
+    "title": "Alte Modalități de Susținere",
+    "way1": "Împărtășește platforma noastră cu prietenii și familia",
+    "way2": "Oferă-ți abilitățile ca voluntar (contactează-ne pentru oportunități)",
+    "way3": "Creează și împărtășește propriile tale povești pe platforma noastră"
+  }
+}

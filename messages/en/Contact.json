@@ -1,0 +1,34 @@
+{
+  "title": "Contact Us",
+  "subtitle": "Have questions or feedback? We'd love to hear from you. Fill out the form below and we'll get back to you as soon as possible.",
+  "form": {
+    "name": {
+      "label": "Your Name",
+      "placeholder": "John Doe"
+    },
+    "email": {
+      "label": "Email Address",
+      "placeholder": "john@example.com"
+    },
+    "subject": {
+      "label": "Subject",
+      "placeholder": "What's this regarding?"
+    },
+    "message": {
+      "label": "Your Message",
+      "placeholder": "How can we help you?"
+    },
+    "submit": "Send Message",
+    "sending": "Sending..."
+  },
+  "success": {
+    "title": "Message Sent!",
+    "message": "Thank you for reaching out. We'll get back to you as soon as possible.",
+    "button": "Send Another Message"
+  },
+  "error": "Something went wrong. Please try again later.",
+  "helpCenter": {
+    "title": "Help Center",
+    "link": "Visit our FAQ page"
+  }
+}

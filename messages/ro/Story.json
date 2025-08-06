@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "Poveste Negăsită",
+      "description": "Povestea solicitată nu a putut fi găsită."
+    }
+  },
+  "header": {
+    "backToStories": "Înapoi la Povești",
+    "by": "De",
+    "published": "Publicat",
+    "updated": "Actualizat",
+    "from": "seif"
+  },
+  "content": {
+    "readMore": "Citește Mai Mult",
+    "readLess": "Citește Mai Puțin"
+  },
+  "actions": {
+    "like": "Apreciază această poveste",
+    "liked": "Nu mai aprecia",
+    "title": "Acțiuni",
+    "moreStories": "Mai multe povești",
+    "share": {
+      "title": "Distribuie această poveste",
+      "twitter": {
+        "prefix": "Verifică",
+        "default": "Verifică această poveste de dragoste"
+      },
+      "copied": "Link copiat!"
+    },
+    "report": "Raportează povestea"
+  },
+  "attachments": {
+    "title": "Atașamente",
+    "gallery": "Galerie Media",
+    "images": "Imagini",
+    "documents": "Documente",
+    "audio": "Audio",
+    "video": "Video",
+    "image": "Imagine",
+    "counter": "{current} din {total}",
+    "noAttachments": "Nu există atașamente pentru această poveste",
+    "processing": "Unele fișiere media sunt încă în curs de procesare. Acestea vor fi disponibile în curând. Vă rugăm să reîmprospătați pagina în câteva momente pentru a vedea tot conținutul."
+  },
+  "support": {
+    "title": "Susține misiunea noastră",
+    "description": "Povestea ta face acum parte din arhiva noastră digitală. Ajută-ne să păstrăm aceste amintiri prețioase pentru generațiile viitoare susținând proiectul nostru de seif al mileniului. Contribuția ta face diferența.",
+    "button": "Susține Proiectul Nostru"
+  },
+  "notFound": {
+    "title": "Poveste Negăsită",
+    "description": "Povestea pe care o cauți nu există sau a fost eliminată.",
+    "button": "Înapoi la Povești"
+  }
+}

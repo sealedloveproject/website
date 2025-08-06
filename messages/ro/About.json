@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Despre sealed.love",
+    "description": "Află despre misiunea noastră de a păstra povești de dragoste pentru generațiile viitoare"
+  },
+  "header": {
+    "title": "Despre sealed.love",
+    "subtitle": "Un proiect personal al lui Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "Povestea",
+      "content": {
+        "intro": "Sunt Alex, soț, tată și, la sfârșitul zilei, doar o persoană obișnuită ca și tine.",
+        "dream": "Ani de zile am visat să creez ceva cu adevărat semnificativ, nu doar o altă afacere, ci o moștenire. Un dar pentru umanitate care ar putea să mă supraviețuiască. Acest proiect, sealed.love, este rezultatul acelui vis.",
+        "revelation": "Când tatăl meu a decedat, am fost forțat să confrunt cele mai profunde adevăruri ale vieții. Într-o lume condusă de viteză, distragere și incertitudine, absența lui a făcut un lucru surprinzător de clar: DRAGOSTEA este singura constantă.",
+        "transcends": "Ea transcende timpul, granițele, culturile și generațiile. Este singura forță care rămâne mult după ce totul s-a estompat.",
+        "purpose": "De aceea am construit sealed.love, pentru a ajuta la păstrarea poveștilor de dragoste care contează. Aceste capsule emoționale ale timpului sunt mai mult decât simple mesaje. Sunt seifuri digitale sigure pentru cele mai semnificative amintiri ale tale, concepute să dureze secole, chiar și în timp ce tehnologia și lumea continuă să evolueze.",
+        "background": "Mi-am investit experiența în tehnologie și conservare pentru a crea ceva care va rezista testului timpului. Dar mai mult decât orice cod sau sistem, ceea ce dă acestui proiect adevărata sa valoare este energia din spatele lui: dragostea pe care alegi să o împărtășești.",
+        "immortal": "Aceste povești sunt moștenirea noastră nemuritoare. Când sunt împărtășite și păstrate, ele devin punți care conectează generațiile, permițând urmașilor noștri să înțeleagă cine am fost și ce am prețuit cel mai mult.",
+        "essence": "De aceea ceea ce facem aici contează. Aceste mesaje, aceste arhive emoționale, ele poartă esență, nu doar date. Ele vorbesc despre singurul lucru care ne supraviețuiește cu adevărat, capacitatea noastră de a iubi.",
+        "divine": "Dragostea este darul divin care ne-a fost dat ca ființe umane. Așadar, să luăm un moment, doar câteva minute pe zi de introspecție, pentru a ne aminti ce contează cu adevărat.",
+        "forgive": "În păstrarea acestor povești, învățăm și să iertăm, să vindecăm și să îmbrățișăm întregul spectru al conexiunii umane - cu toată frumusețea și imperfecțiunea sa.",
+        "chance": "Aceasta este șansa noastră de a ne aminti, de a reflecta, de a transmite singurul lucru care ne definește dincolo de această viață.",
+        "love": "Dragostea."
+      }
+    },
+    "vault": {
+      "title": "Despre Seifurile de Dragoste",
+      "intro": "Seifurile noastre de dragoste sunt sisteme de conservare sigure și pe termen lung, concepute pentru a proteja cele mai prețioase amintiri ale tale pentru ca generațiile viitoare să le descopere și să le prețuiască.",
+      "whatIsVault": {
+        "title": "Ce este un Seif de Dragoste?",
+        "description": "Seifurile noastre de dragoste sunt sisteme de conservare sigure și pe termen lung, concepute pentru a proteja cele mai prețioase amintiri ale tale pentru ca generațiile viitoare să le descopere și să le prețuiască."
+      },
+      "howItWorks": {
+        "title": "Cum funcționează Seifurile de Dragoste sealed.love",
+        "subtitle": "Un proces simplu în trei pași pentru a păstra povești de dragoste pentru generațiile viitoare",
+        "steps": {
+          "submit": {
+            "title": "Trimite Povestea Ta",
+            "description": "Împărtășește povestea ta de dragoste prin platforma noastră sigură. Adaugă text, fotografii, audio sau video pentru a crea o capsulă emoțională completă a timpului."
+          },
+          "preserve": {
+            "title": "Noi o Păstrăm",
+            "description": "Povestea ta este arhivată folosind multiple metode de conservare, inclusiv tehnologia M-DISC (durată de viață de peste 1.000 de ani), hârtie de arhivă și stocare digitală redundantă."
+          },
+          "legacy": {
+            "title": "Crează-ți Moștenirea",
+            "description": "Povestea ta de dragoste devine parte dintr-un seif milenar, păstrată pentru ca generațiile viitoare să descopere puterea conexiunii umane."
+          }
+        }
+      },
+      "collection": {
+        "title": "Colecție",
+        "description": "Împărtășește povestea ta de dragoste prin platforma noastră sigură. Adaugă text, fotografii, audio sau video pentru a crea o capsulă emoțională completă a timpului."
+      },
+      "digitalPreservation": {
+        "title": "Conservare Digitală",
+        "description": "Povestea ta este arhivată folosind multiple metode de conservare, inclusiv tehnologia M-DISC (durată de viață de peste 1.000 de ani), hârtie de arhivă și stocare digitală redundantă."
+      },
+      "futureDiscovery": {
+        "title": "Descoperire Viitoare",
+        "description": "Povestea ta de dragoste devine parte dintr-un seif milenar, păstrată pentru ca generațiile viitoare să descopere puterea conexiunii umane."
+      },
+      "preserveStory": "Păstrează-ți Povestea"
+    },
+    "trust": {
+      "title": "Încredere și Transparență",
+      "features": {
+        "openSource": {
+          "title": "Open Source",
+          "description": "Tot codul platformei este open source și disponibil pentru revizuire pe GitHub, asigurând transparență completă în modul în care gestionăm amintirile tale prețioase"
+        },
+        "dataIntegrity": {
+          "title": "Integritatea Datelor",
+          "description": "Fiecare trimitere primește o sumă de verificare MD5 publică ca dovadă a integrității, pe care o poți verifica independent pentru a te asigura că povestea ta rămâne exact așa cum ai intenționat"
+        },
+        "community": {
+          "title": "Comunitate",
+          "description": "Alătură-te comunității noastre de păstrători de amintiri care cred în conservarea moștenirilor emoționale pentru generațiile viitoare"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Alătură-te Comunității",
+      "description": "Construim o comunitate globală de păstrători de amintiri care cred în conservarea moștenirilor emoționale. Conectează-te cu noi și cu alte persoane care împărtășesc aceleași idei și pasiunea noastră pentru păstrarea poveștilor de dragoste peste generații.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Urmărește-ne pentru actualizări, anunțuri și pentru a vedea povești de dragoste prezentate din comunitatea noastră"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Experimentează povești vizuale și priviri din culise ale procesului nostru de creare a seifurilor"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Alătură-te comunității noastre active pentru a discuta despre povești de dragoste, tehnici de conservare și pentru a te conecta cu alți colaboratori"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Explorează codul nostru open source, contribuie la proiectul nostru și ajută-ne să îmbunătățim conservarea poveștilor de dragoste"
+        }
+      }
+    },
+    "faq": {
+      "title": "Întrebări Frecvente",
+      "questions": {
+        "vaultDuration": {
+          "question": "Cât timp vor dura aceste seifuri?",
+          "answer": "Seifurile sunt fabricate din oțel inoxidabil 316L și conțin M-discuri cu o durată de viață verificată de peste 1.000 de ani. Materialele tipărite utilizează hârtie de arhivă cu o compoziție cu pH neutru și cerneluri pe bază de pigmenți concepute să dureze secole fără a se estompa."
+        },
+        "storySelection": {
+          "question": "Cum sunt selectate poveștile?",
+          "answer": "Toate poveștile trimise sunt păstrate digital. Poți alege să faci povestea ta publică sau să o păstrezi privată. Echipa noastră de curatori asigură diversitatea poveștilor în diferite culturi și tipuri de dragoste."
+        },
+        "whyVaults": {
+          "question": "De ce să creăm aceste seifuri?",
+          "answer": "Credem că dragostea este cea mai importantă emoție umană. Prin păstrarea acestor povești, creăm o moștenire pozitivă care arată generațiilor viitoare capacitatea noastră de a iubi, chiar și în vremuri dificile. Aceste seifuri servesc drept capsule ale timpului de conexiune umană într-o lume din ce în ce mai digitală."
+        },
+        "dataControl": {
+          "question": "Am control asupra datelor mele?",
+          "answer": "Da, în orice moment până când scriem datele pe M-discuri și hârtie, poți opta să ieși, să îți elimini povestea sau să o schimbi. Ai control deplin asupra conținutului tău până când este păstrat în seiful fizic. Nu împărtășim niciodată povești private cu terțe părți."
+        },
+        "cost": {
+          "question": "Există un cost pentru a-mi trimite povestea?",
+          "answer": "Toate trimiterile de povești sunt complet gratuite. Credem că păstrarea poveștilor de dragoste ar trebui să fie accesibilă tuturor. Proiectul nostru este susținut în întregime prin donații voluntare pro bono. Dacă apreciezi misiunea noastră, te invit să ne sprijini pe pagina noastră de suport. Fiecare contribuție ajută la asigurarea conservării pe termen lung a acestor povești de dragoste pentru generațiile viitoare, fără nicio recompensă materială în schimb."
+        },
+        "security": {
+          "question": "Cât de sigure sunt locațiile seifurilor?",
+          "answer": "Metodele noastre de conservare sunt concepute având în vedere longevitatea. Folosim sisteme multiple redundante și urmăm cele mai bune practici în arhivarea digitală și fizică pentru a ne asigura că aceste povești supraviețuiesc pentru generațiile viitoare."
+        },
+        "locations": {
+          "question": "Veți dezvălui locațiile seifurilor?",
+          "answer": "Nu, nu vom dezvălui niciodată nicio informație despre locațiile seifurilor. Aceasta este o politică strictă care se aplică tuturor seifurilor noastre. Locațiile exacte sunt păstrate confidențiale pentru a asigura securitatea maximă și conservarea conținutului pentru generațiile viitoare."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Stochează Povestea Ta",
+      "readStories": "Citește Povești",
+      "vaultDescription": "Adaugă povestea ta de dragoste în seiful nostru milenar",
+      "motto": "Fii bun, fii onest, fii uman!"
+    }
+  }
+}

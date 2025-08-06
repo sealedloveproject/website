@@ -1,0 +1,29 @@
+{
+  "title": "Sostieni la Nostra Missione",
+  "subtitle": "La tua donazione ci aiuta a preservare ricordi preziosi per le generazioni future",
+  "description": "I fondi vengono utilizzati per pagare server, servizi e materiali necessari per le nostre scatole di conservazione: M-Disc, scrittori M-Disc, gas inerte, contenitori protettivi e altri componenti essenziali. Ci siamo impegnati in questo progetto per almeno 20 anni, con piani per trasmetterlo successivamente ad altri che condividono la nostra visione. I donatori non ricevono vantaggi materiali, prodotti o funzionalità speciali rispetto ai non donatori, solo la nostra sincera gratitudine e la consapevolezza di aver contribuito a rendere possibile questo progetto di conservazione per tutti.",
+  "patreon": {
+    "title": "Sostienici su Patreon",
+    "description": "Diventa un sostenitore mensile su Patreon e aiutaci a mantenere la nostra missione a lungo termine. La tua generosità ci permette di continuare la nostra missione di preservare ricordi preziosi per le generazioni future, e siamo profondamente grati per la tua fiducia nel nostro progetto.",
+    "buttonText": "Sostieni su Patreon"
+  },
+  "paypal": {
+    "title": "Effettua una Donazione tramite PayPal",
+    "description": "Dona utilizzando PayPal, carta di credito/debito o bonifico bancario. Puoi scegliere una donazione una tantum o impostare pagamenti ricorrenti durante il checkout.",
+    "note": "Sarai reindirizzato a PayPal per completare la tua donazione in modo sicuro. Non è necessario un account PayPal.",
+    "buttonText": "Dona"
+  },
+  "whyDonate": {
+    "title": "Perché Donare?",
+    "reason1": "Sostieni la nostra missione di preservare ricordi per le generazioni future",
+    "reason2": "Finanzia materiali e attrezzature essenziali per la conservazione: M-Disc, contenitori protettivi di qualità archivistica, sistemi a gas inerte, scrittori di dischi specializzati, controllori di umidità, regolatori di temperatura, attrezzature antistatiche, materiali di protezione UV e materiali per la costruzione di casseforti sicure",
+    "reason3": "Aiutaci a sviluppare nuove funzionalità e migliorare la nostra tecnologia",
+    "reason4": "Permettici di fornire i nostri servizi a più persone in tutto il mondo"
+  },
+  "otherWays": {
+    "title": "Altri Modi per Sostenere",
+    "way1": "Condividi la nostra piattaforma con amici e familiari",
+    "way2": "Offri le tue competenze come volontario (contattaci per opportunità)",
+    "way3": "Crea e condividi le tue storie sulla nostra piattaforma"
+  }
+}

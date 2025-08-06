@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "Storia Non Trovata",
+      "description": "La storia richiesta non è stata trovata."
+    }
+  },
+  "header": {
+    "backToStories": "Torna alle Storie",
+    "by": "Di",
+    "published": "Pubblicato",
+    "updated": "Aggiornato",
+    "from": "vault"
+  },
+  "content": {
+    "readMore": "Leggi di Più",
+    "readLess": "Leggi di Meno"
+  },
+  "actions": {
+    "like": "Mi piace questa storia",
+    "liked": "Non mi piace più",
+    "title": "Azioni",
+    "moreStories": "Più Storie",
+    "share": {
+      "title": "Condividi questa storia",
+      "twitter": {
+        "prefix": "Dai un'occhiata a",
+        "default": "Dai un'occhiata a questa storia d'amore"
+      },
+      "copied": "Link copiato!"
+    },
+    "report": "Segnala storia"
+  },
+  "attachments": {
+    "title": "Allegati",
+    "gallery": "Galleria Multimediale",
+    "images": "Immagini",
+    "documents": "Documenti",
+    "audio": "Audio",
+    "video": "Video",
+    "image": "Immagine",
+    "counter": "{current} di {total}",
+    "noAttachments": "Nessun allegato per questa storia",
+    "processing": "Alcuni file multimediali sono ancora in fase di elaborazione. Saranno disponibili a breve. Aggiorna la pagina tra qualche istante per vedere tutti i contenuti."
+  },
+  "support": {
+    "title": "Sostieni la nostra missione",
+    "description": "La tua storia ora fa parte del nostro archivio digitale. Aiutaci a preservare questi preziosi ricordi per le generazioni future sostenendo il nostro progetto vault del millennio. Il tuo contributo fa la differenza.",
+    "button": "Sostieni Il Nostro Progetto"
+  },
+  "notFound": {
+    "title": "Storia Non Trovata",
+    "description": "La storia che stai cercando non esiste o è stata rimossa.",
+    "button": "Torna alle Storie"
+  }
+}

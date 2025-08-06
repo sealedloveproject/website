@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { AttachmentsListProps } from './StoryFormTypes';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 /**
  * Component for displaying existing attachments in edit mode
@@ -13,13 +14,14 @@ export default function AttachmentsList({
   setCoverImageId,
   removeAttachment
 }: AttachmentsListProps) {
+  const t = useTranslations('User.newStory.form.media.attachmentsList');
   return (
     <div>
       <h4 className="text-sm font-medium mb-3 flex items-center gap-2">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
         </svg>
-        Existing Attachments
+        {t('title')}
       </h4>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2">
         {attachments.map((attachment) => {
@@ -55,14 +57,14 @@ export default function AttachmentsList({
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z" />
                     </svg>
-                    <span className="text-xs font-medium text-muted-foreground mt-1">Video</span>
+                    <span className="text-xs font-medium text-muted-foreground mt-1">{t('fileTypes.video')}</span>
                   </div>
                 ) : isAudio ? (
                   <div className="flex flex-col items-center justify-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                     </svg>
-                    <span className="text-xs font-medium text-muted-foreground mt-1">Audio</span>
+                    <span className="text-xs font-medium text-muted-foreground mt-1">{t('fileTypes.audio')}</span>
                   </div>
                 ) : (
                   <div className="flex flex-col items-center justify-center">
@@ -123,9 +125,9 @@ export default function AttachmentsList({
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          Cover Image
+                          {t('coverImage')}
                         </span>
-                      ) : 'Set as Cover'}
+                      ) : t('setAsCover')}
                     </Button>
                   )}
                   {!isImage && <span></span>}
@@ -136,7 +138,7 @@ export default function AttachmentsList({
                     variant="ghost"
                     size="icon"
                     className="text-red-500 hover:text-red-700 hover:bg-red-50 p-1"
-                    title="Remove attachment"
+                    title={t('removeAttachment')}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />

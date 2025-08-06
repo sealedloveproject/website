@@ -7,10 +7,12 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import { getUserStories } from '@/app/actions/users/stories';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 export default function UserStoriesPage() {
   const { user, isAuthenticated, openSignInModal } = useAuth();
   const router = useRouter();
+  const t = useTranslations('User.stories');
   const [searchQuery, setSearchQuery] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [myStories, setMyStories] = useState<any[]>([]);
@@ -69,16 +71,16 @@ export default function UserStoriesPage() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
             </svg>
           </div>
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">Login Required</h1>
+          <h1 className="text-3xl md:text-4xl font-bold mb-4">{t('loginRequired.title')}</h1>
           <p className="text-lg text-foreground/70 max-w-md mb-8">
-            You need to be logged in to view and manage your stories.
+            {t('loginRequired.message')}
           </p>
           <Button
             onClick={openSignInModal}
             variant="primary"
             className="flex items-center justify-center gap-2"
           >
-            Sign In
+            {t('loginRequired.signIn')}
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
             </svg>
@@ -94,10 +96,10 @@ export default function UserStoriesPage() {
       <header className="mb-16">
         <div className="mt-10 mb-6 relative text-center">
           <div className="absolute -inset-4 rounded-full bg-primary/5 blur-xl"></div>
-          <h1 className="text-4xl md:text-4xl font-bold relative inline-block">My Stories</h1>
+          <h1 className="text-4xl md:text-4xl font-bold relative inline-block">{t('title')}</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4 mx-auto"></div>
           <p className="mt-6 text-lg text-foreground/80 text-center max-w-3xl mx-auto">
-            Your personal collection of memories, wisdom, and love stories
+            {t('subtitle')}
           </p>
         </div>
       </header>
@@ -114,7 +116,7 @@ export default function UserStoriesPage() {
             </div>
             <input
               type="text"
-              placeholder="Search your stories..."
+              placeholder={t('search.placeholder')}
               className="w-full pl-10 pr-4 py-3 border border-border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -130,7 +132,7 @@ export default function UserStoriesPage() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
               </svg>
-              <span>Create New Story</span>
+              <span>{t('createButton')}</span>
             </Button>
           </Link>
         </div>
@@ -139,7 +141,7 @@ export default function UserStoriesPage() {
         {isLoading ? (
           <div className="flex flex-col items-center justify-center py-20">
             <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin mb-4"></div>
-            <p className="text-foreground/70">Loading your stories...</p>
+            <p className="text-foreground/70">{t('loading')}</p>
           </div>
         ) : (
           <>
@@ -170,12 +172,12 @@ export default function UserStoriesPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m6.75 12l-3-3m0 0l-3 3m3-3v6m-1.5-15H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-medium mb-2">No stories found</h3>
+                <h3 className="text-xl font-medium mb-2">{t('noStories.title')}</h3>
                 {searchQuery ? (
-                  <p className="text-muted-foreground">Try adjusting your search criteria</p>
+                  <p className="text-muted-foreground">{t('noStories.searchMessage')}</p>
                 ) : (
                   <div className="space-y-4">
-                    <p className="text-muted-foreground">You haven't created any stories yet</p>
+                    <p className="text-muted-foreground">{t('noStories.emptyMessage')}</p>
                     <Link href="/user/stories/new">
                       <Button
                         variant="outline"
@@ -184,7 +186,7 @@ export default function UserStoriesPage() {
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                         </svg>
-                        <span>Create Your First Story</span>
+                        <span>{t('noStories.createFirst')}</span>
                       </Button>
                     </Link>
                   </div>

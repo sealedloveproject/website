@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { getHumanReadableS3Region } from '@/lib/s3Region';
 import { FileUploadAreaProps } from './StoryFormTypes';
+import { useTranslations } from 'next-intl';
 
 /**
  * Component for handling file uploads with drag and drop functionality
@@ -14,6 +15,7 @@ export default function FileUploadArea({
   files,
   attachments = []
 }: FileUploadAreaProps) {
+  const t = useTranslations('User.newStory.form.media.upload');
   const [isDragging, setIsDragging] = useState(false);
   
   // Get human-readable S3 region for display using the s3Region library
@@ -110,13 +112,13 @@ export default function FileUploadArea({
             </svg>
           </div>
           <div className="text-center">
-            <div className="text-base font-medium mb-1">Drag files here or click to browse</div>
+            <div className="text-base font-medium mb-1">{t('dragDrop')}</div>
             <div className="text-sm text-muted-foreground">
               <span className="inline-flex items-center gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                Supported formats: Images, Videos, Audio
+                {t('supportedFormats')}
               </span>
             </div>
           </div>
@@ -139,12 +141,12 @@ export default function FileUploadArea({
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            <span className="font-medium">Supported formats</span>
+            <span className="font-medium">{t('formats.title')}</span>
           </div>
           <div className="mt-1 text-xs text-muted-foreground pl-6 space-y-1">
-            <div>Images: jpg, jpeg, png, webp</div>
-            <div>Videos: mp4, mov</div>
-            <div>Audio: mp3, aac</div>
+            <div>{t('formats.images')}</div>
+            <div>{t('formats.videos')}</div>
+            <div>{t('formats.audio')}</div>
           </div>
         </div>
         
@@ -153,11 +155,11 @@ export default function FileUploadArea({
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
-            <span className="font-medium">Upload region</span>
+            <span className="font-medium">{t('region.title')}</span>
           </div>
           <div className="mt-1 text-xs pl-6">
-            <div>Closest region: <span className="text-primary font-medium">{getRegionDisplay()}</span></div>
-            <div className="text-muted-foreground">Files will be uploaded to the closest AWS region to your location</div>
+            <div>{t('region.closest', { region: getRegionDisplay() })}</div>
+            <div className="text-muted-foreground">{t('region.info')}</div>
           </div>
         </div>
       </div>
@@ -165,8 +167,8 @@ export default function FileUploadArea({
       {/* Storage usage indicator */}
       <div className="mt-4 p-3 rounded-lg bg-muted/30 border border-border">
         <div className="flex justify-between text-sm mb-2">
-          <span className="font-medium">Storage used</span>
-          <span className="text-primary font-medium">{(calculateTotalSize()).toFixed(1)} MB / 100 MB</span>
+          <span className="font-medium">{t('storage.title')}</span>
+          <span className="text-primary font-medium">{t('storage.used', { used: (calculateTotalSize()).toFixed(1) })}</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden border border-gray-300 relative">
           <div 
@@ -174,7 +176,7 @@ export default function FileUploadArea({
             style={{ width: `${Math.max(getStoragePercentage(), 1)}%`, boxShadow: '0 0 5px rgba(0,0,0,0.2) inset' }}
           ></div>
           <div className="absolute inset-0 flex items-center justify-center text-xs font-medium text-foreground/80">
-            <span className="px-2 py-0.5 bg-white/30 rounded backdrop-blur-sm">{getStoragePercentage().toFixed(1)}% used</span>
+            <span className="px-2 py-0.5 bg-white/30 rounded backdrop-blur-sm">{t('storage.percentage', { percentage: getStoragePercentage().toFixed(1) })}</span>
           </div>
         </div>
       </div>

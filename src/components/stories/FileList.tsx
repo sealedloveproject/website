@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { useState, useEffect, useMemo } from 'react';
 import { FileListProps } from './StoryFormTypes';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 /**
  * Component for displaying a list of files to be uploaded
@@ -16,6 +17,7 @@ export default function FileList({
   isNewFile = true,
   uploadProgress = {}
 }: FileListProps) {
+  const t = useTranslations('User.newStory.form.media.fileList');
   // Store object URLs to prevent recreation on every render
   const [objectUrls, setObjectUrls] = useState<Record<string, string>>({});
   // Helper to get file object from different file types
@@ -81,7 +83,7 @@ export default function FileList({
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 19a2 2 0 01-2-2V7a2 2 0 012-2h4l2 2h4a2 2 0 012 2v1M5 19h14a2 2 0 002-2v-5a2 2 0 00-2-2H9a2 2 0 00-2 2v5a2 2 0 01-2 2z" />
           )}
         </svg>
-        {isNewFile ? 'Files to Upload' : 'Uploaded Files'}
+        {isNewFile ? t('title') : t('uploadedTitle')}
       </h4>
       
       {/* Global progress bar */}
@@ -223,9 +225,9 @@ export default function FileList({
                           <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                           </svg>
-                          Cover Image
+                          {t('coverImage')}
                         </span>
-                      ) : 'Set as Cover'}
+                      ) : t('setAsCover')}
                     </Button>
                   )}
                   {!isImage && <span></span>}
@@ -236,7 +238,7 @@ export default function FileList({
                     variant="ghost"
                     size="icon"
                     className="text-red-500 hover:text-red-700 hover:bg-red-50 p-1"
-                    title="Remove file"
+                    title={t('removeFile')}
                   >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />

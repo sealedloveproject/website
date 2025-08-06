@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "title": "Acerca de sealed.love",
+    "description": "Conoce nuestra misión de preservar historias de amor para las generaciones futuras"
+  },
+  "header": {
+    "title": "Acerca de sealed.love",
+    "subtitle": "Un proyecto personal de Alex"
+  },
+  "sections": {
+    "story": {
+      "title": "La Historia",
+      "content": {
+        "intro": "Soy Alex, esposo, padre y, al final del día, solo una persona común como tú.",
+        "dream": "Durante años, soñé con crear algo verdaderamente significativo, no solo otro negocio, sino un legado. Un regalo para la humanidad que pudiera perdurar más allá de mí. Este proyecto, sealed.love, es el resultado de ese sueño.",
+        "revelation": "Cuando mi padre falleció, me vi obligado a enfrentar las verdades más profundas de la vida. En un mundo impulsado por la velocidad, la distracción y la incertidumbre, su ausencia dejó una cosa sorprendentemente clara: el AMOR es la única constante.",
+        "transcends": "Trasciende el tiempo, las fronteras, las culturas y las generaciones. Es la única fuerza que permanece mucho después de que todo lo demás se desvanece.",
+        "purpose": "Por eso he construido sealed.love, para ayudar a preservar historias de amor que importan. Estas cápsulas emocionales del tiempo son más que simples mensajes. Son bóvedas digitales seguras para tus recuerdos más significativos, diseñadas para perdurar durante siglos, incluso mientras la tecnología y el mundo continúan evolucionando.",
+        "background": "He volcado mi experiencia en tecnología y preservación para crear algo que resistirá la prueba del tiempo. Pero más que cualquier código o sistema, lo que le da a este proyecto su verdadero valor es la energía detrás de él: el amor que eliges compartir.",
+        "immortal": "Estas historias son nuestro legado inmortal. Cuando se comparten y preservan, se convierten en puentes que conectan generaciones, permitiendo a nuestros descendientes entender quiénes éramos y qué valorábamos más.",
+        "essence": "Por eso lo que hacemos aquí importa. Estos mensajes, estos archivos emocionales, llevan esencia, no solo datos. Hablan de lo único que realmente nos sobrevive, nuestra capacidad de amar.",
+        "divine": "El amor es el regalo divino que se nos ha dado como seres humanos. Así que tomemos un momento, solo unos minutos al día de introspección, para recordar lo que realmente importa.",
+        "forgive": "Al preservar estas historias, también aprendemos a perdonar, a sanar y a abrazar todo el espectro de la conexión humana, con toda su belleza e imperfección.",
+        "chance": "Esta es nuestra oportunidad de recordar, de reflexionar, de transmitir lo único que nos define más allá de esta vida.",
+        "love": "Amor."
+      }
+    },
+    "vault": {
+      "title": "Acerca de las Bóvedas de Amor",
+      "intro": "Nuestras bóvedas de amor son sistemas de preservación seguros y a largo plazo diseñados para proteger tus recuerdos más preciados para que las generaciones futuras los descubran y aprecien.",
+      "whatIsVault": {
+        "title": "¿Qué es una Bóveda de Amor?",
+        "description": "Nuestras bóvedas de amor son sistemas de preservación seguros y a largo plazo diseñados para proteger tus recuerdos más preciados para que las generaciones futuras los descubran y aprecien."
+      },
+      "howItWorks": {
+        "title": "Cómo funcionan las Bóvedas de Amor de sealed.love",
+        "subtitle": "Un proceso simple de tres pasos para preservar historias de amor para las generaciones futuras",
+        "steps": {
+          "submit": {
+            "title": "Envía Tu Historia",
+            "description": "Comparte tu historia de amor a través de nuestra plataforma segura. Añade texto, fotos, audio o video para crear una cápsula emocional del tiempo completa."
+          },
+          "preserve": {
+            "title": "Nosotros la Preservamos",
+            "description": "Tu historia se archiva utilizando múltiples métodos de preservación, incluyendo tecnología M-DISC (vida útil de más de 1,000 años), papel de archivo y almacenamiento digital redundante."
+          },
+          "legacy": {
+            "title": "Crea Tu Legado",
+            "description": "Tu historia de amor se convierte en parte de una bóveda milenaria, preservada para que las generaciones futuras descubran el poder de la conexión humana."
+          }
+        }
+      },
+      "collection": {
+        "title": "Colección",
+        "description": "Comparte tu historia de amor a través de nuestra plataforma segura. Añade texto, fotos, audio o video para crear una cápsula emocional del tiempo completa."
+      },
+      "digitalPreservation": {
+        "title": "Preservación Digital",
+        "description": "Tu historia se archiva utilizando múltiples métodos de preservación, incluyendo tecnología M-DISC (vida útil de más de 1,000 años), papel de archivo y almacenamiento digital redundante."
+      },
+      "futureDiscovery": {
+        "title": "Descubrimiento Futuro",
+        "description": "Tu historia de amor se convierte en parte de una bóveda milenaria, preservada para que las generaciones futuras descubran el poder de la conexión humana."
+      },
+      "preserveStory": "Preserva Tu Historia"
+    },
+    "trust": {
+      "title": "Confianza y Transparencia",
+      "features": {
+        "openSource": {
+          "title": "Código Abierto",
+          "description": "Todo el código de la plataforma es de código abierto y está disponible para su revisión en GitHub, garantizando total transparencia en cómo manejamos tus preciados recuerdos"
+        },
+        "dataIntegrity": {
+          "title": "Integridad de Datos",
+          "description": "Cada envío recibe una suma de verificación MD5 pública como prueba de integridad, que puedes verificar de forma independiente para asegurar que tu historia permanezca exactamente como la concebiste"
+        },
+        "community": {
+          "title": "Comunidad",
+          "description": "Únete a nuestra comunidad de guardianes de la memoria que creen en preservar legados emocionales para las generaciones futuras"
+        }
+      }
+    },
+    "joinCommunity": {
+      "title": "Únete a la Comunidad",
+      "description": "Estamos construyendo una comunidad global de guardianes de la memoria que creen en preservar legados emocionales. Conéctate con nosotros y otras personas afines que comparten nuestra pasión por preservar historias de amor a través de las generaciones.",
+      "platforms": {
+        "twitter": {
+          "title": "Twitter",
+          "description": "Síguenos para actualizaciones, anuncios y para ver historias de amor destacadas de nuestra comunidad"
+        },
+        "instagram": {
+          "title": "Instagram",
+          "description": "Experimenta historias visuales y vistazos tras bastidores de nuestro proceso de creación de bóvedas"
+        },
+        "discord": {
+          "title": "Discord",
+          "description": "Únete a nuestra comunidad activa para discutir historias de amor, técnicas de preservación y conectar con otros colaboradores"
+        },
+        "github": {
+          "title": "GitHub",
+          "description": "Explora nuestro código de código abierto, contribuye a nuestro proyecto y ayúdanos a mejorar la preservación de historias de amor"
+        }
+      }
+    },
+    "faq": {
+      "title": "Preguntas Frecuentes",
+      "questions": {
+        "vaultDuration": {
+          "question": "¿Cuánto durarán estas bóvedas?",
+          "answer": "Las bóvedas están hechas de acero inoxidable 316L y contienen M-discs con una vida útil verificada de más de 1,000 años. Los materiales impresos utilizan papel de archivo con una composición de pH neutro y tintas basadas en pigmentos diseñadas para durar siglos sin desvanecerse."
+        },
+        "storySelection": {
+          "question": "¿Cómo se seleccionan las historias?",
+          "answer": "Todas las historias enviadas se conservan digitalmente. Puedes elegir hacer tu historia pública o mantenerla privada. Nuestro equipo de curadores asegura la diversidad de historias a través de culturas y tipos de amor."
+        },
+        "whyVaults": {
+          "question": "¿Por qué crear estas bóvedas?",
+          "answer": "Creemos que el amor es la emoción humana más importante. Al preservar estas historias, estamos creando un legado positivo que muestra a las generaciones futuras nuestra capacidad de amar, incluso durante tiempos difíciles. Estas bóvedas sirven como cápsulas del tiempo de conexión humana en un mundo cada vez más digital."
+        },
+        "dataControl": {
+          "question": "¿Tengo control sobre mis datos?",
+          "answer": "Sí, en cualquier momento hasta que escribamos los datos en M-discs y papel, puedes optar por salir, eliminar tu historia o cambiarla. Tienes control total sobre tu contenido hasta que se preserve en la bóveda física. Nunca compartimos historias privadas con terceros."
+        },
+        "cost": {
+          "question": "¿Hay algún costo para enviar mi historia?",
+          "answer": "Todos los envíos de historias son completamente gratuitos. Creemos que preservar historias de amor debe ser accesible para todos. Nuestro proyecto se sostiene enteramente a través de donaciones voluntarias pro bono. Si aprecias nuestra misión, te invito a apoyarnos en nuestra página de apoyo. Cada contribución ayuda a asegurar la preservación a largo plazo de estas historias de amor para las generaciones futuras, sin ninguna recompensa material a cambio."
+        },
+        "security": {
+          "question": "¿Qué tan seguras son las ubicaciones de las bóvedas?",
+          "answer": "Nuestros métodos de preservación están diseñados pensando en la longevidad. Utilizamos múltiples sistemas redundantes y seguimos las mejores prácticas en archivado digital y físico para asegurar que estas historias sobrevivan para las generaciones futuras."
+        },
+        "locations": {
+          "question": "¿Revelarán las ubicaciones de las bóvedas?",
+          "answer": "No, nunca revelaremos ninguna información sobre las ubicaciones de las bóvedas. Esta es una política estricta que se aplica a todas nuestras bóvedas. Las ubicaciones exactas se mantienen confidenciales para garantizar la máxima seguridad y preservación de los contenidos para las generaciones futuras."
+        }
+      }
+    },
+    "cta": {
+      "storeStory": "Guarda Tu Historia",
+      "readStories": "Leer Historias",
+      "vaultDescription": "Añade tu historia de amor a nuestra bóveda milenaria",
+      "motto": "¡Sé amable, sé honesto, sé humano!"
+    }
+  }
+}

@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useTranslations } from 'next-intl';
 
 export default function Footer() {
+  const t = useTranslations('Footer');
+  
   return (
     <footer className="bg-muted py-8 mt-12 text-foreground">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
@@ -8,12 +11,12 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-4">sealed.love <span className="text-primary">v{process.env.APP_VERSION}</span></h3>
             <p className="text-sm max-w-md">
-              Preserve your memories for future generations.
+              {t('tagline')}
             </p>
           </div>
           
           <div className="flex flex-col">
-            <h3 className="text-lg font-semibold mb-4">Join Our Community</h3>
+            <h3 className="text-lg font-semibold mb-4">{t('joinCommunity')}</h3>
             <div className="flex space-x-5">
               <a href="https://x.com/sealedloveproj" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="Twitter">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5">
@@ -43,20 +46,20 @@ export default function Footer() {
           <div className="flex flex-col md:items-end">
             <div className="flex space-x-4 mb-4">
               <Link href="/about" className="text-sm hover:text-primary transition-colors">
-                About
+                {t('about')}
               </Link>
               <Link href="/privacy" className="text-sm hover:text-primary transition-colors">
-                Privacy
+                {t('privacy')}
               </Link>
               <Link href="/terms" className="text-sm hover:text-primary transition-colors">
-                Terms
+                {t('terms')}
               </Link>
               <Link href="/contact" className="text-sm hover:text-primary transition-colors">
-                Contact
+                {t('contact')}
               </Link>
             </div>
             <p className="text-xs">
-              © {new Date().getFullYear()} sealed.love. All rights reserved.
+              {t('copyright', { year: new Date().getFullYear() })}
             </p>
           </div>
         </div>

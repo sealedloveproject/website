@@ -1,0 +1,204 @@
+{
+  "profile": {
+    "title": "Profilul Meu",
+    "subtitle": "Gestionează informațiile și preferințele contului tău",
+    "loading": "Se încarcă...",
+    "loginRequired": "Autentificare Necesară",
+    "personalInfo": {
+      "title": "Informații Personale",
+      "firstName": "Prenume",
+      "lastName": "Nume",
+      "email": "Adresă de Email",
+      "emailCannotChange": "Adresa de email nu poate fi modificată",
+      "updateButton": "Actualizează Profilul",
+      "updating": "Se actualizează...",
+      "updateSuccess": "Profil actualizat cu succes!",
+      "updateError": "Nu s-a putut actualiza profilul. Vă rugăm să încercați din nou."
+    },
+    "accountSettings": {
+      "title": "Setări Cont",
+      "signOut": "Deconectare",
+      "deleteAccount": {
+        "button": "Șterge Contul",
+        "title": "Șterge Contul",
+        "warning": "Atenție: Această acțiune nu poate fi anulată",
+        "description": "Ștergerea contului dvs. va elimina definitiv toate datele dvs., inclusiv poveștile și informațiile personale.",
+        "verificationStep": "Pentru securitate, vom trimite un cod de verificare la adresa dvs. de email.",
+        "sendCode": "Trimite Cod de Verificare",
+        "sending": "Se trimite...",
+        "resendCode": "Retrimite codul",
+        "verifyCode": "Verifică",
+        "verifying": "Se verifică...",
+        "codeVerified": "Email verificat cu succes",
+        "confirmText": "Tastați DELETE MY ACCOUNT pentru a confirma:",
+        "confirmPlaceholder": "Tastați textul de confirmare",
+        "cancel": "Anulează",
+        "delete": "Șterge Contul",
+        "deleting": "Se șterge..."
+      }
+    }
+  },
+  "stories": {
+    "title": "Poveștile Mele",
+    "subtitle": "Gestionează și creează poveștile tale de dragoste",
+    "loading": "Se încarcă poveștile tale...",
+    "search": {
+      "placeholder": "Caută în poveștile tale..."
+    },
+    "createButton": "Creează o Poveste Nouă",
+    "loginRequired": {
+      "title": "Autentificare Necesară",
+      "message": "Trebuie să fiți autentificat pentru a vizualiza și gestiona poveștile dvs.",
+      "signIn": "Autentificare"
+    },
+    "noStories": {
+      "title": "Nu s-au găsit povești",
+      "searchMessage": "Încercați să ajustați criteriile de căutare",
+      "emptyMessage": "Nu ați creat încă nicio poveste",
+      "createFirst": "Creează Prima Ta Poveste"
+    }
+  },
+  "newStory": {
+    "title": "Păstrează Povestea Ta de Dragoste",
+    "subtitle": "Păstrează-ți amintirile în seiful nostru milenar",
+    "backButton": "Înapoi la Poveștile Mele",
+    "login": {
+      "title": "Autentificare prin Email cu Cod Unic",
+      "description": "Introduceți adresa dvs. de email pentru a primi un cod din 6 cifre care vă permite să accesați și să gestionați poveștile dvs. Nu este necesară înregistrarea.",
+      "infoBox": "De ce folosim autentificarea prin email: Această metodă simplă vă permite să editați, să actualizați sau să ștergeți povestea dvs. mai târziu. Emailul dvs. este folosit doar pentru autentificare și nu îl împărtășim niciodată cu terțe părți.",
+      "continueButton": "Continuă cu Email"
+    },
+    "form": {
+      "submitButton": "Salvează Povestea",
+      "submitting": "Se trimite...",
+      "title": {
+        "label": "Titlul Poveștii",
+        "placeholder": "Dă un titlu poveștii tale"
+      },
+      "content": {
+        "label": "Povestea Ta",
+        "placeholder": "Împărtășește povestea ta aici...",
+        "wordCount": "{count} / 500 cuvinte",
+        "wordLimitExceeded": "Povestea ta depășește limita de 500 de cuvinte. Te rugăm să o scurtezi."
+      },
+      "media": {
+        "title": "Fișiere Media",
+        "replicatingWarning": {
+          "title": "Unele fișiere media sunt încă în curs de replicare",
+          "description": "Vor fi disponibile în curând. Imaginile neplicate vor afișa un substituent."
+        },
+        "upload": {
+          "dragDrop": "Trage fișierele aici sau apasă pentru a naviga",
+          "supportedFormats": "Formate acceptate: Imagini, Videoclipuri, Audio",
+          "formats": {
+            "title": "Formate acceptate",
+            "images": "Imagini: jpg, jpeg, png, webp",
+            "videos": "Videoclipuri: mp4, mov",
+            "audio": "Audio: mp3, aac"
+          },
+          "region": {
+            "title": "Regiune de încărcare",
+            "closest": "Regiunea cea mai apropiată: {region}",
+            "info": "Fișierele vor fi încărcate în regiunea AWS cea mai apropiată de locația ta"
+          },
+          "storage": {
+            "title": "Spațiu utilizat",
+            "used": "{used} MB / 100 MB",
+            "percentage": "{percentage}% utilizat"
+          }
+        },
+        "attachmentsList": {
+          "title": "Fișiere existente",
+          "fileTypes": {
+            "video": "Video",
+            "audio": "Audio"
+          },
+          "coverImage": "Imagine de copertă",
+          "setAsCover": "Setează ca copertă",
+          "removeAttachment": "Elimină fișierul"
+        },
+        "fileList": {
+          "title": "Fișiere de încărcat",
+          "uploadedTitle": "Fișiere încărcate",
+          "coverImage": "Imagine de copertă",
+          "setAsCover": "Setează ca copertă",
+          "removeFile": "Elimină fișierul"
+        },
+        "privacy": {
+          "title": "Setări de confidențialitate",
+          "agreeToTerms": "Sunt de acord cu {termsLink} și {privacyLink}",
+          "termsLink": "Termenii de utilizare",
+          "privacyLink": "Politica de confidențialitate",
+          "makePublic": "Fă această poveste publică și partajabilă (opțional)"
+        }
+      }
+    }
+  },
+  "editStory": {
+    "header": {
+      "title": "Editează Povestea Ta",
+      "subtitle": "Actualizează povestea sau adaugă noi atașamente"
+    },
+    "backToStories": "Înapoi la Poveștile Mele",
+    "form": {
+      "submitButton": "Actualizează Povestea",
+      "submitting": "Se actualizează..."
+    },
+    "error": {
+      "title": "Eroare"
+    },
+    "errors": {
+      "notFound": "Povestea nu a fost găsită sau nu ai permisiunea de a o edita.",
+      "loadingFailed": "A apărut o eroare la încărcarea poveștii. Te rugăm să încerci din nou.",
+      "updateFailed": "Nu s-a putut actualiza povestea",
+      "unexpected": "A apărut o eroare neașteptată. Te rugăm să încerci din nou.",
+      "deleteFailed": "Nu s-a putut șterge povestea",
+      "deleteUnexpected": "A apărut o eroare neașteptată la ștergerea poveștii"
+    },
+    "fileUpload": {
+      "unsupportedFiles": "{count} fișier(e) nu au fost adăugate deoarece nu sunt suportate. Te rugăm să încarci doar fișiere jpg, jpeg, png, webp, mp4, mov, mp3 sau aac.",
+      "sizeExceeded": "Adăugarea acestor fișiere ar depăși limita ta de stocare de 100MB. Te rugăm să elimini câteva fișiere mai întâi."
+    },
+    "deleteModal": {
+      "title": "Șterge Povestea",
+      "message": "Ești sigur că vrei să ștergi această poveste? Această acțiune nu poate fi anulată și toate fișierele media asociate vor fi eliminate permanent.",
+      "cancel": "Anulează",
+      "confirm": "Șterge Definitiv",
+      "deleting": "Se șterge..."
+    },
+    "dangerZone": {
+      "title": "Zonă Periculoasă",
+      "warning": "Avertisment",
+      "permanentWarning": "Ștergerea acestei povești este permanentă și ireversibilă.",
+      "consequences": {
+        "servers": "Povestea va fi complet eliminată de pe toate serverele noastre",
+        "media": "Toate fișierele și media asociate vor fi șterse din stocarea noastră cloud",
+        "backups": "Povestea va fi, de asemenea, eliminată din toate sistemele noastre de backup",
+        "support": "Această acțiune nu poate fi anulată de echipa noastră de suport"
+      },
+      "deleteButton": "Șterge Povestea Definitiv"
+    }
+  },
+  "successPage": {
+    "created": {
+      "title": "Poveste Salvată cu Succes!",
+      "message": "Povestea ta de dragoste a fost salvată în seiful nostru digital. Îți mulțumim că ne-ai împărtășit amintirile tale prețioase. Amintește-ți că poți edita povestea ta oricând pentru a adăuga noi detalii sau actualizări."
+    },
+    "updated": {
+      "title": "Poveste Actualizată cu Succes!",
+      "message": "Povestea ta de dragoste a fost actualizată în seiful nostru digital. Îți mulțumim că îți păstrezi amintirile actualizate. Amintește-ți că poți edita povestea ta oricând pentru a adăuga noi detalii sau actualizări."
+    },
+    "share": {
+      "title": "Ajută-ne să Păstrăm Poveștile de Dragoste pentru Totdeauna!",
+      "message": "Împărtășește Proiectul Sealed Love cu prietenii și familia ta. Fiecare poveste împărtășită ne ajută să construim un seif milenar de dragoste și conexiune umană.",
+      "shareButton": "Împărtășește Acest Proiect",
+      "supportButton": "Susține Misiunea Noastră",
+      "exploreButton": "Explorează Poveștile Publice",
+      "footer": "💝 Fiecare poveste împărtășită ne ajută să ne dezvoltăm comunitatea de dragoste și amintiri"
+    },
+    "actions": {
+      "addAnother": "Adaugă o Altă Poveste",
+      "viewStories": "Vezi Poveștile Mele"
+    }
+  }
+}

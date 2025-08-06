@@ -5,6 +5,7 @@ import { toggleStoryLike, hasUserLikedStory } from '@/app/actions/public/stories
 import { useAuth } from '@/contexts/AuthContext';
 import { Story } from '@/types';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 interface StoryHeaderProps {
   story: Story & {
@@ -19,6 +20,7 @@ interface StoryHeaderProps {
 }
 
 export default function StoryHeader({ story, storyId }: StoryHeaderProps) {
+  const t = useTranslations('Story');
   const [liked, setLiked] = useState(false);
   const [likeInProgress, setLikeInProgress] = useState(false);
   const [likesCount, setLikesCount] = useState(story.likes || 0);
@@ -76,7 +78,7 @@ export default function StoryHeader({ story, storyId }: StoryHeaderProps) {
       {/* Story header */}
       <h1 className="text-4xl font-bold mb-4">{story.title}</h1>
       <div className="flex items-center text-gray-600 mb-8">
-        <span className="mr-4">By {story.author}</span>
+        <span className="mr-4">{t('header.by')} {story.author}</span>
         <span className="mr-4">•</span>
         <span className="mr-4">{story.date}</span>
         {story.vault && (
@@ -86,7 +88,7 @@ export default function StoryHeader({ story, storyId }: StoryHeaderProps) {
               <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
-              {story.vault.name} vault
+              {story.vault.name} {t('header.from')}
             </span>
           </>
         )}
@@ -97,7 +99,7 @@ export default function StoryHeader({ story, storyId }: StoryHeaderProps) {
             size="sm"
             className={`${liked ? 'text-red-500' : 'text-gray-500 hover:text-red-500'} ${likeInProgress ? 'opacity-50' : ''}`}
             disabled={likeInProgress}
-            aria-label={liked ? 'Unlike this story' : 'Like this story'}
+            aria-label={liked ? t('actions.liked') : t('actions.like')}
           >
             <svg xmlns="http://www.w3.org/2000/svg" 
               className={`h-5 w-5 mr-1 transition-transform ${liked ? 'scale-110' : ''} ${likeInProgress ? 'animate-pulse' : ''}`} 

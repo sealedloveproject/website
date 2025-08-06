@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "Historia No Encontrada",
+      "description": "La historia solicitada no pudo ser encontrada."
+    }
+  },
+  "header": {
+    "backToStories": "Volver a Historias",
+    "by": "Por",
+    "published": "Publicado",
+    "updated": "Actualizado",
+    "from": "bóveda"
+  },
+  "content": {
+    "readMore": "Leer Más",
+    "readLess": "Leer Menos"
+  },
+  "actions": {
+    "like": "Me gusta esta historia",
+    "liked": "Ya no me gusta",
+    "title": "Acciones",
+    "moreStories": "Más Historias",
+    "share": {
+      "title": "Compartir esta historia",
+      "twitter": {
+        "prefix": "Mira",
+        "default": "Mira esta historia de amor"
+      },
+      "copied": "¡Enlace copiado!"
+    },
+    "report": "Reportar historia"
+  },
+  "attachments": {
+    "title": "Adjuntos",
+    "gallery": "Galería Multimedia",
+    "images": "Imágenes",
+    "documents": "Documentos",
+    "audio": "Audio",
+    "video": "Video",
+    "image": "Imagen",
+    "counter": "{current} de {total}",
+    "noAttachments": "No hay adjuntos para esta historia",
+    "processing": "Algunos archivos multimedia aún se están procesando. Estarán disponibles pronto. Por favor, actualice la página en unos momentos para ver todo el contenido."
+  },
+  "support": {
+    "title": "Apoya nuestra misión",
+    "description": "Tu historia ahora es parte de nuestro archivo digital. Ayúdanos a preservar estos preciosos recuerdos para las generaciones futuras apoyando nuestro proyecto de bóveda del milenio. Tu contribución marca la diferencia.",
+    "button": "Apoyar Nuestro Proyecto"
+  },
+  "notFound": {
+    "title": "Historia No Encontrada",
+    "description": "La historia que buscas no existe o ha sido eliminada.",
+    "button": "Volver a Historias"
+  }
+}

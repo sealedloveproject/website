@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from 'next-intl/plugin';
 import packageJson from './package.json';
 
 // Determine the environment
@@ -6,6 +7,8 @@ const mediaDomain = process.env.NODE_ENV === 'production' ? 'https://media.seale
 
 // Get app version from package.json
 const appVersion = packageJson.version;
+
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   // Auth.js configuration
@@ -54,4 +57,4 @@ const nextConfig: NextConfig = {
   allowedDevOrigins: ['dev.sealed.love']
 };
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

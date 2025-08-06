@@ -1,0 +1,204 @@
+{
+  "profile": {
+    "title": "Meu Perfil",
+    "subtitle": "Gerencie as informações e preferências da sua conta",
+    "loading": "Carregando...",
+    "loginRequired": "Login Necessário",
+    "personalInfo": {
+      "title": "Informações Pessoais",
+      "firstName": "Nome",
+      "lastName": "Sobrenome",
+      "email": "Endereço de Email",
+      "emailCannotChange": "O endereço de email não pode ser alterado",
+      "updateButton": "Atualizar Perfil",
+      "updating": "Atualizando...",
+      "updateSuccess": "Perfil atualizado com sucesso!",
+      "updateError": "Falha ao atualizar o perfil. Por favor, tente novamente."
+    },
+    "accountSettings": {
+      "title": "Configurações da Conta",
+      "signOut": "Sair",
+      "deleteAccount": {
+        "button": "Excluir Conta",
+        "title": "Excluir Conta",
+        "warning": "Aviso: Esta ação não pode ser desfeita",
+        "description": "A exclusão da sua conta removerá permanentemente todos os seus dados, incluindo suas histórias e informações pessoais.",
+        "verificationStep": "Por segurança, enviaremos um código de verificação para o seu endereço de email.",
+        "sendCode": "Enviar Código de Verificação",
+        "sending": "Enviando...",
+        "resendCode": "Reenviar código",
+        "verifyCode": "Verificar",
+        "verifying": "Verificando...",
+        "codeVerified": "Email verificado com sucesso",
+        "confirmText": "Digite DELETE MY ACCOUNT para confirmar:",
+        "confirmPlaceholder": "Digite o texto de confirmação",
+        "cancel": "Cancelar",
+        "delete": "Excluir Conta",
+        "deleting": "Excluindo..."
+      }
+    }
+  },
+  "stories": {
+    "title": "Minhas Histórias",
+    "subtitle": "Gerencie e crie suas histórias de amor",
+    "loading": "Carregando suas histórias...",
+    "search": {
+      "placeholder": "Pesquisar suas histórias..."
+    },
+    "createButton": "Criar Nova História",
+    "loginRequired": {
+      "title": "Login Necessário",
+      "message": "Você precisa estar logado para visualizar e gerenciar suas histórias.",
+      "signIn": "Entrar"
+    },
+    "noStories": {
+      "title": "Nenhuma história encontrada",
+      "searchMessage": "Tente ajustar seus critérios de pesquisa",
+      "emptyMessage": "Você ainda não criou nenhuma história",
+      "createFirst": "Crie Sua Primeira História"
+    }
+  },
+  "newStory": {
+    "title": "Guarde Sua História de Amor",
+    "subtitle": "Preserve suas memórias em nosso cofre milenar",
+    "backButton": "Voltar para Minhas Histórias",
+    "login": {
+      "title": "Login por Email com Código Único",
+      "description": "Digite seu endereço de email para receber um código de 6 dígitos que permite acessar e gerenciar suas histórias. Não é necessário registro.",
+      "infoBox": "Por que usamos login por email: Este método simples permite que você edite, atualize ou exclua sua história posteriormente. Seu email é usado apenas para autenticação e nunca o compartilhamos com terceiros.",
+      "continueButton": "Continuar com Email"
+    },
+    "form": {
+      "submitButton": "Salvar História",
+      "submitting": "Enviando...",
+      "title": {
+        "label": "Título da História",
+        "placeholder": "Dê um título à sua história"
+      },
+      "content": {
+        "label": "Sua História",
+        "placeholder": "Compartilhe sua história aqui...",
+        "wordCount": "{count} / 500 palavras",
+        "wordLimitExceeded": "Sua história excede o limite de 500 palavras. Por favor, encurte-a."
+      },
+      "media": {
+        "title": "Arquivos de Mídia",
+        "replicatingWarning": {
+          "title": "Alguns arquivos de mídia ainda estão sendo replicados",
+          "description": "Eles estarão disponíveis em breve. Imagens não replicadas mostrarão um espaço reservado."
+        },
+        "upload": {
+          "dragDrop": "Arraste arquivos aqui ou clique para navegar",
+          "supportedFormats": "Formatos suportados: Imagens, Vídeos, Áudio",
+          "formats": {
+            "title": "Formatos suportados",
+            "images": "Imagens: jpg, jpeg, png, webp",
+            "videos": "Vídeos: mp4, mov",
+            "audio": "Áudio: mp3, aac"
+          },
+          "region": {
+            "title": "Região de upload",
+            "closest": "Região mais próxima: {region}",
+            "info": "Os arquivos serão carregados na região AWS mais próxima da sua localização"
+          },
+          "storage": {
+            "title": "Armazenamento usado",
+            "used": "{used} MB / 100 MB",
+            "percentage": "{percentage}% usado"
+          }
+        },
+        "attachmentsList": {
+          "title": "Anexos existentes",
+          "fileTypes": {
+            "video": "Vídeo",
+            "audio": "Áudio"
+          },
+          "coverImage": "Imagem de capa",
+          "setAsCover": "Definir como capa",
+          "removeAttachment": "Remover anexo"
+        },
+        "fileList": {
+          "title": "Arquivos para upload",
+          "uploadedTitle": "Arquivos carregados",
+          "coverImage": "Imagem de capa",
+          "setAsCover": "Definir como capa",
+          "removeFile": "Remover arquivo"
+        },
+        "privacy": {
+          "title": "Configurações de privacidade",
+          "agreeToTerms": "Concordo com os {termsLink} e a {privacyLink}",
+          "termsLink": "Termos de serviço",
+          "privacyLink": "Política de privacidade",
+          "makePublic": "Tornar esta história pública e compartilhável (opcional)"
+        }
+      }
+    }
+  },
+  "editStory": {
+    "header": {
+      "title": "Editar Sua História",
+      "subtitle": "Atualize sua história ou adicione novos anexos"
+    },
+    "backToStories": "Voltar para Minhas Histórias",
+    "form": {
+      "submitButton": "Atualizar História",
+      "submitting": "Atualizando..."
+    },
+    "error": {
+      "title": "Erro"
+    },
+    "errors": {
+      "notFound": "História não encontrada ou você não tem permissão para editá-la.",
+      "loadingFailed": "Ocorreu um erro ao carregar a história. Por favor, tente novamente.",
+      "updateFailed": "Falha ao atualizar a história",
+      "unexpected": "Ocorreu um erro inesperado. Por favor, tente novamente.",
+      "deleteFailed": "Falha ao excluir a história",
+      "deleteUnexpected": "Ocorreu um erro inesperado ao excluir a história"
+    },
+    "fileUpload": {
+      "unsupportedFiles": "{count} arquivo(s) não foram adicionados porque não são suportados. Por favor, carregue apenas arquivos jpg, jpeg, png, webp, mp4, mov, mp3 ou aac.",
+      "sizeExceeded": "Adicionar esses arquivos excederia seu limite de armazenamento de 100MB. Por favor, remova alguns arquivos primeiro."
+    },
+    "deleteModal": {
+      "title": "Excluir História",
+      "message": "Tem certeza de que deseja excluir esta história? Esta ação não pode ser desfeita e todos os arquivos de mídia associados serão removidos permanentemente.",
+      "cancel": "Cancelar",
+      "confirm": "Excluir Permanentemente",
+      "deleting": "Excluindo..."
+    },
+    "dangerZone": {
+      "title": "Zona de Perigo",
+      "warning": "Aviso",
+      "permanentWarning": "Excluir esta história é permanente e irreversível.",
+      "consequences": {
+        "servers": "A história será completamente removida de todos os nossos servidores",
+        "media": "Todos os arquivos e mídias associados serão excluídos do nosso armazenamento na nuvem",
+        "backups": "A história também será removida de todos os nossos sistemas de backup",
+        "support": "Esta ação não pode ser desfeita pela nossa equipe de suporte"
+      },
+      "deleteButton": "Excluir História Permanentemente"
+    }
+  },
+  "successPage": {
+    "created": {
+      "title": "História Salva com Sucesso!",
+      "message": "Sua história de amor foi salva em nosso cofre digital. Obrigado por compartilhar suas preciosas memórias conosco. Lembre-se, você pode editar sua história a qualquer momento para adicionar novos detalhes ou atualizações."
+    },
+    "updated": {
+      "title": "História Atualizada com Sucesso!",
+      "message": "Sua história de amor foi atualizada em nosso cofre digital. Obrigado por manter suas memórias atualizadas. Lembre-se, você pode editar sua história a qualquer momento para adicionar novos detalhes ou atualizações."
+    },
+    "share": {
+      "title": "Ajude-nos a Preservar Histórias de Amor para Sempre!",
+      "message": "Compartilhe o Projeto Sealed Love com seus amigos e familiares. Cada história compartilhada nos ajuda a construir um cofre milenar de amor e conexão humana.",
+      "shareButton": "Compartilhar Este Projeto",
+      "supportButton": "Apoiar Nossa Missão",
+      "exploreButton": "Explorar Histórias Públicas",
+      "footer": "💝 Cada história compartilhada nos ajuda a crescer nossa comunidade de amor e memórias"
+    },
+    "actions": {
+      "addAnother": "Adicionar Outra História",
+      "viewStories": "Ver Minhas Histórias"
+    }
+  }
+}

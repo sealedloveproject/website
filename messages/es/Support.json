@@ -1,0 +1,29 @@
+{
+  "title": "Apoya Nuestra Misión",
+  "subtitle": "Tu donación nos ayuda a preservar recuerdos preciosos para las generaciones futuras",
+  "description": "Los fondos se utilizan para pagar servidores, servicios y materiales necesarios para nuestras cajas de preservación: M-Discs, grabadores de M-Disc, gas inerte, contenedores protectores y otros componentes esenciales. Estamos comprometidos con este proyecto por al menos 20 años, con planes de transmitirlo a otros que compartan nuestra visión después. Los donantes no reciben ventajas materiales, productos o características especiales en comparación con los no donantes, solo nuestra sincera gratitud y el conocimiento de que han ayudado a hacer posible este proyecto de preservación para todos.",
+  "patreon": {
+    "title": "Apóyanos en Patreon",
+    "description": "Conviértete en un colaborador mensual en Patreon y ayúdanos a mantener nuestra misión a largo plazo. Tu generosidad nos permite continuar nuestra misión de preservar recuerdos preciosos para las generaciones futuras, y estamos profundamente agradecidos por tu confianza en nuestro proyecto.",
+    "buttonText": "Apoyar en Patreon"
+  },
+  "paypal": {
+    "title": "Haz una Donación a través de PayPal",
+    "description": "Dona usando PayPal, tarjeta de crédito/débito o transferencia bancaria. Puedes elegir una donación única o configurar pagos recurrentes durante el proceso de pago.",
+    "note": "Serás redirigido a PayPal para completar tu donación de forma segura. No se requiere una cuenta de PayPal.",
+    "buttonText": "Donar"
+  },
+  "whyDonate": {
+    "title": "¿Por qué Donar?",
+    "reason1": "Apoya nuestra misión de preservar recuerdos para las generaciones futuras",
+    "reason2": "Financia materiales y equipos esenciales de preservación: M-Discs, contenedores protectores de calidad archivística, sistemas de gas inerte, grabadores de discos especializados, controladores de humedad, reguladores de temperatura, equipos antiestáticos, materiales de protección UV y materiales para la construcción de bóvedas seguras",
+    "reason3": "Ayúdanos a desarrollar nuevas funciones y mejorar nuestra tecnología",
+    "reason4": "Permítenos proporcionar nuestros servicios a más personas en todo el mundo"
+  },
+  "otherWays": {
+    "title": "Otras Formas de Apoyar",
+    "way1": "Comparte nuestra plataforma con amigos y familiares",
+    "way2": "Ofrece tus habilidades como voluntario (contáctanos para conocer oportunidades)",
+    "way3": "Crea y comparte tus propias historias en nuestra plataforma"
+  }
+}

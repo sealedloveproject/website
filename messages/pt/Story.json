@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "História Não Encontrada",
+      "description": "A história solicitada não pôde ser encontrada."
+    }
+  },
+  "header": {
+    "backToStories": "Voltar para Histórias",
+    "by": "Por",
+    "published": "Publicado",
+    "updated": "Atualizado",
+    "from": "cofre"
+  },
+  "content": {
+    "readMore": "Ler Mais",
+    "readLess": "Ler Menos"
+  },
+  "actions": {
+    "like": "Curtir esta história",
+    "liked": "Não curtir mais",
+    "title": "Ações",
+    "moreStories": "Mais Histórias",
+    "share": {
+      "title": "Compartilhar esta história",
+      "twitter": {
+        "prefix": "Confira",
+        "default": "Confira esta história de amor"
+      },
+      "copied": "Link copiado!"
+    },
+    "report": "Reportar história"
+  },
+  "attachments": {
+    "title": "Anexos",
+    "gallery": "Galeria de Mídia",
+    "images": "Imagens",
+    "documents": "Documentos",
+    "audio": "Áudio",
+    "video": "Vídeo",
+    "image": "Imagem",
+    "counter": "{current} de {total}",
+    "noAttachments": "Sem anexos para esta história",
+    "processing": "Alguns arquivos de mídia ainda estão sendo processados. Eles estarão disponíveis em breve. Por favor, atualize a página em alguns momentos para ver todo o conteúdo."
+  },
+  "support": {
+    "title": "Apoie nossa missão",
+    "description": "Sua história agora faz parte do nosso arquivo digital. Ajude-nos a preservar essas memórias preciosas para as gerações futuras apoiando nosso projeto de cofre do milênio. Sua contribuição faz a diferença.",
+    "button": "Apoiar Nosso Projeto"
+  },
+  "notFound": {
+    "title": "História Não Encontrada",
+    "description": "A história que você está procurando não existe ou foi removida.",
+    "button": "Voltar para Histórias"
+  }
+}

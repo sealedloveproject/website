@@ -4,6 +4,7 @@ import React, { useState, useRef, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 import { Story, Attachment } from '@/types';
 import { convertS3UrlToPublicUrl } from '@/lib/mediaUrl';
+import { useTranslations } from 'next-intl';
 
 // Media item type for the gallery
 type MediaItem = Attachment & {
@@ -19,6 +20,7 @@ type MediaGalleryProps = {
 };
 
 export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
+  const t = useTranslations('Story');
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -246,7 +248,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-blue-500" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
             </svg>
-            Media Gallery
+            {t('attachments.gallery')}
           </h3>
           
           {/* Thumbnails carousel with improved styling */}
@@ -290,7 +292,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                           unoptimized={attachment.fileUrl.startsWith('blob:')}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-1">
-                          <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">Image</span>
+                          <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">{t('attachments.image')}</span>
                         </div>
                       </div>
                     )}
@@ -301,7 +303,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-1">
-                          <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">Video</span>
+                          <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">{t('attachments.video')}</span>
                         </div>
                       </div>
                     )}
@@ -315,7 +317,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                           </div>
                         </div>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-1">
-                          <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">Audio</span>
+                          <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">{t('attachments.audio')}</span>
                         </div>
                       </div>
                     )}
@@ -332,7 +334,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
           {/* Current media info */}
           <div className="mt-3 text-center">
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              {activeMediaIndex + 1} of {mediaAttachments.length}
+              {t('attachments.counter', {current: activeMediaIndex + 1, total: mediaAttachments.length})}
             </p>
           </div>
         </div>

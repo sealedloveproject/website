@@ -1,0 +1,29 @@
+{
+  "title": "Support Our Mission",
+  "subtitle": "Your donation helps us preserve precious memories for generations to come",
+  "description": "Funds are used to pay for servers, services, and materials needed for our preservation boxes: M-Discs, M-Disc writers, inert gas, protective containers, and other essential components. We're committed to this project for at least 20 years, with plans to pass it on to others who share our vision afterward. Donors receive no material advantages, products, or special features compared to non-donors, just our heartfelt gratitude and the knowledge that they've helped make this preservation project possible for everyone.",
+  "patreon": {
+    "title": "Support us on Patreon",
+    "description": "Become a monthly supporter on Patreon and help us sustain our mission long-term. Your generosity enables us to continue our mission of preserving precious memories for future generations, and we're deeply grateful for your belief in our project.",
+    "buttonText": "Support on Patreon"
+  },
+  "paypal": {
+    "title": "Make a Donation via PayPal",
+    "description": "Donate using PayPal, credit/debit card, or bank transfer. You can choose a one-time donation or set up recurring payments during checkout.",
+    "note": "You will be redirected to PayPal to complete your donation securely. No PayPal account required.",
+    "buttonText": "Donate"
+  },
+  "whyDonate": {
+    "title": "Why Donate?",
+    "reason1": "Support our mission to preserve memories for future generations",
+    "reason2": "Fund essential preservation materials and equipment: M-Discs, archival-grade protective containers, inert gas systems, specialized disc writers, humidity controllers, temperature regulators, anti-static equipment, UV protection materials, and secure vault construction materials",
+    "reason3": "Help us develop new features and improve our technology",
+    "reason4": "Enable us to provide our services to more people worldwide"
+  },
+  "otherWays": {
+    "title": "Other Ways to Support",
+    "way1": "Share our platform with friends and family",
+    "way2": "Volunteer your skills (contact us for opportunities)",
+    "way3": "Create and share your own stories on our platform"
+  }
+}

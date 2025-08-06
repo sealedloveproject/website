@@ -1,0 +1,28 @@
+{
+  "stories": "Истории",
+  "about": "О нас",
+  "support": "Поддержка",
+  "signIn": "Войти",
+  "signOut": "Выйти",
+  "account": "Аккаунт",
+  "profile": "Профиль",
+  "settings": "Настройки",
+  "admin": "Администратор",
+  "dashboard": "Панель управления",
+  "reports": "Отчеты",
+  "users": "Пользователи",
+  "vaults": "Хранилища",
+  "myStories": "Мои истории",
+  "theme": "Тема",
+  "selectLanguage": "Выбрать язык",
+  "language": {
+    "en": "English",
+    "es": "Español",
+    "fr": "Français",
+    "de": "Deutsch",
+    "pt": "Português",
+    "ru": "Русский",
+    "ro": "Română",
+    "it": "Italiano"
+  }
+}

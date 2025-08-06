@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Preserve suas histórias de amor",
+    "description": "Preserve suas histórias de amor para o próximo milênio, gratuitamente. O Sealed Love Project ajuda você a capturar e armazenar suas memórias mais preciosas com segurança."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Preserve suas histórias de amor para o próximo milênio, gratuitamente",
+    "description": "Uma cápsula do tempo digital para suas memórias mais preciosas sobre família, amigos, animais de estimação, paixões, fé e tudo o que você guarda em seu coração. Projetado para preservação física que dura mais de 1.000 anos.",
+    "motto": "Seja gentil, seja honesto, seja humano!",
+    "storeStory": "Guarde sua história",
+    "learnMore": "Saiba mais"
+  },
+  "vault": {
+    "title": "O Cofre do Milênio",
+    "presentingVault": "Apresentando o cofre \"{vaultName}\"",
+    "storyCollectionPeriod": "Período de coleta de histórias:",
+    "paragraph1": "Cada ano, criamos um cofre físico de amor projetado para resistir pelo menos 1.000 anos debaixo da terra. Esses cofres são enterrados em vários locais geográficos ao redor do mundo, esperando para serem descobertos pelas gerações futuras.",
+    "paragraph2": "Você pode participar preservando suas histórias de amor de qualquer tipo, parcerias românticas, laços familiares, amizades ou até mesmo amor por lugares e paixões. Cada história pode incluir até 100MB de anexos: fotos, vídeos e gravações de áudio que capturam seus momentos mais preciosos.",
+    "paragraph3": "Por padrão, todas as histórias são privadas e não acessíveis publicamente, a menos que você escolha o contrário. Aqueles que desejam compartilhar suas experiências com o mundo podem tornar suas histórias públicas, permitindo que outros leiam e se inspirem em suas belas jornadas.",
+    "paragraph4": "Este projeto baseado na comunidade ainda está evoluindo, estamos colaborando com engenheiros de construção e preservação para aperfeiçoar o design do nosso cofre. Junte-se a nós nesta jornada para mostrar à humanidade futura como amamos e fomos amados, preservando nossos momentos mais significativos para as gerações vindouras.",
+    "preserveStory": "Preserve sua história"
+  },
+  "publicStories": {
+    "title": "Histórias Públicas",
+    "description": "Explore histórias que outros escolheram compartilhar com o mundo",
+    "viewAll": "Ver todas as histórias",
+    "noStories": {
+      "title": "Ainda não há histórias públicas!",
+      "description": "Seja o primeiro a armazenar uma história pública e você receberá um presente nosso!",
+      "cta": "Seja o primeiro a compartilhar sua história"
+    }
+  }
+}

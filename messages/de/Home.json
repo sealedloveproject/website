@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Bewahre deine Liebesgeschichten",
+    "description": "Bewahre deine Liebesgeschichten für das nächste Jahrtausend, kostenlos. Sealed Love Project hilft dir, deine wertvollsten Erinnerungen sicher zu erfassen und zu speichern."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Bewahre deine Liebesgeschichten für das nächste Jahrtausend, kostenlos",
+    "description": "Eine digitale Zeitkapsel für deine wertvollsten Erinnerungen an Familie, Freunde, Haustiere, Leidenschaften, Glauben und alles, was dir am Herzen liegt. Entwickelt für eine physische Aufbewahrung, die über 1.000 Jahre hält.",
+    "motto": "Sei freundlich, sei ehrlich, sei menschlich!",
+    "storeStory": "Speichere deine Geschichte",
+    "learnMore": "Mehr erfahren"
+  },
+  "vault": {
+    "title": "Der Jahrtausend-Tresor",
+    "presentingVault": "Vorstellung des Tresors \"{vaultName}\"",
+    "storyCollectionPeriod": "Geschichtensammelzeitraum:",
+    "paragraph1": "Jedes Jahr erstellen wir einen physischen Liebestresor, der mindestens 1.000 Jahre unter der Erde überdauern soll. Diese Tresore werden an verschiedenen geografischen Orten auf der ganzen Welt vergraben und warten darauf, von zukünftigen Generationen entdeckt zu werden.",
+    "paragraph2": "Du kannst teilnehmen, indem du deine Liebesgeschichten jeglicher Art bewahrst, sei es romantische Partnerschaften, familiäre Bindungen, Freundschaften oder sogar die Liebe zu Orten und Leidenschaften. Jede Geschichte kann bis zu 100 MB an Anhängen enthalten: Fotos, Videos und Audioaufnahmen, die deine wertvollsten Momente festhalten.",
+    "paragraph3": "Standardmäßig sind alle Geschichten privat und nicht öffentlich zugänglich, es sei denn, du entscheidest dich anders. Diejenigen, die ihre Erfahrungen mit der Welt teilen möchten, können ihre Geschichten öffentlich machen, damit andere sie lesen und sich von ihren schönen Reisen inspirieren lassen können.",
+    "paragraph4": "Dieses gemeinschaftsbasierte Projekt entwickelt sich ständig weiter. Wir arbeiten mit Bau- und Konservierungsingenieuren zusammen, um unser Tresordesign zu perfektionieren. Begleite uns auf dieser Reise, um der zukünftigen Menschheit zu zeigen, wie wir geliebt haben und geliebt wurden, indem wir unsere bedeutungsvollsten Momente für kommende Generationen bewahren.",
+    "preserveStory": "Bewahre deine Geschichte"
+  },
+  "publicStories": {
+    "title": "Öffentliche Geschichten",
+    "description": "Entdecke Geschichten, die andere mit der Welt teilen möchten",
+    "viewAll": "Alle Geschichten ansehen",
+    "noStories": {
+      "title": "Noch keine öffentlichen Geschichten!",
+      "description": "Sei der Erste, der eine öffentliche Geschichte speichert, und du erhältst ein Geschenk von uns!",
+      "cta": "Sei der Erste, der seine Geschichte teilt"
+    }
+  }
+}

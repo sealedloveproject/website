@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Sealed Love Project | Preserve Your Love Stories",
+    "description": "Preserve your love stories for the next millennium, for free. Sealed Love Project helps you capture and store your most precious memories securely."
+  },
+  "hero": {
+    "title": "Sealed Love Project",
+    "tagline": "Preserve your love stories for the next millennium, for free",
+    "description": "A digital time capsule for your most precious memories about family, friends, pets, passions, faith, and everything you hold dear in your heart. Engineered for physical preservation lasting over 1,000 years.",
+    "motto": "Be kind, be honest, be human!",
+    "storeStory": "Store Your Story",
+    "learnMore": "Learn More"
+  },
+  "vault": {
+    "title": "The Millennium Vault",
+    "presentingVault": "Presenting \"{vaultName}\" vault",
+    "storyCollectionPeriod": "Story Collection Period:",
+    "paragraph1": "Each year, we create a physical love vault designed to withstand at least 1,000 years underground. These vaults are buried in various geographic locations around the world, waiting to be discovered by future generations.",
+    "paragraph2": "You can participate by preserving your love stories of any kind, romantic partnerships, family bonds, friendships, or even love for places and passions. Each story can include up to 100MB of attachments: photos, videos, and audio recordings that capture your most precious moments.",
+    "paragraph3": "By default, all stories are private and not publicly accessible unless you choose otherwise. Those who wish to share their experiences with the world can make their stories public, allowing others to read and be inspired by their beautiful journeys.",
+    "paragraph4": "This community-based project is still evolving, we're collaborating with construction and preservation engineers to perfect our vault design. Join us in this journey to show future humanity how we loved and were loved, preserving our most meaningful moments for generations to come.",
+    "preserveStory": "Preserve Your Story"
+  },
+  "publicStories": {
+    "title": "Public Stories",
+    "description": "Explore stories that others have chosen to share with the world",
+    "viewAll": "View All Stories",
+    "noStories": {
+      "title": "No public stories yet!",
+      "description": "Be the first one to store a public story and you will receive a present from us!",
+      "cta": "Be the First to Share Your Story"
+    }
+  }
+}
