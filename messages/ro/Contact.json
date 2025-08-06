@@ -1,0 +1,34 @@
+{
+  "title": "Contactați-ne",
+  "subtitle": "Aveți întrebări sau feedback? Ne-ar plăcea să vă auzim. Completați formularul de mai jos și vă vom răspunde cât mai curând posibil.",
+  "form": {
+    "name": {
+      "label": "Numele dvs.",
+      "placeholder": "Ion Popescu"
+    },
+    "email": {
+      "label": "Adresa de email",
+      "placeholder": "ion@example.com"
+    },
+    "subject": {
+      "label": "Subiect",
+      "placeholder": "Despre ce este vorba?"
+    },
+    "message": {
+      "label": "Mesajul dvs.",
+      "placeholder": "Cum vă putem ajuta?"
+    },
+    "submit": "Trimite mesajul",
+    "sending": "Se trimite..."
+  },
+  "success": {
+    "title": "Mesaj trimis!",
+    "message": "Vă mulțumim că ne-ați contactat. Vă vom răspunde cât mai curând posibil.",
+    "button": "Trimite alt mesaj"
+  },
+  "error": "Ceva nu a funcționat corect. Vă rugăm să încercați din nou mai târziu.",
+  "helpCenter": {
+    "title": "Centru de ajutor",
+    "link": "Vizitați pagina noastră de întrebări frecvente"
+  }
+}

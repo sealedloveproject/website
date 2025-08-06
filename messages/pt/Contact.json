@@ -1,0 +1,34 @@
+{
+  "title": "Entre em Contato",
+  "subtitle": "Tem perguntas ou feedback? Adoraríamos ouvir de você. Preencha o formulário abaixo e entraremos em contato o mais breve possível.",
+  "form": {
+    "name": {
+      "label": "Seu Nome",
+      "placeholder": "João Silva"
+    },
+    "email": {
+      "label": "Endereço de Email",
+      "placeholder": "joao@example.com"
+    },
+    "subject": {
+      "label": "Assunto",
+      "placeholder": "Sobre o que se trata?"
+    },
+    "message": {
+      "label": "Sua Mensagem",
+      "placeholder": "Como podemos ajudá-lo?"
+    },
+    "submit": "Enviar Mensagem",
+    "sending": "Enviando..."
+  },
+  "success": {
+    "title": "Mensagem Enviada!",
+    "message": "Obrigado por entrar em contato. Responderemos o mais breve possível.",
+    "button": "Enviar Outra Mensagem"
+  },
+  "error": "Algo deu errado. Por favor, tente novamente mais tarde.",
+  "helpCenter": {
+    "title": "Central de Ajuda",
+    "link": "Visite nossa página de FAQ"
+  }
+}

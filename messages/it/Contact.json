@@ -1,0 +1,34 @@
+{
+  "title": "Contattaci",
+  "subtitle": "Hai domande o feedback? Ci piacerebbe sentirti. Compila il modulo qui sotto e ti risponderemo il prima possibile.",
+  "form": {
+    "name": {
+      "label": "Il tuo nome",
+      "placeholder": "Mario Rossi"
+    },
+    "email": {
+      "label": "Indirizzo email",
+      "placeholder": "mario@example.com"
+    },
+    "subject": {
+      "label": "Oggetto",
+      "placeholder": "Di cosa si tratta?"
+    },
+    "message": {
+      "label": "Il tuo messaggio",
+      "placeholder": "Come possiamo aiutarti?"
+    },
+    "submit": "Invia messaggio",
+    "sending": "Invio in corso..."
+  },
+  "success": {
+    "title": "Messaggio inviato!",
+    "message": "Grazie per averci contattato. Ti risponderemo il prima possibile.",
+    "button": "Invia un altro messaggio"
+  },
+  "error": "Qualcosa è andato storto. Per favore riprova più tardi.",
+  "helpCenter": {
+    "title": "Centro assistenza",
+    "link": "Visita la nostra pagina FAQ"
+  }
+}

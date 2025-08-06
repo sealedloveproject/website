@@ -1,0 +1,34 @@
+{
+  "title": "Contactez-nous",
+  "subtitle": "Vous avez des questions ou des commentaires ? Nous serions ravis de vous entendre. Remplissez le formulaire ci-dessous et nous vous répondrons dès que possible.",
+  "form": {
+    "name": {
+      "label": "Votre nom",
+      "placeholder": "Jean Dupont"
+    },
+    "email": {
+      "label": "Adresse e-mail",
+      "placeholder": "jean@example.com"
+    },
+    "subject": {
+      "label": "Sujet",
+      "placeholder": "De quoi s'agit-il ?"
+    },
+    "message": {
+      "label": "Votre message",
+      "placeholder": "Comment pouvons-nous vous aider ?"
+    },
+    "submit": "Envoyer le message",
+    "sending": "Envoi en cours..."
+  },
+  "success": {
+    "title": "Message envoyé !",
+    "message": "Merci de nous avoir contactés. Nous vous répondrons dès que possible.",
+    "button": "Envoyer un autre message"
+  },
+  "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
+  "helpCenter": {
+    "title": "Centre d'aide",
+    "link": "Visitez notre page FAQ"
+  }
+}
