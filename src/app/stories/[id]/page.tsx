@@ -8,6 +8,7 @@ import StoryHeader from './storyheader.client';
 import MediaGallery from './mediagallery.client';
 import StoryContent from './storycontent';
 import StoryActions from './storyactions.client';
+import { getTranslations } from 'next-intl/server';
 
 // Extended story type with attachments for the story detail page
 type StoryWithAttachments = Story & {
@@ -22,6 +23,9 @@ type StoryWithAttachments = Story & {
 
 // Generate metadata for the page
 export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  // Get translations
+  const t = await getTranslations('Story');
+  
   // Properly await the params object before accessing its properties
   const resolvedParams = await params;
   const storyId = resolvedParams.id;
@@ -31,8 +35,8 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     
     if (!story) {
       return {
-        title: 'Story Not Found',
-        description: 'The requested story could not be found.'
+        title: t('metadata.notFound.title'),
+        description: t('metadata.notFound.description')
       };
     }
     
@@ -109,6 +113,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
 }
 
 export default async function StoryPage(props: { params: Promise<{ id: string }> }) {
+  // Get translations
+  const t = await getTranslations('Story');
+  
   const params = await props.params;
   const storyId = params.id;
   
@@ -132,9 +139,9 @@ export default async function StoryPage(props: { params: Promise<{ id: string }>
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12">
         <div className="w-full max-w-4xl mx-auto text-center">
           <h1 className="text-3xl font-bold mb-6 text-red-600">{error}</h1>
-          <p className="mb-8">The story you're looking for could not be found or has been removed.</p>
+          <p className="mb-8">{t('notFound.description')}</p>
           <Link href="/stories" className="inline-block bg-blue-600 text-white px-6 py-3 rounded-md hover:bg-blue-700 transition-colors">
-            Back to Stories
+            {t('notFound.button')}
           </Link>
         </div>
       </div>
@@ -155,7 +162,7 @@ export default async function StoryPage(props: { params: Promise<{ id: string }>
               </div>
               <div className="ml-3">
                 <p className="text-sm text-blue-700">
-                  Some media files are still being processed. They will be available soon. Please refresh the page in a few moments to see all content.
+                  {t('attachments.processing')}
                 </p>
               </div>
             </div>
@@ -180,9 +187,9 @@ export default async function StoryPage(props: { params: Promise<{ id: string }>
         {/* Support/Donation section */}
         <div className="mt-16 mb-16">
           <SupportBlock 
-            title="Support our archive"
-            description="Help us preserve these precious love stories for future generations. Your contribution to our millennium vault project ensures these memories will be accessible for centuries to come."
-            buttonText="Support the Archive"
+            title={t('support.title')}
+            description={t('support.description')}
+            buttonText={t('support.button')}
           />
         </div>
         

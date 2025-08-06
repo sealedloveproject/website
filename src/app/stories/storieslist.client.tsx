@@ -7,6 +7,7 @@ import StoryCard from '@/components/stories/StoryCard';
 import { getPublicStories, type PaginatedStoriesResult, type SortOption } from '@/app/actions/public/stories';
 import { Story } from '@/types';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 interface StoriesListProps {
   initialStories?: Story[];
@@ -15,6 +16,7 @@ interface StoriesListProps {
 }
 
 export function StoriesList({ initialStories = [], initialTotalCount = 0, initialHasMore = false }: StoriesListProps) {
+  const t = useTranslations('Stories');
   const router = useRouter();
   const searchParams = useSearchParams();
   const currentPage = Number(searchParams.get('page') || '1');
@@ -76,14 +78,14 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
         <div className="flex flex-col md:flex-row md:items-center md:justify-between max-w-4xl mx-auto gap-4">
           {/* Sort selector */}
           <div className="flex items-center space-x-3">
-            <span className="text-sm font-medium text-foreground/80">Sort by:</span>
+            <span className="text-sm font-medium text-foreground/80">{t('controls.sortBy')}</span>
             <div className="flex rounded-lg overflow-hidden border border-border shadow-sm">
               <Button 
                 onClick={() => handleSortChange('newest')} 
                 variant={currentSort === 'newest' ? 'primary' : 'ghost'}
                 className={`px-5 py-2.5 text-sm font-medium transition-all duration-200 relative ${currentSort === 'newest' && 'transform scale-[1.02]'}`}
               >
-                Newest
+                {t('controls.newest')}
                 {currentSort === 'newest' && (
                   <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-white rounded-full"></div>
                 )}
@@ -93,7 +95,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                 variant={currentSort === 'popular' ? 'primary' : 'ghost'}
                 className={`px-5 py-2.5 text-sm font-medium transition-all duration-200 relative ${currentSort === 'popular' && 'transform scale-[1.02]'}`}
               >
-                Popular
+                {t('controls.popular')}
                 {currentSort === 'popular' && (
                   <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-white rounded-full"></div>
                 )}
@@ -110,7 +112,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
             </div>
             <input
               type="text"
-              placeholder="Search stories..."
+              placeholder={t('controls.search.placeholder')}
               className="block w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background focus:ring-primary focus:border-primary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
@@ -155,7 +157,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                 variant="ghost"
                 size="icon"
                 className="w-10 h-10"
-                aria-label="Previous page"
+                aria-label={t('pagination.prev')}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -203,7 +205,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                 variant="ghost"
                 size="icon"
                 className="w-10 h-10"
-                aria-label="Next page"
+                aria-label={t('pagination.next')}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -216,7 +218,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
         !isLoading && (
           <div className="text-center py-12">
             {searchQuery ? (
-              <p className="text-xl text-muted-foreground">No stories found matching your search.</p>
+              <p className="text-sm text-muted-foreground">{t('noResults.withSearch')}</p>
             ) : (
               <div className="text-center py-2">
                 <div className="mb-8">
@@ -225,9 +227,9 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                     </svg>
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">No public stories yet!</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">{t('noResults.noStories.title')}</h3>
                   <p className="text-lg text-foreground/80 mb-6 max-w-2xl mx-auto">
-                    Be the first one to store a public story and you will receive a present from us!
+                    {t('noResults.noStories.description')}
                   </p>
                 </div>
                 <Link href="/user/stories">
@@ -236,7 +238,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                     size="default"
                     className="inline-flex items-center gap-2 group"
                   >
-                    Be the First to Share Your Story
+                    {t('noResults.noStories.cta')}
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
@@ -253,6 +255,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
 
 // Loading fallback component
 export function LoadingFallback() {
+  const t = useTranslations('Stories');
   return (
     <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto text-foreground">
       <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>

@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Öffentliche Geschichten | Sealed Love",
+    "description": "Entdecken Sie Liebesgeschichten, Erinnerungen und Weisheiten, die andere mit der Welt teilen möchten. Finden Sie Inspiration und Verbindung durch gemeinsame Erfahrungen."
+  },
+  "header": {
+    "title": "Öffentliche Geschichten",
+    "description": "Entdecken Sie Liebesgeschichten, Erinnerungen und Weisheiten, die andere mit der Welt teilen möchten"
+  },
+  "controls": {
+    "sortBy": "Sortieren nach:",
+    "newest": "Neueste",
+    "popular": "Beliebteste",
+    "search": {
+      "placeholder": "Geschichten durchsuchen...",
+      "button": "Suchen"
+    }
+  },
+  "pagination": {
+    "showing": "Zeige",
+    "of": "von",
+    "stories": "Geschichten",
+    "prev": "Vorherige Seite",
+    "next": "Nächste Seite"
+  },
+  "noResults": {
+    "withSearch": "Keine Geschichten gefunden, die Ihrer Suche entsprechen.",
+    "noStories": {
+      "title": "Noch keine öffentlichen Geschichten!",
+      "description": "Seien Sie der Erste, der eine öffentliche Geschichte speichert, und Sie erhalten ein Geschenk von uns!",
+      "cta": "Seien Sie der Erste, der Ihre Geschichte teilt"
+    }
+  }
+}

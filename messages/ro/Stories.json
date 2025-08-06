@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Povești Publice | Sealed Love",
+    "description": "Explorează povești de dragoste, amintiri și înțelepciune pe care alții au ales să le împărtășească cu lumea. Găsește inspirație și conexiune prin experiențe împărtășite."
+  },
+  "header": {
+    "title": "Povești Publice",
+    "description": "Explorează povești de dragoste, amintiri și înțelepciune pe care alții au ales să le împărtășească cu lumea"
+  },
+  "controls": {
+    "sortBy": "Sortează după:",
+    "newest": "Cele mai noi",
+    "popular": "Cele mai populare",
+    "search": {
+      "placeholder": "Caută povești...",
+      "button": "Caută"
+    }
+  },
+  "pagination": {
+    "showing": "Se afișează",
+    "of": "din",
+    "stories": "povești",
+    "prev": "Pagina anterioară",
+    "next": "Pagina următoare"
+  },
+  "noResults": {
+    "withSearch": "Nu s-au găsit povești care să corespundă căutării tale.",
+    "noStories": {
+      "title": "Încă nu există povești publice!",
+      "description": "Fii primul care stochează o poveste publică și vei primi un cadou din partea noastră!",
+      "cta": "Fii Primul care Împărtășește Povestea Ta"
+    }
+  }
+}

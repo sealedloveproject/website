@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useAuth } from '@/contexts/AuthContext';
 import ReportStoryModal from '@/components/report/ReportStoryModal';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 interface StoryActionsProps {
   story: {
@@ -15,6 +16,7 @@ interface StoryActionsProps {
 }
 
 export default function StoryActions({ story, storyId }: StoryActionsProps) {
+  const t = useTranslations('Story');
   const [isReportModalOpen, setIsReportModalOpen] = useState(false);
   const [showCopyTooltip, setShowCopyTooltip] = useState(false);
   const { isAuthenticated, openSignInModal } = useAuth();
@@ -38,7 +40,7 @@ export default function StoryActions({ story, storyId }: StoryActionsProps) {
       <div className="flex flex-wrap justify-between items-center">
         {/* Share section - left side */}
         <div>
-          <h3 className="text-lg font-medium mb-3">Share this story</h3>
+          <h3 className="text-lg font-medium mb-3">{t('actions.share.title')}</h3>
           <div className="flex gap-3">
             {/* Facebook */}
             <Button 
@@ -59,7 +61,7 @@ export default function StoryActions({ story, storyId }: StoryActionsProps) {
             {/* Twitter/X */}
             <Button 
               onClick={() => {
-                const text = story?.title ? `Check out "${story.title}"` : 'Check out this love story';
+                const text = story?.title ? `${t('actions.share.twitter.prefix')} "${story.title}"` : t('actions.share.twitter.default');
                 const url = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(window.location.href)}`;
                 window.open(url, '_blank', 'width=600,height=400');
               }}
@@ -106,7 +108,7 @@ export default function StoryActions({ story, storyId }: StoryActionsProps) {
               {/* Copy success tooltip */}
               {showCopyTooltip && (
                 <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white text-xs px-2 py-1 rounded whitespace-nowrap z-10 animate-fade-in-out">
-                  Link copied!
+                  {t('actions.share.copied')}
                 </div>
               )}
             </div>
@@ -115,13 +117,13 @@ export default function StoryActions({ story, storyId }: StoryActionsProps) {
         
         {/* Actions section - right side */}
         <div>
-          <h3 className="text-lg font-medium mb-3">Actions</h3>
+          <h3 className="text-lg font-medium mb-3">{t('actions.title')}</h3>
           <div className="flex gap-3">
             {/* More Stories */}
             <Link 
               href="/stories"
               className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
-              title="More Stories"
+              title={t('actions.moreStories')}
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />

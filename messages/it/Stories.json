@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "title": "Storie Pubbliche | Sealed Love",
+    "description": "Esplora storie d'amore, ricordi e saggezza che altri hanno scelto di condividere con il mondo. Trova ispirazione e connessione attraverso esperienze condivise."
+  },
+  "header": {
+    "title": "Storie Pubbliche",
+    "description": "Esplora storie d'amore, ricordi e saggezza che altri hanno scelto di condividere con il mondo"
+  },
+  "controls": {
+    "sortBy": "Ordina per:",
+    "newest": "Più recenti",
+    "popular": "Più popolari",
+    "search": {
+      "placeholder": "Cerca storie...",
+      "button": "Cerca"
+    }
+  },
+  "pagination": {
+    "showing": "Mostrando",
+    "of": "di",
+    "stories": "storie",
+    "prev": "Pagina precedente",
+    "next": "Pagina successiva"
+  },
+  "noResults": {
+    "withSearch": "Nessuna storia trovata corrispondente alla tua ricerca.",
+    "noStories": {
+      "title": "Ancora nessuna storia pubblica!",
+      "description": "Sii il primo a memorizzare una storia pubblica e riceverai un regalo da noi!",
+      "cta": "Sii il Primo a Condividere la Tua Storia"
+    }
+  }
+}

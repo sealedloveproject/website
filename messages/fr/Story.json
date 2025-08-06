@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "notFound": {
+      "title": "Histoire Non Trouvée",
+      "description": "L'histoire demandée n'a pas pu être trouvée."
+    }
+  },
+  "header": {
+    "backToStories": "Retour aux Histoires",
+    "by": "Par",
+    "published": "Publié",
+    "updated": "Mis à jour",
+    "from": "coffre"
+  },
+  "content": {
+    "readMore": "Lire Plus",
+    "readLess": "Lire Moins"
+  },
+  "actions": {
+    "like": "J'aime cette histoire",
+    "liked": "Je n'aime plus",
+    "title": "Actions",
+    "moreStories": "Plus d'histoires",
+    "share": {
+      "title": "Partager cette histoire",
+      "twitter": {
+        "prefix": "Découvrez",
+        "default": "Découvrez cette histoire d'amour"
+      },
+      "copied": "Lien copié !"
+    },
+    "report": "Signaler l'histoire"
+  },
+  "attachments": {
+    "title": "Pièces jointes",
+    "gallery": "Galerie Multimédia",
+    "images": "Images",
+    "documents": "Documents",
+    "audio": "Audio",
+    "video": "Vidéo",
+    "image": "Image",
+    "counter": "{current} sur {total}",
+    "noAttachments": "Pas de pièces jointes pour cette histoire",
+    "processing": "Certains fichiers multimédia sont encore en cours de traitement. Ils seront disponibles bientôt. Veuillez rafraîchir la page dans quelques instants pour voir tout le contenu."
+  },
+  "support": {
+    "title": "Soutenez notre mission",
+    "description": "Votre histoire fait maintenant partie de notre archive numérique. Aidez-nous à préserver ces précieux souvenirs pour les générations futures en soutenant notre projet de coffre-fort du millénaire. Votre contribution fait la différence.",
+    "button": "Soutenir Notre Projet"
+  },
+  "notFound": {
+    "title": "Histoire Non Trouvée",
+    "description": "L'histoire que vous recherchez n'existe pas ou a été supprimée.",
+    "button": "Retour aux Histoires"
+  }
+}
