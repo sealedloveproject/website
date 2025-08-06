@@ -11,12 +11,14 @@ import { storyFormSchema, type StoryFormData } from '@/schemas/story';
 import { uploadFilesToS3 } from '@/lib/uploadToS3';
 import StoryForm from '@/components/stories/StoryForm';
 import Modal from '@/components/ui/Modal';
+import { useTranslations } from 'next-intl';
 
 export default function EditStory() {
   const { user, isAuthenticated, openSignInModal, isLoading: authLoading } = useAuth();
   const router = useRouter();
   const params = useParams();
   const storyId = params.id as string;
+  const t = useTranslations('User.editStory');
   
   const [wordCount, setWordCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -119,11 +121,11 @@ export default function EditStory() {
         
         setStoryLoaded(true);
       } else {
-        setError('Story not found or you do not have permission to edit it.');
+        setError(t('errors.notFound'));
       }
     } catch (error) {
       //console.error('Error loading story:', error);
-      setError('An error occurred while loading the story. Please try again.');
+      setError(t('errors.loadingFailed'));
     } finally {
       setIsLoading(false);
     }
@@ -184,7 +186,7 @@ export default function EditStory() {
     
     // Alert if some files were filtered out
     if (validFiles.length < fileArray.length) {
-      alert(`${fileArray.length - validFiles.length} file(s) were not added because they are not supported. Please only upload jpg, jpeg, png, webp, mp4, mov, mp3, or aac files.`);
+      alert(t('fileUpload.unsupportedFiles', { count: fileArray.length - validFiles.length }));
       if (validFiles.length === 0) return; // Exit if no valid files
     }
     
@@ -203,7 +205,7 @@ export default function EditStory() {
     const estimatedNewTotalSize = estimatedTotalSize + (newFilesSize / (1024 * 1024));
     
     if (estimatedNewTotalSize > 100) {
-      alert('Adding these files would exceed your 100MB storage limit. Please remove some files first.');
+      alert(t('fileUpload.sizeExceeded'));
       return;
     }
     
@@ -335,11 +337,11 @@ export default function EditStory() {
         router.push('/user/stories/success?action=updated');
       } else {
         //console.error('Error updating story:', result.error);
-        setError(result.error || 'Failed to update story');
+        setError(result.error || t('errors.updateFailed'));
       }
     } catch (error) {
       //console.error('Error submitting form:', error);
-      setError('An unexpected error occurred. Please try again.');
+      setError(t('errors.unexpected'));
     }
   };
   
@@ -366,13 +368,13 @@ export default function EditStory() {
         router.push('/user/stories');
       } else {
         //console.error('Error deleting story:', result.error);
-        setError(result.error || 'Failed to delete story');
+        setError(result.error || t('errors.deleteFailed'));
         setIsDeleting(false);
         setShowDeleteConfirm(false);
       }
     } catch (error) {
       //console.error('Error deleting story:', error);
-      setError('An unexpected error occurred while deleting the story');
+      setError(t('errors.deleteUnexpected'));
       setIsDeleting(false);
       setShowDeleteConfirm(false);
     }
@@ -400,13 +402,13 @@ export default function EditStory() {
           <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-red-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          <h2 className="text-xl font-bold mb-2">Error</h2>
+          <h2 className="text-xl font-bold mb-2">{t('error.title')}</h2>
           <p className="mb-4">{error}</p>
           <Link href="/user/stories" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to My Stories
+            {t('backToStories')}
           </Link>
         </div>
       </div>
@@ -423,12 +425,12 @@ export default function EditStory() {
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
-            Back to My Stories
+            {t('backToStories')}
           </Link>
         </div>
-        <h1 className="text-3xl font-bold">Edit Your Story</h1>
+        <h1 className="text-3xl font-bold">{t('header.title')}</h1>
         <p className="text-muted-foreground mt-2">
-          Update your story or add new attachments
+          {t('header.subtitle')}
         </p>
       </header>
       
@@ -440,8 +442,8 @@ export default function EditStory() {
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
             </svg>
           </div>
-          <h3 className="text-xl font-bold mb-2">Delete Story</h3>
-          <p className="text-muted-foreground">Are you sure you want to delete this story? This action cannot be undone and all associated media files will be permanently removed.</p>
+          <h3 className="text-xl font-bold mb-2">{t('deleteModal.title')}</h3>
+          <p className="text-muted-foreground">{t('deleteModal.message')}</p>
         </div>
         
         <div className="flex flex-col sm:flex-row gap-3 sm:justify-center">
@@ -450,7 +452,7 @@ export default function EditStory() {
             className="px-5 py-2.5 bg-muted text-foreground font-medium rounded-lg hover:bg-muted/80 transition-all duration-200"
             disabled={isDeleting}
           >
-            Cancel
+            {t('deleteModal.cancel')}
           </button>
           <button
             onClick={handleConfirmDelete}
@@ -460,10 +462,10 @@ export default function EditStory() {
             {isDeleting ? (
               <>
                 <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
-                <span>Deleting...</span>
+                <span>{t('deleteModal.deleting')}</span>
               </>
             ) : (
-              'Delete Permanently'
+              t('deleteModal.confirm')
             )}
           </button>
         </div>
@@ -478,8 +480,8 @@ export default function EditStory() {
           getValues={getValues}
           onSubmit={onSubmit}
           isSubmitting={isSubmitting}
-          submitButtonText="Update Story"
-          loadingButtonText="Updating..."
+          submitButtonText={t('form.submitButton')}
+          loadingButtonText={t('form.submitting')}
           files={filesToUpload}
           handleFiles={handleFiles}
           removeFile={(id) => {
@@ -514,18 +516,18 @@ export default function EditStory() {
                   <path fillRule="evenodd" d="M9.401 3.003c1.155-2 4.043-2 5.197 0l7.355 12.748c1.154 2-.29 4.5-2.599 4.5H4.645c-2.309 0-3.752-2.5-2.598-4.5L9.4 3.003zM12 8.25a.75.75 0 01.75.75v3.75a.75.75 0 01-1.5 0V9a.75.75 0 01.75-.75zm0 8.25a.75.75 0 100-1.5.75.75 0 000 1.5z" clipRule="evenodd" />
                 </svg>
               </div>
-              <h3 className="text-lg font-bold text-red-800 dark:text-red-400">Danger Zone</h3>
+              <h3 className="text-lg font-bold text-red-800 dark:text-red-400">{t('dangerZone.title')}</h3>
             </div>
             
             <div className="space-y-4 mb-5">
               <p className="text-red-700 dark:text-red-300">
-                <span className="font-semibold">Warning:</span> Deleting this story is <span className="font-bold underline">permanent and irreversible</span>.
+                <span className="font-semibold">{t('dangerZone.warning')}:</span> {t('dangerZone.permanentWarning')}
               </p>
               <ul className="list-disc list-inside text-sm text-red-700 dark:text-red-300 space-y-2 pl-1">
-                <li>The story will be completely removed from all our servers</li>
-                <li>All associated files and media will be deleted from our cloud storage</li>
-                <li>The story will also be removed from all our backup systems</li>
-                <li>This action <span className="font-bold">cannot</span> be undone by our support team</li>
+                <li>{t('dangerZone.consequences.servers')}</li>
+                <li>{t('dangerZone.consequences.media')}</li>
+                <li>{t('dangerZone.consequences.backups')}</li>
+                <li>{t('dangerZone.consequences.support')}</li>
               </ul>
             </div>
             
@@ -537,7 +539,7 @@ export default function EditStory() {
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
               </svg>
-              Delete Story Permanently
+              {t('dangerZone.deleteButton')}
             </button>
           </div>
         </div>

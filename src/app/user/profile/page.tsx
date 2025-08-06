@@ -1,19 +1,29 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { deleteAccount, sendDeleteVerification, verifyDeleteCode } from '@/app/actions/users/deleteAccount';
 import Modal from '@/components/ui/Modal';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 export default function ProfilePage() {
   const { user, isAuthenticated, updateUserProfile, signOut, isLoading: authLoading } = useAuth();
   const router = useRouter();
+  const t = useTranslations('User.profile');
   
   const [firstName, setFirstName] = useState(user?.firstName || '');
   const [lastName, setLastName] = useState(user?.lastName || '');
+  
+  // Update firstName and lastName when user data changes
+  useEffect(() => {
+    if (user) {
+      setFirstName(user.firstName || '');
+      setLastName(user.lastName || '');
+    }
+  }, [user]);
   const [isUpdating, setIsUpdating] = useState(false);
   const [updateSuccess, setUpdateSuccess] = useState(false);
   const [updateError, setUpdateError] = useState<string | null>(null);
@@ -37,6 +47,7 @@ export default function ProfilePage() {
     return (
       <div className="flex items-center justify-center py-16">
         <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin"></div>
+        <span className="ml-3">{t('loading')}</span>
       </div>
     );
   }
@@ -45,7 +56,7 @@ export default function ProfilePage() {
     e.preventDefault();
     
     if (!firstName.trim() || !lastName.trim()) {
-      setUpdateError('Both first and last name are required');
+      setUpdateError(t('personalInfo.updateError'));
       return;
     }
 
@@ -59,7 +70,7 @@ export default function ProfilePage() {
       setTimeout(() => setUpdateSuccess(false), 3000);
     } catch (error) {
       //console.error('Error updating profile:', error);
-      setUpdateError('Failed to update profile. Please try again.');
+      setUpdateError(t('personalInfo.updateError'));
     } finally {
       setIsUpdating(false);
     }
@@ -107,7 +118,7 @@ export default function ProfilePage() {
       }
     } catch (error) {
       //console.error('Error verifying code:', error);
-      setCodeError('An unexpected error occurred while verifying code');
+      setCodeError('Please enter the verification code');
     } finally {
       setIsVerifyingCode(false);
     }
@@ -157,8 +168,8 @@ export default function ProfilePage() {
       
       <header className="mb-12">
         <div className="text-center">
-          <h1 className="text-4xl md:text-4xl font-bold mb-4">Profile Settings</h1>
-          <p className="text-lg text-foreground/80">Manage your account information and preferences</p>
+          <h1 className="text-4xl md:text-4xl font-bold mb-4">{t('title')}</h1>
+          <p className="text-lg text-foreground/80">{t('subtitle') || 'Manage your account information and preferences'}</p>
         </div>
       </header>
 
@@ -171,14 +182,14 @@ export default function ProfilePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z" />
               </svg>
             </div>
-            <h2 className="text-2xl font-semibold">Personal Information</h2>
+            <h2 className="text-2xl font-semibold">{t('personalInfo.title')}</h2>
           </div>
 
           <form onSubmit={handleUpdateProfile}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label htmlFor="firstName" className="block text-sm font-medium mb-2">
-                  First Name
+                  {t('personalInfo.firstName')}
                 </label>
                 <input
                   id="firstName"
@@ -192,7 +203,7 @@ export default function ProfilePage() {
               </div>
               <div>
                 <label htmlFor="lastName" className="block text-sm font-medium mb-2">
-                  Last Name
+                  {t('personalInfo.lastName')}
                 </label>
                 <input
                   id="lastName"
@@ -209,12 +220,12 @@ export default function ProfilePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Email Address
+                  {t('personalInfo.email')}
                 </label>
                 <div className="w-full px-4 py-2 border border-gray-300 rounded-lg bg-gray-50 text-gray-500">
                   {user?.email}
                 </div>
-                <p className="text-xs text-gray-500 mt-1">Email cannot be changed</p>
+                <p className="text-xs text-gray-500 mt-1">{t('personalInfo.emailCannotChange') || 'Email cannot be changed'}</p>
               </div>
             </div>
 
@@ -226,7 +237,7 @@ export default function ProfilePage() {
 
             {updateSuccess && (
               <div className="bg-green-50 border border-green-200 text-green-700 px-4 py-3 rounded-lg mb-6">
-                Profile updated successfully!
+                {t('personalInfo.updateSuccess')}
               </div>
             )}
 
@@ -240,10 +251,10 @@ export default function ProfilePage() {
                 {isUpdating ? (
                   <>
                     <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
-                    <span>Saving...</span>
+                    <span>{t('personalInfo.updating')}</span>
                   </>
                 ) : (
-                  'Save Changes'
+                  t('personalInfo.updateButton')
                 )}
               </Button>
             </div>
@@ -259,7 +270,7 @@ export default function ProfilePage() {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
             </div>
-            <h2 className="text-2xl font-semibold">Account Management</h2>
+            <h2 className="text-2xl font-semibold">{t('accountSettings.title')}</h2>
           </div>
 
           <div className="space-y-6">
@@ -271,15 +282,15 @@ export default function ProfilePage() {
                   </svg>
                 </div>
                 <div className="flex-1">
-                  <h3 className="font-semibold text-red-800 mb-2">Danger Zone</h3>
+                  <h3 className="font-semibold text-red-800 mb-2">{t('accountSettings.deleteAccount.warning')}</h3>
                   <p className="text-sm text-red-700 mb-4">
-                    Once you delete your account, there is no going back. This will permanently delete your account and all associated data including your stories and media files.
+                    {t('accountSettings.deleteAccount.description')}
                   </p>
                   <button
                     onClick={() => setShowDeleteConfirm(true)}
                     className="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors"
                   >
-                    Delete Account
+                    {t('accountSettings.deleteAccount.button')}
                   </button>
                 </div>
               </div>
@@ -296,16 +307,16 @@ export default function ProfilePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-2">Delete Account</h3>
+              <h3 className="text-xl font-bold mb-2">{t('accountSettings.deleteAccount.title')}</h3>
               <p className="text-muted-foreground mb-4">
-                This action cannot be undone. All your stories, media files, and account data will be permanently deleted.
+                {t('accountSettings.deleteAccount.description')}
               </p>
               
               {/* Email verification section */}
               <div className="text-left mb-4">
                 <div className="mb-4 p-3 bg-amber-50 border border-amber-200 rounded-lg">
                   <p className="text-sm text-amber-800">
-                    For security, we need to verify your email address before deleting your account.
+                    {t('accountSettings.deleteAccount.verificationStep')}
                   </p>
                 </div>
                 
@@ -318,16 +329,16 @@ export default function ProfilePage() {
                     {isSendingCode ? (
                       <>
                         <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
-                        <span>Sending code...</span>
+                        <span>{t('accountSettings.deleteAccount.sending')}</span>
                       </>
                     ) : (
-                      'Send verification code to my email'
+                      t('accountSettings.deleteAccount.sendCode')
                     )}
                   </button>
                 ) : !codeVerified ? (
                   <div>
                     <label className="block text-sm font-medium mb-2">
-                      Enter the 6-digit verification code sent to your email:
+                      {t('accountSettings.deleteAccount.enterCode') || 'Enter the 6-digit verification code sent to your email:'}
                     </label>
                     <div className="flex gap-2">
                       <input
@@ -346,10 +357,10 @@ export default function ProfilePage() {
                         {isVerifyingCode ? (
                           <>
                             <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
-                            <span>Verifying...</span>
+                            <span>{t('accountSettings.deleteAccount.verifying')}</span>
                           </>
                         ) : (
-                          'Verify'
+                          t('accountSettings.deleteAccount.verifyCode')
                         )}
                       </button>
                     </div>
@@ -361,7 +372,7 @@ export default function ProfilePage() {
                       disabled={isSendingCode}
                       className="text-sm text-blue-600 hover:text-blue-800 mt-2"
                     >
-                      {isSendingCode ? 'Sending...' : 'Resend code'}
+                      {isSendingCode ? t('accountSettings.deleteAccount.sending') : t('accountSettings.deleteAccount.resendCode')}
                     </button>
                   </div>
                 ) : (
@@ -369,7 +380,7 @@ export default function ProfilePage() {
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 text-green-600">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-sm text-green-800">Email verified successfully</span>
+                    <span className="text-sm text-green-800">{t('accountSettings.deleteAccount.codeVerified')}</span>
                   </div>
                 )}
               </div>
@@ -378,14 +389,14 @@ export default function ProfilePage() {
               {codeVerified && (
                 <div className="text-left mb-4">
                   <label className="block text-sm font-medium mb-2">
-                    Type <span className="font-mono bg-gray-100 px-1 rounded">DELETE MY ACCOUNT</span> to confirm:
+                    {t('accountSettings.deleteAccount.confirmText')}
                   </label>
                   <input
                     type="text"
                     value={deleteConfirmText}
                     onChange={(e) => setDeleteConfirmText(e.target.value)}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                    placeholder="Type confirmation text"
+                    placeholder={t('accountSettings.deleteAccount.confirmPlaceholder')}
                   />
                 </div>
               )}
@@ -397,7 +408,7 @@ export default function ProfilePage() {
                 className="px-5 py-2.5 bg-muted text-foreground font-medium rounded-lg hover:bg-muted/80 transition-all duration-200"
                 disabled={isDeleting}
               >
-                Cancel
+                {t('accountSettings.deleteAccount.cancel')}
               </button>
               <button
                 onClick={handleDeleteAccount}
@@ -407,10 +418,10 @@ export default function ProfilePage() {
                 {isDeleting ? (
                   <>
                     <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
-                    <span>Deleting...</span>
+                    <span>{t('accountSettings.deleteAccount.deleting')}</span>
                   </>
                 ) : (
-                  'Delete Account'
+                  t('accountSettings.deleteAccount.delete')
                 )}
               </button>
             </div>

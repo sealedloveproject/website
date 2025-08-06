@@ -1,0 +1,204 @@
+{
+  "profile": {
+    "title": "My Profile",
+    "subtitle": "Manage your account information and preferences",
+    "loading": "Loading...",
+    "loginRequired": "Login Required",
+    "personalInfo": {
+      "title": "Personal Information",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "emailCannotChange": "Email cannot be changed",
+      "updateButton": "Update Profile",
+      "updating": "Updating...",
+      "updateSuccess": "Profile updated successfully!",
+      "updateError": "Failed to update profile. Please try again."
+    },
+    "accountSettings": {
+      "title": "Account Settings",
+      "signOut": "Sign Out",
+      "deleteAccount": {
+        "button": "Delete Account",
+        "title": "Delete Account",
+        "warning": "Warning: This action cannot be undone",
+        "description": "Deleting your account will permanently remove all your data, including your stories and personal information.",
+        "verificationStep": "For security, we'll send a verification code to your email address.",
+        "sendCode": "Send Verification Code",
+        "sending": "Sending...",
+        "resendCode": "Resend code",
+        "verifyCode": "Verify",
+        "verifying": "Verifying...",
+        "codeVerified": "Email verified successfully",
+        "confirmText": "Type DELETE MY ACCOUNT to confirm:",
+        "confirmPlaceholder": "Type confirmation text",
+        "cancel": "Cancel",
+        "delete": "Delete Account",
+        "deleting": "Deleting..."
+      }
+    }
+  },
+  "stories": {
+    "title": "My Stories",
+    "subtitle": "Manage and create your love stories",
+    "loading": "Loading your stories...",
+    "search": {
+      "placeholder": "Search your stories..."
+    },
+    "createButton": "Create New Story",
+    "loginRequired": {
+      "title": "Login Required",
+      "message": "You need to be logged in to view and manage your stories.",
+      "signIn": "Sign In"
+    },
+    "noStories": {
+      "title": "No stories found",
+      "searchMessage": "Try adjusting your search criteria",
+      "emptyMessage": "You haven't created any stories yet",
+      "createFirst": "Create Your First Story"
+    }
+  },
+  "newStory": {
+    "title": "Store Your Love Story",
+    "subtitle": "Preserve your memories in our millennium vault",
+    "backButton": "Back to My Stories",
+    "login": {
+      "title": "Email Login with One-Time Code",
+      "description": "Enter your email address to receive a 6-digit code that lets you access and manage your stories. No registration required.",
+      "infoBox": "Why we use email login: This simple method allows you to edit, update or delete your story later. Your email is only used for authentication and we never share it with third parties.",
+      "continueButton": "Continue with Email"
+    },
+    "form": {
+      "submitButton": "Save Story",
+      "submitting": "Submitting...",
+      "title": {
+        "label": "Story Title",
+        "placeholder": "Give your story a title"
+      },
+      "content": {
+        "label": "Your Story",
+        "placeholder": "Share your story here...",
+        "wordCount": "{count} / 500 words",
+        "wordLimitExceeded": "Your story exceeds the 500 word limit. Please shorten it."
+      },
+      "media": {
+        "title": "Media Files",
+        "replicatingWarning": {
+          "title": "Some media files are still replicating",
+          "description": "They will be available soon. Non-replicated images will show a placeholder."
+        },
+        "upload": {
+          "dragDrop": "Drag files here or click to browse",
+          "supportedFormats": "Supported formats: Images, Videos, Audio",
+          "formats": {
+            "title": "Supported formats",
+            "images": "Images: jpg, jpeg, png, webp",
+            "videos": "Videos: mp4, mov",
+            "audio": "Audio: mp3, aac"
+          },
+          "region": {
+            "title": "Upload region",
+            "closest": "Closest region: {region}",
+            "info": "Files will be uploaded to the closest AWS region to your location"
+          },
+          "storage": {
+            "title": "Storage used",
+            "used": "{used} MB / 100 MB",
+            "percentage": "{percentage}% used"
+          }
+        },
+        "attachmentsList": {
+          "title": "Existing Attachments",
+          "fileTypes": {
+            "video": "Video",
+            "audio": "Audio"
+          },
+          "coverImage": "Cover Image",
+          "setAsCover": "Set as Cover",
+          "removeAttachment": "Remove attachment"
+        },
+        "fileList": {
+          "title": "Files to Upload",
+          "uploadedTitle": "Uploaded Files",
+          "coverImage": "Cover Image",
+          "setAsCover": "Set as Cover",
+          "removeFile": "Remove file"
+        },
+        "privacy": {
+          "title": "Privacy Settings",
+          "agreeToTerms": "I agree to the {termsLink} and {privacyLink}",
+          "termsLink": "Terms of Service",
+          "privacyLink": "Privacy Policy",
+          "makePublic": "Make this story public and shareable (optional)"
+        }
+      }
+    }
+  },
+  "editStory": {
+    "header": {
+      "title": "Edit Your Story",
+      "subtitle": "Update your story or add new attachments"
+    },
+    "backToStories": "Back to My Stories",
+    "form": {
+      "submitButton": "Update Story",
+      "submitting": "Updating..."
+    },
+    "error": {
+      "title": "Error"
+    },
+    "errors": {
+      "notFound": "Story not found or you do not have permission to edit it.",
+      "loadingFailed": "An error occurred while loading the story. Please try again.",
+      "updateFailed": "Failed to update story",
+      "unexpected": "An unexpected error occurred. Please try again.",
+      "deleteFailed": "Failed to delete story",
+      "deleteUnexpected": "An unexpected error occurred while deleting the story"
+    },
+    "fileUpload": {
+      "unsupportedFiles": "{count} file(s) were not added because they are not supported. Please only upload jpg, jpeg, png, webp, mp4, mov, mp3, or aac files.",
+      "sizeExceeded": "Adding these files would exceed your 100MB storage limit. Please remove some files first."
+    },
+    "deleteModal": {
+      "title": "Delete Story",
+      "message": "Are you sure you want to delete this story? This action cannot be undone and all associated media files will be permanently removed.",
+      "cancel": "Cancel",
+      "confirm": "Delete Permanently",
+      "deleting": "Deleting..."
+    },
+    "dangerZone": {
+      "title": "Danger Zone",
+      "warning": "Warning",
+      "permanentWarning": "Deleting this story is permanent and irreversible.",
+      "consequences": {
+        "servers": "The story will be completely removed from all our servers",
+        "media": "All associated files and media will be deleted from our cloud storage",
+        "backups": "The story will also be removed from all our backup systems",
+        "support": "This action cannot be undone by our support team"
+      },
+      "deleteButton": "Delete Story Permanently"
+    }
+  },
+  "successPage": {
+    "created": {
+      "title": "Story Saved Successfully!",
+      "message": "Your love story has been saved to our digital vault. Thank you for sharing your precious memories with us. Remember, you can edit your story anytime to add new details or updates."
+    },
+    "updated": {
+      "title": "Story Updated Successfully!",
+      "message": "Your love story has been updated in our digital vault. Thank you for keeping your memories current. Remember, you can edit your story anytime to add new details or updates."
+    },
+    "share": {
+      "title": "Help Us Preserve Love Stories Forever!",
+      "message": "Share Sealed Love Project with your friends and family. Every story shared helps us build a millennium vault of human love and connection.",
+      "shareButton": "Share This Project",
+      "supportButton": "Support Our Mission",
+      "exploreButton": "Explore Public Stories",
+      "footer": "💝 Every shared story helps us grow our community of love and memories"
+    },
+    "actions": {
+      "addAnother": "Add Another Story",
+      "viewStories": "View My Stories"
+    }
+  }
+}
