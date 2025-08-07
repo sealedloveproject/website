@@ -77,15 +77,15 @@ export default function StoryHeader({ story, storyId }: StoryHeaderProps) {
     <>
       {/* Story header */}
       <h1 className="text-4xl font-bold mb-4">{story.title}</h1>
-      <div className="flex items-center text-gray-600 mb-8">
-        <span className="mr-4">{t('header.by')} {story.author}</span>
-        <span className="mr-4">•</span>
-        <span className="mr-4">{story.date}</span>
+      <div className="flex items-center text-gray-600 dark:text-white mb-8">
+        <span className="mr-4 dark:text-white">{t('header.by')} {story.author}</span>
+        <span className="mr-4 dark:text-white">•</span>
+        <span className="mr-4 dark:text-white">{story.date}</span>
         {story.vault && (
           <>
-            <span className="mr-4">•</span>
-            <span className="flex items-center">
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <span className="mr-4 dark:text-white">•</span>
+            <span className="flex items-center dark:text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-1 dark:stroke-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
               </svg>
               {story.vault.name} {t('header.from')}

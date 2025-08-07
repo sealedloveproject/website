@@ -124,7 +124,10 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
       {/* Loading indicator */}
       {isLoading && (
         <div className="flex justify-center items-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+          <div className="text-center flex flex-col items-center">
+            <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin mx-auto"></div>
+            <p className="mt-4 text-center">{t('loading') || 'Loading stories...'}</p>
+          </div>
         </div>
       )}
       
@@ -148,8 +151,8 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
             ))}
           </div>
           
-          {/* Pagination */}
-          {!searchQuery && (
+          {/* Pagination - only show if more than one page */}
+          {!searchQuery && Math.ceil(totalStories / STORIES_PER_PAGE) > 1 && (
             <div className="mt-16 flex justify-center items-center space-x-2">
               <Button
                 onClick={() => handlePageChange(currentPage - 1)}
@@ -257,28 +260,10 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
 export function LoadingFallback() {
   const t = useTranslations('Stories');
   return (
-    <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto text-foreground">
-      <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
-      <header className="mb-16">
-        <div className="mt-10 mb-6 relative text-center">
-          <div className="absolute -inset-4 rounded-full bg-primary/5 blur-xl"></div>
-          <div className="h-10 w-64 bg-gray-200 rounded-lg mx-auto mb-4 animate-pulse"></div>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4 mx-auto"></div>
-          <div className="h-4 w-96 bg-gray-200 rounded mx-auto mt-6 animate-pulse"></div>
-        </div>
-      </header>
-      
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {[...Array(6)].map((_, i) => (
-          <div key={i} className="bg-card rounded-xl overflow-hidden shadow-md animate-pulse">
-            <div className="h-48 bg-gray-200"></div>
-            <div className="p-5">
-              <div className="h-6 bg-gray-200 rounded w-3/4 mb-4"></div>
-              <div className="h-4 bg-gray-200 rounded w-full mb-2"></div>
-              <div className="h-4 bg-gray-200 rounded w-2/3"></div>
-            </div>
-          </div>
-        ))}
+    <div className="flex items-center justify-center min-h-screen">
+      <div className="text-center flex flex-col items-center">
+        <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin mx-auto"></div>
+        <p className="mt-4 text-center">{t('loading') || 'Loading stories...'}</p>
       </div>
     </div>
   );
