@@ -8,6 +8,7 @@ import { deleteAccount, sendDeleteVerification, verifyDeleteCode } from '@/app/a
 import Modal from '@/components/ui/Modal';
 import { Button } from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
+import UserBreadcrumbs from '@/components/user/Breadcrumbs';
 
 export default function ProfilePage() {
   const { user, isAuthenticated, updateUserProfile, signOut, isLoading: authLoading } = useAuth();
@@ -163,11 +164,13 @@ export default function ProfilePage() {
   };
 
   return (
-    <div className="fade-in pt-16 pb-20 px-6 max-w-4xl mx-auto">
-      <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
+    <div className="fade-in">
+      <div className="mb-6">
+        <UserBreadcrumbs />
+      </div>
       
       <header className="mb-12">
-        <div className="text-center">
+        <div>
           <h1 className="text-4xl md:text-4xl font-bold mb-4">{t('title')}</h1>
           <p className="text-lg text-foreground/80">{t('subtitle') || 'Manage your account information and preferences'}</p>
         </div>

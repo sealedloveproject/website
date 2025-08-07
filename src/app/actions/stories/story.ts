@@ -90,6 +90,9 @@ export async function saveStory(data: StorySubmission) {
     // Mark this as a new story in Redis with 30 minutes expiration
     await cache.set(`new_story:${story.id}`, true, 60 * 30); // 30 minutes expiration
     
+    // Invalidate user stats cache when a new story is created
+    await invalidateUserStatsCache(user.id);
+    
     return { success: true, storyId: story.id, coverImageId: data.coverImageId };
   } catch (error) {
     //console.error('Error saving story:', error);
@@ -98,6 +101,7 @@ export async function saveStory(data: StorySubmission) {
 }
 
 import { cache } from '@/lib/cache';
+import { invalidateUserStatsCache } from '@/app/actions/users/stats';
 
 export async function saveAttachments(storyId: string, attachments: { fileName: string, fileType: string, fileUrl: string, s3Region?: string, s3Bucket?: string, label?: string, isCoverImage?: boolean }[], userEmail: string) {
   try {
@@ -221,12 +225,20 @@ export async function updateStoryCoverImage(storyId: string, coverImageId: strin
       return { success: false, error: 'Unauthorized: You do not have permission to modify this story' };
     }
     
-    // Update the story with the cover image ID
+    // Update the story in the database
     await prisma.story.update({
       where: { id: storyId },
       data: { coverImageId: coverImageId }
     });
-    
+
+    // Invalidate user stats cache when a story is updated
+    const user = await prisma.user.findUnique({
+      where: { email: authenticatedUser.email }
+    });
+    if (user) {
+      await invalidateUserStatsCache(user.id);
+    }
+
     return { success: true };
   } catch (error) {
     //console.error('Error updating story cover image:', error);
@@ -469,6 +481,9 @@ export async function deleteStory(storyId: string) {
       where: { id: storyId }
     });
     
+    // Invalidate user stats cache when a story is deleted
+    await invalidateUserStatsCache(user.id);
+    
     // Delete all files in the story directory from S3
     // The directory structure is: stories/development/<storyId>
     // or stories/production/<storyId> in production
@@ -532,9 +547,14 @@ export async function deleteAttachment(attachmentId: string) {
       where: { id: attachmentId }
     });
 
+    // Invalidate user stats cache when an attachment is deleted
+    await invalidateUserStatsCache(user.id);
+
     return { success: true };
   } catch (error) {
     //console.error('Error deleting attachment:', error);
     return { success: false, error: 'Failed to delete attachment' };
   }
 }
+
+// ... (rest of the code remains the same)

@@ -318,7 +318,7 @@ async function handleS3Notification(messageContent: any) {
                 try {
                   fs.unlinkSync(tempFilePath);
                 } catch (error) {
-                  console.error('Error removing temporary file:', error);
+                    // console.error('Error removing temporary file:', error);
                 }
               }
             } else {

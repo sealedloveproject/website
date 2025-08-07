@@ -58,6 +58,12 @@
       "createFirst": "Crea Tu Primera Historia"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Crear Nueva Historia",
+      "subtitle": "Comparte tu historia de amor con el mundo"
+    }
+  },
   "newStory": {
     "title": "Guarda Tu Historia de Amor",
     "subtitle": "Preserva tus recuerdos en nuestra bóveda milenaria",
@@ -132,6 +138,46 @@
           "makePublic": "Hacer esta historia pública y compartible (opcional)"
         }
       }
+    }
+  },
+  "dashboard": {
+    "title": "Panel de Control",
+    "subtitle": "Resumen de tu actividad y contenido",
+    "loading": "Cargando tu panel de control...",
+    "loginRequired": "Inicio de sesión requerido",
+    "contentDetails": "Detalles del contenido",
+    "stats": {
+      "title": "Resumen de estadísticas",
+      "stories": "Historias",
+      "totalStories": "Total de historias",
+      "publicStories": "Historias públicas",
+      "visibility": "Visibilidad",
+      "visibilityRatio": "{public} públicas / {private} privadas",
+      "engagement": "Interacción",
+      "totalLikes": "Total de me gusta",
+      "averageLikesPerStory": "Media por historia",
+      "attachments": "Archivos adjuntos",
+      "totalAttachments": "Total de archivos subidos",
+      "diskSpaceUsed": "Espacio en disco utilizado",
+      "totalSize": "Tamaño total",
+      "files": "archivos",
+      "photoFiles": "Fotos",
+      "videoFiles": "Videos",
+      "audioFiles": "Audio",
+      "viewAll": "Ver todo",
+      "public": "Público",
+      "private": "Privado"
+    },
+    "quickActions": {
+      "title": "Acciones rápidas",
+      "createStory": "Crear una historia",
+      "createStoryDesc": "Escribe una nueva historia",
+      "manageStories": "Gestionar historias",
+      "manageStoriesDesc": "Ver y editar tus historias",
+      "editProfile": "Editar perfil",
+      "editProfileDesc": "Actualizar tu información de perfil",
+      "helpSupport": "Ayuda y soporte",
+      "helpDesc": "Obtener asistencia con tu cuenta"
     }
   },
   "editStory": {

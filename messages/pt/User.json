@@ -58,6 +58,12 @@
       "createFirst": "Crie Sua Primeira História"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Criar Nova História",
+      "subtitle": "Compartilhe sua história de amor com o mundo"
+    }
+  },
   "newStory": {
     "title": "Guarde Sua História de Amor",
     "subtitle": "Preserve suas memórias em nosso cofre milenar",
@@ -132,6 +138,46 @@
           "makePublic": "Tornar esta história pública e compartilhável (opcional)"
         }
       }
+    }
+  },
+  "dashboard": {
+    "title": "Painel",
+    "subtitle": "Visão geral da sua atividade e conteúdo",
+    "loading": "Carregando seu painel...",
+    "loginRequired": "Login necessário",
+    "contentDetails": "Detalhes do conteúdo",
+    "stats": {
+      "title": "Visão geral das estatísticas",
+      "stories": "Histórias",
+      "totalStories": "Total de histórias",
+      "publicStories": "Histórias públicas",
+      "visibility": "Visibilidade",
+      "visibilityRatio": "{public} públicas / {private} privadas",
+      "engagement": "Engajamento",
+      "totalLikes": "Total de curtidas",
+      "averageLikesPerStory": "Média por história",
+      "attachments": "Anexos",
+      "totalAttachments": "Total de arquivos enviados",
+      "diskSpaceUsed": "Espaço em disco utilizado",
+      "totalSize": "Tamanho total",
+      "files": "arquivos",
+      "photoFiles": "Fotos",
+      "videoFiles": "Vídeos",
+      "audioFiles": "Áudio",
+      "viewAll": "Ver tudo",
+      "public": "Público",
+      "private": "Privado"
+    },
+    "quickActions": {
+      "title": "Ações Rápidas",
+      "createStory": "Criar uma História",
+      "createStoryDesc": "Escrever uma nova história",
+      "manageStories": "Gerenciar Histórias",
+      "manageStoriesDesc": "Visualizar e editar suas histórias",
+      "editProfile": "Editar Perfil",
+      "editProfileDesc": "Atualizar suas informações de perfil",
+      "helpSupport": "Ajuda & Suporte",
+      "helpDesc": "Obter assistência para sua conta"
     }
   },
   "editStory": {

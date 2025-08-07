@@ -103,7 +103,7 @@ export default function StoryViewPage() {
   // Show error message if story failed to load
   if (error) {
     return (
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 mt-8">
+      <div>
         <div className="bg-red-50 border-l-4 border-red-400 p-4 mb-8">
           <div className="flex">
             <div className="flex-shrink-0">
@@ -131,7 +131,7 @@ export default function StoryViewPage() {
   // Show loading state while fetching story
   if (loading || !story) {
     return (
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 mt-8">
+      <div>
         <div className="flex justify-center items-center h-64">
           <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
         </div>
@@ -147,7 +147,7 @@ export default function StoryViewPage() {
   const isVideo = currentMedia?.fileType.startsWith('video/');
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 mt-8">
+    <div>
       {/* Admin info banner */}
       <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8">
         <div className="flex">

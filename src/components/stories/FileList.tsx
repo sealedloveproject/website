@@ -71,7 +71,7 @@ export default function FileList({
     return () => {
       Object.values(objectUrls).forEach(url => URL.revokeObjectURL(url));
     };
-  }, [files]);
+  }, [files, objectUrls]);
   
   return (
     <div>

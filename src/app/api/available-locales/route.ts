@@ -20,7 +20,7 @@ export async function GET() {
     
     return NextResponse.json(locales);
   } catch (error) {
-    console.error('Error fetching available locales:', error);
+    // console.error('Error fetching available locales:', error);
     return NextResponse.json({ error: 'Failed to fetch available locales' }, { status: 500 });
   }
 }

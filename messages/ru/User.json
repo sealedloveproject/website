@@ -58,6 +58,12 @@
       "createFirst": "Создать первую историю"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Создать новую историю",
+      "subtitle": "Поделитесь своей историей любви с миром"
+    }
+  },
   "newStory": {
     "title": "Сохраните свою историю любви",
     "subtitle": "Сохраните свои воспоминания в нашем тысячелетнем хранилище",
@@ -132,6 +138,46 @@
           "makePublic": "Сделать эту историю публичной и доступной для публикации (опционально)"
         }
       }
+    }
+  },
+  "dashboard": {
+    "title": "Панель управления",
+    "subtitle": "Обзор вашей активности и контента",
+    "loading": "Загрузка панели управления...",
+    "loginRequired": "Требуется вход в систему",
+    "contentDetails": "Детали контента",
+    "stats": {
+      "title": "Обзор статистики",
+      "stories": "Истории",
+      "totalStories": "Всего историй",
+      "publicStories": "Публичные истории",
+      "visibility": "Видимость",
+      "visibilityRatio": "{public} публичных / {private} личных",
+      "engagement": "Вовлеченность",
+      "totalLikes": "Всего лайков",
+      "averageLikesPerStory": "Ср. на историю",
+      "attachments": "Вложения",
+      "totalAttachments": "Всего загруженных файлов",
+      "diskSpaceUsed": "Использовано места на диске",
+      "totalSize": "Общий размер",
+      "files": "файлов",
+      "photoFiles": "Фото",
+      "videoFiles": "Видео",
+      "audioFiles": "Аудио",
+      "viewAll": "Посмотреть все",
+      "public": "Публичные",
+      "private": "Личные"
+    },
+    "quickActions": {
+      "title": "Быстрые действия",
+      "createStory": "Создать историю",
+      "createStoryDesc": "Написать новую историю",
+      "manageStories": "Управлять историями",
+      "manageStoriesDesc": "Просмотр и редактирование историй",
+      "editProfile": "Редактировать профиль",
+      "editProfileDesc": "Обновить информацию профиля",
+      "helpSupport": "Помощь & Поддержка",
+      "helpDesc": "Получить помощь с вашим аккаунтом"
     }
   },
   "editStory": {

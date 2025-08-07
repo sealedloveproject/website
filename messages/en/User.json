@@ -58,6 +58,12 @@
       "createFirst": "Create Your First Story"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Create New Story",
+      "subtitle": "Share your love story with the world"
+    }
+  },
   "newStory": {
     "title": "Store Your Love Story",
     "subtitle": "Preserve your memories in our millennium vault",
@@ -177,6 +183,46 @@
         "support": "This action cannot be undone by our support team"
       },
       "deleteButton": "Delete Story Permanently"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Overview of your activity and content",
+    "loading": "Loading your dashboard...",
+    "loginRequired": "Login Required",
+    "contentDetails": "Content Details",
+    "stats": {
+      "title": "Stats Overview",
+      "stories": "Stories",
+      "totalStories": "Total stories",
+      "publicStories": "Public stories",
+      "visibility": "Visibility",
+      "visibilityRatio": "{public} public / {private} private",
+      "engagement": "Engagement",
+      "totalLikes": "Total likes",
+      "averageLikesPerStory": "Avg. per story",
+      "attachments": "Attachments",
+      "totalAttachments": "Total files uploaded",
+      "diskSpaceUsed": "Disk space used",
+      "totalSize": "Total size",
+      "files": "files",
+      "photoFiles": "Photos",
+      "videoFiles": "Videos",
+      "audioFiles": "Audio",
+      "viewAll": "View All",
+      "public": "Public",
+      "private": "Private"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "createStory": "Create a Story",
+      "createStoryDesc": "Write a new story",
+      "manageStories": "Manage Stories",
+      "manageStoriesDesc": "View and edit your stories",
+      "editProfile": "Edit Profile",
+      "editProfileDesc": "Update your profile information",
+      "helpSupport": "Help & Support",
+      "helpDesc": "Get assistance with your account"
     }
   },
   "successPage": {

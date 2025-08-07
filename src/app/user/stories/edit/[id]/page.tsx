@@ -12,6 +12,7 @@ import { uploadFilesToS3 } from '@/lib/uploadToS3';
 import StoryForm from '@/components/stories/StoryForm';
 import Modal from '@/components/ui/Modal';
 import { useTranslations } from 'next-intl';
+import UserBreadcrumbs from '@/components/user/Breadcrumbs';
 
 export default function EditStory() {
   const { user, isAuthenticated, openSignInModal, isLoading: authLoading } = useAuth();
@@ -97,7 +98,7 @@ export default function EditStory() {
           isPublic: result.story.isPublic,
           agreeToTerms: true,
         });
-        console.log(result)
+        // console.log(result)
         setHashReplicatingAttachment(result.story.hashReplicatingAttachment);
 
         // Update word count
@@ -129,7 +130,7 @@ export default function EditStory() {
     } finally {
       setIsLoading(false);
     }
-  }, [storyId, user?.email, isAuthenticated, authLoading, reset, storyLoaded, openSignInModal]);
+  }, [storyId, user?.email, isAuthenticated, authLoading, reset, storyLoaded, openSignInModal, t]);
   
   // Load story data on component mount
   useEffect(() => {
@@ -388,7 +389,7 @@ export default function EditStory() {
   // Show loading state
   if (isLoading) {
     return (
-      <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto flex items-center justify-center">
+      <div className="fade-in flex items-center justify-center">
         <div className="w-12 h-12 rounded-full border-4 border-primary/30 border-t-primary animate-spin"></div>
       </div>
     );
@@ -397,37 +398,26 @@ export default function EditStory() {
   // Show error state
   if (error) {
     return (
-      <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto">
+      <div className="fade-in">
         <div className="bg-red-50 dark:bg-red-900/20 p-6 rounded-lg border border-red-200 dark:border-red-800 text-center">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 mx-auto text-red-500 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
           <h2 className="text-xl font-bold mb-2">{t('error.title')}</h2>
           <p className="mb-4">{error}</p>
-          <Link href="/user/stories" className="inline-flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-            </svg>
-            {t('backToStories')}
-          </Link>
         </div>
       </div>
     );
   }
   
   return (
-    <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto text-foreground">
-      <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
+    <div className="fade-in text-foreground">
+      {/* Breadcrumbs */}
+      <div>
+        <UserBreadcrumbs />
+      </div>
       
       <header className="mb-8">
-        <div className="flex justify-start mb-4">
-          <Link href="/user/stories" className="inline-flex items-center gap-2 bg-background hover:bg-muted px-4 py-2 rounded-lg text-foreground font-medium border border-border transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-            </svg>
-            {t('backToStories')}
-          </Link>
-        </div>
         <h1 className="text-3xl font-bold">{t('header.title')}</h1>
         <p className="text-muted-foreground mt-2">
           {t('header.subtitle')}

@@ -6,6 +6,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import SupportBlock from '@/components/SupportBlock';
 import { useSearchParams } from 'next/navigation';
 import { useTranslations } from 'next-intl';
+import UserBreadcrumbs from '@/components/user/Breadcrumbs';
 
 // Separate component for search params logic
 function StorySuccessContent() {
@@ -18,7 +19,12 @@ function StorySuccessContent() {
   const isUpdate = action === 'updated';
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-16">
+    <div className="fade-in">
+      {/* Breadcrumbs */}
+      <div className="flex justify-center mb-4">
+        <UserBreadcrumbs />
+      </div>
+      
       {/* Success animation */}
       <div className="flex justify-center mb-8">
         <div className="relative">

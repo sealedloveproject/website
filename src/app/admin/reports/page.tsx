@@ -159,7 +159,7 @@ export default function ReportsPage() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 py-12 mt-8">
+    <div>
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
         <div>
           <h1 className="text-2xl font-bold text-foreground">Manage Reports</h1>

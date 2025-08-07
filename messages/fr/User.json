@@ -58,6 +58,12 @@
       "createFirst": "Créer votre première histoire"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Créer une Nouvelle Histoire",
+      "subtitle": "Partagez votre histoire d'amour avec le monde"
+    }
+  },
   "newStory": {
     "title": "Conservez votre histoire d'amour",
     "subtitle": "Préservez vos souvenirs dans notre coffre-fort millénaire",
@@ -132,6 +138,46 @@
           "makePublic": "Rendre cette histoire publique et partageable (facultatif)"
         }
       }
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de Bord",
+    "subtitle": "Aperçu de votre activité et contenu",
+    "loading": "Chargement de votre tableau de bord...",
+    "loginRequired": "Connexion requise",
+    "contentDetails": "Détails du contenu",
+    "stats": {
+      "title": "Aperçu des statistiques",
+      "stories": "Histoires",
+      "totalStories": "Total des histoires",
+      "publicStories": "Histoires publiques",
+      "visibility": "Visibilité",
+      "visibilityRatio": "{public} publiques / {private} privées",
+      "engagement": "Engagement",
+      "totalLikes": "Total des j'aime",
+      "averageLikesPerStory": "Moy. par histoire",
+      "attachments": "Pièces jointes",
+      "totalAttachments": "Total des fichiers téléchargés",
+      "diskSpaceUsed": "Espace disque utilisé",
+      "totalSize": "Taille totale",
+      "files": "fichiers",
+      "photoFiles": "Photos",
+      "videoFiles": "Vidéos",
+      "audioFiles": "Audio",
+      "viewAll": "Voir tout",
+      "public": "Public",
+      "private": "Privé"
+    },
+    "quickActions": {
+      "title": "Actions Rapides",
+      "createStory": "Créer une Histoire",
+      "createStoryDesc": "Écrire une nouvelle histoire",
+      "manageStories": "Gérer les Histoires",
+      "manageStoriesDesc": "Voir et modifier vos histoires",
+      "editProfile": "Modifier le Profil",
+      "editProfileDesc": "Mettre à jour vos informations de profil",
+      "helpSupport": "Aide & Support",
+      "helpDesc": "Obtenir de l'assistance pour votre compte"
     }
   },
   "editStory": {
