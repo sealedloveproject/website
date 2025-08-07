@@ -134,6 +134,48 @@
       }
     }
   },
+  "dashboard": {
+    "title": "Panou de Control",
+    "subtitle": "Privire generală asupra activității și conținutului tău",
+    "loading": "Se încarcă panoul de control...",
+    "loginRequired": "Autentificare necesară",
+    "contentDetails": "Detalii conținut",
+    "stats": {
+      "title": "Privire generală statistici",
+      "stories": "Povești",
+      "totalStories": "Total povești",
+      "publicStories": "Povești publice",
+      "visibility": "Vizibilitate",
+      "visibilityRatio": "{public} publice / {private} private",
+      "engagement": "Implicare",
+      "totalLikes": "Total aprecieri",
+      "totalViews": "Total vizualizări",
+      "averageLikesPerStory": "Media aprecierilor pe poveste",
+      "avgLikesPerStory": "Medie per poveste",
+      "avgViewsPerStory": "Medie per poveste",
+      "thisMonth": "luna aceasta",
+      "attachments": "Atașamente",
+      "totalAttachments": "Total fișiere încărcate",
+      "diskSpaceUsed": "Spațiu pe disc utilizat",
+      "photoFiles": "Fotografii",
+      "videoFiles": "Videoclipuri",
+      "audioFiles": "Audio",
+      "viewAll": "Vezi tot",
+      "public": "Public",
+      "private": "Privat"
+    },
+    "quickActions": {
+      "title": "Acțiuni Rapide",
+      "createStory": "Crează o Poveste",
+      "createStoryDesc": "Scrie o poveste nouă",
+      "manageStories": "Gestionează Poveștile",
+      "manageStoriesDesc": "Vizualizează și editează poveștile tale",
+      "editProfile": "Editează Profilul",
+      "editProfileDesc": "Actualizează informațiile profilului tău",
+      "helpSupport": "Ajutor & Suport",
+      "helpDesc": "Obține asistență pentru contul tău"
+    }
+  },
   "editStory": {
     "header": {
       "title": "Editează Povestea Ta",

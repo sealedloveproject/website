@@ -134,6 +134,48 @@
       }
     }
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Übersicht über Ihre Aktivitäten und Inhalte",
+    "loading": "Dashboard wird geladen...",
+    "loginRequired": "Anmeldung erforderlich",
+    "contentDetails": "Inhaltsdetails",
+    "stats": {
+      "title": "Statistik-Übersicht",
+      "stories": "Geschichten",
+      "totalStories": "Gesamte Geschichten",
+      "publicStories": "Öffentliche Geschichten",
+      "visibility": "Sichtbarkeit",
+      "visibilityRatio": "{public} öffentlich / {private} privat",
+      "engagement": "Engagement",
+      "totalLikes": "Gesamte Likes",
+      "totalViews": "Gesamte Aufrufe",
+      "averageLikesPerStory": "Durchschnittliche Likes pro Geschichte",
+      "avgLikesPerStory": "Durchschnitt pro Geschichte",
+      "avgViewsPerStory": "Durchschnitt pro Geschichte",
+      "thisMonth": "diesen Monat",
+      "attachments": "Anhänge",
+      "totalAttachments": "Insgesamt hochgeladene Dateien",
+      "diskSpaceUsed": "Verwendeter Speicherplatz",
+      "photoFiles": "Fotos",
+      "videoFiles": "Videos",
+      "audioFiles": "Audio",
+      "viewAll": "Alle anzeigen",
+      "public": "Öffentlich",
+      "private": "Privat"
+    },
+    "quickActions": {
+      "title": "Schnellaktionen",
+      "createStory": "Geschichte erstellen",
+      "createStoryDesc": "Neue Geschichte schreiben",
+      "manageStories": "Geschichten verwalten",
+      "manageStoriesDesc": "Geschichten anzeigen und bearbeiten",
+      "editProfile": "Profil bearbeiten",
+      "editProfileDesc": "Profilinformationen aktualisieren",
+      "helpSupport": "Hilfe & Support",
+      "helpDesc": "Unterstützung für Ihr Konto erhalten"
+    }
+  },
   "editStory": {
     "header": {
       "title": "Deine Geschichte bearbeiten",
@@ -177,6 +219,48 @@
         "support": "Diese Aktion kann nicht von unserem Support-Team rückgängig gemacht werden"
       },
       "deleteButton": "Geschichte endgültig löschen"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Überblick über Ihre Aktivitäten und Inhalte",
+    "loading": "Lade dein Dashboard...",
+    "loginRequired": "Anmeldung erforderlich",
+    "contentDetails": "Inhaltsdetails",
+    "stats": {
+      "title": "Statistik-Übersicht",
+      "stories": "Geschichten",
+      "totalStories": "Gesamte Geschichten",
+      "publicStories": "Öffentliche Geschichten",
+      "visibility": "Sichtbarkeit",
+      "visibilityRatio": "{public} öffentlich / {private} privat",
+      "engagement": "Engagement",
+      "totalLikes": "Gesamte Likes",
+      "totalViews": "Gesamte Aufrufe",
+      "averageLikesPerStory": "Durchschnittliche Likes pro Geschichte",
+      "avgLikesPerStory": "Durchschn. pro Geschichte",
+      "avgViewsPerStory": "Durchschn. pro Geschichte",
+      "thisMonth": "diesen Monat",
+      "attachments": "Anhänge",
+      "totalAttachments": "Gesamte hochgeladene Dateien",
+      "diskSpaceUsed": "Genutzter Speicherplatz",
+      "photoFiles": "Fotos",
+      "videoFiles": "Videos",
+      "audioFiles": "Audio",
+      "viewAll": "Alle anzeigen",
+      "public": "Öffentlich",
+      "private": "Privat"
+    },
+    "quickActions": {
+      "title": "Schnellaktionen",
+      "createStory": "Geschichte erstellen",
+      "createStoryDesc": "Eine neue Geschichte schreiben",
+      "manageStories": "Geschichten verwalten",
+      "manageStoriesDesc": "Deine Geschichten ansehen und bearbeiten",
+      "editProfile": "Profil bearbeiten",
+      "editProfileDesc": "Deine Profilinformationen aktualisieren",
+      "helpSupport": "Hilfe & Support",
+      "helpDesc": "Unterstützung für dein Konto erhalten"
     }
   },
   "successPage": {

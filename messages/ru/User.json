@@ -134,6 +134,48 @@
       }
     }
   },
+  "dashboard": {
+    "title": "Панель управления",
+    "subtitle": "Обзор вашей активности и контента",
+    "loading": "Загрузка панели управления...",
+    "loginRequired": "Требуется вход в систему",
+    "contentDetails": "Детали контента",
+    "stats": {
+      "title": "Обзор статистики",
+      "stories": "Истории",
+      "totalStories": "Всего историй",
+      "publicStories": "Публичные истории",
+      "visibility": "Видимость",
+      "visibilityRatio": "{public} публичных / {private} личных",
+      "engagement": "Вовлеченность",
+      "totalLikes": "Всего лайков",
+      "totalViews": "Всего просмотров",
+      "averageLikesPerStory": "Среднее количество лайков на историю",
+      "avgLikesPerStory": "Ср. на историю",
+      "avgViewsPerStory": "Ср. на историю",
+      "thisMonth": "в этом месяце",
+      "attachments": "Вложения",
+      "totalAttachments": "Всего загруженных файлов",
+      "diskSpaceUsed": "Использовано места на диске",
+      "photoFiles": "Фото",
+      "videoFiles": "Видео",
+      "audioFiles": "Аудио",
+      "viewAll": "Посмотреть все",
+      "public": "Публичные",
+      "private": "Личные"
+    },
+    "quickActions": {
+      "title": "Быстрые действия",
+      "createStory": "Создать историю",
+      "createStoryDesc": "Написать новую историю",
+      "manageStories": "Управлять историями",
+      "manageStoriesDesc": "Просмотр и редактирование историй",
+      "editProfile": "Редактировать профиль",
+      "editProfileDesc": "Обновить информацию профиля",
+      "helpSupport": "Помощь & Поддержка",
+      "helpDesc": "Получить помощь с вашим аккаунтом"
+    }
+  },
   "editStory": {
     "header": {
       "title": "Редактировать Историю",

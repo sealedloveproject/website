@@ -134,6 +134,48 @@
       }
     }
   },
+  "dashboard": {
+    "title": "Dashboard",
+    "subtitle": "Panoramica della tua attività e contenuti",
+    "loading": "Caricamento della dashboard...",
+    "loginRequired": "Login richiesto",
+    "contentDetails": "Dettagli del contenuto",
+    "stats": {
+      "title": "Panoramica statistiche",
+      "stories": "Storie",
+      "totalStories": "Totale storie",
+      "publicStories": "Storie pubbliche",
+      "visibility": "Visibilità",
+      "visibilityRatio": "{public} pubbliche / {private} private",
+      "engagement": "Coinvolgimento",
+      "totalLikes": "Totale mi piace",
+      "totalViews": "Totale visualizzazioni",
+      "averageLikesPerStory": "Media mi piace per storia",
+      "avgLikesPerStory": "Media per storia",
+      "avgViewsPerStory": "Media per storia",
+      "thisMonth": "questo mese",
+      "attachments": "Allegati",
+      "totalAttachments": "Totale file caricati",
+      "diskSpaceUsed": "Spazio disco utilizzato",
+      "photoFiles": "Foto",
+      "videoFiles": "Video",
+      "audioFiles": "Audio",
+      "viewAll": "Visualizza tutto",
+      "public": "Pubblico",
+      "private": "Privato"
+    },
+    "quickActions": {
+      "title": "Azioni Rapide",
+      "createStory": "Crea una Storia",
+      "createStoryDesc": "Scrivi una nuova storia",
+      "manageStories": "Gestisci Storie",
+      "manageStoriesDesc": "Visualizza e modifica le tue storie",
+      "editProfile": "Modifica Profilo",
+      "editProfileDesc": "Aggiorna le informazioni del tuo profilo",
+      "helpSupport": "Aiuto & Supporto",
+      "helpDesc": "Ottieni assistenza per il tuo account"
+    }
+  },
   "editStory": {
     "header": {
       "title": "Modifica La Tua Storia",

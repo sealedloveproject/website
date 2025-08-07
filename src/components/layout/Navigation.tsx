@@ -171,7 +171,8 @@ export default function Navigation() {
             <div className="relative ml-2" data-menu="user">
               {isAuthenticated ? (
                 <>
-                  <button 
+                  <button
+                    data-menu="user"
                     onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}
                     className={`flex items-center space-x-2 px-3 py-2 rounded transition-all duration-300 ${isUserMenuOpen ? 'bg-foreground/10 shadow-sm' : 'hover:bg-foreground/5'}`}
                     aria-expanded={isUserMenuOpen}
@@ -190,7 +191,7 @@ export default function Navigation() {
                     <div className="absolute top-full right-0 mt-2 py-2 rounded-md shadow-lg ring-1 ring-border/10 focus:outline-none z-50 min-w-[280px] w-max bg-white dark:bg-slate-800 text-gray-800 dark:text-white border border-gray-200 dark:border-slate-700 user-menu-dropdown">
                       {/* User header with avatar and info */}
                       <div className="px-4 py-3 border-b border-border/30 bg-foreground/5 dark:bg-slate-700 dark:border-slate-600">
-                        <div className="flex items-center gap-3">
+                        <Link href="/user" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                           <div className={`w-12 h-12 rounded-md ${user?.isAdmin ? 'bg-gradient-to-br from-amber-500 to-red-600' : 'bg-gradient-to-br from-primary to-secondary'} flex items-center justify-center text-white relative overflow-hidden shadow-md`}>
                             <span className="text-lg font-bold">{user?.firstName ? user.firstName.charAt(0).toUpperCase() : user?.email.charAt(0).toUpperCase()}</span>
                           </div>
@@ -208,12 +209,24 @@ export default function Navigation() {
                               </span>
                             )}
                           </div>
-                        </div>
+                        </Link>
                       </div>
                       
                       {/* User actions section */}
                       <div className="p-2 border-b border-border/30 dark:border-gray-700/50">
-                        <p className="px-3 py-1 text-xs font-semibold text-gray-600 dark:text-gray-300 uppercase tracking-wider">{t('account')}</p>
+                        <p className="px-3 py-1 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">{t('account')}</p>                        
+                        <Link 
+                          href="/user"
+                          className="flex items-center w-full px-3 py-2 text-left hover:bg-foreground/10 dark:hover:bg-gray-800 rounded transition-colors duration-200 text-gray-800 dark:text-white group"
+                          onClick={() => setIsUserMenuOpen(false)}
+                        >
+                          <div className="flex items-center justify-center w-8 h-8 rounded-md bg-foreground/5 dark:bg-gray-700 mr-3 transition-colors group-hover:bg-primary/10 dark:group-hover:bg-primary/20 group-hover:text-primary">
+                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                            </svg>
+                          </div>
+                          <span className="font-medium text-gray-800 dark:text-white">{t('dashboard')}</span>
+                        </Link>
                         <Link
                           href="/user/profile"
                           className="flex items-center w-full px-3 py-2 text-left hover:bg-foreground/10 dark:hover:bg-gray-800 rounded transition-colors duration-200 text-gray-800 dark:text-white group"
@@ -440,7 +453,7 @@ export default function Navigation() {
               >
                 {isAuthenticated ? (
                   <div className="px-4 py-3">
-                    <div className="flex items-center space-x-3 mb-3">
+                    <Link href="/user" className="flex items-center space-x-3 mb-3 hover:opacity-80 transition-opacity">
                       <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-lg relative overflow-hidden shadow-md">
                         <span className="font-bold">{user?.firstName ? user.firstName.charAt(0).toUpperCase() : user?.email.charAt(0).toUpperCase()}</span>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-50"></div>
@@ -451,12 +464,25 @@ export default function Navigation() {
                         )}
                         <p className="text-sm text-gray-600 truncate max-w-full" style={theme === 'dark' ? { color: 'white' } : {}}>{user?.email}</p>
                       </div>
-                    </div>
-                    <Link
-                      href="/user/stories"
-                      className="w-full flex items-center space-x-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition-colors mb-2"
-                      onClick={() => setIsMenuOpen(false)}
-                    >
+                    </Link>
+                    
+                    <div className="mb-2">
+                      <p className="px-4 py-1 text-xs font-semibold text-gray-600 dark:text-gray-400 uppercase tracking-wider">{t('account')}</p>
+                      <Link
+                        href="/user"
+                        className="w-full flex items-center space-x-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition-colors mb-2"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span>{t('dashboard')}</span>
+                      </Link>
+                      <Link
+                        href="/user/stories"
+                        className="w-full flex items-center space-x-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition-colors mb-2"
+                        onClick={() => setIsMenuOpen(false)}
+                      >
                       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
@@ -473,6 +499,7 @@ export default function Navigation() {
                       </svg>
                       <span>{t('profile')} {t('settings')}</span>
                     </Link>
+                    </div>
                     
                     {user?.isAdmin && (
                       <>

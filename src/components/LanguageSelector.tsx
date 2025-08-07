@@ -29,10 +29,10 @@ export default function LanguageSelector({ variant, onClose, theme }: LanguageSe
     { code: 'es', name: t('language.es'), flag: 'ES', enabled: false },
     { code: 'fr', name: t('language.fr'), flag: 'FR', enabled: false },
     { code: 'de', name: t('language.de'), flag: 'DE', enabled: false },
+    { code: 'it', name: t('language.it'), flag: 'IT', enabled: false },
     { code: 'pt', name: t('language.pt'), flag: 'PT', enabled: false },
     { code: 'ru', name: t('language.ru'), flag: 'RU', enabled: false },
     { code: 'ro', name: t('language.ro'), flag: 'RO', enabled: false },
-    { code: 'it', name: t('language.it'), flag: 'IT', enabled: false },
   ];
   
   const [languages, setLanguages] = useState<Language[]>(defaultLanguages);
