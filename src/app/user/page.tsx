@@ -42,7 +42,7 @@ export default function DashboardPage() {
             setStats(userStats);
           }
         } catch (error) {
-          console.error('Failed to load user stats:', error);
+          // console.error('Failed to load user stats:', error);
         } finally {
           setIsLoadingStats(false);
         }

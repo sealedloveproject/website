@@ -103,7 +103,7 @@ export async function getUserStats(userEmail: string): Promise<UserStats | null>
     ]);
 
     // Process attachment data
-    let attachmentsCount = attachmentsWithSizes.length;
+    const attachmentsCount = attachmentsWithSizes.length;
     let totalDiskSpaceUsed = 0;
     let photoDiskSpace = 0;
     let videoDiskSpace = 0;
@@ -145,7 +145,7 @@ export async function getUserStats(userEmail: string): Promise<UserStats | null>
 
     return stats;
   } catch (error) {
-    console.error('Error fetching user stats:', error);
+    // console.error('Error fetching user stats:', error);
     return null;
   }
 }
@@ -183,7 +183,7 @@ export async function clearUserStatCache(userEmail: string, stat?: string): Prom
 
     return true;
   } catch (error) {
-    console.error('Error clearing user stat cache:', error);
+    // console.error('Error clearing user stat cache:', error);
     return false;
   }
 }
@@ -196,6 +196,6 @@ export async function invalidateUserStatsCache(userId: string): Promise<void> {
   try {
     await cache.del(getCacheKey(userId));
   } catch (error) {
-    console.error('Error invalidating user stats cache:', error);
+    // console.error('Error invalidating user stats cache:', error);
   }
 }

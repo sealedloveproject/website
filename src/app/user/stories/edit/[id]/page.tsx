@@ -98,7 +98,7 @@ export default function EditStory() {
           isPublic: result.story.isPublic,
           agreeToTerms: true,
         });
-        console.log(result)
+        // console.log(result)
         setHashReplicatingAttachment(result.story.hashReplicatingAttachment);
 
         // Update word count
@@ -130,7 +130,7 @@ export default function EditStory() {
     } finally {
       setIsLoading(false);
     }
-  }, [storyId, user?.email, isAuthenticated, authLoading, reset, storyLoaded, openSignInModal]);
+  }, [storyId, user?.email, isAuthenticated, authLoading, reset, storyLoaded, openSignInModal, t]);
   
   // Load story data on component mount
   useEffect(() => {

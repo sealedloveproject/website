@@ -58,7 +58,7 @@ export default function LanguageSelector({ variant, onClose, theme }: LanguageSe
           );
         }
       } catch (error) {
-        console.error('Failed to fetch available locales:', error);
+        // console.error('Failed to fetch available locales:', error);
       }
     }
     
