@@ -11,6 +11,7 @@ import { useRouter } from 'next/navigation';
 import { useAuth } from '@/contexts/AuthContext';
 import StoryForm from '@/components/stories/StoryForm';
 import { useTranslations } from 'next-intl';
+import UserBreadcrumbs from '@/components/user/Breadcrumbs';
 
 export default function StoreYourStory() {
   const { user, isAuthenticated, openSignInModal } = useAuth();
@@ -214,19 +215,13 @@ export default function StoreYourStory() {
 
   
   return (
-    <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto text-foreground">
-      <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
-      
+    <div className="fade-in text-foreground">
+      {/* Breadcrumbs */}
+      <div className="flex justify-start">
+        <UserBreadcrumbs />
+      </div>
 
       <header className="mb-8">
-        <div className="flex justify-start mb-4">
-          <Link href="/user/stories" className="inline-flex items-center gap-2 bg-background hover:bg-muted px-4 py-2 rounded-lg text-foreground font-medium border border-border transition-all">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-            </svg>
-            {t('backButton')}
-          </Link>
-        </div>
         <h1 className="text-3xl font-bold">{t('title')}</h1>
         <p className="text-muted-foreground mt-2">
           {t('subtitle')}

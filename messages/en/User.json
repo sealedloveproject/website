@@ -58,6 +58,12 @@
       "createFirst": "Create Your First Story"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Create New Story",
+      "subtitle": "Share your love story with the world"
+    }
+  },
   "newStory": {
     "title": "Store Your Love Story",
     "subtitle": "Preserve your memories in our millennium vault",

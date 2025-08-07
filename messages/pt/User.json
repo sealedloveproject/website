@@ -58,6 +58,12 @@
       "createFirst": "Crie Sua Primeira História"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Criar Nova História",
+      "subtitle": "Compartilhe sua história de amor com o mundo"
+    }
+  },
   "newStory": {
     "title": "Guarde Sua História de Amor",
     "subtitle": "Preserve suas memórias em nosso cofre milenar",

@@ -58,6 +58,12 @@
       "createFirst": "Creează Prima Ta Poveste"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Creează o Poveste Nouă",
+      "subtitle": "Împărtășește povestea ta de dragoste cu lumea"
+    }
+  },
   "newStory": {
     "title": "Păstrează Povestea Ta de Dragoste",
     "subtitle": "Păstrează-ți amintirile în seiful nostru milenar",

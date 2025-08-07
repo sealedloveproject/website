@@ -5,7 +5,7 @@ export default async function About() {
   // Get translations
   const t = await getTranslations('About');
   return (
-    <div className="fade-in pt-24 pb-20 px-6 max-w-5xl mx-auto text-foreground">
+    <div className="fade-in pt-24 pb-20 px-4 sm:px-6 max-w-6xl mx-auto text-foreground">
       <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
       <header className="mb-16">
         <div className="mt-10 mb-6 relative text-center">

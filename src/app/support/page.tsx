@@ -84,10 +84,10 @@ export default function DonatePage() {
   }, [getPatreonButtonHtml, getPayPalButtonHtml]);
 
   return (
-    <div className="fade-in pt-24 pb-20 px-6 max-w-5xl mx-auto text-foreground">
+    <div className="fade-in pt-24 pb-20 px-4 sm:px-6 max-w-6xl mx-auto text-foreground">
       <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
       <header className="mb-16">
-        <div className="mt-16 mb-6 relative text-center">
+        <div className="mt-10 mb-6 relative text-center">
           <div className="absolute -inset-4 rounded-full bg-primary/5 blur-xl"></div>
           <h1 className="text-3xl md:text-3xl font-bold relative inline-block">{t('title')}</h1>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4 mx-auto"></div>

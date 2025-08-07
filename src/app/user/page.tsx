@@ -6,6 +6,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useTranslations } from 'next-intl';
+import UserBreadcrumbs from '@/components/user/Breadcrumbs';
 
 // Mock data interface based on database schema
 interface UserStats {
@@ -77,13 +78,15 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="fade-in pt-16 pb-20 px-6 max-w-6xl mx-auto">
-      <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
+    <div className="fade-in">
+      <div className="mb-6">
+        <UserBreadcrumbs />
+      </div>
       
-      <header className="mb-12">
-        <div className="text-center">
-          <h1 className="text-4xl md:text-4xl font-bold mb-4">{t('title') || 'Dashboard'}</h1>
-          <p className="text-lg text-foreground/80">{t('subtitle') || 'Overview of your activity and content'}</p>
+      <header className="mb-8">
+        <div>
+          <h1 className="text-3xl font-bold mb-2">{t('title') || 'Dashboard'}</h1>
+          <p className="text-base text-foreground/80">{t('subtitle') || 'Overview of your activity and content'}</p>
         </div>
       </header>
 

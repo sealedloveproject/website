@@ -8,6 +8,7 @@ import { useRouter } from 'next/navigation';
 import { getUserStories } from '@/app/actions/users/stories';
 import { Button } from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
+import UserBreadcrumbs from '@/components/user/Breadcrumbs';
 
 export default function UserStoriesPage() {
   const { user, isAuthenticated, openSignInModal } = useAuth();
@@ -63,8 +64,7 @@ export default function UserStoriesPage() {
   // Show login required message when not authenticated
   if (!isAuthenticated && !isLoading) {
     return (
-      <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto text-foreground">
-        <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
+      <div className="fade-in text-foreground">
         <div className="flex flex-col items-center justify-center py-16 text-center">
           <div className="w-20 h-20 mb-6 rounded-full bg-foreground/5 flex items-center justify-center">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 text-primary">
@@ -91,14 +91,15 @@ export default function UserStoriesPage() {
   }
 
   return (
-    <div className="fade-in pt-16 pb-20 px-6 max-w-5xl mx-auto text-foreground">
-      <div className="absolute inset-0 opacity-5 bg-[url('/images/pattern.svg')] bg-repeat -z-10"></div>
-      <header className="mb-16">
-        <div className="mt-10 mb-6 relative text-center">
-          <div className="absolute -inset-4 rounded-full bg-primary/5 blur-xl"></div>
-          <h1 className="text-4xl md:text-4xl font-bold relative inline-block">{t('title')}</h1>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-secondary rounded-full mt-4 mx-auto"></div>
-          <p className="mt-6 text-lg text-foreground/80 text-center max-w-3xl mx-auto">
+    <div className="fade-in">
+      <div className="mb-6">
+        <UserBreadcrumbs />
+      </div>
+      
+      <header className="mb-8">
+        <div>
+          <h1 className="text-3xl font-bold mb-2">{t('title')}</h1>
+          <p className="mt-6 text-lg text-foreground/80 max-w-3xl">
             {t('subtitle')}
           </p>
         </div>

@@ -58,6 +58,12 @@
       "createFirst": "Erstellen Sie Ihre erste Geschichte"
     }
   },
+  "createStory": {
+    "header": {
+      "title": "Neue Geschichte erstellen",
+      "subtitle": "Teilen Sie Ihre Liebesgeschichte mit der Welt"
+    }
+  },
   "newStory": {
     "title": "Speichern Sie Ihre Liebesgeschichte",
     "subtitle": "Bewahren Sie Ihre Erinnerungen in unserem Jahrtausend-Tresor auf",
@@ -132,48 +138,6 @@
           "makePublic": "Diese Geschichte öffentlich und teilbar machen (optional)"
         }
       }
-    }
-  },
-  "dashboard": {
-    "title": "Dashboard",
-    "subtitle": "Übersicht über Ihre Aktivitäten und Inhalte",
-    "loading": "Dashboard wird geladen...",
-    "loginRequired": "Anmeldung erforderlich",
-    "contentDetails": "Inhaltsdetails",
-    "stats": {
-      "title": "Statistik-Übersicht",
-      "stories": "Geschichten",
-      "totalStories": "Gesamte Geschichten",
-      "publicStories": "Öffentliche Geschichten",
-      "visibility": "Sichtbarkeit",
-      "visibilityRatio": "{public} öffentlich / {private} privat",
-      "engagement": "Engagement",
-      "totalLikes": "Gesamte Likes",
-      "totalViews": "Gesamte Aufrufe",
-      "averageLikesPerStory": "Durchschnittliche Likes pro Geschichte",
-      "avgLikesPerStory": "Durchschnitt pro Geschichte",
-      "avgViewsPerStory": "Durchschnitt pro Geschichte",
-      "thisMonth": "diesen Monat",
-      "attachments": "Anhänge",
-      "totalAttachments": "Insgesamt hochgeladene Dateien",
-      "diskSpaceUsed": "Verwendeter Speicherplatz",
-      "photoFiles": "Fotos",
-      "videoFiles": "Videos",
-      "audioFiles": "Audio",
-      "viewAll": "Alle anzeigen",
-      "public": "Öffentlich",
-      "private": "Privat"
-    },
-    "quickActions": {
-      "title": "Schnellaktionen",
-      "createStory": "Geschichte erstellen",
-      "createStoryDesc": "Neue Geschichte schreiben",
-      "manageStories": "Geschichten verwalten",
-      "manageStoriesDesc": "Geschichten anzeigen und bearbeiten",
-      "editProfile": "Profil bearbeiten",
-      "editProfileDesc": "Profilinformationen aktualisieren",
-      "helpSupport": "Hilfe & Support",
-      "helpDesc": "Unterstützung für Ihr Konto erhalten"
     }
   },
   "editStory": {
