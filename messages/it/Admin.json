@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Dashboard Admin",
+    "subtitle": "Panoramica della piattaforma e strumenti di gestione",
+    "loading": "Caricamento dashboard admin...",
+    "users": {
+      "title": "Statistiche Utenti",
+      "total": "Totale Utenti",
+      "newThisMonth": "Nuovi Questo Mese",
+      "newThisWeek": "Nuovi Questa Settimana",
+      "withStories": "Scrittori Attivi"
+    },
+    "stories": {
+      "title": "Statistiche Storie",
+      "total": "Totale Storie",
+      "public": "Storie Pubbliche",
+      "private": "Storie Private",
+      "totalLikes": "Totale Mi Piace",
+      "averageLikes": "Media Mi Piace/Storia"
+    },
+    "content": {
+      "title": "Contenuti e Archiviazione",
+      "attachments": "Allegati",
+      "totalStorage": "Archiviazione Totale",
+      "photos": "Foto",
+      "videos": "Video",
+      "audio": "Audio"
+    },
+    "moderation": {
+      "title": "Moderazione e Segnalazioni",
+      "totalReports": "Totale Segnalazioni",
+      "pending": "In Attesa di Revisione",
+      "reviewed": "Riviste",
+      "dismissed": "Respinte"
+    },
+    "quickActions": {
+      "title": "Azioni Rapide",
+      "manageUsers": "Gestisci Utenti",
+      "manageUsersDesc": "Visualizza e gestisci account utente",
+      "manageStories": "Gestisci Storie",
+      "manageStoriesDesc": "Rivedi e modera le storie",
+      "reviewReports": "Rivedi Segnalazioni",
+      "reviewReportsDesc": "Gestisci segnalazioni utenti e moderazione",
+      "manageVaults": "Gestisci Caveau",
+      "manageVaultsDesc": "Configura collezioni di storie"
+    }
+  }
+}

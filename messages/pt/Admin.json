@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Painel de Administração",
+    "subtitle": "Visão geral da plataforma e ferramentas de gestão",
+    "loading": "Carregando painel de administração...",
+    "users": {
+      "title": "Estatísticas de Usuários",
+      "total": "Total de Usuários",
+      "newThisMonth": "Novos Este Mês",
+      "newThisWeek": "Novos Esta Semana",
+      "withStories": "Escritores Ativos"
+    },
+    "stories": {
+      "title": "Estatísticas de Histórias",
+      "total": "Total de Histórias",
+      "public": "Histórias Públicas",
+      "private": "Histórias Privadas",
+      "totalLikes": "Total de Curtidas",
+      "averageLikes": "Média Curtidas/História"
+    },
+    "content": {
+      "title": "Conteúdo e Armazenamento",
+      "attachments": "Anexos",
+      "totalStorage": "Armazenamento Total",
+      "photos": "Fotos",
+      "videos": "Vídeos",
+      "audio": "Áudio"
+    },
+    "moderation": {
+      "title": "Moderação e Relatórios",
+      "totalReports": "Total de Relatórios",
+      "pending": "Pendentes de Revisão",
+      "reviewed": "Revisados",
+      "dismissed": "Rejeitados"
+    },
+    "quickActions": {
+      "title": "Ações Rápidas",
+      "manageUsers": "Gerenciar Usuários",
+      "manageUsersDesc": "Ver e gerenciar contas de usuário",
+      "manageStories": "Gerenciar Histórias",
+      "manageStoriesDesc": "Revisar e moderar histórias",
+      "reviewReports": "Revisar Relatórios",
+      "reviewReportsDesc": "Lidar com relatórios de usuários e moderação",
+      "manageVaults": "Gerenciar Cofres",
+      "manageVaultsDesc": "Configurar coleções de histórias"
+    }
+  }
+}

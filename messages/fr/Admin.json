@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Tableau de Bord Admin",
+    "subtitle": "Aperçu de la plateforme et outils de gestion",
+    "loading": "Chargement du tableau de bord admin...",
+    "users": {
+      "title": "Statistiques des Utilisateurs",
+      "total": "Total des Utilisateurs",
+      "newThisMonth": "Nouveaux Ce Mois",
+      "newThisWeek": "Nouveaux Cette Semaine",
+      "withStories": "Écrivains Actifs"
+    },
+    "stories": {
+      "title": "Statistiques des Histoires",
+      "total": "Total des Histoires",
+      "public": "Histoires Publiques",
+      "private": "Histoires Privées",
+      "totalLikes": "Total des J'aime",
+      "averageLikes": "Moy. J'aime/Histoire"
+    },
+    "content": {
+      "title": "Contenu et Stockage",
+      "attachments": "Pièces Jointes",
+      "totalStorage": "Stockage Total",
+      "photos": "Photos",
+      "videos": "Vidéos",
+      "audio": "Audio"
+    },
+    "moderation": {
+      "title": "Modération et Signalements",
+      "totalReports": "Total des Signalements",
+      "pending": "En Attente de Révision",
+      "reviewed": "Révisés",
+      "dismissed": "Rejetés"
+    },
+    "quickActions": {
+      "title": "Actions Rapides",
+      "manageUsers": "Gérer les Utilisateurs",
+      "manageUsersDesc": "Voir et gérer les comptes utilisateur",
+      "manageStories": "Gérer les Histoires",
+      "manageStoriesDesc": "Réviser et modérer les histoires",
+      "reviewReports": "Réviser les Signalements",
+      "reviewReportsDesc": "Traiter les signalements et la modération",
+      "manageVaults": "Gérer les Coffres",
+      "manageVaultsDesc": "Configurer les collections d'histoires"
+    }
+  }
+}
