@@ -256,7 +256,19 @@ export default function Navigation() {
                       {/* Admin section - only shown to admins */}
                       {user?.isAdmin && (
                         <div className="p-2 border-b border-border/30 dark:border-gray-700/50">
-                          <p className="px-3 py-1 text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">{t('admin')} {t('dashboard')}</p>
+                          <p className="px-3 py-1 text-xs font-semibold text-amber-600 dark:text-amber-400 uppercase tracking-wider">{t('admin')}</p>
+                          <Link
+                            href="/admin"
+                            className="flex items-center w-full px-3 py-2 text-left hover:bg-amber-50/50 dark:hover:bg-amber-900/80 rounded transition-colors duration-200 text-amber-800 dark:text-amber-200 group"
+                            onClick={() => setIsUserMenuOpen(false)}
+                          >
+                            <div className="flex items-center justify-center w-8 h-8 rounded-md bg-amber-100/50 dark:bg-amber-800/50 mr-3 transition-colors group-hover:bg-amber-200/70 dark:group-hover:bg-amber-700/70">
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                              </svg>
+                            </div>
+                            <span className="font-medium text-amber-800 dark:text-amber-200">{t('dashboard')}</span>
+                          </Link>
                           <Link
                             href="/admin/stories"
                             className="flex items-center w-full px-3 py-2 text-left hover:bg-amber-50/50 dark:hover:bg-amber-900/80 rounded transition-colors duration-200 text-amber-800 dark:text-amber-200 group"

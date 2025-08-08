@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Admin Dashboard",
+    "subtitle": "Platform overview and management tools",
+    "loading": "Loading admin dashboard...",
+    "users": {
+      "title": "User Statistics",
+      "total": "Total Users",
+      "newThisMonth": "New This Month",
+      "newThisWeek": "New This Week",
+      "withStories": "Active Writers"
+    },
+    "stories": {
+      "title": "Story Statistics",
+      "total": "Total Stories",
+      "public": "Public Stories",
+      "private": "Private Stories",
+      "totalLikes": "Total Likes",
+      "averageLikes": "Avg Likes/Story"
+    },
+    "content": {
+      "title": "Content & Storage",
+      "attachments": "Attachments",
+      "totalStorage": "Total Storage",
+      "photos": "Photos",
+      "videos": "Videos",
+      "audio": "Audio"
+    },
+    "moderation": {
+      "title": "Moderation & Reports",
+      "totalReports": "Total Reports",
+      "pending": "Pending Review",
+      "reviewed": "Reviewed",
+      "dismissed": "Dismissed"
+    },
+    "quickActions": {
+      "title": "Quick Actions",
+      "manageUsers": "Manage Users",
+      "manageUsersDesc": "View and manage user accounts",
+      "manageStories": "Manage Stories",
+      "manageStoriesDesc": "Review and moderate stories",
+      "reviewReports": "Review Reports",
+      "reviewReportsDesc": "Handle user reports and moderation",
+      "manageVaults": "Manage Vaults",
+      "manageVaultsDesc": "Configure story collections"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Admin-Dashboard",
+    "subtitle": "Plattformübersicht und Verwaltungstools",
+    "loading": "Admin-Dashboard wird geladen...",
+    "users": {
+      "title": "Benutzerstatistiken",
+      "total": "Benutzer insgesamt",
+      "newThisMonth": "Neue diesen Monat",
+      "newThisWeek": "Neue diese Woche",
+      "withStories": "Aktive Autoren"
+    },
+    "stories": {
+      "title": "Story-Statistiken",
+      "total": "Stories insgesamt",
+      "public": "Öffentliche Stories",
+      "private": "Private Stories",
+      "totalLikes": "Likes insgesamt",
+      "averageLikes": "Ø Likes/Story"
+    },
+    "content": {
+      "title": "Inhalte & Speicher",
+      "attachments": "Anhänge",
+      "totalStorage": "Speicher insgesamt",
+      "photos": "Fotos",
+      "videos": "Videos",
+      "audio": "Audio"
+    },
+    "moderation": {
+      "title": "Moderation & Meldungen",
+      "totalReports": "Meldungen insgesamt",
+      "pending": "Ausstehende Prüfung",
+      "reviewed": "Geprüft",
+      "dismissed": "Abgelehnt"
+    },
+    "quickActions": {
+      "title": "Schnellaktionen",
+      "manageUsers": "Benutzer verwalten",
+      "manageUsersDesc": "Benutzerkonten anzeigen und verwalten",
+      "manageStories": "Stories verwalten",
+      "manageStoriesDesc": "Stories überprüfen und moderieren",
+      "reviewReports": "Meldungen prüfen",
+      "reviewReportsDesc": "Benutzermeldungen und Moderation bearbeiten",
+      "manageVaults": "Tresore verwalten",
+      "manageVaultsDesc": "Story-Sammlungen konfigurieren"
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Panel de Administración",
+    "subtitle": "Resumen de la plataforma y herramientas de gestión",
+    "loading": "Cargando panel de administración...",
+    "users": {
+      "title": "Estadísticas de Usuarios",
+      "total": "Total de Usuarios",
+      "newThisMonth": "Nuevos Este Mes",
+      "newThisWeek": "Nuevos Esta Semana",
+      "withStories": "Escritores Activos"
+    },
+    "stories": {
+      "title": "Estadísticas de Historias",
+      "total": "Total de Historias",
+      "public": "Historias Públicas",
+      "private": "Historias Privadas",
+      "totalLikes": "Total de Me Gusta",
+      "averageLikes": "Promedio Me Gusta/Historia"
+    },
+    "content": {
+      "title": "Contenido y Almacenamiento",
+      "attachments": "Archivos Adjuntos",
+      "totalStorage": "Almacenamiento Total",
+      "photos": "Fotos",
+      "videos": "Videos",
+      "audio": "Audio"
+    },
+    "moderation": {
+      "title": "Moderación y Reportes",
+      "totalReports": "Total de Reportes",
+      "pending": "Pendientes de Revisión",
+      "reviewed": "Revisados",
+      "dismissed": "Desestimados"
+    },
+    "quickActions": {
+      "title": "Acciones Rápidas",
+      "manageUsers": "Gestionar Usuarios",
+      "manageUsersDesc": "Ver y gestionar cuentas de usuario",
+      "manageStories": "Gestionar Historias",
+      "manageStoriesDesc": "Revisar y moderar historias",
+      "reviewReports": "Revisar Reportes",
+      "reviewReportsDesc": "Manejar reportes de usuarios y moderación",
+      "manageVaults": "Gestionar Bóvedas",
+      "manageVaultsDesc": "Configurar colecciones de historias"
+    }
+  }
+}

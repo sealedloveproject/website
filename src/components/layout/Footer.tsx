@@ -10,12 +10,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-lg font-semibold mb-4">sealed.love <span className="text-primary">v{process.env.APP_VERSION}</span></h3>
-            <p className="text-sm max-w-md">
+            <p className="text-xs max-w-md">
               {t('tagline')}
             </p>
           </div>
           
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center">
             <h3 className="text-lg font-semibold mb-4">{t('joinCommunity')}</h3>
             <div className="flex space-x-5">
               <a href="https://x.com/sealedloveproj" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="Twitter">
@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
           
           <div className="flex flex-col md:items-end">
-            <div className="flex space-x-4 mb-4">
+            <div className="flex flex-wrap gap-x-4 gap-y-2 mb-4 md:justify-end">
               <Link href="/about" className="text-sm hover:text-primary transition-colors">
                 {t('about')}
               </Link>

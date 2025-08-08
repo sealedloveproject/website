@@ -1,0 +1,48 @@
+{
+  "dashboard": {
+    "title": "Panou de Administrare",
+    "subtitle": "Prezentare generală a platformei și instrumente de gestionare",
+    "loading": "Se încarcă panoul de administrare...",
+    "users": {
+      "title": "Statistici Utilizatori",
+      "total": "Total Utilizatori",
+      "newThisMonth": "Noi Luna Aceasta",
+      "newThisWeek": "Noi Săptămâna Aceasta",
+      "withStories": "Scriitori Activi"
+    },
+    "stories": {
+      "title": "Statistici Povești",
+      "total": "Total Povești",
+      "public": "Povești Publice",
+      "private": "Povești Private",
+      "totalLikes": "Total Aprecieri",
+      "averageLikes": "Media Aprecieri/Poveste"
+    },
+    "content": {
+      "title": "Conținut și Stocare",
+      "attachments": "Atașamente",
+      "totalStorage": "Stocare Totală",
+      "photos": "Fotografii",
+      "videos": "Videoclipuri",
+      "audio": "Audio"
+    },
+    "moderation": {
+      "title": "Moderare și Rapoarte",
+      "totalReports": "Total Rapoarte",
+      "pending": "În Așteptarea Revizuirii",
+      "reviewed": "Revizuite",
+      "dismissed": "Respinse"
+    },
+    "quickActions": {
+      "title": "Acțiuni Rapide",
+      "manageUsers": "Gestionează Utilizatorii",
+      "manageUsersDesc": "Vizualizează și gestionează conturile utilizatorilor",
+      "manageStories": "Gestionează Poveștile",
+      "manageStoriesDesc": "Revizuiește și moderează poveștile",
+      "reviewReports": "Revizuiește Rapoartele",
+      "reviewReportsDesc": "Gestionează rapoartele utilizatorilor și moderarea",
+      "manageVaults": "Gestionează Seifurile",
+      "manageVaultsDesc": "Configurează colecțiile de povești"
+    }
+  }
+}
