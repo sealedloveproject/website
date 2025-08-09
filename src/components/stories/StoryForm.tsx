@@ -101,7 +101,7 @@ export default function StoryForm({
           <label htmlFor="content" className="block font-medium">
             {t('content.label')}
           </label>
-          <span className={`text-sm ${wordCount > 500 ? 'text-red-500 font-medium' : 'text-muted-foreground'}`}>
+          <span className={`text-sm ${wordCount > 1000 ? 'text-red-500 font-medium' : 'text-muted-foreground'}`}>
             {t('content.wordCount', { count: wordCount })}
           </span>
         </div>
@@ -115,7 +115,7 @@ export default function StoryForm({
         {errors.content && (
           <p className="text-red-500 text-sm mt-1">{errors.content.message}</p>
         )}
-        {wordCount > 500 && (
+        {wordCount > 1000 && (
           <p className="text-red-500 text-sm mt-1">
             {t('content.wordLimitExceeded')}
           </p>

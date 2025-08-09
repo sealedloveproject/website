@@ -84,7 +84,7 @@
       "content": {
         "label": "La Tua Storia",
         "placeholder": "Condividi la tua storia qui...",
-        "wordCount": "{count} / 500 parole",
+        "wordCount": "{count} / 1000 parole",
         "wordLimitExceeded": "La tua storia supera il limite di 500 parole. Per favore, accorciala."
       },
       "media": {
