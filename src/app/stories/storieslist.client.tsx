@@ -84,20 +84,24 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                 onClick={() => handleSortChange('newest')} 
                 variant={currentSort === 'newest' ? 'primary' : 'ghost'}
                 className={`px-5 py-2.5 text-sm font-medium transition-all duration-200 relative ${currentSort === 'newest' && 'transform scale-[1.02]'}`}
+                aria-pressed={currentSort === 'newest'}
+                aria-label={t('controls.newest')}
               >
                 {t('controls.newest')}
                 {currentSort === 'newest' && (
-                  <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-white rounded-full"></div>
+                  <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-white rounded-full" aria-hidden="true"></div>
                 )}
               </Button>
               <Button 
                 onClick={() => handleSortChange('popular')} 
                 variant={currentSort === 'popular' ? 'primary' : 'ghost'}
                 className={`px-5 py-2.5 text-sm font-medium transition-all duration-200 relative ${currentSort === 'popular' && 'transform scale-[1.02]'}`}
+                aria-pressed={currentSort === 'popular'}
+                aria-label={t('controls.popular')}
               >
                 {t('controls.popular')}
                 {currentSort === 'popular' && (
-                  <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-white rounded-full"></div>
+                  <div className="absolute -bottom-0.5 left-1/2 transform -translate-x-1/2 w-2 h-0.5 bg-white rounded-full" aria-hidden="true"></div>
                 )}
               </Button>
             </div>
@@ -116,6 +120,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
               className="block w-full pl-10 pr-4 py-2 border border-border rounded-lg bg-background focus:ring-primary focus:border-primary"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              aria-label={t('controls.search.label') || 'Search stories'}
             />
           </div>
         </div>
@@ -160,9 +165,9 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                 variant="ghost"
                 size="icon"
                 className="w-10 h-10"
-                aria-label={t('pagination.prev')}
+                aria-label={t('pagination.previous')}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>
               </Button>
@@ -195,6 +200,8 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                       variant={currentPage === pageNum ? 'primary' : 'ghost'}
                       size="sm"
                       className="w-10 h-10"
+                      aria-label={`${t('pagination.page')} ${pageNum}`}
+                      aria-current={currentPage === pageNum ? 'page' : undefined}
                     >
                       {pageNum}
                     </Button>
@@ -210,7 +217,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                 className="w-10 h-10"
                 aria-label={t('pagination.next')}
               >
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
                 </svg>
               </Button>
@@ -226,7 +233,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
               <div className="text-center py-2">
                 <div className="mb-8">
                   <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-12 h-12 text-primary" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" />
                     </svg>
                   </div>
@@ -242,7 +249,7 @@ export function StoriesList({ initialStories = [], initialTotalCount = 0, initia
                     className="inline-flex items-center gap-2 group"
                   >
                     {t('noResults.noStories.cta')}
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                     </svg>
                   </Button>

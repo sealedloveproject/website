@@ -14,7 +14,8 @@
     "popular": "Популярные",
     "search": {
       "placeholder": "Поиск историй...",
-      "button": "Поиск"
+      "button": "Поиск",
+      "label": "Поиск историй"
     }
   },
   "pagination": {

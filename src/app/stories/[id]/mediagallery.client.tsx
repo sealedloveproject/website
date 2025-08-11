@@ -23,6 +23,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
   const t = useTranslations('Story');
   const [activeMediaIndex, setActiveMediaIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const audioRef = useRef<HTMLAudioElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
@@ -74,6 +75,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
   // Navigate to previous media item
   const navigateToPrevious = useCallback(() => {
     if (mediaAttachments.length <= 1) return;
+    setIsLoading(true);
     setActiveMediaIndex((prevIndex) => 
       prevIndex === 0 ? mediaAttachments.length - 1 : prevIndex - 1
     );
@@ -82,6 +84,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
   // Navigate to next media item
   const navigateToNext = useCallback(() => {
     if (mediaAttachments.length <= 1) return;
+    setIsLoading(true);
     setActiveMediaIndex((prevIndex) => 
       prevIndex === mediaAttachments.length - 1 ? 0 : prevIndex + 1
     );
@@ -158,28 +161,44 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
             
             {/* Media content based on type */}
             {mediaAttachments[activeMediaIndex]?.fileType.startsWith('image/') && (
-              <div className="flex items-center justify-center h-full bg-gray-200 dark:bg-gray-900">
+              <div className="flex items-center justify-center h-full bg-gray-200 dark:bg-gray-900 relative">
                 <Image
                   ref={imageRef as React.RefObject<HTMLImageElement>}
                   src={mediaAttachments[activeMediaIndex].fileUrl}
                   alt={mediaAttachments[activeMediaIndex].fileName}
                   className="max-h-full max-w-full object-contain"
                   fill
+                  priority
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                   style={{ objectFit: 'contain' }}
                   unoptimized={mediaAttachments[activeMediaIndex].fileUrl.startsWith('blob:')}
+                  onLoad={() => setIsLoading(false)}
+                  onError={() => setIsLoading(false)}
                 />
+                {isLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-10">
+                    <div className="w-12 h-12 rounded-full border-4 border-white border-t-transparent animate-spin"></div>
+                  </div>
+                )}
               </div>
             )}
             
             {mediaAttachments[activeMediaIndex]?.fileType.startsWith('video/') && (
-              <div className="flex items-center justify-center h-full bg-gray-200 dark:bg-gray-900">
+              <div className="flex items-center justify-center h-full bg-gray-200 dark:bg-gray-900 relative">
                 <video 
                   ref={videoRef}
                   src={mediaAttachments[activeMediaIndex].fileUrl} 
                   controls 
                   autoPlay
                   className="max-w-full max-h-full"
+                  onLoadedData={() => setIsLoading(false)}
+                  onError={() => setIsLoading(false)}
                 />
+                {isLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30 backdrop-blur-sm z-10">
+                    <div className="w-12 h-12 rounded-full border-4 border-white border-t-transparent animate-spin"></div>
+                  </div>
+                )}
               </div>
             )}
             
@@ -220,7 +239,14 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                   onEnded={() => setIsPlaying(false)}
                   onPlay={() => setIsPlaying(true)}
                   onPause={() => setIsPlaying(false)}
+                  onLoadedData={() => setIsLoading(false)}
+                  onError={() => setIsLoading(false)}
                 />
+                {isLoading && (
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/20 backdrop-blur-sm z-10">
+                    <div className="w-12 h-12 rounded-full border-4 border-blue-500 border-t-transparent animate-spin"></div>
+                  </div>
+                )}
               </div>
             )}
           </div>
@@ -266,20 +292,21 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                       ${activeMediaIndex === index 
                         ? 'ring-3 ring-blue-500 ring-offset-2 shadow-lg transform scale-105' 
                         : 'hover:ring-2 hover:ring-blue-300 hover:ring-offset-1 shadow-md hover:shadow-lg'}`}
-                    onClick={() => {
-                      setActiveMediaIndex(index);
-                      // For videos, we'll rely on the autoPlay attribute
-                      // For audio, start playing when clicked
-                      if (isAudio && audioRef.current) {
-                        setTimeout(() => {
-                          if (audioRef.current) {
-                            audioRef.current.play()
-                              .then(() => setIsPlaying(true))
-                              .catch(() => setIsPlaying(false));
-                          }
-                        }, 100);
-                      }
-                    }}
+                      onClick={() => {
+                        setIsLoading(true);
+                        setActiveMediaIndex(index);
+                        // For videos, we'll rely on the autoPlay attribute
+                        // For audio, start playing when clicked
+                        if (isAudio && audioRef.current) {
+                          setTimeout(() => {
+                            if (audioRef.current) {
+                              audioRef.current.play()
+                                .then(() => setIsPlaying(true))
+                                .catch(() => setIsPlaying(false));
+                            }
+                          }, 100);
+                        }
+                      }}
                   >
                     {isImage && (
                       <div className="relative w-full h-full group">

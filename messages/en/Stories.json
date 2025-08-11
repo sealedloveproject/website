@@ -14,7 +14,8 @@
     "popular": "Popular",
     "search": {
       "placeholder": "Search stories...",
-      "button": "Search"
+      "button": "Search",
+      "label": "Search stories"
     }
   },
   "pagination": {

@@ -14,7 +14,8 @@
     "popular": "Cele mai populare",
     "search": {
       "placeholder": "Caută povești...",
-      "button": "Caută"
+      "button": "Caută",
+      "label": "Caută povești"
     }
   },
   "pagination": {

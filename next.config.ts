@@ -32,7 +32,7 @@ const nextConfig: NextConfig = {
           // Content-Security-Policy - Prevent XSS, clickjacking, etc.
           {
             key: 'Content-Security-Policy',
-            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; connect-src 'self' https:; frame-src 'self' https:; object-src 'none';",
+            value: "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' data: https:; font-src 'self' data: https:; media-src 'self' https://devmedia.sealed.love https://media.sealed.love; connect-src 'self' https:; frame-src 'self' https:; object-src 'none';",
           },
           // X-Content-Type-Options - Prevent MIME type sniffing
           {

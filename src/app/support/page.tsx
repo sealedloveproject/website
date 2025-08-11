@@ -29,8 +29,9 @@ export default function DonatePage() {
         text-decoration: none;
         transition: all 0.2s ease;
         box-shadow: 0 4px 12px rgba(249, 104, 84, 0.3);
-      ">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 24px; margin-right: 12px; fill: currentColor;">
+      " aria-label="${buttonText}" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height: 24px; margin-right: 12px; fill: currentColor;" aria-hidden="true" role="img" focusable="false">
+          <title>Patreon Logo</title>
           <path d="M512 194.8c0 101.3-82.4 183.8-183.8 183.8-101.7 0-184.4-82.4-184.4-183.8 0-101.6 82.7-184.3 184.4-184.3C429.6 10.5 512 93.2 512 194.8zM0 501.5h90v-491H0v491z"/>
         </svg>
         ${buttonText}
@@ -60,9 +61,9 @@ export default function DonatePage() {
         text-decoration: none;
         transition: all 0.2s ease;
         box-shadow: 0 4px 12px rgba(0, 112, 186, 0.3);
-      ">
+      " aria-label="${buttonText}" rel="noopener noreferrer">
         <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/PP_logo_h_100x26.png" 
-          alt="PayPal Logo" style="height: 24px; margin-right: 12px;" />
+          alt="PayPal" style="height: 24px; margin-right: 12px;" role="img" />
         ${buttonText}
       </a>
     `;
@@ -136,6 +137,7 @@ export default function DonatePage() {
               </div>
             </div>
           </div>
+          <h3 id="paypal-section" className="sr-only">{t('paypal.title')}</h3>
         </div>
         
         {/* Info sections */}
@@ -154,7 +156,7 @@ export default function DonatePage() {
                     return (
                       <li key={index} className="flex gap-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-primary">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-primary" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                           </svg>
                         </div>
@@ -188,7 +190,7 @@ export default function DonatePage() {
                     return (
                       <li key={index} className="flex gap-3">
                         <div className="flex-shrink-0 w-6 h-6 rounded-full bg-secondary/20 flex items-center justify-center">
-                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-secondary">
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4 text-secondary" aria-hidden="true">
                             {icons[index % icons.length]}
                           </svg>
                         </div>

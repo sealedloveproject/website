@@ -28,7 +28,7 @@ export default function TermsPage() {
         <div className="bg-card/50 rounded-xl p-8 mb-8 border border-border/50">
           <div className="flex items-center mb-4">
             <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-primary">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6 text-primary" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
@@ -58,15 +58,15 @@ export default function TermsPage() {
               </p>
               <ul className="space-y-2 text-foreground/80">
                 <li className="flex items-start">
-                  <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 mr-3 flex-shrink-0" aria-hidden="true"></span>
                   <span>Digital story creation and storage</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 mr-3 flex-shrink-0" aria-hidden="true"></span>
                   <span>Long-term preservation services</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 mr-3 flex-shrink-0"></span>
+                  <span className="w-2 h-2 rounded-full bg-primary/60 mt-2 mr-3 flex-shrink-0" aria-hidden="true"></span>
                   <span>Community sharing features (optional)</span>
                 </li>
                 <li className="flex items-start">
@@ -412,7 +412,7 @@ export default function TermsPage() {
             <div className="bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg p-6 border border-border/30">
               <div className="text-center">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-primary">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-primary" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                   </svg>
                 </div>
@@ -424,8 +424,9 @@ export default function TermsPage() {
                   <Link 
                     href="/contact" 
                     className="px-6 py-3 bg-primary text-white hover:bg-primary/90 rounded-lg transition-colors flex items-center gap-2"
+                    aria-label="Contact Us"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                     Contact Us
@@ -433,8 +434,9 @@ export default function TermsPage() {
                   <Link 
                     href="/privacy" 
                     className="px-6 py-3 bg-card hover:bg-card/80 border border-border rounded-lg transition-colors flex items-center gap-2"
+                    aria-label="Privacy Policy"
                   >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                     </svg>
                     Privacy Policy

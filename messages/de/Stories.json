@@ -14,7 +14,8 @@
     "popular": "Beliebteste",
     "search": {
       "placeholder": "Geschichten durchsuchen...",
-      "button": "Suchen"
+      "button": "Suchen",
+      "label": "Geschichten durchsuchen"
     }
   },
   "pagination": {
