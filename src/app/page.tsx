@@ -39,11 +39,6 @@ export const metadata: Metadata = createMetadata('/', {
   // Note: canonical URL will be automatically added by createMetadata
 });
 
-// Generate JSON-LD structured data for the homepage
-export function generateJsonLd() {
-  return generateHomePageJsonLd();
-}
-
 export default async function Home() {
   const t = await getTranslations('Home');
 

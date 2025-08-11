@@ -59,39 +59,29 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   try {
     // Get the first batch of stories with count to determine total pages
     const firstBatch = await getPublicStories(1, 100);
-    const totalStories = firstBatch.totalCount;
     
-    // If we have fewer stories than MAX_URLS_PER_SITEMAP, include them directly
-    if (totalStories <= MAX_URLS_PER_SITEMAP - routes.length) {
-      // Calculate how many pages we need to fetch to get all stories
-      const totalPages = Math.ceil(totalStories / 100);
-      let allStories = [...firstBatch.stories];
-      
-      // Fetch all remaining pages
-      for (let page = 2; page <= totalPages; page++) {
-        const batch = await getPublicStories(page, 100);
-        allStories = [...allStories, ...batch.stories];
-      }
-      
-      // Map stories to sitemap entries
-      const storyRoutes = allStories.map((story) => ({
-        url: `${baseUrl}/stories/${story.id}`,
-        lastModified: new Date(story.updatedAt || story.date || new Date()),
-        changeFrequency: 'weekly' as const,
-        priority: 0.7,
-      }));
-      
-      // Return all routes in a single sitemap
-      return [...routes, ...storyRoutes];
-    } 
-    // Otherwise, we'll need to create multiple sitemap files
-    else {
-      // For the main sitemap.xml, we'll return just the static routes
-      // The dynamic story routes will be handled by sitemap-stories-[index].xml files
-      return routes;
+    // Calculate how many pages we need to fetch to get all stories
+    const totalPages = Math.ceil(firstBatch.totalCount / 100);
+    let allStories = [...firstBatch.stories];
+    
+    // Fetch all remaining pages
+    for (let page = 2; page <= totalPages; page++) {
+      const batch = await getPublicStories(page, 100);
+      allStories = [...allStories, ...batch.stories];
     }
+    
+    // Map stories to sitemap entries
+    const storyRoutes = allStories.map((story) => ({
+      url: `${baseUrl}/stories/${story.id}`,
+      lastModified: new Date(story.updatedAt || story.date || new Date()),
+      changeFrequency: 'weekly' as const,
+      priority: 0.7,
+    }));
+    
+    // Return all routes in a single sitemap, regardless of size. todo: don't forget to change this when we will have a huge success :D
+    return [...routes, ...storyRoutes];
   } catch (error) {
-    console.error('Error generating dynamic sitemap entries:', error);
+    //console.error('Error generating dynamic sitemap entries:', error);
     return routes;
   }
 }

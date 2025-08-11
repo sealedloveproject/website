@@ -133,27 +133,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   }
 }
 
-// Generate JSON-LD structured data for the page
-export function generateJsonLd({ params }: { params: Promise<{ id: string }> }) {
-  return async () => {
-    // Properly await the params object before accessing its properties
-    const resolvedParams = await params;
-    const storyId = resolvedParams.id;
-    
-    try {
-      const story = await getPublicStoryById(storyId);
-      
-      if (!story) {
-        return null;
-      }
-      
-      return generateStoryJsonLd(story);
-    } catch (error) {
-      console.error('Error generating JSON-LD:', error);
-      return null;
-    }
-  };
-}
+// JSON-LD will be injected directly in the component using a Script tag
 
 export default async function StoryPage(props: { params: Promise<{ id: string }> }) {
   // Get translations

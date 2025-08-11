@@ -307,7 +307,7 @@ export async function getAdminStats(): Promise<AdminStats | null> {
 
     return stats;
   } catch (error) {
-    console.error('Error fetching admin stats:', error);
+    //console.error('Error fetching admin stats:', error);
     return null;
   }
 }
@@ -326,7 +326,7 @@ export async function clearAdminStatsCache(stat?: string): Promise<boolean> {
     await cache.del(cacheKey);
     return true;
   } catch (error) {
-    console.error('Error clearing admin stats cache:', error);
+    //console.error('Error clearing admin stats cache:', error);
     return false;
   }
 }
@@ -339,6 +339,6 @@ export async function invalidateAdminStatsCache(): Promise<void> {
   try {
     await cache.del(getCacheKey());
   } catch (error) {
-    console.error('Error invalidating admin stats cache:', error);
+    //console.error('Error invalidating admin stats cache:', error);
   }
 }

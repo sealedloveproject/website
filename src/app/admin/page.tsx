@@ -58,7 +58,7 @@ export default function AdminDashboardPage() {
             setStats(adminStats);
           }
         } catch (error) {
-          console.error('Failed to load admin stats:', error);
+          //console.error('Failed to load admin stats:', error);
         } finally {
           setIsLoadingStats(false);
         }
