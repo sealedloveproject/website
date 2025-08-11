@@ -1,5 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import { Metadata } from 'next';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata: Metadata = createMetadata('/privacy', {
+  title: 'Privacy Policy - Sealed Love Project',
+  description: 'Learn about how we protect your privacy and secure your data at Sealed Love Project.',
+});
 
 export default function PrivacyPage() {
   return (

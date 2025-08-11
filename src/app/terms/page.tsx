@@ -1,5 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
+import { Metadata } from 'next';
+import { createMetadata } from '@/lib/metadata';
+
+export const metadata: Metadata = createMetadata('/terms', {
+  title: 'Terms of Service - Sealed Love Project',
+  description: 'Terms and conditions for using the Sealed Love Project platform.',
+});
 
 export default function TermsPage() {
   return (
