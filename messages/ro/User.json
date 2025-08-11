@@ -208,12 +208,17 @@
       "deleteUnexpected": "A apărut o eroare neașteptată la ștergerea poveștii"
     },
     "fileUpload": {
-      "unsupportedFiles": "{count} fișier(e) nu au fost adăugate deoarece nu sunt suportate. Te rugăm să încarci doar fișiere jpg, jpeg, png, webp, mp4, mov, mp3 sau aac.",
-      "sizeExceeded": "Adăugarea acestor fișiere ar depăși limita ta de stocare de 100MB. Te rugăm să elimini câteva fișiere mai întâi."
+      "unsupportedFiles": "{count} fișier(e) nu au fost adăugate deoarece nu sunt acceptate. Vă rugăm să încărcați doar fișiere jpg, jpeg, png, webp, mp4, mov, mp3 sau aac.",
+      "sizeExceeded": "Adăugarea acestor fișiere ar depăși limita dvs. de stocare de 100MB. Vă rugăm să ștergeți mai întâi câteva fișiere.",
+      "sizeExceededTitle": "Limită de stocare depășită",
+      "sizeLimit": "Limita totală de stocare este de {size}.",
+      "understood": "OK, am înțeles"
     },
     "deleteModal": {
       "title": "Șterge Povestea",
-      "message": "Ești sigur că vrei să ștergi această poveste? Această acțiune nu poate fi anulată și toate fișierele media asociate vor fi eliminate permanent.",
+      "message": "Ești sigur că vrei să ștergi această poveste? Această acţiune nu poate fi anulată și toate fișierele media asociate vor fi eliminate permanent.",
+      "confirmText": "Tastați DELETE_STORY pentru a confirma:",
+      "confirmPlaceholder": "Tastați DELETE_STORY aici",
       "cancel": "Anulează",
       "confirm": "Șterge Definitiv",
       "deleting": "Se șterge..."

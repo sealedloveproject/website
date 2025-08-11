@@ -208,12 +208,17 @@
       "deleteUnexpected": "Ocorreu um erro inesperado ao excluir a história"
     },
     "fileUpload": {
-      "unsupportedFiles": "{count} arquivo(s) não foram adicionados porque não são suportados. Por favor, carregue apenas arquivos jpg, jpeg, png, webp, mp4, mov, mp3 ou aac.",
-      "sizeExceeded": "Adicionar esses arquivos excederia seu limite de armazenamento de 100MB. Por favor, remova alguns arquivos primeiro."
+      "unsupportedFiles": "{count} arquivo(s) não foram adicionados porque não são suportados. Por favor, faça upload apenas de arquivos jpg, jpeg, png, webp, mp4, mov, mp3 ou aac.",
+      "sizeExceeded": "Adicionar esses arquivos excederia seu limite de armazenamento de 100MB. Por favor, remova alguns arquivos primeiro.",
+      "sizeExceededTitle": "Limite de armazenamento excedido",
+      "sizeLimit": "Seu limite total de armazenamento é de {size}.",
+      "understood": "OK, entendi"
     },
     "deleteModal": {
       "title": "Excluir História",
       "message": "Tem certeza de que deseja excluir esta história? Esta ação não pode ser desfeita e todos os arquivos de mídia associados serão removidos permanentemente.",
+      "confirmText": "Digite DELETE_STORY para confirmar:",
+      "confirmPlaceholder": "Digite DELETE_STORY aqui",
       "cancel": "Cancelar",
       "confirm": "Excluir Permanentemente",
       "deleting": "Excluindo..."

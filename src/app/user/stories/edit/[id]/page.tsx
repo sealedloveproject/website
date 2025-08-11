@@ -25,7 +25,7 @@ export default function EditStory() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [storyLoaded, setStoryLoaded] = useState(false);
-  const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [showDeleteModal, setShowDeleteModal] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [attachments, setAttachments] = useState<Array<{id: string, fileName: string, fileType: string, fileUrl: string | null | undefined, isCoverImage?: boolean}>>([]);
   const [coverImageId, setCoverImageId] = useState<string | null>(null);
@@ -34,6 +34,39 @@ export default function EditStory() {
   const [uploadProgress, setUploadProgress] = useState<Record<string, number>>({});
   const [hashReplicatingAttachment, setHashReplicatingAttachment] = useState(false);
   const [isUploading, setIsUploading] = useState(false);
+  const [showFileSizeModal, setShowFileSizeModal] = useState(false);
+  const [deleteVerification, setDeleteVerification] = useState('');
+  const DELETE_CONFIRMATION_TEXT = 'DELETE_STORY';
+
+  const handleDeleteClick = () => {
+    setShowDeleteModal(true);
+    setDeleteVerification(''); // Reset verification field when opening modal
+  };
+
+  const handleDeleteStory = async () => {
+    try {
+      setIsDeleting(true);
+      
+      // Call server action to delete the story
+      const result = await deleteStory(storyId);
+      
+      if (result.success) {
+        // Redirect to my stories page
+        router.push('/user/stories');
+      } else {
+        //console.error('Error deleting story:', result.error);
+        setError(result.error || t('errors.deleteFailed'));
+        setIsDeleting(false);
+        setShowDeleteModal(false);
+      }
+    } catch (error) {
+      //console.error('Error deleting story:', error);
+      setError(t('errors.deleteUnexpected'));
+      setIsDeleting(false);
+      setShowDeleteModal(false);
+    }
+  };
+
   // React Hook Form setup with Zod validation
   const {
     register,
@@ -113,7 +146,10 @@ export default function EditStory() {
             setCoverImageId(result.story.coverImageId);
           } else {
             // If no cover image is set, use the first image attachment as the default cover
-            const firstImageAttachment = result.story.attachments.find(att => att.fileType.startsWith('image/'));
+            const firstImageAttachment = result.story.attachments.find(att => 
+              att.fileType.startsWith('image/')
+            );
+            
             if (firstImageAttachment) {
               setCoverImageId(firstImageAttachment.id);
             }
@@ -206,12 +242,25 @@ export default function EditStory() {
     const estimatedNewTotalSize = estimatedTotalSize + (newFilesSize / (1024 * 1024));
     
     if (estimatedNewTotalSize > 100) {
-      alert(t('fileUpload.sizeExceeded'));
+      // Show modal instead of alert
+      setShowFileSizeModal(true);
       return;
     }
     
+    // Check for duplicate filenames before adding
+    const filteredValidFiles = validFiles.filter(file => {
+      // Check if a file with same name exists in existing attachments
+      const isDuplicateInAttachments = attachments.some(att => att.fileName === file.name);
+      
+      // Check if file with same name exists in files to upload
+      const isDuplicateInUploadFiles = filesToUpload.some(existingFile => existingFile.name === file.name);
+      
+      // Only add files that don't have duplicate filenames
+      return !isDuplicateInAttachments && !isDuplicateInUploadFiles;
+    });
+    
     // Process files and add to state
-    setFilesToUpload(prev => [...prev, ...validFiles]);
+    setFilesToUpload(prev => [...prev, ...filteredValidFiles]);
   };
   
   // Handle file input change
@@ -352,40 +401,10 @@ export default function EditStory() {
   };
   
   // Handle delete button
-  const handleDeleteClick = () => {
-    setShowDeleteConfirm(true);
-  };
-  
-  // Handle delete confirmation
-  const handleConfirmDelete = async () => {
-    try {
-      setIsDeleting(true);
-      
-      // Call server action to delete the story
-      const result = await deleteStory(storyId);
-      
-      if (result.success) {
-        // Redirect to my stories page
-        router.push('/user/stories');
-      } else {
-        //console.error('Error deleting story:', result.error);
-        setError(result.error || t('errors.deleteFailed'));
-        setIsDeleting(false);
-        setShowDeleteConfirm(false);
-      }
-    } catch (error) {
-      //console.error('Error deleting story:', error);
-      setError(t('errors.deleteUnexpected'));
-      setIsDeleting(false);
-      setShowDeleteConfirm(false);
-    }
-  };
-  
-  // Handle cancel delete
   const handleCancelDelete = () => {
-    setShowDeleteConfirm(false);
+    setShowDeleteModal(false);
   };
-  
+
   // Show loading state
   if (isLoading) {
     return (
@@ -425,38 +444,74 @@ export default function EditStory() {
       </header>
       
       {/* Delete Confirmation Modal - Using Modal Component */}
-      <Modal isOpen={showDeleteConfirm} onClose={handleCancelDelete} className="max-w-md w-full p-6">
+      <Modal isOpen={showDeleteModal} onClose={() => setShowDeleteModal(false)} className="max-w-md w-full p-6">
         <div className="text-center mb-6">
           <div className="w-16 h-16 bg-red-100 dark:bg-red-900/30 rounded-full mx-auto flex items-center justify-center mb-4">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-red-600 dark:text-red-400">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0" />
             </svg>
           </div>
           <h3 className="text-xl font-bold mb-2">{t('deleteModal.title')}</h3>
           <p className="text-muted-foreground">{t('deleteModal.message')}</p>
+          
+          <div className="mt-6 text-left">
+            <label className="block text-sm font-medium mb-2">{t('deleteModal.confirmText', { confirmText: DELETE_CONFIRMATION_TEXT })}</label>
+            <input
+              type="text"
+              value={deleteVerification}
+              onChange={(e) => setDeleteVerification(e.target.value)}
+              placeholder={t('deleteModal.confirmPlaceholder')}
+              className="w-full px-4 py-2 border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
         </div>
         
-        <div className="flex flex-col sm:flex-row gap-3 sm:justify-center">
+        <div className="flex justify-between">
           <button
-            onClick={handleCancelDelete}
-            className="px-5 py-2.5 bg-muted text-foreground font-medium rounded-lg hover:bg-muted/80 transition-all duration-200"
-            disabled={isDeleting}
+            onClick={() => setShowDeleteModal(false)}
+            className="px-5 py-2.5 bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-gray-100 font-medium rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-all duration-200"
           >
             {t('deleteModal.cancel')}
           </button>
           <button
-            onClick={handleConfirmDelete}
-            className="px-5 py-2.5 bg-red-500 text-white font-medium rounded-lg hover:bg-red-600 transition-all duration-200 flex items-center justify-center gap-2"
-            disabled={isDeleting}
+            onClick={handleDeleteStory}
+            disabled={isDeleting || deleteVerification !== DELETE_CONFIRMATION_TEXT}
+            className="px-5 py-2.5 bg-red-600 text-white font-medium rounded-lg hover:bg-red-700 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isDeleting ? (
               <>
-                <div className="w-4 h-4 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
-                <span>{t('deleteModal.deleting')}</span>
+                <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                  <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                {t('deleteModal.deleting')}
               </>
             ) : (
               t('deleteModal.confirm')
             )}
+          </button>
+        </div>
+      </Modal>
+      
+      {/* File Size Limit Modal */}
+      <Modal isOpen={showFileSizeModal} onClose={() => setShowFileSizeModal(false)} className="max-w-md w-full p-6">
+        <div className="text-center mb-6">
+          <div className="w-16 h-16 bg-amber-100 dark:bg-amber-900/30 rounded-full mx-auto flex items-center justify-center mb-4">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8 text-amber-600 dark:text-amber-400">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 9v3.75m9.344-2.998c-.175-.156-.348-.309-.517-.458a8.95 8.95 0 00-1.313-.982c-.294-.177-.591-.332-.891-.46a8.995 8.995 0 00-5.167-.362 9.01 9.01 0 00-2.499.94 8.979 8.979 0 00-1.858 1.341 8.876 8.876 0 00-1.398 1.886 8.786 8.786 0 00-.793 2.04c-.11.425-.167.819-.172 1.213-.01.784.155 1.517.346 2.18.252.873.624 1.567.94 2.033.32.474.74.96 1.13 1.306.386.345.822.636 1.28.863.463.227.945.39 1.425.483.908.177 1.683.17 2.438.002a7.48 7.48 0 001.588-.5c.558-.254 1.115-.59 1.654-1.01a8.57 8.57 0 001.852-2.022c.37-.539.69-1.153.943-1.838" />
+            </svg>
+          </div>
+          <h3 className="text-xl font-bold mb-2">{t('fileUpload.sizeExceededTitle')}</h3>
+          <p className="text-muted-foreground">{t('fileUpload.sizeExceeded')}</p>
+          <p className="text-muted-foreground mt-2 text-sm">{t('fileUpload.sizeLimit', { size: '100MB' })}</p>
+        </div>
+        
+        <div className="flex justify-center">
+          <button
+            onClick={() => setShowFileSizeModal(false)}
+            className="px-5 py-2.5 bg-primary text-white font-medium rounded-lg hover:bg-primary/90 transition-all duration-200"
+          >
+            {t('fileUpload.understood')}
           </button>
         </div>
       </Modal>
@@ -475,9 +530,18 @@ export default function EditStory() {
           files={filesToUpload}
           handleFiles={handleFiles}
           removeFile={(id) => {
-            const index = parseInt(id);
-            if (!isNaN(index)) {
-              removeFileToUpload(index);
+            // Find the file in the filesToUpload array
+            // The id from FileList could be in format: filename+size+lastModified
+            // So we need to find the file by checking all files in our array
+            for (let i = 0; i < filesToUpload.length; i++) {
+              const file = filesToUpload[i];
+              const generatedId = file.name + file.size + file.lastModified;
+              
+              // Check if this is the file we want to remove
+              if (generatedId === id) {
+                removeFileToUpload(i);
+                return;
+              }
             }
           }}
           handleFileChange={(e) => {

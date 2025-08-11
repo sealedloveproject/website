@@ -168,12 +168,17 @@
       "deleteUnexpected": "Beim Löschen der Geschichte ist ein unerwarteter Fehler aufgetreten"
     },
     "fileUpload": {
-      "unsupportedFiles": "{count} Datei(en) wurden nicht hinzugefügt, da sie nicht unterstützt werden. Bitte lade nur jpg, jpeg, png, webp, mp4, mov, mp3 oder aac Dateien hoch.",
-      "sizeExceeded": "Das Hinzufügen dieser Dateien würde dein Speicherlimit von 100MB überschreiten. Bitte entferne zuerst einige Dateien."
+      "unsupportedFiles": "{count} Datei(en) wurden nicht hinzugefügt, da sie nicht unterstützt werden. Bitte laden Sie nur jpg, jpeg, png, webp, mp4, mov, mp3 oder aac-Dateien hoch.",
+      "sizeExceeded": "Das Hinzufügen dieser Dateien würde Ihr 100MB-Speicherlimit überschreiten. Bitte entfernen Sie zuerst einige Dateien.",
+      "sizeExceededTitle": "Speicherlimit überschritten",
+      "sizeLimit": "Ihr gesamtes Speicherlimit beträgt {size}.",
+      "understood": "OK, verstanden"
     },
     "deleteModal": {
       "title": "Geschichte löschen",
       "message": "Bist du sicher, dass du diese Geschichte löschen möchtest? Diese Aktion kann nicht rückgängig gemacht werden und alle zugehörigen Mediendateien werden dauerhaft entfernt.",
+      "confirmText": "Geben Sie DELETE_STORY ein, um zu bestätigen:",
+      "confirmPlaceholder": "DELETE_STORY hier eingeben",
       "cancel": "Abbrechen",
       "confirm": "Endgültig löschen",
       "deleting": "Wird gelöscht..."

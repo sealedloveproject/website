@@ -169,11 +169,16 @@
     },
     "fileUpload": {
       "unsupportedFiles": "{count} file(s) were not added because they are not supported. Please only upload jpg, jpeg, png, webp, mp4, mov, mp3, or aac files.",
-      "sizeExceeded": "Adding these files would exceed your 100MB storage limit. Please remove some files first."
+      "sizeExceeded": "Adding these files would exceed your 100MB storage limit. Please remove some files first.",
+      "sizeExceededTitle": "Storage Limit Exceeded",
+      "sizeLimit": "Your total storage limit is {size}.",
+      "understood": "OK, I Understand"
     },
     "deleteModal": {
       "title": "Delete Story",
       "message": "Are you sure you want to delete this story? This action cannot be undone and all associated media files will be permanently removed.",
+      "confirmText": "Type DELETE_STORY to confirm:", 
+      "confirmPlaceholder": "Type DELETE_STORY here",
       "cancel": "Cancel",
       "confirm": "Delete Permanently",
       "deleting": "Deleting..."

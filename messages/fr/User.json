@@ -209,11 +209,16 @@
     },
     "fileUpload": {
       "unsupportedFiles": "{count} fichier(s) n'ont pas été ajoutés car ils ne sont pas pris en charge. Veuillez télécharger uniquement des fichiers jpg, jpeg, png, webp, mp4, mov, mp3 ou aac.",
-      "sizeExceeded": "L'ajout de ces fichiers dépasserait votre limite de stockage de 100 Mo. Veuillez d'abord supprimer certains fichiers."
+      "sizeExceeded": "L'ajout de ces fichiers dépasserait votre limite de stockage de 100 Mo. Veuillez d'abord supprimer certains fichiers.",
+      "sizeExceededTitle": "Limite de stockage dépassée",
+      "sizeLimit": "Votre limite de stockage totale est de {size}.",
+      "understood": "OK, j'ai compris"
     },
     "deleteModal": {
       "title": "Supprimer l'Histoire",
       "message": "Êtes-vous sûr de vouloir supprimer cette histoire? Cette action ne peut pas être annulée et tous les fichiers multimédia associés seront définitivement supprimés.",
+      "confirmText": "Tapez DELETE_STORY pour confirmer :",
+      "confirmPlaceholder": "Tapez DELETE_STORY ici",
       "cancel": "Annuler",
       "confirm": "Supprimer Définitivement",
       "deleting": "Suppression..."
