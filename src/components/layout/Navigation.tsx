@@ -155,8 +155,9 @@ export default function Navigation() {
                       ? 'text-primary' 
                       : 'text-foreground/80 hover:text-foreground hover:bg-foreground/5'
                   }`}
+                  aria-label={label}
                 >
-                  <span className="flex items-center justify-center w-5 h-5 transition-all duration-200">
+                  <span className="flex items-center justify-center w-5 h-5 transition-all duration-200" aria-hidden="true">
                     {icon}
                   </span>
                   <span className="text-lg">{label}</span>
@@ -413,13 +414,14 @@ export default function Navigation() {
                         : 'hover:bg-gray-100 dark:hover:bg-gray-800/80 text-gray-800'
                     }`}
                     style={theme === 'dark' ? { color: 'white' } : {}}
+                    aria-label={label}
                   >
-                    <div className="flex items-center justify-center w-10 h-10">
+                    <div className="flex items-center justify-center w-10 h-10" aria-hidden="true">
                       {icon}
                     </div>
                     <span className="font-medium text-lg">{label}</span>
                     {isActive(path) && (
-                      <span className="ml-auto">
+                      <span className="ml-auto" aria-hidden="true">
                         <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                         </svg>
@@ -465,8 +467,8 @@ export default function Navigation() {
               >
                 {isAuthenticated ? (
                   <div className="px-4 py-3">
-                    <Link href="/user" className="flex items-center space-x-3 mb-3 hover:opacity-80 transition-opacity">
-                      <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-lg relative overflow-hidden shadow-md">
+                    <Link href="/user" className="flex items-center space-x-3 mb-3 hover:opacity-80 transition-opacity" aria-label={t('dashboard')}>
+                      <div className="w-10 h-10 rounded-md bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white text-lg relative overflow-hidden shadow-md" aria-hidden="true">
                         <span className="font-bold">{user?.firstName ? user.firstName.charAt(0).toUpperCase() : user?.email.charAt(0).toUpperCase()}</span>
                         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-50"></div>
                       </div>
@@ -484,8 +486,9 @@ export default function Navigation() {
                         href="/user"
                         className="w-full flex items-center space-x-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition-colors mb-2"
                         onClick={() => setIsMenuOpen(false)}
+                        aria-label={t('dashboard')}
                       >
-                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
                         </svg>
                         <span>{t('dashboard')}</span>
@@ -494,8 +497,9 @@ export default function Navigation() {
                         href="/user/stories"
                         className="w-full flex items-center space-x-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition-colors mb-2"
                         onClick={() => setIsMenuOpen(false)}
+                        aria-label={t('myStories')}
                       >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                       </svg>
                       <span>{t('myStories')}</span>
@@ -504,8 +508,9 @@ export default function Navigation() {
                       href="/user/profile"
                       className="w-full flex items-center space-x-2 px-4 py-2.5 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-800 dark:text-gray-200 rounded transition-colors mb-2"
                       onClick={() => setIsMenuOpen(false)}
+                      aria-label={`${t('profile')} ${t('settings')}`}
                     >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                       </svg>
@@ -519,8 +524,9 @@ export default function Navigation() {
                           href="/admin/stories"
                           className="w-full flex items-center space-x-2 px-4 py-2.5 bg-amber-50/30 dark:bg-amber-900/30 hover:bg-amber-50/50 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-200 rounded transition-colors mb-2"
                           onClick={() => setIsMenuOpen(false)}
+                          aria-label={t('stories')}
                         >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
                           </svg>
                           <span>{t('stories')}</span>
@@ -529,8 +535,9 @@ export default function Navigation() {
                           href="/admin/reports"
                           className="w-full flex items-center space-x-2 px-4 py-2.5 bg-amber-50/30 dark:bg-amber-900/30 hover:bg-amber-50/50 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-200 rounded transition-colors mb-2"
                           onClick={() => setIsMenuOpen(false)}
+                          aria-label={t('reports')}
                         >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21v-4m0 0V5a2 2 0 012-2h6.5l1 1H21l-3 6 3 6h-8.5l-1-1H5a2 2 0 00-2 2zm9-13.5V9" />
                           </svg>
                           <span>{t('reports')}</span>
@@ -539,8 +546,9 @@ export default function Navigation() {
                           href="/admin/users"
                           className="w-full flex items-center space-x-2 px-4 py-2.5 bg-amber-50/30 dark:bg-amber-900/30 hover:bg-amber-50/50 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-200 rounded transition-colors mb-2"
                           onClick={() => setIsMenuOpen(false)}
+                          aria-label={t('users')}
                         >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" />
                           </svg>
                           <span>{t('users')}</span>
@@ -549,8 +557,9 @@ export default function Navigation() {
                           href="/admin/vault"
                           className="w-full flex items-center space-x-2 px-4 py-2.5 bg-amber-50/30 dark:bg-amber-900/30 hover:bg-amber-50/50 dark:hover:bg-amber-900/50 text-amber-800 dark:text-amber-200 rounded transition-colors mb-2"
                           onClick={() => setIsMenuOpen(false)}
+                          aria-label={t('vaults')}
                         >
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                           </svg>
                           <span>{t('vaults')}</span>
@@ -561,8 +570,9 @@ export default function Navigation() {
                       onClick={signOut}
                       variant="secondary"
                       className="w-full flex items-center justify-center space-x-2"
+                      aria-label={t('signOut')}
                     >
-                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                       </svg>
                       <span>{t('signOut')}</span>
@@ -576,8 +586,9 @@ export default function Navigation() {
                     }}
                     variant="secondary"
                     className="w-full flex items-center justify-center space-x-2"
+                    aria-label={t('signIn')}
                   >
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
                     <span className="text-lg font-medium">{t('signIn')}</span>
