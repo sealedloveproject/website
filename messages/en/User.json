@@ -77,6 +77,8 @@
     "form": {
       "submitButton": "Save Story",
       "submitting": "Submitting...",
+      "submitButtonSave": "Save Story",
+      "submitButtonUpdate": "Update Story",
       "title": {
         "label": "Story Title",
         "placeholder": "Give your story a title"
@@ -135,7 +137,11 @@
           "agreeToTerms": "I agree to the {termsLink} and {privacyLink}",
           "termsLink": "Terms of Service",
           "privacyLink": "Privacy Policy",
-          "makePublic": "Make this story public and shareable (optional)"
+          "makePublic": "Make this story public and shareable (optional)",
+          "statusPublic": "Public",
+          "statusPublicDesc": "Everyone can see it",
+          "statusPrivate": "Private",
+          "statusPrivateDesc": "Only you can see it"
         }
       }
     }

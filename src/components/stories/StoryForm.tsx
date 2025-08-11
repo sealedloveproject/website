@@ -7,6 +7,7 @@ import AttachmentsList from './AttachmentsList';
 import FileUploadArea from './FileUploadArea';
 import { Button } from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
+import { useState } from 'react';
 
 /**
  * Shared form component for creating and editing stories
@@ -17,6 +18,7 @@ export default function StoryForm({
   formState,
   errors,
   getValues,
+  watch,
   onSubmit,
   isSubmitting,
   submitButtonText,
@@ -37,6 +39,9 @@ export default function StoryForm({
   hashReplicatingAttachment = false,
 }: StoryFormProps) {
   const t = useTranslations('User.newStory.form');
+  
+  // State to track the public/private status
+  const [isPublic, setIsPublic] = useState(getValues('isPublic') || false);
 
   // Helper function to calculate total file size
   const getTotalFileSize = (files: any[], returnRawSize = false) => {
@@ -80,16 +85,26 @@ export default function StoryForm({
     }} className="space-y-8">
       {/* Title Field */}
       <div className="space-y-2">
-        <label htmlFor="title" className="block font-medium">
+        <label htmlFor="title" className="block font-medium text-base mb-1 flex items-center gap-1.5">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+          </svg>
           {t('title.label')}
         </label>
-        <input
-          id="title"
-          type="text"
-          className={`w-full p-3 border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all ${errors.title ? 'border-red-500' : 'border-border'}`}
-          placeholder={t('title.placeholder')}
-          {...register('title')}
-        />
+        <div className="relative">
+          <input
+            id="title"
+            type="text"
+            className={`w-full px-5 py-4 border-[1.5px] shadow-sm rounded-xl bg-background/90 dark:bg-slate-900/60 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all ${errors.title ? 'border-red-500' : 'border-primary/10 dark:border-primary/20'}`}
+            placeholder={t('title.placeholder')}
+            {...register('title')}
+          />
+          <div className="absolute right-4 top-1/2 transform -translate-y-1/2 text-muted-foreground/40">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+            </svg>
+          </div>
+        </div>
         {errors.title && (
           <p className="text-red-500 text-sm mt-1">{errors.title.message}</p>
         )}
@@ -98,20 +113,31 @@ export default function StoryForm({
       {/* Story Content Field */}
       <div className="space-y-2">
         <div className="flex justify-between items-center">
-          <label htmlFor="content" className="block font-medium">
+          <label htmlFor="content" className="block font-medium text-base flex items-center gap-1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
             {t('content.label')}
           </label>
           <span className={`text-sm ${wordCount > 1000 ? 'text-red-500 font-medium' : 'text-muted-foreground'}`}>
             {t('content.wordCount', { count: wordCount })}
           </span>
         </div>
-        <textarea
-          id="content"
-          rows={10}
-          className={`w-full p-4 border rounded-lg bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all min-h-[300px] ${errors.content ? 'border-red-500' : 'border-border'}`}
-          placeholder={t('content.placeholder')}
-          {...register('content')}
-        />
+        <div className="relative">
+          <textarea
+            id="content"
+            rows={10}
+            className={`w-full px-6 py-5 border-[1.5px] shadow-sm rounded-xl bg-background/90 dark:bg-slate-900/60 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all min-h-[300px] ${errors.content ? 'border-red-500' : 'border-primary/10 dark:border-primary/20'}`}
+            placeholder={t('content.placeholder')}
+            style={{ resize: 'vertical', lineHeight: '1.6' }}
+            {...register('content')}
+          />
+          <div className="absolute right-4 top-5 text-muted-foreground/40">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+          </div>
+        </div>
         {errors.content && (
           <p className="text-red-500 text-sm mt-1">{errors.content.message}</p>
         )}
@@ -185,66 +211,91 @@ export default function StoryForm({
       </div>
 
       {/* Privacy Settings */}
-      <div className="p-6 rounded-lg bg-muted/30 border border-border">
+      <div className="rounded-lg bg-muted/30">
         <h3 className="font-medium mb-4">{t('media.privacy.title')}</h3>
         
-        <div className="flex items-start mb-4">
-          <div className="flex items-center h-5">
-            <input
-              id="agreeToTerms"
-              type="checkbox"
-              className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
-              {...register('agreeToTerms')}
-            />
+        <div className="space-y-4">
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <input
+                id="agreeToTerms"
+                type="checkbox"
+                className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
+                {...register('agreeToTerms')}
+              />
+            </div>
+            <label htmlFor="agreeToTerms" className="ml-3 text-sm">
+              <span>
+                I agree to the{' '}
+                <Link href="/terms" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  {t('media.privacy.termsLink')}
+                </Link>
+                {' '}and{' '}
+                <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
+                  {t('media.privacy.privacyLink')}
+                </Link>
+              </span>
+              {errors.agreeToTerms && <p className="text-red-500 text-sm mt-1">{errors.agreeToTerms.message}</p>}
+            </label>
           </div>
-          <label htmlFor="agreeToTerms" className="ml-3 text-sm">
-            <span>
-              I agree to the{' '}
-              <Link href="/terms" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                {t('media.privacy.termsLink')}
-              </Link>
-              {' '}and{' '}
-              <Link href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">
-                {t('media.privacy.privacyLink')}
-              </Link>
-            </span>
-            {errors.agreeToTerms && <p className="text-red-500 text-sm mt-1">{errors.agreeToTerms.message}</p>}
-          </label>
-        </div>
-        
-        <div className="flex items-start">
-          <div className="flex items-center h-5">
-            <input
-              type="checkbox"
-              id="isPublic"
-              className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
-              {...register('isPublic')}
-            />
+          
+          <div className="flex items-start">
+            <div className="flex items-center h-5">
+              <input
+                type="checkbox"
+                id="isPublic"
+                className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
+                {...register('isPublic', {
+                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => setIsPublic(e.target.checked)
+                })}
+              />
+            </div>
+            <label htmlFor="isPublic" className="ml-3 text-sm">
+              {t('media.privacy.makePublic')}
+            </label>
           </div>
-          <label htmlFor="isPublic" className="ml-3 text-sm">
-            {t('media.privacy.makePublic')}
-          </label>
         </div>
       </div>
       
       {/* Action Buttons */}
       <div className="flex justify-between pt-4">
         
-        {/* Right-aligned buttons */}
-        <div className={`flex space-x-4 ${isEdit && onDelete ? 'ml-auto' : ''}`}>
+        {/* Submit button - always present */}
+        <div className="flex">
           <Button
             type="submit"
             disabled={isSubmitting}
             variant="primary"
-            className="flex items-center justify-center gap-2"
+            className={`flex flex-col items-center justify-center gap-1.5 py-5 px-7 h-auto min-h-[68px] min-w-[240px] w-full sm:w-auto rounded-xl shadow-md transition-all duration-200 ease-in-out transform hover:translate-y-[-2px] hover:shadow-lg border border-opacity-10 ${isPublic 
+              ? 'bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-700 hover:to-emerald-600 border-emerald-400' 
+              : 'bg-gradient-to-r from-slate-700 to-slate-600 hover:from-slate-800 hover:to-slate-700 border-slate-500'}`}
           >
             {isSubmitting ? (
               <>
-                <div className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin"></div>
+                <div className="w-5 h-5 rounded-full border-2 border-white/30 border-t-white animate-spin mb-1"></div>
                 <span>{loadingButtonText}</span>
               </>
             ) : (
-              submitButtonText
+              <>
+                <div className="flex items-center gap-2">
+                  {isPublic ? (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                  ) : (
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  )}
+                  <span className="text-md font-normal">{isEdit ? t('submitButtonUpdate') : t('submitButtonSave')}</span>
+                </div>
+                <span className="text-xs font-bold">
+                  {isPublic 
+                    ? t('media.privacy.statusPublicDesc') || 'Everyone can see it' 
+                    : t('media.privacy.statusPrivateDesc') || 'Only you can see it'}
+                </span>
+              </>
             )}
           </Button>
         </div>

@@ -11,6 +11,7 @@ export interface StoryFormProps {
   formState: any;
   errors: any;
   getValues: any;
+  watch?: any; // Optional since we're using useState for tracking isPublic
   onSubmit: (data: StoryFormData) => Promise<void>;
   isSubmitting: boolean;
   submitButtonText: string;

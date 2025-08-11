@@ -216,9 +216,9 @@ export default function FileList({
                     <Button 
                       type="button"
                       onClick={() => setCoverImageId(fileId)}
-                      variant={isCover ? "primary" : "ghost"}
+                      variant={isCover ? "primary" : "secondary"}
                       size="sm"
-                      className="text-xs"
+                      className="text-xs dark:text-white dark:hover:text-white dark:border dark:border-slate-400 dark:bg-slate-600 dark:hover:bg-slate-700"
                     >
                       {isCover ? (
                         <span className="flex items-center gap-1">

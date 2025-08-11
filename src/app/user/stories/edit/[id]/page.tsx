@@ -498,7 +498,7 @@ export default function EditStory() {
         />
         
         {/* Danger Zone */}
-        <div className="mt-12 border-t border-border pt-6">
+        <div className="mt-12">
           <div className="bg-red-50 dark:bg-red-950/20 p-6 rounded-lg border-2 border-red-300 dark:border-red-800">
             <div className="flex items-center gap-3 mb-4">
               <div className="p-2 bg-red-100 dark:bg-red-900/30 rounded-full">
