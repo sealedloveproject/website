@@ -170,9 +170,9 @@ export default function FileUploadArea({
           <span className="font-medium">{t('storage.title')}</span>
           <span className="text-primary font-medium">{t('storage.used', { used: (calculateTotalSize()).toFixed(1) })}</span>
         </div>
-        <div className="w-full bg-gray-200 rounded-full h-5 overflow-hidden border border-gray-300 relative">
+        <div className="w-full bg-gray-200 rounded-md h-5 overflow-hidden border border-gray-300 relative">
           <div 
-            className={`h-5 rounded-full transition-all ${getProgressColor()}`}
+            className={`h-5 rounded-sm transition-all ${getProgressColor()}`}
             style={{ width: `${Math.max(getStoragePercentage(), 1)}%`, boxShadow: '0 0 5px rgba(0,0,0,0.2) inset' }}
           ></div>
           <div className="absolute inset-0 flex items-center justify-center text-xs font-medium text-foreground/80">

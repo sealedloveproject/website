@@ -171,7 +171,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                   priority
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
                   style={{ objectFit: 'contain' }}
-                  unoptimized={mediaAttachments[activeMediaIndex].fileUrl.startsWith('blob:')}
+                  unoptimized={true}
                   onLoad={() => setIsLoading(false)}
                   onError={() => setIsLoading(false)}
                 />
@@ -316,7 +316,7 @@ export default function MediaGallery({ story, storyId }: MediaGalleryProps) {
                           className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
                           fill
                           sizes="(max-width: 768px) 100px, 112px"
-                          unoptimized={attachment.fileUrl.startsWith('blob:')}
+                          unoptimized={true}
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-1">
                           <span className="text-white text-xs font-medium truncate max-w-[90%] px-1">{t('attachments.image')}</span>

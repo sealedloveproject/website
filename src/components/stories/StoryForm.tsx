@@ -123,7 +123,7 @@ export default function StoryForm({
       </div>
 
       {/* Media Files */}
-      <div className="rounded-lg border border-border bg-card p-6 shadow-sm">
+      <div className="bg-card">
         <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
@@ -185,7 +185,7 @@ export default function StoryForm({
       </div>
 
       {/* Privacy Settings */}
-      <div className="bg-muted/50 p-6 rounded-lg border border-border">
+      <div className="p-6 rounded-lg bg-muted/30 border border-border">
         <h3 className="font-medium mb-4">{t('media.privacy.title')}</h3>
         
         <div className="flex items-start mb-4">
