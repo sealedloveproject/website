@@ -77,6 +77,8 @@
     "form": {
       "submitButton": "Salvează Povestea",
       "submitting": "Se trimite...",
+      "submitButtonSave": "Salvează Povestea",
+      "submitButtonUpdate": "Actualizează Povestea",
       "title": {
         "label": "Titlul Poveștii",
         "placeholder": "Dă un titlu poveștii tale"
@@ -135,7 +137,11 @@
           "agreeToTerms": "Sunt de acord cu {termsLink} și {privacyLink}",
           "termsLink": "Termenii de utilizare",
           "privacyLink": "Politica de confidențialitate",
-          "makePublic": "Fă această poveste publică și partajabilă (opțional)"
+          "makePublic": "Fă această poveste publică și partajabilă (opțional)",
+          "statusPublic": "Publică",
+          "statusPublicDesc": "Oricine o poate vedea",
+          "statusPrivate": "Privată",
+          "statusPrivateDesc": "Doar tu o poți vedea"
         }
       }
     }

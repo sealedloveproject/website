@@ -77,6 +77,8 @@
     "form": {
       "submitButton": "Сохранить историю",
       "submitting": "Отправка...",
+      "submitButtonSave": "Сохранить историю",
+      "submitButtonUpdate": "Обновить историю",
       "title": {
         "label": "Название истории",
         "placeholder": "Дайте название вашей истории"
@@ -135,7 +137,11 @@
           "agreeToTerms": "Я согласен с {termsLink} и {privacyLink}",
           "termsLink": "Условиями использования",
           "privacyLink": "Политикой конфиденциальности",
-          "makePublic": "Сделать эту историю публичной и доступной для публикации (опционально)"
+          "makePublic": "Сделать эту историю публичной и доступной для публикации (опционально)",
+          "statusPublic": "Публичная",
+          "statusPublicDesc": "Все могут её видеть",
+          "statusPrivate": "Личная",
+          "statusPrivateDesc": "Только вы можете её видеть"
         }
       }
     }

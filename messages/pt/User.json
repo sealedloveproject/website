@@ -77,6 +77,8 @@
     "form": {
       "submitButton": "Salvar História",
       "submitting": "Enviando...",
+      "submitButtonSave": "Salvar História",
+      "submitButtonUpdate": "Atualizar História",
       "title": {
         "label": "Título da História",
         "placeholder": "Dê um título à sua história"
@@ -135,7 +137,11 @@
           "agreeToTerms": "Concordo com os {termsLink} e a {privacyLink}",
           "termsLink": "Termos de serviço",
           "privacyLink": "Política de privacidade",
-          "makePublic": "Tornar esta história pública e compartilhável (opcional)"
+          "makePublic": "Tornar esta história pública e compartilhável (opcional)",
+          "statusPublic": "Pública",
+          "statusPublicDesc": "Todos podem ver",
+          "statusPrivate": "Privada",
+          "statusPrivateDesc": "Somente você pode ver"
         }
       }
     }
