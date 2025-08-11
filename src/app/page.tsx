@@ -7,14 +7,16 @@ import { Story } from '@/types';
 import FallbackImage from '@/components/stories/FallbackImage';
 import { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
+import { createMetadata } from '@/lib/metadata';
+import { generateHomePageJsonLd } from '@/lib/jsonld';
 
 // Define metadata for the homepage
-export const metadata: Metadata = {
+export const metadata: Metadata = createMetadata('/', {
   title: 'Sealed Love Project | Preserve Your Love Stories',
-  description: 'Preserve your love stories for the next millennium, for free. Sealed Love Project helps you capture and store your most precious memories securely.',
+  description: 'Create, preserve, and share your love stories for generations to come. Sealed Love Project offers secure, timeless digital preservation of your most precious romantic memories and milestones, completely free.',
   openGraph: {
     title: 'Sealed Love Project | Preserve Your Love Stories',
-    description: 'Preserve your love stories for the next millennium, for free. Sealed Love Project helps you capture and store your most precious memories securely.',
+    description: 'Create, preserve, and share your love stories for generations to come. Sealed Love Project offers secure, timeless digital preservation of your most precious romantic memories and milestones, completely free.',
     url: `https://${process.env.DOMAIN}/`,
     siteName: 'Sealed Love',
     images: [
@@ -31,13 +33,16 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Sealed Love Project | Preserve Your Love Stories',
-    description: 'Preserve your love stories for the next millennium, for free. Sealed Love Project helps you capture and store your most precious memories securely.',
+    description: 'Create, preserve, and share your love stories for generations to come. Sealed Love Project offers secure, timeless digital preservation of your most precious romantic memories and milestones—completely free.',
     images: [`https://${process.env.DOMAIN}/images/og-home.png`],
   },
-  alternates: {
-    canonical: `https://${process.env.DOMAIN}/`,
-  },
-};
+  // Note: canonical URL will be automatically added by createMetadata
+});
+
+// Generate JSON-LD structured data for the homepage
+export function generateJsonLd() {
+  return generateHomePageJsonLd();
+}
 
 export default async function Home() {
   const t = await getTranslations('Home');

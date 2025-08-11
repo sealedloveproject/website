@@ -84,7 +84,7 @@
       "content": {
         "label": "Povestea Ta",
         "placeholder": "Împărtășește povestea ta aici...",
-        "wordCount": "{count} / 500 cuvinte",
+        "wordCount": "{count} / 1000 cuvinte",
         "wordLimitExceeded": "Povestea ta depășește limita de 500 de cuvinte. Te rugăm să o scurtezi."
       },
       "media": {

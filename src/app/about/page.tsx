@@ -1,5 +1,12 @@
 import Link from 'next/link';
 import { getTranslations } from 'next-intl/server';
+import { createMetadata } from '@/lib/metadata';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = createMetadata('/about', {
+  title: 'About - sealed.love project',
+  description: 'Learn more about the sealed.love project, our story, and how the platform works.',
+});
 
 export default async function About() {
   // Get translations

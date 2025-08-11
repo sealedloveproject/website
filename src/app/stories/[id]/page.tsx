@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { generateCanonicalUrl, shouldExcludeFromCanonical } from '@/lib/canonicalUrl';
 import { getPublicStoryById } from '@/app/actions/public/stories';
 import { Story, Attachment } from '@/types';
 import SupportBlock from '@/components/SupportBlock';
@@ -9,6 +10,7 @@ import MediaGallery from './mediagallery.client';
 import StoryContent from './storycontent';
 import StoryActions from './storyactions.client';
 import { getTranslations } from 'next-intl/server';
+import { generateStoryJsonLd } from '@/lib/jsonld';
 
 // Extended story type with attachments for the story detail page
 type StoryWithAttachments = Story & {
@@ -30,6 +32,9 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
   const resolvedParams = await params;
   const storyId = resolvedParams.id;
   
+  // Generate canonical URL path for the story
+  const canonicalPath = `/stories/${storyId}`;
+  
   try {
     const story = await getPublicStoryById(storyId);
     
@@ -46,7 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
     // First check if there's a dedicated cover image in attachments
     if (story.attachments && story.attachments.length > 0) {
       const coverAttachment = story.attachments.find(attachment => 
-        attachment.fileType?.startsWith('image/') && attachment.isCoverImage
+        attachment.fileType?.startsWith('image/')
       );
       
       if (coverAttachment) {
@@ -85,7 +90,11 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       description = `Read this touching love story on Sealed Love Project`;
     }
     
-    return {
+    // Generate JSON-LD data for the story
+    const jsonLd = generateStoryJsonLd(story);
+    
+    // Create base metadata
+    const baseMetadata = {
       title: `${story.title} by ${story.author} | Sealed Love Project`,
       description,
       openGraph: {
@@ -103,6 +112,18 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
         images: [coverImageUrl],
       },
     };
+    
+    // Add canonical URL if this path should not be excluded
+    if (!shouldExcludeFromCanonical(canonicalPath)) {
+      return {
+        ...baseMetadata,
+        alternates: {
+          canonical: generateCanonicalUrl(canonicalPath),
+        },
+      };
+    }
+    
+    return baseMetadata;
   } catch (error) {
     //console.error('Error generating metadata:', error);
     return {
@@ -110,6 +131,28 @@ export async function generateMetadata({ params }: { params: Promise<{ id: strin
       description: 'Read touching love stories on Sealed Love Project',
     };
   }
+}
+
+// Generate JSON-LD structured data for the page
+export function generateJsonLd({ params }: { params: Promise<{ id: string }> }) {
+  return async () => {
+    // Properly await the params object before accessing its properties
+    const resolvedParams = await params;
+    const storyId = resolvedParams.id;
+    
+    try {
+      const story = await getPublicStoryById(storyId);
+      
+      if (!story) {
+        return null;
+      }
+      
+      return generateStoryJsonLd(story);
+    } catch (error) {
+      console.error('Error generating JSON-LD:', error);
+      return null;
+    }
+  };
 }
 
 export default async function StoryPage(props: { params: Promise<{ id: string }> }) {

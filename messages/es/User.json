@@ -84,7 +84,7 @@
       "content": {
         "label": "Tu Historia",
         "placeholder": "Comparte tu historia aquí...",
-        "wordCount": "{count} / 500 palabras",
+        "wordCount": "{count} / 1000 palabras",
         "wordLimitExceeded": "Tu historia excede el límite de 500 palabras. Por favor, acórtala."
       },
       "media": {

@@ -84,7 +84,7 @@
       "content": {
         "label": "Your Story",
         "placeholder": "Share your story here...",
-        "wordCount": "{count} / 500 words",
+        "wordCount": "{count} / 1000 words",
         "wordLimitExceeded": "Your story exceeds the 500 word limit. Please shorten it."
       },
       "media": {
