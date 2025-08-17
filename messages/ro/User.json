@@ -138,10 +138,21 @@
           "termsLink": "Termenii de utilizare",
           "privacyLink": "Politica de confidențialitate",
           "makePublic": "Fă această poveste publică și partajabilă (opțional)",
+          "setupUnlockDate": "Configurează data de deblocare pentru această poveste",
           "statusPublic": "Publică",
           "statusPublicDesc": "Oricine o poate vedea",
           "statusPrivate": "Privată",
           "statusPrivateDesc": "Doar tu o poți vedea"
+        },
+        "unlockDate": {
+          "title": "Data de Deblocare",
+          "dateLabel": "Selectează Data",
+          "placeholder": "Selectează o dată",
+          "dateHelp": "Povestea va rămâne blocată până la această dată",
+          "secretPasswordLabel": "Parolă Secretă",
+          "secretPasswordHelp": "Această parolă va fi necesară pentru a debloca povestea ta după data stabilită",
+          "copyButton": "Copiază",
+          "copiedButton": "Copiat"
         }
       }
     }

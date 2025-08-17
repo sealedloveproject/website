@@ -138,10 +138,21 @@
           "termsLink": "Terms of Service",
           "privacyLink": "Privacy Policy",
           "makePublic": "Make this story public and shareable (optional)",
+          "setupUnlockDate": "Setup Unlock Date for this story",
           "statusPublic": "Public",
           "statusPublicDesc": "Everyone can see it",
           "statusPrivate": "Private",
           "statusPrivateDesc": "Only you can see it"
+        },
+        "unlockDate": {
+          "title": "Unlock Date",
+          "dateLabel": "Select Date",
+          "placeholder": "Select a date",
+          "dateHelp": "Story will be locked until this date",
+          "secretPasswordLabel": "Secret Password",
+          "secretPasswordHelp": "This password will be required to unlock your story after the set date",
+          "copyButton": "Copy",
+          "copiedButton": "Copied"
         }
       }
     }

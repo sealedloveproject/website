@@ -6,8 +6,10 @@ import FileList from './FileList';
 import AttachmentsList from './AttachmentsList';
 import FileUploadArea from './FileUploadArea';
 import { Button } from '@/components/ui/Button';
+import DatePicker from '@/components/ui/DatePicker';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { format } from 'date-fns';
 
 /**
  * Shared form component for creating and editing stories
@@ -42,6 +44,56 @@ export default function StoryForm({
   
   // State to track the public/private status
   const [isPublic, setIsPublic] = useState(getValues('isPublic') || false);
+  
+  // State for unlock date and secret password
+  const [unlockDate, setUnlockDate] = useState(getValues('unlockDate') || '');
+  const [secretPassword, setSecretPassword] = useState(getValues('secretPassword') || '');
+  const [passwordCopied, setPasswordCopied] = useState(false);
+  
+  // State to track if unlock date should be set
+  const [setupUnlockDate, setSetupUnlockDate] = useState(getValues('unlockDate') ? true : false);
+  
+  // Function to generate a secure random password
+  const generatePassword = () => {
+    const numbers = '0123456789';
+    const lowerLetters = 'abcdefghijklmnopqrstuvwxyz';
+    const upperLetters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const specialChars = '!@#$%^&*()-_=+[]{}|;:,.<>?';
+    
+    const allChars = numbers + lowerLetters + upperLetters + specialChars;
+    let password = '';
+    
+    // Ensure at least one of each character type
+    password += numbers.charAt(Math.floor(Math.random() * numbers.length));
+    password += lowerLetters.charAt(Math.floor(Math.random() * lowerLetters.length));
+    password += upperLetters.charAt(Math.floor(Math.random() * upperLetters.length));
+    password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));
+    
+    // Fill the rest to reach 20 characters
+    for (let i = 4; i < 20; i++) {
+      password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+    }
+    
+    // Shuffle the password characters
+    password = password.split('').sort(() => 0.5 - Math.random()).join('');
+    
+    return password;
+  };
+  
+  // Generate password on component mount if not already set
+  useEffect(() => {
+    if (!secretPassword) {
+      const newPassword = generatePassword();
+      setSecretPassword(newPassword);
+    }
+  }, [secretPassword]);
+  
+  // Function to copy password to clipboard
+  const copyPasswordToClipboard = () => {
+    navigator.clipboard.writeText(secretPassword);
+    setPasswordCopied(true);
+    setTimeout(() => setPasswordCopied(false), 2000); // Reset after 2 seconds
+  };
 
   // Helper function to calculate total file size
   const getTotalFileSize = (files: any[], returnRawSize = false) => {
@@ -212,7 +264,15 @@ export default function StoryForm({
 
       {/* Privacy Settings */}
       <div className="rounded-lg bg-muted/30">
-        <h3 className="font-medium mb-4">{t('media.privacy.title')}</h3>
+        <h3 className="text-lg font-medium mb-4 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+            <path d="M7 15h0m5 0h0m5 0h0"/>
+            <path d="M7 12a5 5 0 0 1 10 0v2a1 1 0 0 1-1 1h-8a1 1 0 0 1-1-1v-2z"/>
+            <path d="M12 3v7"/>
+          </svg>
+          {t('media.privacy.title')}
+        </h3>
         
         <div className="space-y-4">
           <div className="flex items-start">
@@ -246,7 +306,13 @@ export default function StoryForm({
                 id="isPublic"
                 className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
                 {...register('isPublic', {
-                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => setIsPublic(e.target.checked)
+                  onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
+                    setIsPublic(e.target.checked);
+                    // If story is made public, disable unlock date
+                    if (e.target.checked) {
+                      setSetupUnlockDate(false);
+                    }
+                  }
                 })}
               />
             </div>
@@ -254,8 +320,110 @@ export default function StoryForm({
               {t('media.privacy.makePublic')}
             </label>
           </div>
+          
+          {/* Setup Unlock Date checkbox - only enabled for private stories */}
+          <div className="flex items-start mt-4">
+            <div className="flex items-center h-5">
+              <input
+                type="checkbox"
+                id="setupUnlockDate"
+                className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
+                checked={setupUnlockDate}
+                onChange={(e) => setSetupUnlockDate(e.target.checked)}
+                disabled={isPublic}
+              />
+            </div>
+            <label htmlFor="setupUnlockDate" className="ml-3 text-sm">
+              {t('media.privacy.setupUnlockDate') || 'Setup Unlock Date'}
+            </label>
+          </div>
         </div>
       </div>
+      
+      {/* Unlock Date Section - Only shown when story is private and user wants to set unlock date */}
+      {!isPublic && setupUnlockDate && (
+        <div className="rounded-lg bg-muted/30">
+          <h3 className="font-medium mb-4 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg>
+            {t('media.unlockDate.title') || 'Unlock Date'}
+          </h3>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Date Selector */}
+            <div className="space-y-2">
+              <label htmlFor="unlockDate" className="block font-medium text-sm mb-1 flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                {t('media.unlockDate.dateLabel') || 'Select Date'}
+              </label>
+              <DatePicker
+                id="unlockDate"
+                value={unlockDate}
+                onChange={(date) => {
+                  setUnlockDate(date);
+                  // Register the value
+                  register('unlockDate').onChange({
+                    target: { name: 'unlockDate', value: date }
+                  });
+                }}
+                placeholder={t('media.unlockDate.placeholder') || 'Select a date'}
+              />
+              <p className="text-sm text-muted-foreground">
+                {t('media.unlockDate.dateHelp') || 'Story will be locked until this date'}
+              </p>
+            </div>
+            
+            {/* Secret Password */}
+            <div className="space-y-2">
+              <label htmlFor="secretPassword" className="block font-medium text-sm mb-1 flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                {t('media.unlockDate.secretPasswordLabel') || 'Secret Password'}
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="secretPassword"
+                  className="w-full px-5 py-4 border-[1.5px] rounded border-gray-300 text-primary focus:ring-primary/30"
+                  value={secretPassword}
+                  readOnly
+                  {...register('secretPassword')}
+                />
+                <button
+                  type="button"
+                  onClick={copyPasswordToClipboard}
+                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1.5 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition-colors"
+                >
+                  {passwordCopied ? (
+                    <span className="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
+                      {t('media.unlockDate.copiedButton') || 'Copied'}
+                    </span>
+                  ) : (
+                    <span className="flex items-center gap-1">
+                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+                      </svg>
+                      {t('media.unlockDate.copyButton') || 'Copy'}
+                    </span>
+                  )}
+                </button>
+              </div>
+              <p className="text-sm text-muted-foreground">
+                {t('media.unlockDate.secretPasswordHelp') || 'This password will be required to unlock your story after the set date'}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
       
       {/* Action Buttons */}
       <div className="flex justify-between pt-4">

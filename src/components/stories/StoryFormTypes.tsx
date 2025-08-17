@@ -6,6 +6,8 @@ export interface StoryFormData {
   content: string;
   isPublic: boolean;
   agreeToTerms: boolean;
+  unlockDate?: string;
+  secretPassword?: string;
 }
 
 // Type for attachment objects

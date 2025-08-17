@@ -138,10 +138,21 @@
           "termsLink": "Termos de serviço",
           "privacyLink": "Política de privacidade",
           "makePublic": "Tornar esta história pública e compartilhável (opcional)",
+          "setupUnlockDate": "Configurar data de desbloqueio para esta história",
           "statusPublic": "Pública",
           "statusPublicDesc": "Todos podem ver",
           "statusPrivate": "Privada",
           "statusPrivateDesc": "Somente você pode ver"
+        },
+        "unlockDate": {
+          "title": "Data de Desbloqueio",
+          "dateLabel": "Selecionar Data",
+          "placeholder": "Selecione uma data",
+          "dateHelp": "A história ficará bloqueada até esta data",
+          "secretPasswordLabel": "Senha Secreta",
+          "secretPasswordHelp": "Esta senha será necessária para desbloquear sua história após a data definida",
+          "copyButton": "Copiar",
+          "copiedButton": "Copiado"
         }
       }
     }

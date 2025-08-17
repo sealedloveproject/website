@@ -142,6 +142,16 @@
           "statusPublicDesc": "Jeder kann sie sehen",
           "statusPrivate": "Privat",
           "statusPrivateDesc": "Nur du kannst sie sehen"
+        },
+        "unlockDate": {
+          "title": "Freischaltdatum",
+          "dateLabel": "Datum auswählen",
+          "placeholder": "Wählen Sie ein Datum",
+          "dateHelp": "Geschichte bleibt bis zu diesem Datum gesperrt",
+          "secretPasswordLabel": "Geheimes Passwort",
+          "secretPasswordHelp": "Dieses Passwort wird benötigt, um Ihre Geschichte vor dem festgelegten Datum freizuschalten",
+          "copyButton": "Kopieren",
+          "copiedButton": "Kopiert"
         }
       }
     }
