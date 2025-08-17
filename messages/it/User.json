@@ -75,22 +75,40 @@
       "continueButton": "Continua con Email"
     },
     "form": {
+      "storyForm": {
+        "introTitle": "Crea La Tua Storia Senza Tempo",
+        "introText1": "La tua storia è una preziosa capsula del tempo che può essere preservata per generazioni. Prenditi il tuo tempo per elaborarla con cura e dettaglio.",
+        "introText2": "Anche durante la creazione della tua storia perfetta, puoi mantenerla privata e modificarla tutte le volte necessarie. Quando sei pronto per condividere i tuoi ricordi, attiva semplicemente l'impostazione pubblica.",
+        "tip1": "Hai il controllo completo sull'inclusione della tua storia nell'archivio millenario per la conservazione futura.",
+        "tip2": "Per le storie private, puoi configurare l'accesso futuro per parenti e persone care utilizzando una password segreta. Attiva semplicemente la funzione 'Imposta data di sblocco' qui sotto.",
+        "tip3": "Durante la creazione della tua storia, puoi mantenerla privata. Rendila pubblica solo quando sei completamente soddisfatto del contenuto.",
+        "tip4": "La tua storia sarà conservata in modo sicuro secondo le tue preferenze di privacy."
+      },
       "submitButton": "Salva Storia",
       "submitting": "Invio in corso...",
       "submitButtonSave": "Salva Storia",
       "submitButtonUpdate": "Aggiorna Storia",
       "title": {
         "label": "Titolo della Storia",
-        "placeholder": "Dai un titolo alla tua storia"
+        "placeholder": "Dai un titolo alla tua storia",
+        "helpTitle": "Crea un titolo memorabile",
+        "helpText": "Un buon titolo aiuta te e gli altri a identificare facilmente la tua storia. Sii descrittivo ma conciso.",
+        "helpExample": "Esempio: \"Il Nostro Viaggio a Parigi, Estate 2025\""
       },
       "content": {
         "label": "La Tua Storia",
         "placeholder": "Condividi la tua storia qui...",
         "wordCount": "{count} / 1000 parole",
-        "wordLimitExceeded": "La tua storia supera il limite di 500 parole. Per favore, accorciala."
+        "wordLimitExceeded": "La tua storia supera il limite di 500 parole. Per favore, accorciala.",
+        "helpTitle": "Esprimiti",
+        "helpText": "Scrivi la tua storia qui. Puoi utilizzare fino a 1000 parole per condividere i tuoi ricordi, pensieri o messaggi.",
+        "helpNote": "Nota: Il contenuto verrà mostrato esattamente come lo scrivi, quindi rivedilo con attenzione."
       },
       "media": {
         "title": "File Multimediali",
+        "helpTitle": "Aggiungi ricordi visivi",
+        "helpText": "Carica foto, file o altri documenti per completare la tua storia. I formati supportati includono: jpg, jpeg, png, webp, mp4, mov, mp3, aac, zip",
+        "helpCover": "Puoi selezionare un'immagine come copertina della tua storia facendo clic sul pulsante 'Imposta come copertina'.",
         "replicatingWarning": {
           "title": "Alcuni file multimediali sono ancora in fase di replica",
           "description": "Saranno disponibili a breve. Le immagini non replicate mostreranno un segnaposto."
@@ -138,6 +156,9 @@
           "termsLink": "Termini di servizio",
           "privacyLink": "Informativa sulla privacy",
           "makePublic": "Rendi questa storia pubblica e condivisibile (opzionale)",
+          "publicHelpTitle": "Storie pubbliche",
+          "publicHelpText": "Quando questa opzione è attivata, la tua storia sarà visibile a tutti. Chiunque abbia il link può vederla, e potrebbe apparire nei feed pubblici.",
+          "publicHelpNote": "Se disattivata, solo tu potrai vedere questa storia.",
           "setupUnlockDate": "Imposta data di sblocco per questa storia",
           "statusPublic": "Pubblica",
           "statusPublicDesc": "Tutti possono vederla",
@@ -152,7 +173,11 @@
           "secretPasswordLabel": "Password Segreta",
           "secretPasswordHelp": "Questa password sarà necessaria per sbloccare la tua storia dopo la data impostata",
           "copyButton": "Copia",
-          "copiedButton": "Copiato"
+          "copiedButton": "Copiato",
+          "helpTitle": "Storie con blocco temporale",
+          "helpText": "Quando questa funzione è attiva, la tua storia privata rimarrà bloccata fino alla data specificata. In quella data, chiunque abbia la password segreta potrà sbloccarla e visualizzarla.",
+          "helpSecurity": "La password segreta generata automaticamente garantisce che solo coloro con cui l'hai condivisa possano accedere alla tua storia dopo la data di sblocco.",
+          "helpNote": "Nota: Questa funzione è disponibile solo per le storie private."
         }
       }
     }

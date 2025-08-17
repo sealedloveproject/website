@@ -75,22 +75,40 @@
       "continueButton": "Continuă cu Email"
     },
     "form": {
+      "storyForm": {
+        "introTitle": "Creează Povestea Ta Atemporală",
+        "introText1": "Povestea ta este o capsulă prețioasă a timpului care poate fi păstrată pentru generații. Ia-ți timp să o elaborezi cu grijă și detaliu.",
+        "introText2": "Chiar și în timpul creării poveștii tale perfecte, o poți păstra privată și o poți edita de câte ori este nevoie. Când ești gata să-ți împărtășești amintirile, activează pur și simplu setarea publică.",
+        "tip1": "Ai control complet asupra includerii poveștii tale în seiful milenar pentru păstrare viitoare.",
+        "tip2": "Pentru poveștile private, poți configura acces viitor pentru cei dragi folosind o parolă secretă. Activează pur și simplu funcția 'Configurează data de deblocare' de mai jos.",
+        "tip3": "În timpul creării poveștii tale, o poți păstra privată. Fă-o publică doar când ești pe deplin mulțumit de conținut.",
+        "tip4": "Povestea ta va fi păstrată în siguranță conform preferințelor tale de confidențialitate."
+      },
       "submitButton": "Salvează Povestea",
       "submitting": "Se trimite...",
       "submitButtonSave": "Salvează Povestea",
       "submitButtonUpdate": "Actualizează Povestea",
       "title": {
         "label": "Titlul Poveștii",
-        "placeholder": "Dă un titlu poveștii tale"
+        "placeholder": "Dă un titlu poveștii tale",
+        "helpTitle": "Creează un titlu memorabil",
+        "helpText": "Un titlu bun te ajută pe tine și pe alții să identifici ușor povestea ta. Fii descriptiv dar concis.",
+        "helpExample": "Exemplu: \"Călătoria noastră la Paris, Vara 2025\""
       },
       "content": {
         "label": "Povestea Ta",
         "placeholder": "Împărtășește povestea ta aici...",
         "wordCount": "{count} / 1000 cuvinte",
-        "wordLimitExceeded": "Povestea ta depășește limita de 500 de cuvinte. Te rugăm să o scurtezi."
+        "wordLimitExceeded": "Povestea ta depășește limita de 500 de cuvinte. Te rugăm să o scurtezi.",
+        "helpTitle": "Exprimă-te",
+        "helpText": "Scrie povestea ta aici. Poți folosi până la 1000 de cuvinte pentru a-ți împărtăși amintirile, gândurile sau mesajele.",
+        "helpNote": "Notă: Conținutul va fi afișat exact așa cum îl scrii, așa că revizuiește-l cu atenție."
       },
       "media": {
         "title": "Fișiere Media",
+        "helpTitle": "Adaugă amintiri vizuale",
+        "helpText": "Încarcă fotografii, fișiere sau alte documente pentru a-ți completa povestea. Formatele acceptate includ: jpg, jpeg, png, webp, mp4, mov, mp3, aac, zip",
+        "helpCover": "Poți selecta o imagine ca copertă pentru povestea ta apăsând pe butonul 'Setează ca copertă'.",
         "replicatingWarning": {
           "title": "Unele fișiere media sunt încă în curs de replicare",
           "description": "Vor fi disponibile în curând. Imaginile neplicate vor afișa un substituent."
@@ -138,6 +156,9 @@
           "termsLink": "Termenii de utilizare",
           "privacyLink": "Politica de confidențialitate",
           "makePublic": "Fă această poveste publică și partajabilă (opțional)",
+          "publicHelpTitle": "Povești publice",
+          "publicHelpText": "Când această opțiune este activată, povestea ta va fi vizibilă tuturor. Oricine are link-ul o poate vedea, și ar putea apărea în feed-urile publice.",
+          "publicHelpNote": "Dacă este dezactivată, doar tu vei putea vedea această poveste.",
           "setupUnlockDate": "Configurează data de deblocare pentru această poveste",
           "statusPublic": "Publică",
           "statusPublicDesc": "Oricine o poate vedea",
@@ -152,7 +173,11 @@
           "secretPasswordLabel": "Parolă Secretă",
           "secretPasswordHelp": "Această parolă va fi necesară pentru a debloca povestea ta după data stabilită",
           "copyButton": "Copiază",
-          "copiedButton": "Copiat"
+          "copiedButton": "Copiat",
+          "helpTitle": "Povești cu blocare temporală",
+          "helpText": "Când această funcție este activă, povestea ta privată va rămâne blocată până la data specificată. La acea dată, oricine are parola secretă o va putea debloca și vizualiza.",
+          "helpSecurity": "Parola secretă generată automat asigură că doar cei cu care ai împărtășit-o pot accesa povestea ta după data de deblocare.",
+          "helpNote": "Notă: Această funcție este disponibilă doar pentru poveștile private."
         }
       }
     }

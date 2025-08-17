@@ -75,22 +75,40 @@
       "continueButton": "Continue with Email"
     },
     "form": {
+      "storyForm": {
+        "introTitle": "Create Your Timeless Story",
+        "introText1": "Your story is a precious time capsule that can be preserved for generations. Take your time to craft it with care and detail.",
+        "introText2": "Even while crafting your perfect story, you can keep it private and edit it as many times as you need. When you're ready to share your memories, simply toggle the public setting.",
+        "tip1": "You have complete control over whether your story is included in the millennium vault for future preservation.",
+        "tip2": "For private stories, you can set up future access for relatives and loved ones using a secret password. Simply enable the 'Setup Unlock Date' feature below.",
+        "tip3": "While building your story, you can keep it private. Make it public only when you're fully satisfied with the content.",
+        "tip4": "Your story will be securely preserved according to your privacy preferences."
+      },
       "submitButton": "Save Story",
       "submitting": "Submitting...",
       "submitButtonSave": "Save Story",
       "submitButtonUpdate": "Update Story",
       "title": {
         "label": "Story Title",
-        "placeholder": "Give your story a title"
+        "placeholder": "Give your story a title",
+        "helpTitle": "Make your title memorable",
+        "helpText": "A good title helps you and others identify your story easily. Be descriptive but concise.",
+        "helpExample": "Example: \"Our Trip to Paris, Summer 2025\""
       },
       "content": {
         "label": "Your Story",
         "placeholder": "Share your story here...",
         "wordCount": "{count} / 1000 words",
-        "wordLimitExceeded": "Your story exceeds the 500 word limit. Please shorten it."
+        "wordLimitExceeded": "Your story exceeds the 500 word limit. Please shorten it.",
+        "helpTitle": "Express yourself",
+        "helpText": "Write your story here. You can use up to 1000 words to share your memories, thoughts, or messages.",
+        "helpNote": "Note: The content will be displayed exactly as entered, so please check it carefully."
       },
       "media": {
         "title": "Media Files",
+        "helpTitle": "Add visual memories",
+        "helpText": "Upload photos, archives, or other files to enhance your story. Supported formats include: jpg, jpeg, png, webp, mp4, mov, mp3, aac, zip",
+        "helpCover": "You can select one image as your story cover by clicking the set cover button.",
         "replicatingWarning": {
           "title": "Some media files are still replicating",
           "description": "They will be available soon. Non-replicated images will show a placeholder."
@@ -138,6 +156,9 @@
           "termsLink": "Terms of Service",
           "privacyLink": "Privacy Policy",
           "makePublic": "Make this story public and shareable (optional)",
+          "publicHelpTitle": "Public Stories",
+          "publicHelpText": "When enabled, your story will be visible to everyone. Anyone with a link can view it, and it may appear in public feeds.",
+          "publicHelpNote": "If disabled, only you will be able to see this story.",
           "setupUnlockDate": "Setup Unlock Date for this story",
           "statusPublic": "Public",
           "statusPublicDesc": "Everyone can see it",
@@ -152,7 +173,11 @@
           "secretPasswordLabel": "Secret Password",
           "secretPasswordHelp": "This password will be required to unlock your story after the set date",
           "copyButton": "Copy",
-          "copiedButton": "Copied"
+          "copiedButton": "Copied",
+          "helpTitle": "Time-locked Stories",
+          "helpText": "When enabled, your private story will remain locked until the specified date. On that date, anyone with the secret password can unlock and view it.",
+          "helpSecurity": "The auto-generated secret password ensures only those you share it with can access your story after the unlock date.",
+          "helpNote": "Note: This feature is only available for private stories."
         }
       }
     }

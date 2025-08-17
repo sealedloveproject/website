@@ -75,22 +75,40 @@
       "continueButton": "Mit E-Mail fortfahren"
     },
     "form": {
+      "storyForm": {
+        "introTitle": "Erstellen Sie Ihre zeitlose Geschichte",
+        "introText1": "Ihre Geschichte ist eine kostbare Zeitkapsel, die für Generationen bewahrt werden kann. Nehmen Sie sich Zeit, sie mit Sorgfalt und Detail zu gestalten.",
+        "introText2": "Auch während Sie Ihre perfekte Geschichte erstellen, können Sie sie privat halten und so oft wie nötig bearbeiten. Wenn Sie bereit sind, Ihre Erinnerungen zu teilen, schalten Sie einfach die öffentliche Einstellung um.",
+        "tip1": "Sie haben die volle Kontrolle darüber, ob Ihre Geschichte in den Jahrtausend-Tresor für zukünftige Erhaltung aufgenommen wird.",
+        "tip2": "Bei privaten Geschichten können Sie zukünftigen Zugang für Verwandte und Liebsten mit einem geheimen Passwort einrichten. Aktivieren Sie einfach die 'Freischaltdatum einrichten' Funktion unten.",
+        "tip3": "Während Sie Ihre Geschichte erstellen, können Sie sie privat halten. Machen Sie sie erst öffentlich, wenn Sie mit dem Inhalt vollständig zufrieden sind.",
+        "tip4": "Ihre Geschichte wird gemäß Ihren Datenschutzeinstellungen sicher aufbewahrt."
+      },
       "submitButton": "Geschichte speichern",
       "submitting": "Wird übermittelt...",
       "submitButtonSave": "Geschichte speichern",
       "submitButtonUpdate": "Geschichte aktualisieren",
       "title": {
         "label": "Titel der Geschichte",
-        "placeholder": "Gib deiner Geschichte einen Titel"
+        "placeholder": "Gib deiner Geschichte einen Titel",
+        "helpTitle": "Erstellen Sie einen einprägsamen Titel",
+        "helpText": "Ein guter Titel hilft Ihnen und anderen, Ihre Geschichte leicht zu identifizieren. Seien Sie beschreibend, aber prägnant.",
+        "helpExample": "Beispiel: \"Unsere Reise nach Paris, Sommer 2025\""
       },
       "content": {
         "label": "Deine Geschichte",
         "placeholder": "Teile deine Geschichte hier...",
         "wordCount": "{count} / 1000 Wörter",
-        "wordLimitExceeded": "Deine Geschichte überschreitet das Limit von 500 Wörtern. Bitte kürze sie."
+        "wordLimitExceeded": "Deine Geschichte überschreitet das Limit von 500 Wörtern. Bitte kürze sie.",
+        "helpTitle": "Drücken Sie sich aus",
+        "helpText": "Schreiben Sie Ihre Geschichte hier. Sie können bis zu 1000 Wörter verwenden, um Ihre Erinnerungen, Gedanken oder Botschaften zu teilen.",
+        "helpNote": "Hinweis: Der Inhalt wird genau so angezeigt, wie Sie ihn eingeben, also überprüfen Sie ihn sorgfältig."
       },
       "media": {
         "title": "Mediendateien",
+        "helpTitle": "Fügen Sie visuelle Erinnerungen hinzu",
+        "helpText": "Laden Sie Fotos, Archive oder andere Dateien hoch, um Ihre Geschichte zu ergänzen. Unterstützte Formate sind: jpg, jpeg, png, webp, mp4, mov, mp3, aac, zip",
+        "helpCover": "Sie können ein Bild als Titelbild Ihrer Geschichte festlegen, indem Sie auf die Schaltfläche 'Als Titelbild festlegen' klicken.",
         "replicatingWarning": {
           "title": "Einige Mediendateien werden noch repliziert",
           "description": "Sie werden bald verfügbar sein. Nicht replizierte Bilder zeigen einen Platzhalter an."
@@ -138,6 +156,9 @@
           "termsLink": "Nutzungsbedingungen",
           "privacyLink": "Datenschutzrichtlinie",
           "makePublic": "Diese Geschichte öffentlich und teilbar machen (optional)",
+          "publicHelpTitle": "Öffentliche Geschichten",
+          "publicHelpText": "Wenn diese Option aktiviert ist, ist Ihre Geschichte für alle sichtbar. Jeder mit dem Link kann sie anzeigen, und sie kann in öffentlichen Feeds erscheinen.",
+          "publicHelpNote": "Wenn deaktiviert, können nur Sie diese Geschichte sehen.",
           "statusPublic": "Öffentlich",
           "statusPublicDesc": "Jeder kann sie sehen",
           "statusPrivate": "Privat",
@@ -151,7 +172,11 @@
           "secretPasswordLabel": "Geheimes Passwort",
           "secretPasswordHelp": "Dieses Passwort wird benötigt, um Ihre Geschichte vor dem festgelegten Datum freizuschalten",
           "copyButton": "Kopieren",
-          "copiedButton": "Kopiert"
+          "copiedButton": "Kopiert",
+          "helpTitle": "Geschichten mit Zeitschloss",
+          "helpText": "Wenn diese Funktion aktiviert ist, bleibt Ihre private Geschichte bis zum angegebenen Datum gesperrt. An diesem Datum kann jeder mit dem geheimen Passwort sie freischalten und ansehen.",
+          "helpSecurity": "Das automatisch generierte geheime Passwort stellt sicher, dass nur diejenigen, mit denen Sie das Passwort geteilt haben, nach dem Freischaltdatum auf Ihre Geschichte zugreifen können.",
+          "helpNote": "Hinweis: Diese Funktion ist nur für private Geschichten verfügbar."
         }
       }
     }

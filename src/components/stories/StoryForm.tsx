@@ -10,6 +10,7 @@ import DatePicker from '@/components/ui/DatePicker';
 import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
+import Tooltip from '@/components/ui/Tooltip';
 
 /**
  * Shared form component for creating and editing stories
@@ -135,13 +136,65 @@ export default function StoryForm({
       handleFormSubmit(e);
       handleSubmit(onSubmit)(e);
     }} className="space-y-8">
+      {/* Introduction and guidance */}
+      <div className="bg-slate-50 dark:bg-slate-800/40 rounded-xl p-4 border border-slate-200 dark:border-slate-700/70 mb-6">
+        <h2 className="text-lg font-medium text-primary mb-3 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+          </svg>
+          {t('storyForm.introTitle') || 'Create Your Timeless Story'}
+        </h2>
+        <div className="text-sm text-slate-700 dark:text-slate-300 space-y-3">
+          <p>{t('storyForm.introText1') || 'Your story is a precious time capsule that can be preserved for generations. Take your time to craft it with care and detail.'}</p>
+          <p>{t('storyForm.introText2') || 'Begin with a meaningful title, then share your memories in the content section. You can add photos and documents to enrich your story.'}</p>
+          <div className="mt-4 space-y-3">
+            <div className="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-primary mt-0.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span>{t('storyForm.tip1') || 'You can save and edit your story at any time before publishing.'}</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-primary mt-0.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span>{t('storyForm.tip2') || 'Add photos, letters, or documents to make your story come alive.'}</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-primary mt-0.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span>{t('storyForm.tip3') || 'Choose if your story is private or public in the privacy settings below.'}</span>
+            </div>
+            <div className="flex items-start gap-2">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4 text-primary mt-0.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+              </svg>
+              <span>{t('storyForm.tip4') || 'Your story will be securely preserved in our millennium vault.'}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
       {/* Title Field */}
       <div className="space-y-2">
         <label htmlFor="title" className="block font-medium text-base mb-1 flex items-center gap-1.5">
           <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
           </svg>
-          {t('title.label')}
+          <span className="flex items-center gap-1">
+            {t('title.label')}
+            <Tooltip 
+              text={
+                <div className="max-w-md">
+                  <p className="font-medium mb-1">{t('title.helpTitle') || 'Make your title memorable'}</p>
+                  <p className="text-sm">{t('title.helpText') || 'A good title helps you and others identify your story easily. Be descriptive but concise.'}</p>
+                  <p className="text-sm italic mt-2">{t('title.helpExample') || 'Example: "Our Trip to Paris, Summer 2025"'}</p>
+                </div>
+              } 
+              position="right"
+            />
+          </span>
         </label>
         <div className="relative">
           <input
@@ -169,7 +222,19 @@ export default function StoryForm({
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
-            {t('content.label')}
+            <span className="flex items-center gap-1">
+              {t('content.label')}
+              <Tooltip 
+                text={
+                  <div>
+                    <p className="font-medium mb-1">{t('content.helpTitle') || 'Express yourself'}</p>
+                    <p className="text-sm">{t('content.helpText') || 'Write your story here. You can use up to 1000 words to share your memories, thoughts, or messages.'}</p>
+                    <p className="text-sm mt-2">{t('content.helpNote') || 'Note: The content will be displayed exactly as entered, so check your spelling and formatting.'}</p>
+                  </div>
+                } 
+                position="right"
+              />
+            </span>
           </label>
           <span className={`text-sm ${wordCount > 1000 ? 'text-red-500 font-medium' : 'text-muted-foreground'}`}>
             {t('content.wordCount', { count: wordCount })}
@@ -208,7 +273,19 @@ export default function StoryForm({
             <circle cx="8.5" cy="8.5" r="1.5"/>
             <polyline points="21 15 16 10 5 21"/>
           </svg>
-          {t('media.title')}
+          <span className="flex items-center gap-1">
+            {t('media.title')}
+            <Tooltip 
+              text={
+                <div>
+                  <p className="font-medium mb-1">{t('media.helpTitle') || 'Add visual memories'}</p>
+                  <p className="text-sm">{t('media.helpText') || 'Upload photos, documents, or other files to enhance your story. Supported formats include: jpg, png, pdf, and more.'}</p>
+                  <p className="text-sm mt-2">{t('media.helpCover') || 'You can select one image as your story cover by clicking the star icon.'}</p>
+                </div>
+              } 
+              position="right"
+            />
+          </span>
         </h3>
         
         {/* Warning message when media files are still replicating */}
@@ -316,8 +393,18 @@ export default function StoryForm({
                 })}
               />
             </div>
-            <label htmlFor="isPublic" className="ml-3 text-sm">
+            <label htmlFor="isPublic" className="ml-3 text-sm flex items-center gap-1">
               {t('media.privacy.makePublic')}
+              <Tooltip 
+                text={
+                  <div>
+                    <p className="font-medium mb-1">{t('media.privacy.publicHelpTitle') || 'Public Stories'}</p>
+                    <p className="text-sm">{t('media.privacy.publicHelpText') || 'When enabled, your story will be visible to everyone. Anyone with a link can view it, and it may appear in public feeds.'}</p>
+                    <p className="text-sm mt-2">{t('media.privacy.publicHelpNote') || 'If disabled, only you will be able to see this story.'}</p>
+                  </div>
+                } 
+                position="top"
+              />
             </label>
           </div>
           
@@ -333,8 +420,19 @@ export default function StoryForm({
                 disabled={isPublic}
               />
             </div>
-            <label htmlFor="setupUnlockDate" className="ml-3 text-sm">
+            <label htmlFor="setupUnlockDate" className="ml-3 text-sm flex items-center gap-1">
               {t('media.privacy.setupUnlockDate') || 'Setup Unlock Date'}
+              <Tooltip 
+                text={
+                  <div>
+                    <p className="font-medium mb-1">{t('media.unlockDate.helpTitle') || 'Time-locked Stories'}</p>
+                    <p className="text-sm">{t('media.unlockDate.helpText') || 'When enabled, your private story will remain locked until the specified date. On that date, anyone with the secret password can unlock and view it.'}</p>
+                    <p className="text-sm mt-2">{t('media.unlockDate.helpSecurity') || 'The auto-generated secret password ensures only those you share it with can access your story after the unlock date.'}</p>
+                    <p className="text-sm mt-2">{t('media.unlockDate.helpNote') || 'Note: This feature is only available for private stories.'}</p>
+                  </div>
+                } 
+                position="top"
+              />
             </label>
           </div>
         </div>
