@@ -62,6 +62,9 @@ model Story {
   title       String
   content     String    @db.Text
   isPublic    Boolean   @default(false)
+  storeInVault Boolean   @default(false)  // Whether the story should be physically stored in the vault
+  unlockDate  DateTime?  // Date when the story can be unlocked (for time-locked stories)
+  unlockPasswordHash String?  // MD5 hash of the unlock password
   likes       Int       @default(0)
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt

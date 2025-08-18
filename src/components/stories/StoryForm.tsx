@@ -11,6 +11,7 @@ import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import { format } from 'date-fns';
 import Tooltip from '@/components/ui/Tooltip';
+import { createMd5Hash } from '@/lib/utils';
 
 /**
  * Shared form component for creating and editing stories
@@ -48,8 +49,11 @@ export default function StoryForm({
   
   // State for unlock date and secret password
   const [unlockDate, setUnlockDate] = useState(getValues('unlockDate') || '');
-  const [secretPassword, setSecretPassword] = useState(getValues('secretPassword') || '');
   const [passwordCopied, setPasswordCopied] = useState(false);
+  const [passwordExists, setPasswordExists] = useState(!!getValues('unlockPasswordHash'));
+  
+  // Initialize secret password as empty when there's an existing password hash
+  const [secretPassword, setSecretPassword] = useState(passwordExists ? '' : (getValues('secretPassword') || ''));
   
   // State to track if unlock date should be set
   const [setupUnlockDate, setSetupUnlockDate] = useState(getValues('unlockDate') ? true : false);
@@ -81,13 +85,17 @@ export default function StoryForm({
     return password;
   };
   
-  // Generate password on component mount if not already set
+  // Generate password on component mount only for new stories without existing password
   useEffect(() => {
-    if (!secretPassword) {
+    // Only generate a new password if:
+    // 1. We don't have a password set in the form
+    // 2. There's no existing password hash
+    // 3. We're not in edit mode with an existing hash
+    if (!secretPassword && !passwordExists) {
       const newPassword = generatePassword();
       setSecretPassword(newPassword);
     }
-  }, [secretPassword]);
+  }, []);  // Empty dependency array ensures this only runs once on mount
   
   // Function to copy password to clipboard
   const copyPasswordToClipboard = () => {
@@ -129,7 +137,32 @@ export default function StoryForm({
     if (submitButton) {
       submitButton.setAttribute('disabled', 'true');
     }
+    
+    // If unlock date is set, generate the MD5 hash of the password
+    if (setupUnlockDate && unlockDate) {
+      // Only update password hash if we have a new password or generating a new one
+      if (secretPassword && !passwordExists) {
+        // Register the unlockPasswordHash with the form
+        register('unlockPasswordHash').onChange({
+          target: { name: 'unlockPasswordHash', value: createMd5Hash(secretPassword) }
+        });
+      }
+    } else {
+      // If unlock date is not set, clear the password hash
+      register('unlockPasswordHash').onChange({
+        target: { name: 'unlockPasswordHash', value: null }
+      });
+    }
   };
+  
+  // Clear password and hash when unlock date setup is toggled off
+  useEffect(() => {
+    if (!setupUnlockDate) {
+      register('unlockPasswordHash').onChange({
+        target: { name: 'unlockPasswordHash', value: null }
+      });
+    }
+  }, [setupUnlockDate, register]);
 
   return (
     <form onSubmit={(e) => {
@@ -509,36 +542,62 @@ export default function StoryForm({
                 </svg>
                 {t('media.unlockDate.secretPasswordLabel') || 'Secret Password'}
               </label>
-              <div className="relative">
-                <input
-                  type="text"
-                  id="secretPassword"
-                  className="w-full px-5 py-4 border-[1.5px] rounded border-gray-300 text-primary focus:ring-primary/30"
-                  value={secretPassword}
-                  readOnly
-                  {...register('secretPassword')}
-                />
-                <button
-                  type="button"
-                  onClick={copyPasswordToClipboard}
-                  className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1.5 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition-colors"
-                >
-                  {passwordCopied ? (
-                    <span className="flex items-center gap-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      {t('media.unlockDate.copiedButton') || 'Copied'}
-                    </span>
-                  ) : (
-                    <span className="flex items-center gap-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
-                      </svg>
-                      {t('media.unlockDate.copyButton') || 'Copy'}
-                    </span>
-                  )}
-                </button>
+              <div className="space-y-2">
+                <div className="relative">
+                  <input
+                    type="text"
+                    id="secretPassword"
+                    className="w-full px-5 py-4 border-[1.5px] rounded border-gray-300 text-primary focus:ring-primary/30"
+                    value={secretPassword}
+                    placeholder={passwordExists ? t('media.unlockDate.passwordPlaceholder') || 'Password saved. Generate new if needed' : ''}
+                    readOnly
+                    {...register('secretPassword')}
+                  />
+                  <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex gap-1">
+                    {/* Regenerate Password Button */}
+                    <button
+                      type="button"
+                      onClick={() => {
+                        const newPassword = generatePassword();
+                        setSecretPassword(newPassword);
+                        setPasswordExists(false);
+                      }}
+                      className="px-3 py-1.5 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 transition-colors"
+                      title={t('media.unlockDate.regenerateButton') || 'Generate New Password'}
+                    >
+                      <span className="flex items-center gap-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                        </svg>
+                        {t('media.unlockDate.regenerateButtonText') || 'New'}
+                      </span>
+                    </button>
+                    
+                    {/* Copy Password Button */}
+                    <button
+                      type="button"
+                      onClick={copyPasswordToClipboard}
+                      disabled={!secretPassword}
+                      className="px-3 py-1.5 bg-primary text-white rounded-md text-sm hover:bg-primary/90 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                    >
+                      {passwordCopied ? (
+                        <span className="flex items-center gap-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          {t('media.unlockDate.copiedButton') || 'Copied'}
+                        </span>
+                      ) : (
+                        <span className="flex items-center gap-1">
+                          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2" />
+                          </svg>
+                          {t('media.unlockDate.copyButton') || 'Copy'}
+                        </span>
+                      )}
+                    </button>
+                  </div>
+                </div>
               </div>
               <p className="text-sm text-muted-foreground">
                 {t('media.unlockDate.secretPasswordHelp') || 'This password will be required to unlock your story after the set date'}

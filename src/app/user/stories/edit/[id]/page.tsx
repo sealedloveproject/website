@@ -76,12 +76,13 @@ export default function EditStory() {
     setValue,
     getValues,
     reset,
-  } = useForm({
+  } = useForm<StoryFormData>({
     resolver: zodResolver(storyFormSchema) as any,
     defaultValues: {
       title: '',
       content: '',
       isPublic: false,
+      storeInVault: false,
       agreeToTerms: true
     }
   });
@@ -129,6 +130,11 @@ export default function EditStory() {
           title: result.story.title,
           content: result.story.content,
           isPublic: result.story.isPublic,
+          storeInVault: result.story.storeInVault || false,
+          // Format the date correctly if it exists (ISO string needs to be converted to YYYY-MM-DD format for date inputs)
+          unlockDate: result.story.unlockDate ? new Date(result.story.unlockDate).toISOString().split('T')[0] : null,
+          // Make sure we pass the unlockPasswordHash to the form so it can detect existing passwords
+          unlockPasswordHash: result.story.unlockPasswordHash || null,
           agreeToTerms: true,
         });
         // console.log(result)
@@ -140,19 +146,25 @@ export default function EditStory() {
         // Set attachments
         if (result.story.attachments) {
           setAttachments(result.story.attachments);
+        }
+        
+        // Check if story has an unlock date and set the setupUnlockDate state
+        if (result.story.unlockDate) {
+          // Pass this information to StoryForm
+          setValue('setupUnlockDate', true);
+        }
+        
+        // Set cover image if available
+        if (result.story.coverImageId) {
+          setCoverImageId(result.story.coverImageId);
+        } else {
+          // If no cover image is set, use the first image attachment as the default cover
+          const firstImageAttachment = result.story.attachments.find(att => 
+            att.fileType.startsWith('image/')
+          );
           
-          // Set cover image if available
-          if (result.story.coverImageId) {
-            setCoverImageId(result.story.coverImageId);
-          } else {
-            // If no cover image is set, use the first image attachment as the default cover
-            const firstImageAttachment = result.story.attachments.find(att => 
-              att.fileType.startsWith('image/')
-            );
-            
-            if (firstImageAttachment) {
-              setCoverImageId(firstImageAttachment.id);
-            }
+          if (firstImageAttachment) {
+            setCoverImageId(firstImageAttachment.id);
           }
         }
         
@@ -315,7 +327,10 @@ export default function EditStory() {
         title: data.title,
         content: data.content,
         isPublic: data.isPublic,
-        coverImageId: coverImageId
+        coverImageId: coverImageId,
+        storeInVault: data.storeInVault,
+        unlockDate: data.unlockDate,
+        unlockPasswordHash: data.unlockPasswordHash
       };
       
       // Upload new files to S3 if there are any
