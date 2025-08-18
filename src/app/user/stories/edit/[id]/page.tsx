@@ -178,7 +178,7 @@ export default function EditStory() {
     } finally {
       setIsLoading(false);
     }
-  }, [storyId, user?.email, isAuthenticated, authLoading, reset, storyLoaded, openSignInModal, t]);
+  }, [storyId, user?.email, isAuthenticated, authLoading, reset, storyLoaded, openSignInModal, t, setValue]);
   
   // Load story data on component mount
   useEffect(() => {

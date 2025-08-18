@@ -95,7 +95,7 @@ export default function StoryForm({
       const newPassword = generatePassword();
       setSecretPassword(newPassword);
     }
-  }, []);  // Empty dependency array ensures this only runs once on mount
+  }, [passwordExists, secretPassword]);  // Empty dependency array ensures this only runs once on mount
   
   // Function to copy password to clipboard
   const copyPasswordToClipboard = () => {
