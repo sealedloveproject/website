@@ -8,6 +8,9 @@ export type DbStory = {
   updatedAt: Date;
   likes: number;
   isPublic: boolean;
+  storeInVault: boolean;
+  unlockDate: Date | null;
+  unlockPasswordHash: string | null;
 };
 
 // Story type as returned to the frontend
@@ -21,6 +24,9 @@ export type Story = {
   likes: number;
   featured: boolean;
   isPublic: boolean;
+  storeInVault?: boolean; // Whether the story is physically stored in vault
+  unlockDate?: string | null; // ISO string date format for when the story can be unlocked
+  unlockPasswordHash?: string | null; // MD5 hash of the unlock password
   content?: string; // Optional for list views
   createdAt?: string; // ISO string date format
   updatedAt?: string; // ISO string date format

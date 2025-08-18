@@ -130,7 +130,7 @@ export default function FileUploadArea({
           multiple
           className="sr-only"
           onChange={handleFileChange}
-          accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.mp3,.aac"
+          accept=".jpg,.jpeg,.png,.webp,.mp4,.mov,.mp3,.aac,.zip"
         />
       </div>
       

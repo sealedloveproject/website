@@ -75,22 +75,40 @@
       "continueButton": "Continuer avec l'email"
     },
     "form": {
+      "storyForm": {
+        "introTitle": "Créez Votre Histoire Intemporelle",
+        "introText1": "Votre histoire est une précieuse capsule temporelle qui peut être préservée pour des générations. Prenez votre temps pour la façonner avec soin et détail.",
+        "introText2": "Même pendant que vous élaborez votre histoire parfaite, vous pouvez la garder privée et la modifier autant de fois que nécessaire. Lorsque vous êtes prêt à partager vos souvenirs, activez simplement le paramètre public.",
+        "tip1": "Vous avez un contrôle total sur l'inclusion de votre histoire dans le coffre-fort millénaire pour une préservation future.",
+        "tip2": "Pour les histoires privées, vous pouvez configurer un accès futur pour vos proches à l'aide d'un mot de passe secret. Activez simplement la fonction 'Configurer une date de déverrouillage' ci-dessous.",
+        "tip3": "Pendant la création de votre histoire, vous pouvez la garder privée. Rendez-la publique uniquement lorsque vous êtes pleinement satisfait du contenu.",
+        "tip4": "Votre histoire sera conservée en toute sécurité selon vos préférences de confidentialité."
+      },
       "submitButton": "Enregistrer l'Histoire",
       "submitting": "Soumission en cours...",
       "submitButtonSave": "Enregistrer l'Histoire",
       "submitButtonUpdate": "Mettre à jour l'Histoire",
       "title": {
         "label": "Titre de l'Histoire",
-        "placeholder": "Donnez un titre à votre histoire"
+        "placeholder": "Donnez un titre à votre histoire",
+        "helpTitle": "Créez un titre mémorable",
+        "helpText": "Un bon titre vous aide, vous et les autres, à identifier facilement votre histoire. Soyez descriptif mais concis.",
+        "helpExample": "Exemple : \"Notre Voyage à Paris, Été 2025\""
       },
       "content": {
         "label": "Votre Histoire",
         "placeholder": "Partagez votre histoire ici...",
         "wordCount": "{count} / 1000 mots",
-        "wordLimitExceeded": "Votre histoire dépasse la limite de 500 mots. Veuillez la raccourcir."
+        "wordLimitExceeded": "Votre histoire dépasse la limite de 1000 mots. Veuillez la raccourcir.",
+        "helpTitle": "Exprimez-vous",
+        "helpText": "Rédigez votre histoire ici. Vous pouvez utiliser jusqu'à 1000 mots pour partager vos souvenirs, pensées ou messages.",
+        "helpNote": "Remarque : Le contenu s'affichera exactement comme vous l'avez écrit, alors révisez-le attentivement."
       },
       "media": {
         "title": "Fichiers Média",
+        "helpTitle": "Ajoutez des souvenirs visuels",
+        "helpText": "Téléchargez des photos, des fichiers ou d'autres documents pour compléter votre histoire. Les formats supportés incluent : jpg, jpeg, png, webp, mp4, mov, mp3, aac, zip",
+        "helpCover": "Vous pouvez sélectionner une image comme couverture de votre histoire en cliquant sur le bouton 'Définir comme couverture'.",
         "replicatingWarning": {
           "title": "Certains fichiers média sont encore en cours de réplication",
           "description": "Ils seront disponibles bientôt. Les images non répliquées afficheront un espace réservé."
@@ -138,10 +156,38 @@
           "termsLink": "Conditions d'utilisation",
           "privacyLink": "Politique de confidentialité",
           "makePublic": "Rendre cette histoire publique et partageable (facultatif)",
+          "publicHelpTitle": "Histoires publiques",
+          "publicHelpText": "Lorsque cette option est activée, votre histoire sera visible par tous. N'importe qui avec le lien peut la voir, et elle peut apparaître dans les flux publics.",
+          "publicHelpNote": "Si désactivée, seul vous pourrez voir cette histoire.",
+          "setupUnlockDate": "Configurer une date de déverrouillage pour cette histoire",
+          "storeInVault": "Je souhaite que mon histoire soit physiquement stockée dans le coffre",
           "statusPublic": "Publique",
           "statusPublicDesc": "Tout le monde peut la voir",
           "statusPrivate": "Privée",
           "statusPrivateDesc": "Seul vous pouvez la voir"
+        },
+        "storeInVault": {
+          "helpTitle": "Stockage Physique en Coffre-fort",
+          "helpText": "Lorsque cette option est activée, votre histoire sera physiquement stockée dans notre coffre-fort capsule temporelle actuel.",
+          "helpNote": "Votre histoire sera conservée en toute sécurité avec d'autres dans cette collection à durée limitée."
+        },
+        "unlockDate": {
+          "title": "Date de Déverrouillage",
+          "dateLabel": "Sélectionner une Date",
+          "placeholder": "Sélectionnez une date",
+          "dateHelp": "L'histoire restera verrouillée jusqu'à cette date",
+          "secretPasswordLabel": "Mot de Passe Secret",
+          "secretPasswordHelp": "Ce mot de passe sera nécessaire pour déverrouiller votre histoire après la date définie",
+          "copyButton": "Copier",
+          "copiedButton": "Copié",
+          "existingPassword": "Un mot de passe a déjà été défini. Générez-en un nouveau si nécessaire.",
+          "passwordPlaceholder": "Mot de passe enregistré. Générez-en un nouveau si nécessaire",
+          "regenerateButton": "Générer Nouveau Mot de Passe",
+          "regenerateButtonText": "Nouveau",
+          "helpTitle": "Histoires à verrouillage temporel",
+          "helpText": "Lorsque cette fonction est activée, votre histoire privée restera verrouillée jusqu'à la date spécifiée. À cette date, toute personne disposant du mot de passe secret pourra la déverrouiller et la consulter.",
+          "helpSecurity": "Le mot de passe secret généré automatiquement garantit que seules les personnes avec qui vous l'avez partagé pourront accéder à votre histoire après la date de déverrouillage.",
+          "helpNote": "Remarque : Cette fonctionnalité n'est disponible que pour les histoires privées."
         }
       }
     }

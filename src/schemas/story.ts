@@ -8,14 +8,18 @@ export const storyFormSchema = z.object({
     .refine(
       (text) => {
         const wordCount = text.trim() ? text.trim().split(/\s+/).length : 0;
-        return wordCount <= 500;
+        return wordCount <= 1000;
       },
-      { message: "Story must be 500 words or less" }
+      { message: "Story must be 1000 words or less" }
     ),
   agreeToTerms: z.boolean().refine(val => val === true, {
     message: "You must agree to the terms and conditions"
   }),
-  isPublic: z.boolean().optional().default(false)
+  isPublic: z.boolean().optional().default(false),
+  storeInVault: z.boolean().optional().default(false),
+  setupUnlockDate: z.boolean().optional().default(false),
+  unlockDate: z.string().optional().nullable(),
+  unlockPasswordHash: z.string().optional().nullable()
 });
 
 export type StoryFormData = z.infer<typeof storyFormSchema>;
@@ -41,8 +45,8 @@ export const validateStoryField = (field: keyof StoryFormData, value: string): s
     // Special case for content word count
     if (field === 'content') {
       const wordCount = value.trim() ? value.trim().split(/\s+/).length : 0;
-      if (wordCount > 500) {
-        return 'Story must be 500 words or less';
+      if (wordCount > 1000) {
+        return 'Story must be 1000 words or less';
       }
     }
     return '';

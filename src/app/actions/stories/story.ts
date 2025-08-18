@@ -16,6 +16,9 @@ export type StorySubmission = {
   userName: string;
   coverImageId?: string | null;
   hashReplicatingAttachment?: boolean;
+  storeInVault?: boolean;
+  unlockDate?: Date | string | null;
+  unlockPasswordHash?: string | null;
 };
 
 export type StoryUpdate = {
@@ -27,6 +30,9 @@ export type StoryUpdate = {
   coverImageId?: string | null;
   newCoverImageIndex?: number;
   hashReplicatingAttachment?: boolean;
+  storeInVault?: boolean;
+  unlockDate?: Date | string | null;
+  unlockPasswordHash?: string | null;
   newAttachments?: Array<{
     fileName: string;
     fileType: string;
@@ -81,7 +87,10 @@ export async function saveStory(data: StorySubmission) {
         userId: user.id,
         location: location,
         vaultId: vaultId,
-        hashReplicatingAttachment: data.hashReplicatingAttachment
+        hashReplicatingAttachment: data.hashReplicatingAttachment,
+        storeInVault: data.storeInVault || false,
+        unlockDate: data.unlockDate ? new Date(data.unlockDate) : null,
+        unlockPasswordHash: data.unlockPasswordHash || null
       }
     });
     
@@ -293,6 +302,7 @@ export async function getStoryById(id: string, userEmail: string) {
     return {
       success: true,
       story: {
+        // Include all original story fields
         id: story.id,
         title: story.title,
         content: story.content,
@@ -300,8 +310,13 @@ export async function getStoryById(id: string, userEmail: string) {
         coverImageId: story.coverImageId,
         createdAt: story.createdAt,
         updatedAt: story.updatedAt,
-        attachments: formattedAttachments,
-        hashReplicatingAttachment: story.hashReplicatingAttachment
+        hashReplicatingAttachment: story.hashReplicatingAttachment,
+        // Include the new fields
+        storeInVault: story.storeInVault ?? false,
+        unlockDate: story.unlockDate ? story.unlockDate.toISOString() : null,
+        unlockPasswordHash: story.unlockPasswordHash ?? null,
+        // Include the formatted attachments
+        attachments: formattedAttachments
       }
     };
   } catch (error) {
@@ -365,6 +380,9 @@ export async function updateStory(data: StoryUpdate) {
         content: data.content,
         isPublic: data.isPublic,
         coverImageId: data.coverImageId,
+        storeInVault: data.storeInVault,
+        unlockDate: data.unlockDate ? new Date(data.unlockDate) : null,
+        unlockPasswordHash: data.unlockPasswordHash,
         updatedAt: new Date()
       }
     });

@@ -4,6 +4,7 @@
 
 import { type ClassValue, clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
+import crypto from 'crypto';
 
 /**
  * Combines multiple class names using clsx and tailwind-merge
@@ -26,4 +27,13 @@ export function formatFileSize(bytes: number): string {
   const i = Math.floor(Math.log(bytes) / Math.log(1024));
   
   return parseFloat((bytes / Math.pow(1024, i)).toFixed(2)) + ' ' + sizes[i];
+}
+
+/**
+ * Creates an MD5 hash of the input string
+ * @param text The text to hash
+ * @returns MD5 hash as a hex string
+ */
+export function createMd5Hash(text: string): string {
+  return crypto.createHash('md5').update(text).digest('hex');
 }
