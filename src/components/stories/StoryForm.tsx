@@ -407,6 +407,31 @@ export default function StoryForm({
               />
             </label>
           </div>
+
+          {/* Vault storage option */}
+          <div className="flex items-start mt-4">
+            <div className="flex items-center h-5">
+              <input
+                type="checkbox"
+                id="storeInVault"
+                className="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary/30"
+                {...register('storeInVault')}
+              />
+            </div>
+            <label htmlFor="storeInVault" className="ml-3 text-sm flex items-center gap-1">
+              {t('media.privacy.storeInVault') || 'I want my story physically stored into vault'}
+              <Tooltip 
+                text={
+                  <div>
+                    <p className="font-medium mb-1">{t('media.storeInVault.helpTitle') || 'Physical Vault Storage'}</p>
+                    <p className="text-sm">{t('media.storeInVault.helpText') || 'When enabled, your story will be physically stored in our current active time capsule vault.'}</p>
+                    <p className="text-sm mt-2">{t('media.storeInVault.helpNote') || 'Your story will be securely preserved alongside others in this time-limited collection.'}</p>
+                  </div>
+                } 
+                position="top"
+              />
+            </label>
+          </div>
           
           {/* Setup Unlock Date checkbox - only enabled for private stories */}
           <div className="flex items-start mt-4">

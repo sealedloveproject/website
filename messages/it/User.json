@@ -78,9 +78,9 @@
       "storyForm": {
         "introTitle": "Crea La Tua Storia Senza Tempo",
         "introText1": "La tua storia è una preziosa capsula del tempo che può essere preservata per generazioni. Prenditi il tuo tempo per elaborarla con cura e dettaglio.",
-        "introText2": "Anche durante la creazione della tua storia perfetta, puoi mantenerla privata e modificarla tutte le volte necessarie. Quando sei pronto per condividere i tuoi ricordi, attiva semplicemente l'impostazione pubblica.",
+        "introText2": "Anche durante la creazione della tua storia perfetta, puoi mantenerla privata e modificarla tutte le volte necessarie. Quando sei pronto per condividere i tuoi ricordi, attiva l'impostazione pubblica.",
         "tip1": "Hai il controllo completo sull'inclusione della tua storia nell'archivio millenario per la conservazione futura.",
-        "tip2": "Per le storie private, puoi configurare l'accesso futuro per parenti e persone care utilizzando una password segreta. Attiva semplicemente la funzione 'Imposta data di sblocco' qui sotto.",
+        "tip2": "Per le storie private, puoi configurare l'accesso futuro per parenti e persone care utilizzando una password segreta. Attiva la funzione 'Imposta data di sblocco' qui sotto.",
         "tip3": "Durante la creazione della tua storia, puoi mantenerla privata. Rendila pubblica solo quando sei completamente soddisfatto del contenuto.",
         "tip4": "La tua storia sarà conservata in modo sicuro secondo le tue preferenze di privacy."
       },
@@ -160,10 +160,16 @@
           "publicHelpText": "Quando questa opzione è attivata, la tua storia sarà visibile a tutti. Chiunque abbia il link può vederla, e potrebbe apparire nei feed pubblici.",
           "publicHelpNote": "Se disattivata, solo tu potrai vedere questa storia.",
           "setupUnlockDate": "Imposta data di sblocco per questa storia",
+          "storeInVault": "Voglio che la mia storia sia conservata fisicamente nel caveau",
           "statusPublic": "Pubblica",
           "statusPublicDesc": "Tutti possono vederla",
           "statusPrivate": "Privata",
           "statusPrivateDesc": "Solo tu puoi vederla"
+        },
+        "storeInVault": {
+          "helpTitle": "Conservazione Fisica nel Caveau",
+          "helpText": "Quando attivato, la tua storia sarà conservata fisicamente nel nostro attuale caveau capsula del tempo.",
+          "helpNote": "La tua storia sarà preservata in modo sicuro insieme ad altre in questa collezione a tempo limitato."
         },
         "unlockDate": {
           "title": "Data di Sblocco",

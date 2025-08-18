@@ -78,9 +78,9 @@
       "storyForm": {
         "introTitle": "Creează Povestea Ta Atemporală",
         "introText1": "Povestea ta este o capsulă prețioasă a timpului care poate fi păstrată pentru generații. Ia-ți timp să o elaborezi cu grijă și detaliu.",
-        "introText2": "Chiar și în timpul creării poveștii tale perfecte, o poți păstra privată și o poți edita de câte ori este nevoie. Când ești gata să-ți împărtășești amintirile, activează pur și simplu setarea publică.",
+        "introText2": "Chiar și în timpul creării poveștii tale perfecte, o poți păstra privată și o poți edita de câte ori este nevoie. Când ești gata să-ți împărtășești amintirile, activează setarea publică.",
         "tip1": "Ai control complet asupra includerii poveștii tale în seiful milenar pentru păstrare viitoare.",
-        "tip2": "Pentru poveștile private, poți configura acces viitor pentru cei dragi folosind o parolă secretă. Activează pur și simplu funcția 'Configurează data de deblocare' de mai jos.",
+        "tip2": "Pentru poveștile private, poți configura acces viitor pentru cei dragi folosind o parolă secretă. Activează funcția 'Configurează data de deblocare' de mai jos.",
         "tip3": "În timpul creării poveștii tale, o poți păstra privată. Fă-o publică doar când ești pe deplin mulțumit de conținut.",
         "tip4": "Povestea ta va fi păstrată în siguranță conform preferințelor tale de confidențialitate."
       },
@@ -160,10 +160,16 @@
           "publicHelpText": "Când această opțiune este activată, povestea ta va fi vizibilă tuturor. Oricine are link-ul o poate vedea, și ar putea apărea în feed-urile publice.",
           "publicHelpNote": "Dacă este dezactivată, doar tu vei putea vedea această poveste.",
           "setupUnlockDate": "Configurează data de deblocare pentru această poveste",
+          "storeInVault": "Vreau ca povestea mea să fie stocată fizic în seif",
           "statusPublic": "Publică",
           "statusPublicDesc": "Oricine o poate vedea",
           "statusPrivate": "Privată",
           "statusPrivateDesc": "Doar tu o poți vedea"
+        },
+        "storeInVault": {
+          "helpTitle": "Stocare Fizică în Seif",
+          "helpText": "Când este activată, povestea ta va fi stocată fizic în capsula noastră de timp activă.",
+          "helpNote": "Povestea ta va fi păstrată în siguranţă alături de altele în această colecţie cu timp limitat."
         },
         "unlockDate": {
           "title": "Data de Deblocare",

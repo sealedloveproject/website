@@ -160,10 +160,16 @@
           "publicHelpText": "When enabled, your story will be visible to everyone. Anyone with a link can view it, and it may appear in public feeds.",
           "publicHelpNote": "If disabled, only you will be able to see this story.",
           "setupUnlockDate": "Setup Unlock Date for this story",
+          "storeInVault": "I want my story physically stored into vault",
           "statusPublic": "Public",
           "statusPublicDesc": "Everyone can see it",
           "statusPrivate": "Private",
           "statusPrivateDesc": "Only you can see it"
+        },
+        "storeInVault": {
+          "helpTitle": "Physical Vault Storage",
+          "helpText": "When enabled, your story will be physically stored in our current active time capsule vault.",
+          "helpNote": "Your story will be securely preserved alongside others in this time-limited collection."
         },
         "unlockDate": {
           "title": "Unlock Date",

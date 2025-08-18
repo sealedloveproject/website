@@ -160,10 +160,16 @@
           "publicHelpText": "Lorsque cette option est activée, votre histoire sera visible par tous. N'importe qui avec le lien peut la voir, et elle peut apparaître dans les flux publics.",
           "publicHelpNote": "Si désactivée, seul vous pourrez voir cette histoire.",
           "setupUnlockDate": "Configurer une date de déverrouillage pour cette histoire",
+          "storeInVault": "Je souhaite que mon histoire soit physiquement stockée dans le coffre",
           "statusPublic": "Publique",
           "statusPublicDesc": "Tout le monde peut la voir",
           "statusPrivate": "Privée",
           "statusPrivateDesc": "Seul vous pouvez la voir"
+        },
+        "storeInVault": {
+          "helpTitle": "Stockage Physique en Coffre-fort",
+          "helpText": "Lorsque cette option est activée, votre histoire sera physiquement stockée dans notre coffre-fort capsule temporelle actuel.",
+          "helpNote": "Votre histoire sera conservée en toute sécurité avec d'autres dans cette collection à durée limitée."
         },
         "unlockDate": {
           "title": "Date de Déverrouillage",

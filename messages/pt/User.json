@@ -160,10 +160,16 @@
           "publicHelpText": "Quando esta opção está ativada, sua história ficará visível para todos. Qualquer pessoa com o link pode vê-la, e ela pode aparecer nos feeds públicos.",
           "publicHelpNote": "Se desativada, apenas você poderá ver esta história.",
           "setupUnlockDate": "Configurar data de desbloqueio para esta história",
+          "storeInVault": "Quero que minha história seja armazenada fisicamente no cofre",
           "statusPublic": "Pública",
           "statusPublicDesc": "Todos podem ver",
           "statusPrivate": "Privada",
           "statusPrivateDesc": "Somente você pode ver"
+        },
+        "storeInVault": {
+          "helpTitle": "Armazenamento Físico no Cofre",
+          "helpText": "Quando ativado, sua história será fisicamente armazenada em nossa atual cápsula do tempo.",
+          "helpNote": "Sua história será preservada com segurança junto com outras nesta coleção de tempo limitado."
         },
         "unlockDate": {
           "title": "Data de Desbloqueio",

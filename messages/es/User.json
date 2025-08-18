@@ -160,10 +160,16 @@
           "publicHelpText": "Cuando esta opción está activada, tu historia será visible para todos. Cualquiera con el enlace puede verla, y puede aparecer en feeds públicos.",
           "publicHelpNote": "Si está desactivada, sólo tú podrás ver esta historia.",
           "setupUnlockDate": "Configurar fecha de desbloqueo para esta historia",
+          "storeInVault": "Quiero que mi historia se almacene físicamente en la bóveda",
           "statusPublic": "Pública",
           "statusPublicDesc": "Todos pueden verla",
           "statusPrivate": "Privada",
           "statusPrivateDesc": "Solo tú puedes verla"
+        },
+        "storeInVault": {
+          "helpTitle": "Almacenamiento Físico en Bóveda",
+          "helpText": "Cuando está activado, tu historia se almacenará físicamente en nuestra bóveda cápsula del tiempo actual.",
+          "helpNote": "Tu historia se preservará de forma segura junto con otras en esta colección de tiempo limitado."
         },
         "unlockDate": {
           "title": "Fecha de Desbloqueo",
