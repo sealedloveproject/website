@@ -255,7 +255,7 @@ export default async function About() {
                 <p className="text-muted-foreground text-sm">{t('sections.joinCommunity.platforms.instagram.description')}</p>
               </a>
               
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-center p-6 rounded-xl bg-card hover:shadow-lg transition-all duration-300 border border-border group">
+              <a href="https://discord.gg/7CKv5QkDMD" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center text-center p-6 rounded-xl bg-card hover:shadow-lg transition-all duration-300 border border-border group">
                 <div className="w-16 h-16 flex items-center justify-center rounded-full bg-primary/10 text-primary mb-4 group-hover:bg-primary/20 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8">
                     <path d="M18 9.2c-.2-.5-.5-1-.9-1.4-1.9-1.7-4.6-2-4.8-2h-.6c-.2 0-2.9.3-4.8 2-.4.4-.7.9-.9 1.4-1.4 3.1-.7 5.2-.5 5.5.8 1.1 2.1 1.7 3.1 1.9l.6-.9c-.5-.1-1.1-.4-1.6-.8.1-.1.2-.1.3-.2 2.2 1 4.6 1 6.8 0 .1.1.2.1.3.2-.5.4-1.1.7-1.6.8l.6.9c1-.2 2.3-.8 3.1-1.9.2-.3.9-2.4-.5-5.5zm-8.3 4.5c-.6 0-1.1-.5-1.1-1.2s.5-1.2 1.1-1.2c.6 0 1.1.5 1.1 1.2s-.5 1.2-1.1 1.2zm4.6 0c-.6 0-1.1-.5-1.1-1.2s.5-1.2 1.1-1.2c.6 0 1.1.5 1.1 1.2s-.5 1.2-1.1 1.2z"/>

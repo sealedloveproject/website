@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/Button';
 import { useTranslations } from 'next-intl';
 import { useAuth } from '@/contexts/AuthContext';
+import { sendContactEmail, ContactFormData } from '../actions/sendContactEmail';
 
 export default function ContactPage() {
   const t = useTranslations('Contact');
@@ -15,9 +16,10 @@ export default function ContactPage() {
     subject: '',
     message: ''
   });
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [generalError, setGeneralError] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [error, setError] = useState('');
   
   // Pre-fill form with user data if authenticated
   useEffect(() => {
@@ -48,27 +50,48 @@ export default function ContactPage() {
     }
     
     setIsSubmitting(true);
-    setError('');
+    setGeneralError('');
+    setErrors({});
     
     try {
-      // This is a placeholder for your actual form submission logic
-      // You would typically send this data to your backend or a form service
-      //console.log('Form data submitted:', formData);
+      // Send the contact form data to the server action
+      // But since this is a client component, we'll let the server action use default 'unknown'
+      const result = await sendContactEmail(formData as ContactFormData);
       
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      // Show success state
-      setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+      if (result.success) {
+        // Show success state
+        setIsSubmitted(true);
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        // Handle validation or server errors
+        if (result.fieldErrors) {
+          // Map field errors to the corresponding form fields
+          const fieldErrorsMap: Record<string, string> = {};
+          
+          // Convert Zod field errors to our format
+          Object.entries(result.fieldErrors).forEach(([field, messages]) => {
+            if (Array.isArray(messages) && messages.length > 0) {
+              fieldErrorsMap[field] = messages[0];
+            }
+          });
+          
+          setErrors(fieldErrorsMap);
+          
+          if (Object.keys(fieldErrorsMap).length === 0) {
+            setGeneralError('Please check your form data and try again.');
+          }
+        } else {
+          setGeneralError(result.error || 'Something went wrong. Please try again later.');
+        }
+      }
     } catch (err) {
-      setError('Something went wrong. Please try again later.');
-      //console.error('Contact form error:', err);
+      setGeneralError('Something went wrong. Please try again later.');
+      console.error('Contact form error:', err);
     } finally {
       setIsSubmitting(false);
     }
@@ -104,77 +127,71 @@ export default function ContactPage() {
           </div>
         ) : (
           <div className="bg-card rounded-xl shadow-sm p-8">
-            {error && (
-              <div id="error-message" className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 rounded-lg" role="alert" aria-live="assertive">
-                {t('error')}
+            {/* General Error Message */}
+            {generalError && (
+              <div className="mb-6 p-4 border border-red-400 bg-red-50 dark:bg-red-900/20 dark:border-red-800 rounded-lg">
+                <p className="text-red-600 dark:text-red-400 text-sm">{generalError}</p>
               </div>
             )}
             
             <form onSubmit={handleSubmit} aria-describedby="error-message" className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-2">
-                    {t('form.name.label')}
-                  </label>
-                  <input
-                    id="name"
+                {/* Form Fields */}
+                <div className="mb-6">
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.name.label')}</label>
+                  <input 
+                    type="text" 
+                    id="name" 
                     name="name"
-                    type="text"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    placeholder={t('form.name.placeholder')}
+                    className={`bg-white dark:bg-gray-900 border ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
                     required
                   />
+                  {errors.name && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.name}</p>}
                 </div>
                 
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-2">
-                    {t('form.email.label')}
-                  </label>
-                  <input
-                    id="email"
+                <div className="mb-6">
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.email.label')}</label>
+                  <input 
+                    type="email" 
+                    id="email" 
                     name="email"
-                    type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                    placeholder={t('form.email.placeholder')}
+                    className={`bg-white dark:bg-gray-900 border ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
                     required
                   />
+                  {errors.email && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.email}</p>}
                 </div>
               </div>
               
-              <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
-                  {t('form.subject.label')}
-                </label>
-                <input
-                  id="subject"
+              <div className="mb-6">
+                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.subject.label')}</label>
+                <input 
+                  type="text" 
+                  id="subject" 
                   name="subject"
-                  type="text"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  placeholder={t('form.subject.placeholder')}
+                  className={`bg-white dark:bg-gray-900 border ${errors.subject ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
                   required
                 />
+                {errors.subject && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.subject}</p>}
               </div>
               
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
-                  {t('form.message.label')}
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
+              <div className="mb-6">
+                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.message.label')}</label>
+                <textarea 
+                  id="message" 
+                  name="message" 
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 rounded-md border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/50"
-                  placeholder={t('form.message.placeholder')}
+                  className={`bg-white dark:bg-gray-900 border ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
                   required
-                ></textarea>
+                />
+                {errors.message && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.message}</p>}
               </div>
               
               <div>

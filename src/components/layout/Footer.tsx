@@ -30,7 +30,7 @@ export default function Footer() {
                   <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                 </svg>
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="Discord">
+              <a href="https://discord.gg/7CKv5QkDMD" target="_blank" rel="noopener noreferrer" className="text-foreground hover:text-primary transition-colors" aria-label="Discord">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-5 h-5" aria-hidden="true">
                   <path d="M18 9.2c-.2-.5-.5-1-.9-1.4-1.9-1.7-4.6-2-4.8-2h-.6c-.2 0-2.9.3-4.8 2-.4.4-.7.9-.9 1.4-1.4 3.1-.7 5.2-.5 5.5.8 1.1 2.1 1.7 3.1 1.9l.6-.9c-.5-.1-1.1-.4-1.6-.8.1-.1.2-.1.3-.2 2.2 1 4.6 1 6.8 0 .1.1.2.1.3.2-.5.4-1.1.7-1.6.8l.6.9c1-.2 2.3-.8 3.1-1.9.2-.3.9-2.4-.5-5.5zm-8.3 4.5c-.6 0-1.1-.5-1.1-1.2s.5-1.2 1.1-1.2c.6 0 1.1.5 1.1 1.2s-.5 1.2-1.1 1.2zm4.6 0c-.6 0-1.1-.5-1.1-1.2s.5-1.2 1.1-1.2c.6 0 1.1.5 1.1 1.2s-.5 1.2-1.1 1.2z"/>
                 </svg>

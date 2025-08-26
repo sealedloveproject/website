@@ -19,7 +19,8 @@
       "placeholder": "Cum vă putem ajuta?"
     },
     "submit": "Trimite mesajul",
-    "sending": "Se trimite..."
+    "sending": "Se trimite...",
+    "loading": "Se încarcă"
   },
   "success": {
     "title": "Mesaj trimis!",

@@ -7,6 +7,7 @@ import { verificationEmail } from '@/lib/emails/templates/verification';
 import { deletionVerificationEmail } from '@/lib/emails/templates/deletionVerification';
 import { welcomeEmail } from '@/lib/emails/templates/welcome';
 import { storyStoredEmail } from '@/lib/emails/templates/storyStored';
+import { contactFormEmail } from '@/lib/emails/templates/contactForm';
 
 /**
  * Available email templates
@@ -15,7 +16,8 @@ export const emailTemplates = {
   verification: verificationEmail,
   deletionVerification: deletionVerificationEmail,
   welcome: welcomeEmail,
-  storyStored: storyStoredEmail
+  storyStored: storyStoredEmail,
+  contactForm: contactFormEmail
 };
 
 /**

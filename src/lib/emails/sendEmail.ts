@@ -12,6 +12,7 @@ type EmailContent = {
     email: string;
     name?: string;
   };
+  replyTo?: string;
   attachments?: Array<{
     content: string;
     filename: string;
@@ -63,6 +64,11 @@ export async function sendEmail(content: EmailContent): Promise<void> {
         },
       ],
     };
+    
+    // Add reply-to if specified
+    if (content.replyTo) {
+      payload.reply_to = { email: content.replyTo };
+    }
     
     // Only add attachments if they exist and the array is not empty
     if (content.attachments && content.attachments.length > 0) {

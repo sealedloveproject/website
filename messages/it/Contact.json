@@ -19,7 +19,8 @@
       "placeholder": "Come possiamo aiutarti?"
     },
     "submit": "Invia messaggio",
-    "sending": "Invio in corso..."
+    "sending": "Invio in corso...",
+    "loading": "Caricamento"
   },
   "success": {
     "title": "Messaggio inviato!",

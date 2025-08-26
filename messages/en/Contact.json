@@ -19,7 +19,8 @@
       "placeholder": "How can we help you?"
     },
     "submit": "Send Message",
-    "sending": "Sending..."
+    "sending": "Sending...",
+    "loading": "Loading"
   },
   "success": {
     "title": "Message Sent!",

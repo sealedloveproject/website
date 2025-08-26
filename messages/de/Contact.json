@@ -19,7 +19,8 @@
       "placeholder": "Wie können wir Ihnen helfen?"
     },
     "submit": "Nachricht senden",
-    "sending": "Wird gesendet..."
+    "sending": "Wird gesendet...",
+    "loading": "Wird geladen"
   },
   "success": {
     "title": "Nachricht gesendet!",

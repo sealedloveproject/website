@@ -19,7 +19,8 @@
       "placeholder": "¿Cómo podemos ayudarle?"
     },
     "submit": "Enviar mensaje",
-    "sending": "Enviando..."
+    "sending": "Enviando...",
+    "loading": "Cargando"
   },
   "success": {
     "title": "¡Mensaje enviado!",
