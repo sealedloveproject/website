@@ -91,7 +91,7 @@ export default function ContactPage() {
       }
     } catch (err) {
       setGeneralError('Something went wrong. Please try again later.');
-      console.error('Contact form error:', err);
+      //console.error('Contact form error:', err);
     } finally {
       setIsSubmitting(false);
     }

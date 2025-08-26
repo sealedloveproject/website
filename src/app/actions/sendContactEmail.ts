@@ -3,7 +3,6 @@
 import { getEmailTemplate } from '@/lib/emails';
 import { sendEmail } from '@/lib/emails/sendEmail';
 import { z } from 'zod';
-import DOMPurify from 'dompurify';
 import { headers } from 'next/headers';
 
 // Define validation schema for contact form
@@ -97,7 +96,7 @@ export async function sendContactEmail(formData: ContactFormData) {
     
     return { success: true };
   } catch (error) {
-    console.error('Contact form submission error:', error);
+    //console.error('Contact form submission error:', error);
     
     if (error instanceof z.ZodError) {
       return { 
