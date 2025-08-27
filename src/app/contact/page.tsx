@@ -108,19 +108,19 @@ export default function ContactPage() {
         </div>
         
         {isSubmitted ? (
-          <div className="bg-green-50 border border-green-200 rounded-xl p-8 text-center" role="status" aria-live="polite">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-100 text-green-600 mb-4">
+          <div className="bg-success/5 border border-success/20 rounded-xl p-8 text-center theme-transition" role="status" aria-live="polite">
+            <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-success/10 text-success mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-8 h-8" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-green-800 mb-2">{t('success.title')}</h2>
-            <p className="text-green-700 mb-6">
+            <h2 className="text-2xl font-bold text-success mb-2">{t('success.title')}</h2>
+            <p className="text-success/90 mb-6 theme-transition">
               {t('success.message')}
             </p>
             <button 
               onClick={() => setIsSubmitted(false)}
-              className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+              className="px-6 py-2 bg-success hover:bg-success/90 text-white rounded-lg transition-colors"
             >
               {t('success.button')}
             </button>
@@ -129,8 +129,8 @@ export default function ContactPage() {
           <div className="bg-card rounded-xl shadow-sm p-8">
             {/* General Error Message */}
             {generalError && (
-              <div className="mb-6 p-4 border border-red-400 bg-red-50 dark:bg-red-900/20 dark:border-red-800 rounded-lg">
-                <p className="text-red-600 dark:text-red-400 text-sm">{generalError}</p>
+              <div className="mb-6 p-4 border border-error/30 bg-error/5 rounded-lg theme-transition">
+                <p className="text-error text-sm">{generalError}</p>
               </div>
             )}
             
@@ -138,60 +138,60 @@ export default function ContactPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Form Fields */}
                 <div className="mb-6">
-                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.name.label')}</label>
+                  <label htmlFor="name" className="block mb-2 text-sm font-medium text-foreground theme-transition">{t('form.name.label')}</label>
                   <input 
                     type="text" 
                     id="name" 
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className={`bg-white dark:bg-gray-900 border ${errors.name ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
+                    className={`bg-background border ${errors.name ? 'border-error' : 'border-input'} text-foreground text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3 theme-transition`}
                     required
                   />
-                  {errors.name && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.name}</p>}
+                  {errors.name && <p className="mt-2 text-sm text-error">{errors.name}</p>}
                 </div>
                 
                 <div className="mb-6">
-                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.email.label')}</label>
+                  <label htmlFor="email" className="block mb-2 text-sm font-medium text-foreground theme-transition">{t('form.email.label')}</label>
                   <input 
                     type="email" 
                     id="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className={`bg-white dark:bg-gray-900 border ${errors.email ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
+                    className={`bg-background border ${errors.email ? 'border-error' : 'border-input'} text-foreground text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3 theme-transition`}
                     required
                   />
-                  {errors.email && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.email}</p>}
+                  {errors.email && <p className="mt-2 text-sm text-error">{errors.email}</p>}
                 </div>
               </div>
               
               <div className="mb-6">
-                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.subject.label')}</label>
+                <label htmlFor="subject" className="block mb-2 text-sm font-medium text-foreground theme-transition">{t('form.subject.label')}</label>
                 <input 
                   type="text" 
                   id="subject" 
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className={`bg-white dark:bg-gray-900 border ${errors.subject ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
+                  className={`bg-background border ${errors.subject ? 'border-error' : 'border-input'} text-foreground text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3 theme-transition`}
                   required
                 />
-                {errors.subject && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.subject}</p>}
+                {errors.subject && <p className="mt-2 text-sm text-error">{errors.subject}</p>}
               </div>
               
               <div className="mb-6">
-                <label htmlFor="message" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-100">{t('form.message.label')}</label>
+                <label htmlFor="message" className="block mb-2 text-sm font-medium text-foreground theme-transition">{t('form.message.label')}</label>
                 <textarea 
                   id="message" 
                   name="message" 
                   rows={5}
                   value={formData.message}
                   onChange={handleChange}
-                  className={`bg-white dark:bg-gray-900 border ${errors.message ? 'border-red-500' : 'border-gray-300 dark:border-gray-700'} text-gray-900 dark:text-gray-100 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3`}
+                  className={`bg-background border ${errors.message ? 'border-error' : 'border-input'} text-foreground text-sm rounded-lg focus:ring-primary focus:border-primary block w-full p-3 theme-transition`}
                   required
                 />
-                {errors.message && <p className="mt-2 text-sm text-red-600 dark:text-red-500">{errors.message}</p>}
+                {errors.message && <p className="mt-2 text-sm text-error">{errors.message}</p>}
               </div>
               
               <div>
@@ -221,7 +221,7 @@ export default function ContactPage() {
         )}
         
         <div className="mt-12 grid grid-cols-1 gap-8">
-          <div className="bg-card p-6 rounded-xl text-center">
+          <div className="bg-card p-6 rounded-xl text-center theme-transition">
             <div className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-primary/10 text-primary mb-4">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" />
