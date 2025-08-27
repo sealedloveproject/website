@@ -131,6 +131,7 @@ export default function Navigation() {
                 <div className="flex items-baseline">
                   <span className="text-2xl font-bold gradient-text dark:text-white dark:bg-clip-text dark:bg-gradient-to-r dark:from-primary dark:to-secondary">sealed</span>
                   <span className="text-2xl font-bold love-text">.love</span>
+                  <span className="ml-2 px-1.5 py-0.5 text-xs font-bold bg-amber-500 dark:bg-amber-600 text-white rounded-md shadow-sm animate-pulse">BETA</span>
                 </div>
                 <span className="text-sm text-gray-600 dark:text-gray-400 tracking-wider">@sealedloveproject</span>
               </div>
