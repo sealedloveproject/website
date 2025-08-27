@@ -95,7 +95,7 @@ export default function StoryCard({ id, title, excerpt, author, date, imageUrl, 
       borderWidth: '1px',
       borderStyle: 'solid',
       borderColor: 'var(--border)',
-      borderRadius: 'var(--radius-xl)'
+      borderRadius: 'var(--radius-sm)'
     }}>
       {/* Fixed edit button in top right corner */}
       {showEditButton && (
