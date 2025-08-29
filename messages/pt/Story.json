@@ -21,6 +21,9 @@
     "liked": "Não curtir mais",
     "title": "Ações",
     "moreStories": "Mais Histórias",
+    "shareOnFacebook": "Compartilhar no Facebook",
+    "shareOnTwitter": "Compartilhar no Twitter",
+    "shareOnLinkedIn": "Compartilhar no LinkedIn",
     "share": {
       "title": "Compartilhar esta história",
       "twitter": {

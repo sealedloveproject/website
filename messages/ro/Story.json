@@ -21,6 +21,9 @@
     "liked": "Nu mai aprecia",
     "title": "Acțiuni",
     "moreStories": "Mai multe povești",
+    "shareOnFacebook": "Distribuie pe Facebook",
+    "shareOnTwitter": "Distribuie pe Twitter",
+    "shareOnLinkedIn": "Distribuie pe LinkedIn",
     "share": {
       "title": "Distribuie această poveste",
       "twitter": {

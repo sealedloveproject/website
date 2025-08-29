@@ -21,6 +21,9 @@
     "liked": "Больше не нравится",
     "title": "Действия",
     "moreStories": "Больше историй",
+    "shareOnFacebook": "Поделиться на Facebook",
+    "shareOnTwitter": "Поделиться на Twitter",
+    "shareOnLinkedIn": "Поделиться на LinkedIn",
     "share": {
       "title": "Поделиться этой историей",
       "twitter": {

@@ -9,7 +9,7 @@ import SignInModal from "@/components/auth/SignInModal";
 import { SessionProvider } from "@/providers/SessionProvider";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { NextIntlClientProvider } from 'next-intl';
-import { getLocale } from 'next-intl/server';
+import { getLocale, getMessages } from 'next-intl/server';
 
 const playfair = Playfair_Display({
   variable: "--font-playfair",
@@ -56,6 +56,7 @@ export default async function RootLayout({
 }>) {
 
   const locale = (await getLocale()) || 'en';
+  const messages = await getMessages();
 
   return (
     <html lang={locale}>
@@ -67,15 +68,15 @@ export default async function RootLayout({
             <AuthProvider>
               <div className="min-h-screen flex flex-col">
                 <div className="texture-background"></div>
-                <NextIntlClientProvider>
+                <NextIntlClientProvider locale={locale} messages={messages}>
                   <Navigation />
                   <main className="flex-grow mt-12">
                     {children}
                   </main>
                   <Footer />
+                  <SignInModal />
                 </NextIntlClientProvider>
               </div>
-              <SignInModal />
             </AuthProvider>
           </SessionProvider>
         </ThemeProvider>

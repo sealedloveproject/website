@@ -2,9 +2,10 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
+import { useTranslations } from 'next-intl';
 
-// Import types from centralized types index
-import { User } from '@/types';
+// Import types from auth types
+import { User } from '@/types/auth';
 import { Button } from '@/components/ui/Button';
 
 type SignInStep = 'email' | 'verification' | 'profile';
@@ -20,12 +21,13 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
   const [email, setEmail] = useState('');
   const [verificationCode, setVerificationCode] = useState(['', '', '', '', '', '']);
   const codeInputRefs = useRef<(HTMLInputElement | null)[]>([]);
-  const containerRef = useRef<HTMLDivElement | null>(null);
+  const containerRef = useRef<HTMLFormElement | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [step, setStep] = useState<SignInStep>('email');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+  const t = useTranslations('Auth');
   
   const handleRequestCode = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -54,7 +56,7 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
       // Clear any previous errors
       setError('');
     } catch (err) {
-      setError('Failed to send verification code. Please check your email and try again.');
+      setError(t('errors.sendCode'));
       //console.error('Email verification error:', err);
     } finally {
       setIsLoading(false);
@@ -116,7 +118,7 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
       
       // Check if the code is complete
       if (codeString.length !== 6) {
-        throw new Error('Please enter all 6 digits of the verification code');
+        throw new Error(t('errors.missingDigits'));
       }
       
       // Use the verification code to authenticate with NextAuth
@@ -131,7 +133,7 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
       
       if (result?.error) {
         // Show a single, clear error message for invalid verification code
-        throw new Error('Invalid verification code');
+        throw new Error(t('errors.invalidCode'));
       }
       
       // Check if we need to collect user profile information
@@ -247,7 +249,7 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
     try {
       // Validate inputs
       if (!firstName.trim() || !lastName.trim()) {
-        throw new Error('Please enter both your first and last name');
+        throw new Error(t('errors.missingName'));
       }
       
       // Update the user profile in the database
@@ -278,7 +280,7 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
       // Force a page refresh to update the session
       window.location.reload();
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to update profile. Please try again.');
+      setError(err instanceof Error ? err.message : t('errors.profileError'));
       //console.error('Profile update error:', err);
     } finally {
       setIsLoading(false);
@@ -293,207 +295,256 @@ export default function SignInForm({ onClose, className = '', onStepChange }: Si
         </div>
       )}
 
-      {step === 'email' ? (
-        <form onSubmit={handleRequestCode} className="space-y-6">
-          <div className="mb-6 text-center">
-            <h3 className="text-xl font-medium">Sign in to your account</h3>
-            <p className="mt-2 text-sm text-foreground/70">
-              Enter your email to receive a verification code
+      {step === 'email' && (
+        <form onSubmit={handleRequestCode} className="space-y-8 animate-fadeIn">
+          <div className="mb-8 text-center">
+            <div className="inline-block mb-2 bg-primary/10 px-3 py-1 rounded-full">
+              <span className="text-xs font-medium text-primary/90">sealed.love</span>
+            </div>
+            <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+              {t('form.email.title')}
+            </h3>
+            <p className="mt-3 text-sm text-foreground/80 max-w-md mx-auto leading-relaxed">
+              {t('form.email.subtitle')}
             </p>
           </div>
 
-          <div className="bg-muted/30 p-4 rounded-lg border border-border">
-            <label htmlFor="email" className="block text-sm font-medium mb-1">
-              Email Address
+          <div className="bg-gradient-to-r from-muted/40 to-muted/20 p-6 rounded-2xl shadow-sm border border-white/5 backdrop-blur-sm transform hover:scale-[1.01] transition-all duration-300">
+            <label htmlFor="email" className="flex items-center gap-2 text-sm font-medium mb-2 text-foreground/90">
+              <svg className="h-4 w-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+              </svg>
+              {t('form.email.label')}
             </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="block w-full px-4 py-3 border border-border rounded-md shadow-sm bg-background focus:ring-primary focus:border-primary sm:text-sm"
-              placeholder="Enter your email"
-              required
-            />
+            <div className="relative group">
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="block w-full px-4 py-3 border border-border/50 rounded-lg shadow-sm bg-background/80 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 sm:text-sm group-hover:border-primary/30"
+                placeholder={t('form.email.placeholder')}
+                autoComplete="email"
+                autoFocus
+                required
+              />
+            </div>
+            <div className="mt-3 flex items-center">
+              <svg className="h-4 w-4 text-green-500 mr-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+              </svg>
+              <p className="text-xs text-foreground/70">{t('form.email.privacyNotice')}</p>
+            </div>
           </div>
 
-          <div>
+          <div className="mt-6">
             <Button
               type="submit"
               disabled={isLoading}
               fullWidth
               variant="primary"
-              className="flex justify-center"
+              className="flex justify-center py-3.5 text-base font-medium shadow-md hover:shadow-lg hover:translate-y-[-1px] active:translate-y-[1px] transition-all duration-200 rounded-xl"
             >
               {isLoading ? (
-                <span className="flex items-center">
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                     <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                   </svg>
-                  Sending...
+                  <span className="animate-pulse">{t('form.email.loading')}</span>
                 </span>
               ) : (
-                'Send Verification Code'
-              )}
-            </Button>
-          </div>
-        </form>
-      ) : step === 'verification' ? (
-        <form onSubmit={handleVerifyCode} className="space-y-6">
-          <div className="mb-6 text-center">
-            <h3 className="text-xl font-medium">Verify your email</h3>
-            <p className="mt-2 text-sm text-foreground/70">
-              We've sent a 6-digit verification code to <span className="font-medium">{email}</span>
-            </p>
-          </div>
-          
-          <div 
-            ref={containerRef} 
-            onPaste={handleContainerPaste}
-            className="flex justify-center space-x-2 mb-4"
-          >
-            {verificationCode.map((digit, index) => (
-              <input
-                key={index}
-                ref={el => {
-                  codeInputRefs.current[index] = el;
-                }}
-                type="text"
-                inputMode="numeric"
-                maxLength={1}
-                value={digit}
-                onChange={(e) => handleCodeInputChange(index, e.target.value)}
-                onKeyDown={(e) => handleKeyDown(index, e)}
-                className="w-12 h-12 text-center text-lg border border-border rounded-md shadow-sm bg-background focus:ring-primary focus:border-primary"
-                required
-              />
-            ))}
-          </div>
-
-          <div className="flex flex-col space-y-4">
-            <Button
-              type="submit"
-              disabled={isLoading || verificationCode.some(digit => !digit)}
-              fullWidth
-              variant="primary"
-            >
-              {isLoading ? (
-                <span className="flex items-center">
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                <span className="flex items-center justify-center">
+                  <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
                   </svg>
-                  Verifying...
+                  {t('form.email.button')}
                 </span>
-              ) : (
-                'Verify Code'
-              )}
-            </Button>
-
-            <div className="flex justify-between text-sm">
-              <Button
-                type="button"
-                onClick={() => {
-                  setStep('email');
-                  if (onStepChange) {
-                    onStepChange('email');
-                  }
-                }}
-                variant="link"
-                className="text-foreground/70 hover:text-foreground"
-              >
-                Use a different email
-              </Button>
-              
-              <Button
-                type="button"
-                onClick={handleRequestCode}
-                variant="link"
-                className="text-primary hover:text-primary/80"
-                disabled={isLoading}
-              >
-                {isLoading ? 'Sending...' : 'Resend code'}
-              </Button>
-            </div>
-          </div>
-        </form>
-      ) : (
-        <form onSubmit={handleProfileSubmit} className="space-y-6">
-          <div className="mb-6 text-center">
-            <h3 className="text-xl font-medium">Complete Your Profile</h3>
-            <div className="mt-2 flex justify-center">
-              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                </svg>
-              </div>
-            </div>
-            <p className="text-sm text-foreground/70 mt-3">
-              Tell us a bit about yourself
-            </p>
-          </div>
-          
-          <div className="bg-muted/30 p-4 rounded-lg border border-border mb-6">
-            <div className="mb-4">
-              <label htmlFor="firstName" className="block text-sm font-medium mb-1">
-                First Name
-              </label>
-              <input
-                id="firstName"
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                className="block w-full px-4 py-3 border border-border rounded-md shadow-sm bg-background focus:ring-primary focus:border-primary sm:text-sm"
-                placeholder="Enter your first name"
-                required
-              />
-            </div>
-            
-            <div>
-              <label htmlFor="lastName" className="block text-sm font-medium mb-1">
-                Last Name
-              </label>
-              <input
-                id="lastName"
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                className="block w-full px-4 py-3 border border-border rounded-md shadow-sm bg-background focus:ring-primary focus:border-primary sm:text-sm"
-                placeholder="Enter your last name"
-                required
-              />
-            </div>
-          </div>
-          
-          <div>
-            <Button
-              type="submit"
-              disabled={isLoading || !firstName || !lastName}
-              fullWidth
-              variant="primary"
-            >
-              {isLoading ? (
-                <span className="flex items-center">
-                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Saving...
-                </span>
-              ) : (
-                'Complete Profile'
               )}
             </Button>
           </div>
         </form>
       )}
       
-      <div className="mt-8 text-center">
-        <p className="text-sm text-foreground/70">
-          No registration needed. Just enter your email to get started.
-        </p>
-      </div>
+      {step === 'verification' && (
+        <form 
+          ref={containerRef}
+          onSubmit={handleVerifyCode} 
+          onPaste={handleContainerPaste}
+          className="space-y-8 animate-fadeIn"
+        >
+          <div className="mb-8 text-center">
+            <div className="inline-block mb-2 bg-primary/10 px-3 py-1 rounded-full">
+              <span className="text-xs font-medium text-primary/90">verification</span>
+            </div>
+            <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+              {t('form.verification.title')}
+            </h3>
+            <p className="mt-3 text-sm text-foreground/80 max-w-md mx-auto leading-relaxed">
+              {t('form.verification.subtitle')} <span className="font-semibold text-foreground">{email}</span>
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-muted/40 to-muted/20 p-6 rounded-2xl shadow-sm border border-white/5 backdrop-blur-sm">
+            <div className="flex justify-center gap-3 mb-6">
+              {verificationCode.map((digit, index) => (
+                <input
+                  key={index}
+                  ref={el => { codeInputRefs.current[index] = el; }}
+                  type="text"
+                  inputMode="numeric"
+                  pattern="[0-9]*"
+                  maxLength={1}
+                  value={digit}
+                  onChange={(e) => handleCodeInputChange(index, e.target.value)}
+                  onKeyDown={(e) => handleKeyDown(index, e)}
+                  className="w-14 h-14 text-center border border-border/50 rounded-lg shadow-sm bg-background/80 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 text-xl font-semibold hover:border-primary/30"
+                  aria-label={`Digit ${index + 1}`}
+                  required
+                />
+              ))}
+            </div>
+            <div className="flex justify-center gap-6 mt-4">
+              <button
+                type="button"
+                onClick={() => setStep('email')}
+                className="text-sm text-foreground/70 hover:text-foreground flex items-center gap-1 transition-colors duration-200"
+              >
+                <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M9.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L7.414 9H15a1 1 0 110 2H7.414l2.293 2.293a1 1 0 010 1.414z" clipRule="evenodd" />
+                </svg>
+                {t('form.verification.useAnotherEmail')}
+              </button>
+              <button
+                type="button"
+                onClick={handleRequestCode}
+                className="text-sm text-primary hover:text-primary/80 flex items-center gap-1 transition-colors duration-200"
+              >
+                <svg className="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M4 2a1 1 0 011 1v2.101a7.002 7.002 0 0111.601 2.566 1 1 0 11-1.885.666A5.002 5.002 0 005.999 7H9a1 1 0 010 2H4a1 1 0 01-1-1V3a1 1 0 011-1zm.008 9.057a1 1 0 011.276.61A5.002 5.002 0 0014.001 13H11a1 1 0 110-2h5a1 1 0 011 1v5a1 1 0 11-2 0v-2.101a7.002 7.002 0 01-11.601-2.566 1 1 0 01.61-1.276z" clipRule="evenodd" />
+                </svg>
+                {t('form.verification.resendCode')}
+              </button>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <Button
+              type="submit"
+              disabled={isLoading || verificationCode.some(digit => !digit)}
+              fullWidth
+              variant="primary"
+              className="flex justify-center py-3.5 text-base font-medium shadow-md hover:shadow-lg hover:translate-y-[-1px] active:translate-y-[1px] transition-all duration-200 rounded-xl"
+            >
+              {isLoading ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span className="animate-pulse">{t('form.verification.loading')}</span>
+                </span>
+              ) : (
+                <span className="flex items-center justify-center">
+                  <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  </svg>
+                  {t('form.verification.button')}
+                </span>
+              )}
+            </Button>
+          </div>
+        </form>
+      )}
+      
+      {step === 'profile' && (
+        <form onSubmit={handleProfileSubmit} className="space-y-8 animate-fadeIn">
+          <div className="mb-8 text-center">
+            <div className="inline-block mb-2 bg-primary/10 px-3 py-1 rounded-full">
+              <span className="text-xs font-medium text-primary/90">profile</span>
+            </div>
+            <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/80">
+              {t('form.profile.title')}
+            </h3>
+            <p className="mt-3 text-sm text-foreground/80 max-w-md mx-auto leading-relaxed">
+              {t('form.profile.subtitle')}
+            </p>
+          </div>
+
+          <div className="bg-gradient-to-r from-muted/40 to-muted/20 p-6 rounded-2xl shadow-sm border border-white/5 backdrop-blur-sm">
+            <div className="grid gap-5">
+              <div>
+                <label htmlFor="firstName" className="flex items-center gap-2 text-sm font-medium mb-2 text-foreground/90">
+                  <svg className="h-4 w-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
+                  </svg>
+                  {t('form.profile.firstName.label')}
+                </label>
+                <div className="relative group">
+                  <input
+                    id="firstName"
+                    type="text"
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="block w-full px-4 py-3 border border-border/50 rounded-lg shadow-sm bg-background/80 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 sm:text-sm group-hover:border-primary/30"
+                    placeholder={t('form.profile.firstName.placeholder')}
+                    autoFocus
+                    required
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label htmlFor="lastName" className="flex items-center gap-2 text-sm font-medium mb-2 text-foreground/90">
+                  <svg className="h-4 w-4 text-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path d="M9 6a3 3 0 11-6 0 3 3 0 016 0zM17 6a3 3 0 11-6 0 3 3 0 016 0zM12.93 17c.046-.327.07-.66.07-1a6.97 6.97 0 00-1.5-4.33A5 5 0 0119 16v1h-6.07zM6 11a5 5 0 015 5v1H1v-1a5 5 0 015-5z" />
+                  </svg>
+                  {t('form.profile.lastName.label')}
+                </label>
+                <div className="relative group">
+                  <input
+                    id="lastName"
+                    type="text"
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="block w-full px-4 py-3 border border-border/50 rounded-lg shadow-sm bg-background/80 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 sm:text-sm group-hover:border-primary/30"
+                    placeholder={t('form.profile.lastName.placeholder')}
+                    required
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6">
+            <Button
+              type="submit"
+              disabled={isLoading}
+              fullWidth
+              variant="primary"
+              className="flex justify-center py-3.5 text-base font-medium shadow-md hover:shadow-lg hover:translate-y-[-1px] active:translate-y-[1px] transition-all duration-200 rounded-xl"
+            >
+              {isLoading ? (
+                <span className="flex items-center justify-center">
+                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  <span className="animate-pulse">{t('form.profile.loading')}</span>
+                </span>
+              ) : (
+                <span className="flex items-center justify-center">
+                  <svg className="mr-2 h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                  </svg>
+                  {t('form.profile.button')}
+                </span>
+              )}
+            </Button>
+          </div>
+        </form>
+      )}
     </div>
   );
 }

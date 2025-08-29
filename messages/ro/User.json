@@ -32,6 +32,7 @@
         "codeVerified": "Email verificat cu succes",
         "confirmText": "Tastați DELETE MY ACCOUNT pentru a confirma:",
         "confirmPlaceholder": "Tastați textul de confirmare",
+        "enterCode": "Introduceți codul de verificare din 6 cifre trimis la adresa dvs. de email:",
         "cancel": "Anulează",
         "delete": "Șterge Contul",
         "deleting": "Se șterge..."
@@ -49,7 +50,7 @@
     "loginRequired": {
       "title": "Autentificare Necesară",
       "message": "Trebuie să fiți autentificat pentru a vizualiza și gestiona poveștile dvs.",
-      "signIn": "Autentificare"
+      "signIn": "Autentificare / Alătură-te"
     },
     "noStories": {
       "title": "Nu s-au găsit povești",

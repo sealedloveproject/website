@@ -32,6 +32,7 @@
         "codeVerified": "Email vérifié avec succès",
         "confirmText": "Tapez DELETE MY ACCOUNT pour confirmer :",
         "confirmPlaceholder": "Tapez le texte de confirmation",
+        "enterCode": "Entrez le code de vérification à 6 chiffres envoyé à votre adresse email :",
         "cancel": "Annuler",
         "delete": "Supprimer le compte",
         "deleting": "Suppression..."
@@ -49,7 +50,7 @@
     "loginRequired": {
       "title": "Connexion Requise",
       "message": "Vous devez être connecté pour voir et gérer vos histoires.",
-      "signIn": "Se connecter"
+      "signIn": "Se connecter / Rejoignez-nous"
     },
     "noStories": {
       "title": "Aucune histoire trouvée",

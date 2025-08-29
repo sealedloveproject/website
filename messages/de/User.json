@@ -32,6 +32,7 @@
         "codeVerified": "E-Mail erfolgreich verifiziert",
         "confirmText": "Geben Sie DELETE MY ACCOUNT ein, um zu bestätigen:",
         "confirmPlaceholder": "Bestätigungstext eingeben",
+        "enterCode": "Geben Sie den 6-stelligen Bestätigungscode ein, der an Ihre E-Mail gesendet wurde:",
         "cancel": "Abbrechen",
         "delete": "Konto löschen",
         "deleting": "Lösche..."
@@ -49,7 +50,7 @@
     "loginRequired": {
       "title": "Anmeldung erforderlich",
       "message": "Sie müssen angemeldet sein, um Ihre Geschichten anzuzeigen und zu verwalten.",
-      "signIn": "Anmelden"
+      "signIn": "Anmelden / Beitreten"
     },
     "noStories": {
       "title": "Keine Geschichten gefunden",

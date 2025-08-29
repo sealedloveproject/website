@@ -4,11 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import SignInForm from './SignInForm';
 import { Button } from '@/components/ui/Button';
+import { useTranslations } from 'next-intl';
 
 export default function SignInModal() {
   const { isSignInModalOpen, closeSignInModal } = useAuth();
   const modalRef = useRef<HTMLDivElement>(null);
   const [currentStep, setCurrentStep] = useState<'email' | 'verification' | 'profile'>('email');
+  const t = useTranslations('Auth');
   
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -69,14 +71,14 @@ export default function SignInModal() {
         {/* Header with cleaner spacing */}
         <div className="flex justify-between items-center px-6 py-5 border-b border-border">
           <h2 className="text-xl font-semibold tracking-tight">
-            <span className="gradient-text">Sign In</span>
-            <span className="ml-1.5 text-foreground/60 text-sm font-normal">to your story</span>
+            <span className="gradient-text">{t('modal.title')}</span>
+            <span className="ml-1.5 text-foreground/60 text-sm font-normal">{t('modal.subtitle')}</span>
           </h2>
           <Button 
             onClick={closeSignInModal}
             variant="ghost"
             size="icon"
-            aria-label="Close"
+            aria-label={t('modal.close')}
           >
             <svg className="w-5 h-5 text-foreground/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />

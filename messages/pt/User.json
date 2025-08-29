@@ -32,6 +32,7 @@
         "codeVerified": "Email verificado com sucesso",
         "confirmText": "Digite DELETE MY ACCOUNT para confirmar:",
         "confirmPlaceholder": "Digite o texto de confirmação",
+        "enterCode": "Digite o código de verificação de 6 dígitos enviado para seu email:",
         "cancel": "Cancelar",
         "delete": "Excluir Conta",
         "deleting": "Excluindo..."
@@ -49,7 +50,7 @@
     "loginRequired": {
       "title": "Login Necessário",
       "message": "Você precisa estar logado para visualizar e gerenciar suas histórias.",
-      "signIn": "Entrar"
+      "signIn": "Entrar / Junte-se a nós"
     },
     "noStories": {
       "title": "Nenhuma história encontrada",
